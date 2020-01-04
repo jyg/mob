@@ -56,11 +56,11 @@ f 33;
 -257985 -1 0 1;
 #X obj 861 589 hsl 300 50 0 127 0 0 empty empty empty -2 -8 0 10 -232576
 -258113 -1 0 1;
-#X obj 311 828 bng 50 250 50 0 snd-/bouing empty empty 17 7 0 10 -4032
--4160 -1;
+#X obj 311 828 bng 50 250 50 0 /bouing /bouing-rcv empty 17 7 0 10
+-4032 -4160 -1;
 #X obj 850 724 vradio 50 1 0 4 empty empty empty 0 -8 0 10 -4034 -159808
 -1 3;
-#X obj 757 495 hradio 60 1 0 7 snd-/mode empty empty 0 -8 0 10 -260097
+#X obj 757 495 hradio 60 1 0 7 /mode /mode-rcv empty 0 -8 0 10 -260097
 -257985 -1 0;
 #X obj 82 795 print;
 #X obj 82 756 r /bouing;
@@ -80,61 +80,28 @@ f 33;
 #X text 19 315 Il peut être supprimé après l'export du fichier .mmp
 , f 37;
 #X obj 295 105 mob;
-#A saved -R 170.669;
-#A saved -G 134.528;
-#A saved -B 86.3386;
-#A saved -pages 1;
-#A saved -mode 0;
-#X obj 309 773 mob/gui /bouing;
 #X obj 633 67 mob/hfader;
-#A saved -name myslider;
-#A saved -speed_ratio 100;
-#A saved -front_color 11;
-#A saved -cursor_color 0;
-#A saved -back_color 10;
-#A saved -size 127 15;
 #X obj 628 232 mob/hfader;
-#A saved -name myslider;
-#A saved -speed_ratio 100;
-#A saved -front_color 11;
-#A saved -cursor_color 0;
-#A saved -back_color 10;
-#A saved -size 127 15;
 #X obj 639 357 mob/hfader;
-#A saved -name myslider;
-#A saved -speed_ratio 100;
-#A saved -front_color 11;
-#A saved -cursor_color 0;
-#A saved -back_color 10;
-#A saved -size 127 15;
 #X text 112 73 [mob];
 #X text 605 563 mob.button;
 #X obj 621 657 mob/gui /fx_ring-0/freq;
 #X text 634 843 mob.hfader;
-#X obj 712 453 mob/gui /mode;
 #X text 1269 64 mob/hfader;
 #X text 1265 94 mob/button;
 #X obj 1445 52 mob/hfader;
-#A saved -name myslider;
-#A saved -speed_ratio 100;
-#A saved -front_color 11;
-#A saved -cursor_color 0;
-#A saved -back_color 10;
-#A saved -size 127 15;
 #X obj 1445 97 mob/button;
-#A saved -name ;
-#A saved -cursor_color -1;
-#A saved -back_color 10;
-#A saved -size 60 60;
 #X obj 1452 494 mob/gui /fx_ring-0/freq;
 #X text 1279 706 mob.vslider;
 #X text 1278 736 mob.rotbutton;
 #X text 1248 624 - renommer mob.hfader en mob.hslider;
-#X text 26 506, f 34;
+#X text 26 506 comment, f 34;
 #X text 23 404 Pour connecter le patch aux objets de l'interface MobMuPlat
 \, pour importer le savestate depuis pd > 0.49 et sauvegarder des presets
 \, ajouter l'objet suivant :, f 36;
 #X obj 253 577 mob/loader <filename>;
+#X obj 309 773 mob/listener /bouing /bouing-rcv;
+#X obj 621 453 mob/listener /mode /mode-rcv;
 #X connect 26 0 46 0;
 #X connect 26 0 52 0;
 #X connect 28 0 29 0;
@@ -154,7 +121,5 @@ f 33;
 #X connect 52 0 30 0;
 #X connect 53 0 52 1;
 #X connect 54 0 44 0;
-#X connect 58 0 38 0;
-#X connect 64 0 16 0;
-#X connect 66 0 40 0;
-#X connect 71 0 17 0;
+#X connect 63 0 16 0;
+#X connect 69 0 17 0;
