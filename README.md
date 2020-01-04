@@ -13,3 +13,5 @@ Requirements :
 - pd >= 0.50 on development platform
 - mrpeach/binfile external
 - iemguts + iemlib external libs
+
+-current version of pd on MobMuPlat is 0.48-0
