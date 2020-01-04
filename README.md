@@ -7,6 +7,6 @@ In order to create GUIs, it comes with a java app (MobMuPlat Editor) that genera
 [mob] lets you build those .mmp files directly from the patch you want to use on mobile platform, without the need of using MobMuPlat Editor. What you get should be what you see !
 
 Requirements :
-- pd 0.50 on development platform
+- pd >= 0.50 on development platform
 - mrpeach/binfile external
 - iemguts + iemlib external libs
