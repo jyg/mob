@@ -14,4 +14,5 @@ Requirements :
 - mrpeach/binfile external
 - iemguts + iemlib external libs
 
--current version of pd on MobMuPlat is 0.48-0
+Note that current version of pd on MobMuPlat is 0.48-0.
+[mob] comes with a RJDJ-based preset saving mechanism.
