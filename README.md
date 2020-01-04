@@ -9,10 +9,11 @@ In order to create GUIs, it comes with a java app (MobMuPlat Editor) that genera
 [mob] maps native pd-guis (hsv, vsl, hradio, vradio, toggle, bang) and text comments into mmp.widgets in the .mmp file.
 It comes with enhanced guis (mob/hfader, mob/button, and - coming soon - knob / xy-slider) that are also converted to mmp.widgets.
 
+[mob] comes with a RJDJ-based preset saving mechanism.
+
 Requirements :
 - pd >= 0.50 on development platform
 - mrpeach/binfile external
 - iemguts + iemlib external libs
 
 Note that current version of pd on MobMuPlat is 0.48-0.
-[mob] comes with a RJDJ-based preset saving mechanism.
