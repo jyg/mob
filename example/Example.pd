@@ -1,0 +1,57 @@
+#N struct bckgrnd float x float y float width float height float color
+;
+#N canvas 0 50 1114 944 16;
+#X scalar bckgrnd 0 0 600 960 653 \;;
+#X obj 42 228 hsl 200 50 0 1 0 0 param param-rcv empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 41 321 hsl 200 50 0 1 0 0 param param-rcv empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 296 236 hsl 200 50 0 1 0 0 /param2 /param2-rcv empty -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 301 321 hsl 200 50 0 1 0 0 /param2 /param2-rcv empty -2 -8 0
+10 -262144 -1 -1 0 1;
+#X text 626 194 TO DO prévoir un systeme d identifiant unique pour
+crér des paires uniques gui/listener \, de manière à permettre des
+mapping et des excursions lineaires/log, f 37;
+#N canvas 0 50 450 300 listeners 0;
+#X obj 113 83 mob/listener param param-rcv;
+#X obj 115 114 mob/listener /param2 /param2-rcv;
+#X restore 326 184 pd listeners;
+#X obj 181 23 mob;
+#A saved -R 170.669;
+#A saved -G 134.528;
+#A saved -B 86.3386;
+#A saved -pages 1;
+#A saved -mode 0;
+#X obj 56 176 mob/loader Example;
+#X obj 43 397 mob/hfader;
+#A saved -name param;
+#A saved -speed_ratio 100;
+#A saved -front_color 11;
+#A saved -cursor_color 0;
+#A saved -back_color 10;
+#A saved -size 167 61;
+#X obj 37 468 mob/hfader;
+#A saved -name param;
+#A saved -speed_ratio 100;
+#A saved -front_color 11;
+#A saved -cursor_color 0;
+#A saved -back_color 10;
+#A saved -size 153 54;
+#X obj 307 406 mob/hfader;
+#A saved -name /param2;
+#A saved -speed_ratio 100;
+#A saved -front_color 11;
+#A saved -cursor_color 0;
+#A saved -back_color 10;
+#A saved -size 164 52;
+#X obj 306 476 mob/hfader;
+#A saved -name /param2;
+#A saved -speed_ratio 100;
+#A saved -front_color 11;
+#A saved -cursor_color 0;
+#A saved -back_color 10;
+#A saved -size 178 61;
+#X text 626 15 [mob] crée un sous-patch [pd listeners];
+#X text 630 39 où seront stockées les instances de mob/listener,
+f 41;
