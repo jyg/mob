@@ -17,11 +17,10 @@
 #X obj 338 367 vsl 50 200 32 96 0 0 bar bar-rcv empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 180 372 vradio 15 1 0 8 fff ffff empty 0 -8 0 10 -262144 -1
--1 3;
+-1 0;
 #X msg 670 311 \; mob save 1;
 #X msg 672 401 \; mob load 1;
-#X msg 675 434 \; mob load 2;
-#X msg 668 364 \; mob save 2;
+#X msg 678 358 \; mob save 2;
 #X text 625 85 où sont stockées les objets necessaires à la communication
 entre le patch et l'interface MobMuPlat. (instances de mob/listener
 \, mob/loader), f 41;
@@ -34,9 +33,18 @@ entre le patch et l'interface MobMuPlat. (instances de mob/listener
 #X obj 20 180 mob/listener fff ffff;
 #X obj 20 0 mob/loader Example;
 #X restore 10 10 pd mob-listeners;
-#X obj 600 531 r fromGUI;
-#X obj 608 561 print fromGUI;
-#X obj 758 529 r toGUI;
-#X obj 766 559 print toGUI;
-#X connect 17 0 18 0;
-#X connect 19 0 20 0;
+#X obj 843 302 metro 2000;
+#X obj 831 258 loadbang;
+#X obj 843 331 f;
+#X obj 898 342 == 0;
+#X obj 843 369 + 1;
+#X msg 760 466 \; mob load \$1;
+#X obj 807 277 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X connect 16 0 18 0;
+#X connect 17 0 16 0;
+#X connect 18 0 19 0;
+#X connect 18 0 20 0;
+#X connect 19 0 18 1;
+#X connect 20 0 21 0;
+#X connect 22 0 16 0;
