@@ -19,5 +19,14 @@ Requirements :
 Note that current version of pd on MobMuPlat is 0.48-0.
 
 ## Instructions
-Copy this folder (named 'mob') into the externals directory of your puredata installation.
-Copy the content of subfolder (named 'MobMuPlat_target_folder') into the MobMuPlat directory on your mobile device.
+Copy this folder (named 'mob') into the externals directory of your desktop puredata installation (pd >= 0.50).
+
+Copy the content of subfolder named 'MobMuPlat_target_folder' into the MobMuPlat directory on your mobile device.
+
+Edit the patch you want to export to MobMuPlat with pd >= 0.50. Add the [mob] object on it. Check the background color, the layout size, the number of pages, etc..
+
+All the native pd GUIs will be exported. They must interact with the patch only with their rcv and snd channel names (no wired connections).
+
+Save your patch. Click on red button, mopb creates dynamically the needed wrappers. Choose a name for the generated graphical interface file (******.mmp). Copy both ******.pd and ******.mmp files to your mobile device (MobMuPlat directory). 
+
+That's all !
