@@ -19,7 +19,6 @@
 #X obj 424 671 s \$2;
 #X obj 66 205 r \$1;
 #X obj 65 250 list prepend \$1 set;
-#X obj 65 275 list trim;
 #X connect 0 0 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -35,5 +34,4 @@
 #X connect 15 0 16 0;
 #X connect 16 0 17 0;
 #X connect 18 0 19 0;
-#X connect 19 0 20 0;
-#X connect 20 0 11 0;
+#X connect 19 0 11 0;

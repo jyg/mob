@@ -5,22 +5,17 @@
 #X scalar bckgrnd 600 0 600 960 563 \;;
 #X text 616 56 [mob] crée un sous-patch [pd mob-listeners];
 #X obj 283 17 mob;
-#A saved -R 146.575;
-#A saved -G 156.614;
-#A saved -B 88.3465;
-#A saved -pages 2;
-#A saved -mode 0;
 #X text 625 223 TO DO permettre des mapping log des sliders;
 #X obj 63 149 vsl 50 200 0 127 0 0 foo foo-rcv empty 0 -9 0 10 -262144
--1 -1 10649 1;
+-1 -1 0 1;
 #X obj 129 147 vsl 50 200 0 127 0 0 foo foo-rcv empty 0 -9 0 10 -262144
--1 -1 10649 1;
+-1 -1 0 1;
 #X obj 216 236 hsl 300 50 0 127 0 0 foo foo-rcv empty -2 -8 0 10 -262144
--1 -1 16000 1;
+-1 -1 0 1;
 #X obj 272 369 vsl 50 200 0 127 0 0 bar bar-rcv empty 0 -9 0 10 -262144
--1 -1 12825 1;
+-1 -1 0 1;
 #X obj 338 367 vsl 50 200 32 96 0 0 bar bar-rcv empty 0 -9 0 10 -262144
--1 -1 15500 1;
+-1 -1 0 1;
 #X obj 180 372 vradio 15 1 0 8 fff ffff empty 0 -8 0 10 -262144 -1
 -1 3;
 #X msg 670 311 \; mob save 1;
@@ -39,3 +34,9 @@ entre le patch et l'interface MobMuPlat. (instances de mob/listener
 #X obj 20 180 mob/listener fff ffff;
 #X obj 20 0 mob/loader Example;
 #X restore 10 10 pd mob-listeners;
+#X obj 600 531 r fromGUI;
+#X obj 608 561 print fromGUI;
+#X obj 758 529 r toGUI;
+#X obj 766 559 print toGUI;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;
