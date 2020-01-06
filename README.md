@@ -27,6 +27,6 @@ Edit the patch you want to export to MobMuPlat with pd >= 0.50. Add the [mob] ob
 
 All the native pd GUIs will be exported. They must interact with the patch only with their rcv and snd channel names (no wired connections).
 
-Save your patch. Click on red button, mopb creates dynamically the needed wrappers. Choose a name for the generated graphical interface file (*.mmp). Copy both *.pd and *.mmp files to your mobile device (MobMuPlat directory). 
+Save your patch. Click on red button, [mob] creates dynamically the needed wrappers. Choose a name for the generated graphical interface file (*.mmp). Copy both *.pd and *.mmp files to your mobile device (MobMuPlat directory). 
 
 That's all !
