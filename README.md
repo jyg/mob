@@ -17,3 +17,7 @@ Requirements :
 - iemguts + iemlib external libs
 
 Note that current version of pd on MobMuPlat is 0.48-0.
+
+## Instructions
+Copy this folder (named 'mob') into the externals directory of your puredata installation.
+Copy the content of subfolder (named 'MobMuPlat_target_folder') into the MobMuPlat directory on your mobile device.
