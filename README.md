@@ -7,7 +7,7 @@ In order to create GUIs, it comes with a java app (MobMuPlat Editor) that genera
 [mob] lets you build those .mmp files directly from the patch you want to use on mobile platform, without the need of using MobMuPlat Editor. What you get should be what you see !
 
 [mob] maps native pd-guis (hsv, vsl, hradio, vradio, toggle, bang) and text comments into mmp.widgets in the .mmp file.
-It comes with enhanced guis (mob/hfader, mob/button, and - coming soon - knob / xy-slider) that are also converted to mmp.widgets.
+It comes with enhanced guis (mob/hfader, mob/button, mob/xy_slider, and, coming soon, mob/knob ...) that are also converted to mmp.widgets.
 
 [mob] comes with a RJDJ-based preset saving mechanism.
 
