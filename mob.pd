@@ -2,7 +2,7 @@
 #X obj 100 100 cnv 15 298 138 empty empty mob 2 8 0 14 -204800 -1 0
 ;
 #X obj 54 63 inlet;
-#X symbolatom 187 188 30 0 0 2 pd_target_File #0-pdFile-rcv #0-pdFile
+#X symbolatom 187 184 30 0 0 2 pd_target_File #0-pdFile-rcv #0-pdFile
 ;
 #N canvas 1163 889 362 187 \$0-properties 0;
 #X obj 58 137 cnv 15 200 35 empty empty empty 20 12 0 14 -233017 -66577
@@ -12,12 +12,12 @@
 #X obj 188 145 bng 15 250 50 0 \$0-cancel empty cancel 17 7 0 10 -258699
 -1 -1;
 #X obj 61 76 hsl 128 15 0 255 0 1 \$0-R \$0-R empty -2 -8 0 10 -258699
--1 -1 7300 1;
+-1 -1 8200 1;
 #X obj 61 93 hsl 128 15 0 255 0 1 \$0-G \$0-G empty -2 -8 0 10 -24198
--1 -1 7800 1;
+-1 -1 7000 1;
 #X obj 61 110 hsl 128 15 0 255 0 1 \$0-B \$0-B empty -2 -8 0 10 -62784
 -1 -1 4400 1;
-#X obj 206 76 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -149975
+#X obj 206 76 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -170199
 -262144 0;
 #X obj 120 145 bng 15 250 50 0 \$0-apply empty apply 17 7 0 10 -241291
 -1 -1;
@@ -197,12 +197,12 @@
 #X restore 448 44 pd propertyguts;
 #X obj 350 100 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 355 105 cnv 15 40 40 empty \$0-color empty 20 12 0 14 -149975
+#X obj 355 105 cnv 15 40 40 empty \$0-color empty 20 12 0 14 -170199
 -262144 0;
-#X floatatom 363 150 5 1 100 0 pageCount #0-pageCount-rcv #0-pageCount
+#X floatatom 253 150 5 1 100 0 pageCount #0-pageCount-rcv #0-pageCount
 ;
 #X text 286 118 BackGroundColor;
-#X floatatom 363 169 5 0 99 0 firstPage #0-firstPage-rcv #0-firstPage
+#X floatatom 363 150 5 0 99 0 firstPage #0-firstPage-rcv #0-firstPage
 ;
 #X msg 250 285 clear;
 #X obj 128 776 s MMP_BINFILE;
@@ -216,22 +216,16 @@
 #X obj 132 722 list trim;
 #X obj 44 620 list prepend add;
 #X obj 49 564 list append 125;
-#X msg 35 779 write \$1;
-#X obj 36 754 savepanel;
-#X obj 56 727 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
 #X obj 748 677 mrpeach/binfile;
 #X obj 748 651 r MMP_BINFILE;
 #X obj 43 656 t b a;
 #X obj 956 99 r MMP_EXPORT;
 #X obj 100 150 vradio 15 1 0 6 \$0-mode \$0-mode-rcv empty 0 -8 0 10
--262144 -1 -1 1;
-#X obj 506 666 text define -k \$0-resolutions;
+-262144 -1 -1 0;
+#X obj 495 744 text define -k \$0-resolutions;
 #A set 600x960 android7inch 0 600 960 600 0 \; 960x600 android7inch
 1 960 600 960 0 \;;
 #X text 119 149 600 x 960;
-#X text 160 206 une page android7inch portrait = 600 x 960 pixels,
-f 31;
 #X text 102 116 Orientation / Resolution, f 13;
 #N canvas 0 50 450 300 orientation 0;
 #X obj 55 9 inlet;
@@ -285,8 +279,8 @@ f 31;
 #X obj 188 81 unpack s s;
 #X obj 187 150 s \$0-pdFile-rcv;
 #X obj 308 63 loadbang;
-#X obj 408 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 408 61 bng 15 250 50 0 empty \$0-reset empty 17 7 0 10 -262144
+-1 -1;
 #X obj 187 25 iemguts/receivecanvas 2;
 #X obj 305 90 iemguts/canvasname 2;
 #X obj 68 98 r \$0-pdFile;
@@ -1559,7 +1553,7 @@ width 0 0 0;
 #X obj 1074 770 s \$0-yoffset;
 #X obj 989 849 s \$0-width;
 #X obj 1018 818 s \$0-height;
-#X obj 236 142 bng 30 250 50 0 empty empty refresh 17 7 0 10 -4034
+#X obj 196 101 bng 30 250 50 0 \$0-done empty refresh -15 7 0 10 -4034
 -1 -1;
 #X text 117 164 960 x 600;
 #X obj 959 667 f;
@@ -1665,6 +1659,7 @@ width 0 0 0;
 #X msg 357 253 30;
 #X obj 121 163 delay 10;
 #X msg 130 499 obj 20 0 mob/loader \$1;
+#X obj 126 9 r LISTENERS;
 #X connect 1 0 2 0;
 #X connect 2 0 21 0;
 #X connect 2 1 8 0;
@@ -1695,6 +1690,7 @@ width 0 0 0;
 #X connect 22 0 4 1;
 #X connect 23 0 13 0;
 #X connect 24 0 0 0;
+#X connect 25 0 2 0;
 #X restore 1232 55 pd dynamic_patching;
 #X obj 24 99 t b b;
 #X obj 1023 383 route vsl hsl vradio hradio bng tgl cnv;
@@ -1840,77 +1836,127 @@ width 0 0 0;
 #X obj 17 218 delay 300;
 #X obj 56 346 delay 100;
 #X obj 65 379 delay 100;
-#X obj 57 701 delay 100;
-#X connect 1 0 89 0;
+#X obj 45 690 delay 100;
+#X symbolatom 187 221 30 0 0 2 mmp_target_File #0-mmpFile-rcv #0-mmpFile
+;
+#X obj 384 204 bng 15 250 50 0 empty empty browse -40 7 0 10 -262144
+-1 -1;
+#X obj 36 773 symbol;
+#X obj 578 691 pdcontrol;
+#X msg 576 647 dir 1;
+#X obj 360 659 t s b;
+#X obj 360 684 pack s s;
+#X msg 366 720 write \$2/\$1;
+#X obj 379 481 savepanel;
+#X obj 379 506 splitfilename /;
+#X obj 446 534 symbol;
+#X obj 426 568 s \$0-mmpFile;
+#X obj 46 745 r \$0-mmpFile;
+#X obj 751 466 r \$0-mmpFile;
+#X obj 753 538 s \$0-mmpFile-rcv;
+#X obj 1405 330 r \$0-pdFile;
+#X obj 1405 355 list fromsymbol;
+#X obj 1405 380 t l l;
+#X obj 1444 410 list length;
+#X obj 1401 464 list split;
+#X obj 1401 489 list tosymbol;
+#X obj 1433 556 s \$0-mmpFile;
+#X msg 751 491 set \$1;
+#X msg 1401 514 symbol \$1.mmp;
+#X obj 1456 437 - 3;
+#X obj 384 169 bng 15 250 50 0 \$0-reset empty reset -35 7 0 10 -262144
+-1 -1;
+#X text 297 166 <-----;
+#X text 297 202 <-----;
+#X connect 1 0 85 0;
 #X connect 5 0 4 0;
 #X connect 6 0 5 0;
 #X connect 7 0 5 0;
 #X connect 8 0 7 0;
 #X connect 9 0 6 0;
-#X connect 14 0 49 0;
+#X connect 14 0 45 0;
 #X connect 16 0 17 0;
 #X connect 17 0 22 0;
-#X connect 18 0 89 0;
+#X connect 18 0 85 0;
 #X connect 21 0 20 0;
 #X connect 22 0 15 0;
-#X connect 23 0 30 0;
+#X connect 23 0 27 0;
 #X connect 24 0 23 0;
-#X connect 25 0 15 0;
 #X connect 26 0 25 0;
-#X connect 27 0 26 0;
-#X connect 29 0 28 0;
-#X connect 30 0 95 0;
-#X connect 30 1 22 0;
-#X connect 31 0 53 0;
-#X connect 37 0 42 0;
-#X connect 38 0 40 0;
-#X connect 40 0 41 0;
-#X connect 41 0 16 0;
-#X connect 42 0 43 0;
-#X connect 43 0 24 0;
-#X connect 51 0 39 0;
-#X connect 53 0 54 0;
-#X connect 54 0 52 0;
-#X connect 54 1 55 0;
-#X connect 55 0 56 0;
-#X connect 55 1 57 1;
-#X connect 56 0 57 0;
-#X connect 57 0 59 0;
-#X connect 59 0 90 0;
-#X connect 66 0 77 0;
-#X connect 67 0 69 0;
-#X connect 69 1 68 0;
-#X connect 69 2 70 0;
-#X connect 69 3 73 0;
-#X connect 69 4 74 0;
-#X connect 69 5 71 0;
-#X connect 69 6 72 0;
-#X connect 75 0 65 0;
-#X connect 77 0 67 0;
-#X connect 78 0 77 0;
-#X connect 79 0 65 0;
+#X connect 27 0 91 0;
+#X connect 27 1 22 0;
+#X connect 28 0 49 0;
+#X connect 33 0 38 0;
+#X connect 34 0 36 0;
+#X connect 36 0 37 0;
+#X connect 37 0 16 0;
+#X connect 38 0 39 0;
+#X connect 39 0 24 0;
+#X connect 47 0 35 0;
+#X connect 49 0 50 0;
+#X connect 50 0 48 0;
+#X connect 50 1 51 0;
+#X connect 51 0 52 0;
+#X connect 51 1 53 1;
+#X connect 52 0 53 0;
+#X connect 53 0 55 0;
+#X connect 55 0 86 0;
+#X connect 62 0 73 0;
+#X connect 63 0 65 0;
+#X connect 65 1 64 0;
+#X connect 65 2 66 0;
+#X connect 65 3 69 0;
+#X connect 65 4 70 0;
+#X connect 65 5 67 0;
+#X connect 65 6 68 0;
+#X connect 73 0 63 0;
+#X connect 74 0 73 0;
+#X connect 75 0 61 0;
+#X connect 77 0 76 0;
+#X connect 78 0 89 0;
+#X connect 78 1 19 0;
+#X connect 78 2 21 0;
+#X connect 78 3 34 0;
+#X connect 78 4 14 0;
+#X connect 78 5 79 0;
+#X connect 78 6 35 0;
+#X connect 78 7 77 0;
+#X connect 78 7 83 0;
 #X connect 81 0 80 0;
-#X connect 82 0 93 0;
-#X connect 82 1 19 0;
-#X connect 82 2 21 0;
-#X connect 82 3 38 0;
-#X connect 82 4 14 0;
-#X connect 82 5 83 0;
-#X connect 82 6 39 0;
-#X connect 82 7 81 0;
-#X connect 82 7 87 0;
-#X connect 85 0 84 0;
-#X connect 87 0 86 0;
-#X connect 89 0 92 0;
-#X connect 89 1 85 0;
-#X connect 90 0 58 0;
-#X connect 90 1 60 0;
-#X connect 90 2 61 0;
-#X connect 90 3 62 0;
-#X connect 90 4 63 0;
-#X connect 92 0 82 0;
-#X connect 93 0 85 0;
-#X connect 93 0 94 0;
-#X connect 94 0 37 0;
-#X connect 95 0 26 0;
+#X connect 83 0 82 0;
+#X connect 85 0 88 0;
+#X connect 85 1 81 0;
+#X connect 86 0 54 0;
+#X connect 86 1 56 0;
+#X connect 86 2 57 0;
+#X connect 86 3 58 0;
+#X connect 86 4 59 0;
+#X connect 88 0 78 0;
+#X connect 89 0 81 0;
+#X connect 89 0 90 0;
+#X connect 90 0 33 0;
+#X connect 91 0 94 0;
+#X connect 93 0 100 0;
+#X connect 94 0 97 0;
+#X connect 95 0 98 1;
+#X connect 96 0 95 0;
+#X connect 97 0 98 0;
+#X connect 97 1 96 0;
+#X connect 98 0 99 0;
+#X connect 99 0 15 0;
+#X connect 100 0 101 0;
+#X connect 101 1 102 0;
+#X connect 102 0 103 0;
+#X connect 104 0 94 1;
+#X connect 105 0 114 0;
+#X connect 107 0 108 0;
+#X connect 108 0 109 0;
+#X connect 109 0 111 0;
+#X connect 109 1 110 0;
+#X connect 110 0 116 0;
+#X connect 111 0 112 0;
+#X connect 112 0 115 0;
+#X connect 114 0 106 0;
+#X connect 115 0 113 0;
+#X connect 116 0 111 1;
 #X coords 0 -1 1 1 300 140 1 100 100;
