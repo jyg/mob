@@ -1,0 +1,1 @@
+Copy this mob folder into the MobMuPlat folder on your mobile device.

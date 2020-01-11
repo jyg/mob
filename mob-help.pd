@@ -22,9 +22,9 @@
 #A saved -back_color -1.3559e+07;
 #A saved -size 191 110;
 #X obj 512 338 vsl 50 200 0 127 0 0 my_vsl my_vsl-rcv empty 0 -9 0
-10 -260097 -257985 -1 12045 0;
+10 -260097 -257985 -1 0 0;
 #X obj 112 332 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
--232576 -258113 -1 6236 0;
+-232576 -258113 -1 0 0;
 #X obj 443 406 vradio 50 1 0 4 my_vradio my_vradio-rcv empty 0 -8 0
 10 -4034 -159808 -1 0;
 #X obj 123 405 hradio 60 1 0 5 my_hradio my_hradio-rcv empty 0 -8 0
@@ -32,11 +32,10 @@
 #N canvas 0 50 450 349 mob-listeners 1;
 #X obj 20 30 mob/listenerHLCD_lin my_hsl my_hsl-rcv 1 0 1 0;
 #X obj 20 60 mob/listenerVLCD_lin my_vsl my_vsl-rcv 2 0 127 0;
-#X obj 20 90 mob/listenerVLCD_lin my_vsl my_vsl-rcv 3 0 127 148.865
+#X obj 20 90 mob/listenerHLCD_lin my_hsl my_hsl-rcv 3 0 1 181.631;
+#X obj 20 120 mob/listenerHLCD_lin myslider myslider-rcv 4 0 0 0;
+#X obj 20 150 mob/listenerVLCD_lin my_vsl my_vsl-rcv 5 0 127 148.865
 ;
-#X obj 20 120 mob/listenerHLCD_lin my_hsl my_hsl-rcv 4 0 1 181.631
-;
-#X obj 20 150 mob/listenerHLCD_lin myslider myslider-rcv 5 0 0 0;
 #X obj 20 180 mob/listenerXY_lin xy xy-rcv 6 -1 1;
 #X obj 20 210 mob/listener mybutton mybutton-rcv;
 #X obj 20 240 mob/listener_lin my_vsl my_vsl-rcv 7 0 127;
@@ -46,7 +45,6 @@
 #X obj 20 360 mob/listenerBng my_bng 11 250 50;
 #X obj 20 390 mob/listenerVradio mob_load mob_load-rcv 12 4;
 #X obj 20 420 mob/listenerVradio mob_save mob_save-rcv 13 4;
-#X obj 20 450 mob/listenerBng my_bng 14 250 50;
 #X obj 20 0 mob/loader mob-help;
 #X restore 100 10 pd mob-listeners;
 #X obj 11 14 cnv 15 50 15 empty empty empty 20 12 0 14 -128992 -66577
@@ -57,10 +55,10 @@
 0;
 #X text 17 94 [mob] converts guis into mmp-widgets., f 24;
 #N canvas 0 50 730 596 some_restrictions 0;
-#X text 23 204 Only "jump on click" mode for sliders om target platform.
+#X text 23 200 Only "jump on click" mode for sliders om target platform.
 ;
-#X text 20 221 No logarithm mode for sliders on target platform.;
-#X text 28 326 No labels. Use comments and (coming soon) textdisplay
+#X text 20 261 No logarithm mode for sliders on target platform.;
+#X text 28 366 No labels. Use comments and (coming soon) textdisplay
 abstraction.;
 #X text 22 29 Native guis can be connected by wires but MUST have defined
 send/receive channels., f 53;
@@ -69,10 +67,12 @@ be handled.;
 #X text 24 137 Don't use the rcv channel in your patch. To change the
 value of a slider \, send the value of the associed parameter name
 (using send channel), f 53;
-#X text 23 250 No Init feature as defined in the properties dialog.
+#X text 23 290 No Init feature as defined in the properties dialog.
 Initialisations has to be defined using the parameter state saving
 system., f 52;
-#X text 26 390 no " in comments;
+#X text 26 430 no " in comments;
+#X text 24 231 Use mob/hfader & mob/vfader with slide mode property.
+;
 #X restore 706 199 pd some_restrictions;
 #X text 8 264 * supported native GUIs :;
 #X text 58 334 -hsl;
@@ -112,8 +112,6 @@ and drag, f 40;
 #X text 715 86 canvas type;
 #X text 895 55 tallPhone;
 #X text 906 84 widePhone;
-#X obj 465 841 bng 70 250 50 0 my_bng my_bng empty 17 7 0 10 -262144
--1 -1;
 #X text 177 336 (only 'jump on click' mode for sliders), f 23;
 #X text 56 290 -comments are displayed on the target platform.;
 #X obj 318 761 mob/vfader;

@@ -1,9 +1,9 @@
 #N struct bckgrnd float x float y float width float height float color
 ;
 #N canvas 597 201 1321 704 36;
-#X scalar bckgrnd 0 0 600 960 653 \;;
-#X obj 29 28 hsl 900 550 50 120 0 0 note note-rcv empty -2 -8 0 10
--204800 -1 -1 0 0;
+#X scalar bckgrnd 0 0 960 600 653 \;;
+#X obj 29 28 hsl 800 550 50 120 0 0 note note-rcv empty -2 -8 0 10
+-204800 -1 -1 59900 0;
 #X obj 136 220 mtof;
 #X obj 135 164 r note;
 #X obj 134 265 t f b;
@@ -18,14 +18,21 @@
 #A saved -G 140.551;
 #A saved -B 88.3465;
 #A saved -pages 1;
-#A saved -mode 0;
+#A saved -mode 1;
 #X text 299 155 TRIBUTE TO MARTENOT;
 #X msg 240 324 0.5 \, 0 300;
 #N canvas 0 50 450 300 mob-listeners 0;
 #X obj 20 30 mob/listener_lin note note-rcv 1 50 120;
+#X obj 20 60 mob/listenerVradio mob_load mob_load-rcv 2 4;
+#X obj 20 90 mob/listenerVradio mob_save mob_save-rcv 3 4;
 #X obj 20 0 mob/loader martenot;
 #X restore 100 10 pd mob-listeners;
-#X text 567 244 [mob];
+#X obj 866 58 vradio 50 1 0 4 mob_load mob_load-rcv empty 0 -8 0 10
+-4034 -159808 -1 1;
+#X obj 866 360 vradio 50 1 0 4 mob_save mob_save-rcv empty 0 -8 0 10
+-258113 -159808 -1 1;
+#X text 844 301 save;
+#X text 834 5 load;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
 #X connect 4 0 6 0;
