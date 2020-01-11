@@ -7,7 +7,8 @@ In order to create GUIs, it comes with a java app (MobMuPlat Editor) that genera
 [mob] lets you build those .mmp files directly from the patch you want to use on mobile platform, without the need of using MobMuPlat Editor. What you get should be what you see !
 
 **Why not use simply mobmuplat native mode ?**
-Native mode doesn't let you access to MobMuPlat enhanced gui features (grid, xy, xy multitouch, lcd panel, etc..), nor use of multiple pages.
+
+Native mode doesn't let you access to MobMuPlat enhanced gui features (grid, xy, xy multitouch, lcd panel, etc..), nor use of multiple pages. With [mob] you can, in a faster way than when using the MobMuPlat Java Editor.
 
 [mob] maps native pd-guis (hsv, vsl, hradio, vradio, toggle, bang) and text comments into mmp.widgets in the .mmp file.
 It comes with enhanced guis (mob/hfader, mob/button, mob/xy_slider, and, coming soon, mob/knob ...) that are also converted to mmp.widgets.
