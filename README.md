@@ -15,7 +15,7 @@ It comes with enhanced guis (mob/hfader, mob/button, mob/xy_slider, and, coming 
 
 [mob] comes with a RJDJ-based preset saving mechanism.
 
-Requirements :
+**Requirements :**
 - pd >= 0.50 on development platform
 - mrpeach/binfile external
 - iemguts + iemlib external libs
@@ -23,14 +23,19 @@ Requirements :
 Note that current version of pd on MobMuPlat is 0.48-0.
 
 ## Instructions
+
+**Installation**
+
 Copy this folder (named 'mob') into the externals directory of your desktop puredata installation (pd >= 0.50).
 
 Copy the content of subfolder named 'MobMuPlat_target_folder' into the MobMuPlat directory on your mobile device.
 
+**Usage**
+
 Edit the patch you want to export to MobMuPlat with pd >= 0.50. Add the [mob] object on it. Check the background color, the layout size, the number of pages, etc..
 
-All the native pd GUIs will be exported. They must interact with the patch only with their rcv and snd channel names (no wired connections).
+All the native pd GUIs will be exported. They must interact with the patch only with their rcv and snd channel names (wired connections not tested).
 
-Save your patch. Click on red button, [mob] creates dynamically the needed wrappers. Choose a name for the generated graphical interface file (*.mmp). Copy both *.pd and *.mmp files to your mobile device (MobMuPlat directory). 
+Save your patch. Click on red button, [mob] creates dynamically the needed wrappers in the patch. The name for the generated graphical interface file is the name of the patch but with the *.mmp extension. Copy both *.pd and *.mmp files to your mobile device (MobMuPlat directory). 
 
 That's all !
