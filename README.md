@@ -39,3 +39,5 @@ All the native pd GUIs will be exported. They must interact with the patch only 
 Save your patch. Click on red button, [mob] creates dynamically the needed wrappers in the patch. The name for the generated graphical interface file is the name of the patch but with the *.mmp extension. Copy both *.pd and *.mmp files to your mobile device (MobMuPlat directory). 
 
 That's all !
+
+See mob-help.pd for more infos.

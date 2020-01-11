@@ -1,9 +1,9 @@
 #N struct bckgrnd float x float y float width float height float color
 ;
 #N canvas 597 201 1321 704 36;
-#X scalar bckgrnd 0 0 960 600 563 \;;
-#X obj 29 28 hsl 800 550 50 120 0 0 note note-rcv empty -2 -8 0 10
--204800 -1 -1 50400 0;
+#X scalar bckgrnd 0 0 600 960 653 \;;
+#X obj 29 28 hsl 900 550 50 120 0 0 note note-rcv empty -2 -8 0 10
+-204800 -1 -1 0 0;
 #X obj 136 220 mtof;
 #X obj 135 164 r note;
 #X obj 134 265 t f b;
@@ -14,29 +14,17 @@
 #X obj 229 383 line~;
 #X obj 248 446 lop~ 10;
 #X obj 960 239 mob;
-#A saved -R 146.575;
-#A saved -G 156.614;
+#A saved -R 164.646;
+#A saved -G 140.551;
 #A saved -B 88.3465;
 #A saved -pages 1;
-#A saved -mode 1;
+#A saved -mode 0;
 #X text 299 155 TRIBUTE TO MARTENOT;
 #X msg 240 324 0.5 \, 0 300;
-#X obj 867 31 vradio 50 1 0 4 mob_load mob_load-rcv empty 0 -8 0 10
--204786 -4034 -1 3;
-#X obj 868 374 vradio 50 1 0 4 mob_save mob_save-rcv empty 0 -8 0 10
--261234 -258113 -1 0;
 #N canvas 0 50 450 300 mob-listeners 0;
 #X obj 20 30 mob/listener_lin note note-rcv 1 50 120;
-#X obj 20 60 mob/listenerVradio mob_load mob_load-rcv 2 4;
-#X obj 20 90 mob/listenerVradio mob_save mob_save-rcv 3 4;
-#X obj 20 120 mob/listenerHradio ducon ducon-rcv 4 2;
-#X obj 20 150 mob/listenerBng mybang 5 250 50;
 #X obj 20 0 mob/loader martenot;
 #X restore 100 10 pd mob-listeners;
-#X obj 734 60 hradio 40 1 0 2 ducon ducon-rcv empty 0 -8 0 10 -262144
--1 -1 0;
-#X obj 851 266 bng 70 250 50 0 mybang mybang empty 17 7 0 10 -262144
--1 -1;
 #X text 567 244 [mob];
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
