@@ -1,10 +1,10 @@
 #N struct bckgrnd float x float y float width float height float color
 ;
-#N canvas 539 62 1121 1003 16;
+#N canvas 539 62 1151 1003 16;
 #X scalar bckgrnd 0 0 600 960 653 \;;
 #X scalar bckgrnd 600 0 600 960 653 \;;
 #X obj 289 3 mob;
-#A saved -R 164.646;
+#A saved -R 168.661;
 #A saved -G 140.551;
 #A saved -B 88.3465;
 #A saved -pages 2;
@@ -26,25 +26,25 @@
 #X obj 112 332 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
 -232576 -258113 -1 0 0;
 #X obj 443 406 vradio 50 1 0 4 my_vradio my_vradio-rcv empty 0 -8 0
-10 -4034 -159808 -1 0;
+10 -4034 -159808 -1 1;
 #X obj 123 405 hradio 60 1 0 5 my_hradio my_hradio-rcv empty 0 -8 0
 10 -260097 -257985 -1 0;
 #N canvas 0 50 450 349 mob-listeners 0;
 #X obj 20 30 mob/listenerHLCD_lin my_hsl my_hsl-rcv 1 0 1 0;
 #X obj 20 60 mob/listenerVLCD_lin my_vsl my_vsl-rcv 2 0 127 0;
 #X obj 20 90 mob/listenerHLCD_lin my_hsl my_hsl-rcv 3 0 1 181.631;
-#X obj 20 120 mob/listenerHLCD_lin myslider myslider-rcv 4 0 0 0;
-#X obj 20 150 mob/listenerVLCD_lin my_vsl my_vsl-rcv 5 0 127 148.865
+#X obj 20 120 mob/listenerVLCD_lin my_vsl my_vsl-rcv 4 0 127 148.865
 ;
-#X obj 20 180 mob/listenerXY_lin xy xy-rcv 6 -1 1;
-#X obj 20 210 mob/listener mybutton mybutton-rcv;
-#X obj 20 240 mob/listener_lin my_vsl my_vsl-rcv 7 0 127;
-#X obj 20 270 mob/listener_lin my_hsl my_hsl-rcv 8 0 1;
-#X obj 20 300 mob/listenerVradio my_vradio my_vradio-rcv 9 4;
-#X obj 20 330 mob/listenerHradio my_hradio my_hradio-rcv 10 5;
-#X obj 20 360 mob/listenerBng my_bng 11 250 50;
-#X obj 20 390 mob/listenerVradio mob_load mob_load-rcv 12 4;
-#X obj 20 420 mob/listenerVradio mob_save mob_save-rcv 13 4;
+#X obj 20 150 mob/listenerXY_lin xy xy-rcv 5 -1 1;
+#X obj 20 180 mob/listener mybutton mybutton-rcv;
+#X obj 20 210 mob/listener_lin my_vsl my_vsl-rcv 6 0 127;
+#X obj 20 240 mob/listener_lin my_hsl my_hsl-rcv 7 0 1;
+#X obj 20 270 mob/listenerVradio my_vradio my_vradio-rcv 8 4;
+#X obj 20 300 mob/listenerHradio my_hradio my_hradio-rcv 9 5;
+#X obj 20 330 mob/listenerBng my_bng 10 250 50;
+#X obj 20 360 mob/listenerVradio mob_load mob_load-rcv 11 3;
+#X obj 20 390 mob/listenerVradio mob_save mob_save-rcv 12 3;
+#X obj 20 420 mob/listenerVradio my_vradio my_vradio-rcv 13 4;
 #X obj 20 0 mob/loader mob-help;
 #X restore 100 10 pd mob-listeners;
 #X obj 11 14 cnv 15 50 15 empty empty empty 20 12 0 14 -128992 -66577
@@ -57,7 +57,7 @@
 #N canvas 0 50 730 596 some_restrictions 0;
 #X text 23 200 Only "jump on click" mode for sliders om target platform.
 ;
-#X text 20 261 No logarithm mode for sliders on target platform.;
+#X text 23 261 No logarithm mode for sliders on target platform.;
 #X text 28 366 No labels. Use comments and (coming soon) textdisplay
 abstraction.;
 #X text 22 29 Native guis can be connected by wires but MUST have defined
@@ -71,9 +71,9 @@ value of a slider \, send the value of the associed parameter name
 Initialisations has to be defined using the parameter state saving
 system., f 52;
 #X text 26 430 no " in comments;
-#X text 24 231 Use mob/hfader & mob/vfader with slide mode property.
+#X text 24 231 Use mob/hfader & mob/vfader with steady mode property.
 ;
-#X restore 706 199 pd some_restrictions;
+#X restore 273 264 pd some_restrictions;
 #X text 8 264 * supported native GUIs :;
 #X text 58 334 -hsl;
 #X text 443 345 -vsl;
@@ -83,7 +83,6 @@ system., f 52;
 #X obj 121 493 bng 70 250 50 0 my_bng my_bng empty 17 7 0 10 -262144
 -1 -1;
 #X text 200 520 (bng is converted as a button), f 18;
-#X text 16 649 * mob/Guis :;
 #X text 49 682 -mob/hfader;
 #X text 318 731 -mob/vfader;
 #X text 466 729 -mob/button;
@@ -102,16 +101,12 @@ and copy the .pd and .mmp files to the target platform!, f 49;
 #X text 49 179 set edit mode (ctrl+e) \, press ctrl key and then click
 and drag, f 40;
 #X restore 356 692 pd edit;
-#X text 630 349 *Preset state saving;
-#X obj 650 420 vradio 50 1 0 4 mob_load mob_load-rcv empty 0 -8 0 10
+#X obj 900 47 vradio 50 1 0 3 mob_load mob_load-rcv empty 0 -8 0 10
 -4034 -159808 -1 1;
-#X text 642 391 mob_load;
-#X obj 822 420 vradio 50 1 0 4 mob_save mob_save-rcv empty 0 -8 0 10
+#X text 892 18 mob_load;
+#X obj 1008 50 vradio 50 1 0 3 mob_save mob_save-rcv empty 0 -8 0 10
 -258113 -159808 -1 1;
-#X text 814 391 mob_save;
-#X text 715 86 canvas type;
-#X text 895 55 tallPhone;
-#X text 906 84 widePhone;
+#X text 1005 17 mob_save;
 #X text 177 336 (only 'jump on click' mode for sliders), f 23;
 #X text 56 290 -comments are displayed on the target platform.;
 #X obj 318 761 mob/vfader;
@@ -124,16 +119,6 @@ and drag, f 40;
 #A saved -cursor_color 0;
 #A saved -back_color -1.56298e+07;
 #A saved -size 76 159;
-#X obj -196 63 mob/hfader;
-#A saved -mode 0;
-#A saved -max 0;
-#A saved -min 0;
-#A saved -name myslider;
-#A saved -speed_ratio 0;
-#A saved -front_color 0;
-#A saved -cursor_color 0;
-#A saved -back_color 0;
-#A saved -size 127 15;
 #X obj 69 711 mob/hfader;
 #A saved -mode 1;
 #A saved -max 1;
@@ -154,15 +139,69 @@ and drag, f 40;
 #A saved -cursor_color 0;
 #A saved -back_color -1.56298e+07;
 #A saved -size 76 159;
-#X text 701 699 jump mode;
-#X text 109 726 slide mode;
 #X obj 626 727 mob/hfader;
 #A saved -mode 0;
 #A saved -max 1;
 #A saved -min 0;
 #A saved -name my_hsl;
-#A saved -speed_ratio 181.631;
+#A saved -speed_ratio 100;
 #A saved -front_color -8.28384e+06;
 #A saved -cursor_color 0;
 #A saved -back_color -1.25007e+07;
 #A saved -size 216 71;
+#X text 16 649 * mob/Guis (ctrl+properties to edit) :;
+#X text 146 711 (steady mode);
+#X text 627 663 (jump mode is available only in mmp interface \, not
+in vfader / hfader objects), f 47;
+#N canvas 0 50 450 300 TODO 0;
+#X text 340 23 tallPhone;
+#X text 340 42 widePhone;
+#X text 8 23 TODO : add those canvas types :;
+#X restore 511 153 pd TODO;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array1 20 float 3;
+#A 0 -0.328572 -0.27143 -0.228573 -0.200002 -0.114289 -0.0285754 -0.0142899
+0.0285668 0.0999947 0.171422 0.271421 0.285707 0.342849 0.428563 0.528562
+0.585704 0.642846 0.742845 0.742845 0.742845;
+#X coords 0 1 20 -1 200 140 1;
+#X restore 623 264 graph;
+#X text 618 215 * Quick and dirty export of gop-arrays;
+#X text 616 42 * Preset state saving using reserved senders names 'mob_load'
+& 'mob_save', f 24;
+#X text 846 271 Quick and dirty export of gop-array uses only mode
+0 \, displayMode 0, f 22;
+#N canvas 0 50 537 340 Display_modes/TODO 0;
+#X text 39 18 MMP offers different modes for displaying arrays, f
+26;
+#X text 41 69 mode 0 : edit content \, mode 1 : select zone, f 24
+;
+#X text 39 112 displayMode 0 = line \, displayMode 1 = filled bar,
+f 27;
+#X text 31 188 TODO : abstraction to choose colors \, displaymode \,
+editmode, f 40;
+#X restore 852 372 pd Display_modes/TODO;
+#X obj 628 454 cnv 15 400 60 display dispay-rcv empty 20 25 0 50 -233017
+-66577 0;
+#X obj 1047 410 vradio 50 1 0 4 my_vradio my_vradio-rcv empty 0 -8
+0 10 -4034 -159808 -1 1;
+#N canvas 0 50 450 300 display 0;
+#X obj 136 210 list prepend display;
+#X obj 136 239 s toGUI;
+#X msg 222 101 ceci;
+#X msg 231 140 est;
+#X msg 229 175 un;
+#X msg 310 105 texte;
+#X obj 218 28 r my_vradio;
+#X obj 218 57 select 0 1 2 3;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 0;
+#X connect 7 1 3 0;
+#X connect 7 2 4 0;
+#X connect 7 3 5 0;
+#X restore 789 532 pd display;
+#X text 617 418 * cnv + text;
