@@ -29,7 +29,7 @@
 10 -4034 -159808 -1 0;
 #X obj 123 405 hradio 60 1 0 5 my_hradio my_hradio-rcv empty 0 -8 0
 10 -260097 -257985 -1 0;
-#N canvas 0 50 450 349 mob-listeners 1;
+#N canvas 0 50 450 349 mob-listeners 0;
 #X obj 20 30 mob/listenerHLCD_lin my_hsl my_hsl-rcv 1 0 1 0;
 #X obj 20 60 mob/listenerVLCD_lin my_vsl my_vsl-rcv 2 0 127 0;
 #X obj 20 90 mob/listenerHLCD_lin my_hsl my_hsl-rcv 3 0 1 181.631;

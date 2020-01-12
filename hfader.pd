@@ -413,10 +413,10 @@
 #X obj 906 393 r \$0-w;
 #X obj 996 413 r \$0-h;
 #X msg 805 689 vis_size \$2 \$1;
-#X obj 104 100 hsl 121 15 0 127 0 0 empty \$0-slider empty -2 -8 0
-10 -233017 -233017 -233017 0 1;
+#X obj 104 100 hsl 210 71 0 127 0 0 empty \$0-slider empty -2 -8 0
+10 -195575 -195575 -195575 0 1;
 #X obj 54 12 - 6;
-#X obj 101 101 cnv 1 1 1 empty \$0-cnv empty 2 6 0 10 -128992 -66577
+#X obj 101 101 cnv 1 1 1 empty \$0-cnv empty 2 6 0 10 -128624 -66577
 0;
 #X msg 587 648 vis_size 1 1;
 #X obj 748 344 / 127;
@@ -495,14 +495,14 @@
 #X obj 773 412 max 0;
 #X obj 789 493 f 0;
 #X obj 1114 248 s pd-mmp.hfader_properties(\$0);
-#N canvas 804 433 422 459 mmp.hfader_properties(\$0) 0;
+#N canvas 804 463 422 459 mmp.hfader_properties(\$0) 1;
 #X obj 6 4 cnv 15 400 450 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X floatatom 156 8 5 0 0 0 width #0-w-rcv #0-w-snd;
 #X floatatom 149 217 8 0 0 0 back_color_ #0-bc-rcv #0-bc-snd;
 #X floatatom 150 242 8 0 0 0 front_color #0-fc-rcv #0-fc-snd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -233017
+#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -195575
 -66577 0;
 #X obj 170 75 r \$0-back_color;
 #X msg 170 104 color \$1 \$1;
@@ -512,7 +512,7 @@
 #X coords 0 -1 1 1 20 20 2 100 100;
 #X restore 12 214 pd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-fc_cnv-rcv empty 20 12 0 14 -128992
+#X obj 100 100 cnv 20 20 20 empty \$0-fc_cnv-rcv empty 20 12 0 14 -128624
 -66577 0;
 #X msg 170 104 color \$1 \$1;
 #X obj 170 75 r \$0-front_color;
@@ -742,7 +742,7 @@ a rgb;
 #X text 137 31 ................;
 #N canvas 0 50 450 300 todo 0;
 #X obj 169 165 nbx 3 20 10 200 1 0 \$0-spdrt \$0-spdrt-rcv speed_ratio(%)
--140 10 0 16 -262144 -1 -1 100 256;
+-140 10 0 16 -262144 -1 -1 181.631 256;
 #X obj 24 70 cnv 15 200 80 empty empty TODO 20 12 0 14 -262130 -66577
 0;
 #X floatatom 130 90 5 0 0 0 text_color #0-cc-rcv #0-cc-snd;
@@ -759,12 +759,12 @@ a rgb;
 #X floatatom 130 120 5 0 0 0 text_size - -;
 #X restore 32 356 pd todo;
 #X obj 342 120 nbx 3 20 10 200 1 0 \$0-spdrt \$0-spdrt-rcv speed_ratio(%)
--140 10 0 16 -262144 -1 -1 100 256;
+-140 10 0 16 -262144 -1 -1 181.631 256;
 #X obj 72 120 hradio 20 1 0 2 \$0-mode \$0-mode-rcv mode 2 -10 0 14
--262144 -1 -1 0;
+-262144 -1 -1 1;
 #X text 20 119 jump;
-#X text 115 118 slide ->;
 #X text 12 82 Behaviour;
+#X text 115 118 steady->;
 #X restore 1116 303 pd mmp.hfader_properties(\$0);
 #X obj 473 169 t f f f;
 #X obj 666 291 t f;
@@ -1212,4 +1212,4 @@ a rgb;
 #X connect 69 1 70 0;
 #X connect 69 2 60 0;
 #X connect 70 0 52 0;
-#X coords 0 -1 1 1 127 15 2 100 100;
+#X coords 0 -1 1 1 216 71 2 100 100;
