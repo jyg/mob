@@ -20,7 +20,7 @@ It comes with enhanced guis (mob/hfader, mob/button, mob/xy_slider, and, coming 
 - mrpeach/binfile external
 - iemguts + iemlib external libs
 
-Note that current version of pd on MobMuPlat is 0.48-0. **don'use [savestate], [pdcontrol], [slop~], beware of [declare] different behaviour, [value] has no second inlet**
+Note that current version of pd on MobMuPlat is 0.48-0. **Don'use in your patch : [savestate], [pdcontrol], [slop~], beware of [declare] different behaviour, [value] has no second inlet**
 
 ## Instructions
 
