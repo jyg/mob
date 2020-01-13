@@ -10,7 +10,7 @@ In order to create GUIs, it comes with a java app (MobMuPlat Editor) that genera
 
 Native mode directly renders your pd patches but doesn't let you access to MobMuPlat enhanced gui features (grid, xy, xy multitouch, lcd panel, etc..), nor use of multiple pages. With [mob] you can, in a faster way than when using the MobMuPlat Java Editor.
 
-[mob] maps native pd-guis (hsv, vsl, hradio, vradio, toggle, bang) and text comments into mmp.widgets in the .mmp file.
+[mob] maps native pd-guis (hsv, vsl, hradio, vradio, toggle, bang, cnv, array) and text comments into mmp.widgets in the .mmp file.
 It comes with enhanced guis (mob/hfader, mob/button, mob/xy_slider, and, coming soon, mob/knob ...) that are also converted to mmp.widgets.
 
 [mob] comes with a RJDJ-based preset saving mechanism.
