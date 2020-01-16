@@ -191,8 +191,8 @@
 #X obj 864 727 outlet;
 #X obj 100 99 cnv 5 5 5 \$0-pos \$0-pos-rcv empty 20 12 0 14 -66577
 -66577 0;
-#X obj 100 102 vsl 60 54 0 127 0 0 empty empty empty 0 20 0 20 -144960
--144960 -144960 0 1;
+#X obj 100 102 vsl 60 54 0 127 0 0 empty empty empty 0 20 0 20 -233017
+-233017 -233017 0 1;
 #X msg 790 213 -1;
 #X obj 612 311 route remove update pressure;
 #X obj 1129 727 outlet;
@@ -223,7 +223,7 @@
 #X obj 665 681 r \$0-back_color;
 #X obj 262 660 r \$0-front_color;
 #X msg 447 764 color -1.51178e+07 -1.51178e+07 -1.51178e+07;
-#X msg 660 754 color -9.20064e+06 -9.20064e+06 -9.20064e+06;
+#X msg 660 754 color 10 10 10;
 #X msg 678 715 set color \$1 \$1 \$1;
 #X msg 263 696 set color \$1 \$1 \$1;
 #N canvas 950 300 1202 739 monoclickmode 0;
@@ -362,7 +362,7 @@
 #X msg 597 703 color \$1 \$1 \$1;
 #X obj 855 664 pipe 0;
 #X obj 547 538 &&;
-#N canvas 0 50 1568 1015 mmp-export-button 1;
+#N canvas 0 50 1568 1015 mmp-export-button 0;
 #X obj 121 37 r MMP_EXPORT;
 #X obj 256 32 r \$0-x;
 #X obj 312 32 r \$0-y;
@@ -435,17 +435,18 @@
 #X obj 106 95 t b b b b;
 #X msg 76 433 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPButton"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]
 , f 25;
-#X obj 189 284 r MOB_ZOOM;
 #X obj 79 323 * 1;
 #X obj 154 324 * 1;
 #X obj 304 323 * 1;
 #X obj 232 322 * 1;
+#X obj 126 280 t f b f b f b f;
+#X obj 125 245 r MOB_ZOOM;
 #X connect 0 0 69 0;
 #X connect 1 0 5 1;
-#X connect 2 0 73 0;
-#X connect 3 0 74 0;
-#X connect 4 0 75 0;
-#X connect 5 0 72 0;
+#X connect 2 0 72 0;
+#X connect 3 0 73 0;
+#X connect 4 0 74 0;
+#X connect 5 0 71 0;
 #X connect 6 0 27 5;
 #X connect 7 0 27 4;
 #X connect 8 0 27 6;
@@ -511,14 +512,18 @@
 #X connect 69 2 28 0;
 #X connect 69 3 64 0;
 #X connect 70 0 16 0;
-#X connect 71 0 72 1;
-#X connect 71 0 73 1;
-#X connect 71 0 75 1;
-#X connect 71 0 74 1;
-#X connect 72 0 27 0;
-#X connect 73 0 27 1;
-#X connect 74 0 27 3;
-#X connect 75 0 27 2;
+#X connect 71 0 27 0;
+#X connect 72 0 27 1;
+#X connect 73 0 27 3;
+#X connect 74 0 27 2;
+#X connect 75 0 71 1;
+#X connect 75 1 72 0;
+#X connect 75 2 72 1;
+#X connect 75 3 74 0;
+#X connect 75 4 74 1;
+#X connect 75 5 73 0;
+#X connect 75 6 73 1;
+#X connect 76 0 75 0;
 #X restore 1117 269 pd mmp-export-button;
 #N canvas 126 456 419 480 mmpButton_properties(\$0) 0;
 #X obj 6 4 cnv 15 400 450 empty empty empty 20 12 0 14 -233017 -66577
@@ -527,7 +532,7 @@
 #X floatatom 126 183 8 0 0 0 back_color #0-bc-rcv #0-bc-snd;
 #X floatatom 127 208 8 0 0 0 front_color #0-fc-rcv #0-fc-snd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -144960
+#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -233017
 -66577 0;
 #X obj 170 75 r \$0-back_color;
 #X msg 170 104 color \$1 \$1;

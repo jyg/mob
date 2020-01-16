@@ -3,7 +3,7 @@
 #N canvas 539 62 1151 1003 16;
 #X scalar bckgrnd 0 0 600 960 653 \;;
 #X scalar bckgrnd 600 0 600 960 653 \;;
-#X obj 289 3 mob;
+#X obj 289 47 mob;
 #A saved -R 168.661;
 #A saved -G 140.551;
 #A saved -B 88.3465;
@@ -24,7 +24,7 @@
 #A saved -back_color -1.3559e+07;
 #A saved -size 191 110;
 #X obj 524 370 vsl 50 200 0 127 0 0 my_vsl my_vsl-rcv empty 0 -9 0
-10 -260097 -257985 -1 0 0;
+10 -260097 -257985 -1 4400 0;
 #X obj 112 322 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
 -232576 -258113 -1 0 0;
 #X obj 452 414 vradio 50 1 0 4 my_vradio my_vradio-rcv empty 0 -8 0
@@ -50,7 +50,7 @@
 #X obj 20 450 mob/listener my_tgl my_tgl-rcv;
 #X obj 20 0 mob/loader mob-help;
 #X restore 100 10 pd mob-listeners;
-#X text 17 94 [mob] converts guis into mmp-widgets., f 24;
+#X text 16 49 [mob] converts guis into mmp-widgets., f 24;
 #N canvas 0 50 730 596 some_restrictions 0;
 #X text 23 250 Only "jump on click" mode for sliders om target platform.
 ;
@@ -89,7 +89,7 @@ saving system., f 52;
 you. To change the value \, say \, of a slider \, just send the value
 to the associed parameter name sender., f 53;
 #X restore 37 598 pd some_restrictions;
-#X text 8 264 * supported native GUIs :;
+#X text 18 259 * supported native GUIs :;
 #X text 44 333 -hsl;
 #X text 527 335 -vsl;
 #X text 43 401 -hradio;
@@ -101,11 +101,8 @@ to the associed parameter name sender., f 53;
 #X text 49 665 -mob/hfader;
 #X text 249 775 -mob/vfader;
 #X text 257 818 -mob/button;
-#X text 25 194 Just draw your interface \, then press the red button
-and copy the .pd and .mmp files to the target platform!, f 49;
-#X text 106 32 (do not erase);
-#X text 21 144 [mob] object will not appear on the target platform
-\, you can move it anywhere on the patch., f 49;
+#X text 16 96 Just draw your interface \, then press the red button
+and copy the .pd and .mmp files to the target platform!, f 26;
 #X text 19 545 * currently not supported :;
 #X text 46 773 -mob/xy_slider (jump on touch), f 16;
 #X obj 900 47 vradio 50 1 0 3 mob_load mob_load-rcv empty 0 -8 0 10
@@ -157,8 +154,15 @@ and copy the .pd and .mmp files to the target platform!, f 49;
 #A saved -back_color -1.25007e+07;
 #A saved -size 178 63;
 #N canvas 0 50 630 343 TODO 1;
-#X text 58 25 enable preset saving of arrays;
-#X text 59 235 -LCD display;
+#X text 60 51 Arrays;
+#X text 24 6 TODO LIST;
+#X text 91 81 -enable preset saving of arrays;
+#X text 95 111 -abstraction to choose colors \, displaymode \, editmode
+;
+#X text 52 161 Object emulating LCD display with datastructures;
+#X text 46 204 Menu;
+#X text 49 239 Dialog box;
+#X text 47 270 Confirm dialog box;
 #X restore 1047 923 pd TODO;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array array1 20 float 3;
@@ -172,16 +176,6 @@ and copy the .pd and .mmp files to the target platform!, f 49;
 & 'mob_save', f 24;
 #X text 846 271 Quick and dirty export of gop-array uses only mode
 0 \, displayMode 0, f 22;
-#N canvas 0 50 537 340 Display_modes/TODO 0;
-#X text 39 18 MMP offers different modes for displaying arrays, f
-26;
-#X text 41 69 mode 0 : edit content \, mode 1 : select zone, f 24
-;
-#X text 39 112 displayMode 0 = line \, displayMode 1 = filled bar,
-f 27;
-#X text 31 188 TODO : abstraction to choose colors \, displaymode \,
-editmode, f 40;
-#X restore 852 372 pd Display_modes/TODO;
 #X obj 628 454 cnv 15 400 60 my_cnv my_cnv-rcv texte 20 25 0 50 -233017
 -66577 0;
 #X obj 1047 410 vradio 50 1 0 4 my_vradio my_vradio-rcv empty 0 -8
@@ -236,3 +230,14 @@ and drag, f 40;
 #X obj 306 473 tgl 70 0 my_tgl my_tgl-rcv empty 17 7 0 10 -261234 -258113
 -1 0 1;
 #X text 85 569 number \, symbol \, vu;
+#X text 271 9 <-(do not erase);
+#X text 16 206 Note : [mob] object will not appear on the target platform
+\, you can move it anywhere on the patch., f 53;
+#N canvas 0 50 537 340 About_display_modes 0;
+#X text 39 18 MMP offers different modes for displaying arrays, f
+26;
+#X text 41 69 mode 0 : edit content \, mode 1 : select zone, f 24
+;
+#X text 39 112 displayMode 0 = line \, displayMode 1 = filled bar,
+f 27;
+#X restore 849 346 pd About_display_modes;

@@ -413,10 +413,10 @@
 #X obj 906 393 r \$0-w;
 #X obj 996 413 r \$0-h;
 #X msg 805 689 vis_size \$2 \$1;
-#X obj 104 100 hsl 170 63 0 127 0 0 empty \$0-slider empty -2 -8 0
-10 -195575 -195575 -195575 0 1;
+#X obj 104 100 hsl 121 15 0 127 0 0 empty \$0-slider empty -2 -8 0
+10 -233017 -233017 -233017 0 1;
 #X obj 54 12 - 6;
-#X obj 101 101 cnv 1 1 1 empty \$0-cnv empty 2 6 0 10 -128624 -66577
+#X obj 101 101 cnv 1 1 1 empty \$0-cnv empty 2 6 0 10 -128992 -66577
 0;
 #X msg 587 648 vis_size 1 1;
 #X obj 748 344 / 127;
@@ -502,7 +502,7 @@
 #X floatatom 149 217 8 0 0 0 back_color_ #0-bc-rcv #0-bc-snd;
 #X floatatom 150 242 8 0 0 0 front_color #0-fc-rcv #0-fc-snd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -195575
+#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -233017
 -66577 0;
 #X obj 170 75 r \$0-back_color;
 #X msg 170 104 color \$1 \$1;
@@ -512,7 +512,7 @@
 #X coords 0 -1 1 1 20 20 2 100 100;
 #X restore 12 214 pd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-fc_cnv-rcv empty 20 12 0 14 -128624
+#X obj 100 100 cnv 20 20 20 empty \$0-fc_cnv-rcv empty 20 12 0 14 -128992
 -66577 0;
 #X msg 170 104 color \$1 \$1;
 #X obj 170 75 r \$0-front_color;
@@ -742,7 +742,7 @@ a rgb;
 #X text 137 31 ................;
 #N canvas 0 50 450 300 todo 0;
 #X obj 169 165 nbx 3 20 10 200 1 0 \$0-spdrt \$0-spdrt-rcv speed_ratio(%)
--140 10 0 16 -262144 -1 -1 181.631 256;
+-140 10 0 16 -262144 -1 -1 100 256;
 #X obj 24 70 cnv 15 200 80 empty empty TODO 20 12 0 14 -262130 -66577
 0;
 #X floatatom 130 90 5 0 0 0 text_color #0-cc-rcv #0-cc-snd;
@@ -759,9 +759,9 @@ a rgb;
 #X floatatom 130 120 5 0 0 0 text_size - -;
 #X restore 32 356 pd todo;
 #X obj 342 120 nbx 3 20 10 200 1 0 \$0-spdrt \$0-spdrt-rcv speed_ratio(%)
--140 10 0 16 -262144 -1 -1 181.631 256;
+-140 10 0 16 -262144 -1 -1 100 256;
 #X obj 72 120 hradio 20 1 0 2 \$0-mode \$0-mode-rcv mode 2 -10 0 14
--262144 -1 -1 1;
+-262144 -1 -1 0;
 #X text 20 119 jump;
 #X text 12 82 Behaviour;
 #X text 115 118 steady->;
@@ -946,7 +946,7 @@ a rgb;
 #X connect 87 3 63 0;
 #X connect 87 4 68 0;
 #X restore 1189 419 pd mmp-export-hfader_as_slider;
-#N canvas 0 57 1920 1023 mmp-export-hfader_as_LCD 1;
+#N canvas 0 57 1920 1023 mmp-export-hfader_as_LCD 0;
 #X obj 47 16 r MMP_EXPORT;
 #X obj 232 10 r \$0-x;
 #X obj 312 32 r \$0-y;
@@ -1010,11 +1010,11 @@ a rgb;
 #X obj 910 551 s \$0-hr;
 #X obj 1034 553 s \$0-hg;
 #X obj 1124 551 s \$0-hb;
-#X obj 425 341 iemguts/canvasposition 1;
-#X obj 502 408 s \$0-y;
-#X obj 390 398 s \$0-x;
-#X obj 425 370 unpack f f;
-#X obj 83 283 pack f f f f 1 s f f f 1 f f f 1, f 105;
+#X obj 425 361 iemguts/canvasposition 1;
+#X obj 502 428 s \$0-y;
+#X obj 390 418 s \$0-x;
+#X obj 425 390 unpack f f;
+#X obj 83 303 pack f f f f 1 s f f f 1 f f f 1, f 105;
 #X obj 1224 168 v WIDGET-ID;
 #X obj 1224 193 + 1;
 #X obj 1224 218 s WIDGET-ID;
@@ -1034,7 +1034,7 @@ a rgb;
 #X text 539 826 "address":"/myLCD1" \, "frame":[21.25781 \, 92.7305
 \, 273.027 \, 248.7266] \, "class":"MMPLCD" \, "highlightColor":[1
 \, 0 \, 0 \, 1] \, "color":[0.9316406 \, 1 \, 1 \, 1];
-#X msg 51 319 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPLCD"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]
+#X msg 51 339 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPLCD"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]
 , f 23;
 #X obj 1280 597 list prepend mob/listenerHLCD_lin;
 #X obj 1688 385 r \$0-mode;
@@ -1042,17 +1042,18 @@ a rgb;
 #X obj 1748 427 r \$0-spdrt;
 #X obj 1748 456 t b f;
 #X obj 1748 485 *;
-#X obj 193 212 r MOB_ZOOM;
 #X obj 83 251 * 1;
 #X obj 158 252 * 1;
 #X obj 308 251 * 1;
 #X obj 236 250 * 1;
+#X obj 107 222 t f b f b f b f, f 23;
+#X obj -23 164 r MOB_ZOOM;
 #X connect 0 0 71 0;
 #X connect 1 0 3 1;
 #X connect 1 0 24 0;
 #X connect 2 0 25 0;
-#X connect 2 0 94 0;
-#X connect 3 0 93 0;
+#X connect 2 0 93 0;
+#X connect 3 0 92 0;
 #X connect 4 0 28 0;
 #X connect 4 0 73 1;
 #X connect 5 0 30 0;
@@ -1076,9 +1077,9 @@ a rgb;
 #X connect 21 0 15 1;
 #X connect 22 0 23 0;
 #X connect 31 0 26 0;
-#X connect 31 0 96 0;
+#X connect 31 0 95 0;
 #X connect 32 0 27 0;
-#X connect 32 0 95 0;
+#X connect 32 0 94 0;
 #X connect 33 0 35 0;
 #X connect 34 0 49 0;
 #X connect 35 0 36 0;
@@ -1138,14 +1139,17 @@ a rgb;
 #X connect 90 0 91 0;
 #X connect 90 1 91 1;
 #X connect 91 0 88 5;
-#X connect 92 0 93 1;
-#X connect 92 0 94 1;
-#X connect 92 0 96 1;
-#X connect 92 0 95 1;
-#X connect 93 0 67 0;
-#X connect 94 0 67 1;
-#X connect 95 0 67 3;
-#X connect 96 0 67 2;
+#X connect 92 0 67 0;
+#X connect 93 0 67 1;
+#X connect 94 0 67 3;
+#X connect 95 0 67 2;
+#X connect 96 0 92 1;
+#X connect 96 1 93 0;
+#X connect 96 2 93 1;
+#X connect 96 3 95 0;
+#X connect 96 5 94 0;
+#X connect 96 6 94 1;
+#X connect 97 0 96 0;
 #X restore 1201 463 pd mmp-export-hfader_as_LCD;
 #X text 1513 422 disabled;
 #X connect 1 0 42 0;
@@ -1225,4 +1229,4 @@ a rgb;
 #X connect 69 1 70 0;
 #X connect 69 2 60 0;
 #X connect 70 0 52 0;
-#X coords 0 -1 1 1 176 63 2 100 100;
+#X coords 0 -1 1 1 127 15 2 100 100;

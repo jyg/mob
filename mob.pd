@@ -1,5 +1,5 @@
 #N canvas 205 58 1920 1023 12;
-#X obj 100 100 cnv 15 298 138 empty empty mob 2 8 0 14 -204800 -1 0
+#X obj 100 100 cnv 15 298 138 empty empty mob 2 8 0 14 -228856 -1 0
 ;
 #X obj 54 63 inlet;
 #N canvas 1163 889 362 187 \$0-properties 0;
@@ -10,12 +10,12 @@
 #X obj 188 145 bng 15 250 50 0 \$0-cancel empty cancel 17 7 0 10 -258699
 -1 -1;
 #X obj 61 76 hsl 128 15 0 255 0 1 \$0-R \$0-R empty -2 -8 0 10 -258699
--1 -1 8400 1;
+-1 -1 8500 1;
 #X obj 61 93 hsl 128 15 0 255 0 1 \$0-G \$0-G empty -2 -8 0 10 -24198
--1 -1 7000 1;
+-1 -1 6700 1;
 #X obj 61 110 hsl 128 15 0 255 0 1 \$0-B \$0-B empty -2 -8 0 10 -62784
--1 -1 4400 1;
-#X obj 206 76 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -174295
+-1 -1 4300 1;
+#X obj 206 76 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -174166
 -262144 0;
 #X obj 120 145 bng 15 250 50 0 \$0-apply empty apply 17 7 0 10 -241291
 -1 -1;
@@ -195,7 +195,7 @@
 #X restore 448 44 pd propertyguts;
 #X obj 350 100 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 355 105 cnv 15 40 40 empty \$0-color empty 20 12 0 14 -174295
+#X obj 355 105 cnv 15 40 40 empty \$0-color empty 20 12 0 14 -174166
 -262144 0;
 #X text 286 118 BackGroundColor;
 #X floatatom 363 150 5 0 99 0 firstPage #0-firstPage-rcv #0-firstPage
@@ -362,10 +362,12 @@ iPad 1 1024 768 1024 0 \;;
 #X obj 1144 192 select 0;
 #X msg 1144 217 1;
 #X obj 1144 242 s \$0-zoom;
-#X obj 1228 305 r \$0-zoom;
-#X obj 1228 330 s MOB_ZOOM;
+#X obj 1167 326 r \$0-zoom;
+#X obj 1238 352 s MOB_ZOOM;
 #X obj 1220 380 s \$0-zoom-rcv;
 #X msg 1164 355 set \$1;
+#X obj 1251 245 r \$0-done;
+#X obj 1264 272 v \$0-zoom;
 #X connect 0 0 8 0;
 #X connect 0 1 2 0;
 #X connect 0 1 4 0;
@@ -412,9 +414,10 @@ iPad 1 1024 768 1024 0 \;;
 #X connect 40 0 39 0;
 #X connect 41 0 42 0;
 #X connect 42 0 43 0;
-#X connect 44 0 45 0;
 #X connect 44 0 47 0;
 #X connect 47 0 46 0;
+#X connect 48 0 49 0;
+#X connect 49 0 45 0;
 #X restore 637 118 pd savestate;
 #X obj 366 289 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -2017,7 +2020,7 @@ width 0 0 0;
 #X obj 155 22 t b b b;
 #X obj 269 118 * 1;
 #X obj 79 692 outlet;
-#X obj 344 269 v \$0-patch_status;
+#X obj 457 203 v \$0-patch_status;
 #X obj 122 144 v \$0-next_line;
 #X obj 495 551 == 2;
 #X obj 437 575 spigot;
@@ -2080,7 +2083,8 @@ width 0 0 0;
 #X connect 5 1 4 0;
 #X connect 6 0 1 0;
 #X restore 365 825 pd zoom;
-#X obj 183 263 route restore scalar;
+#X obj 289 391 t a a;
+#X obj 183 263 route restore scalar declare;
 #X connect 0 0 1 0;
 #X connect 0 0 12 0;
 #X connect 1 0 0 1;
@@ -2089,7 +2093,7 @@ width 0 0 0;
 #X connect 2 0 0 1;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
-#X connect 4 1 43 0;
+#X connect 4 1 44 0;
 #X connect 5 0 8 0;
 #X connect 6 0 7 0;
 #X connect 7 0 6 1;
@@ -2132,9 +2136,10 @@ width 0 0 0;
 #X connect 38 1 29 0;
 #X connect 41 0 23 0;
 #X connect 42 0 33 0;
-#X connect 43 0 38 0;
-#X connect 43 2 11 0;
-#X connect 43 2 27 0;
+#X connect 43 0 11 0;
+#X connect 43 1 27 0;
+#X connect 44 0 38 0;
+#X connect 44 3 43 0;
 #X restore 955 128 pd parsing_main_patch|gop_arrays;
 #N canvas 0 50 1471 954 gop_array 0;
 #X obj 79 29 inlet;
@@ -3985,7 +3990,7 @@ système de remote control de automatonism3;
 #X obj 919 953 s \$0-canvasType-rcv;
 #X msg 905 924 label \$1;
 #X obj 100 162 cnv 15 100 16 empty \$0-canvasType-rcv android7Inch
-1 8 0 12 -204800 -258113 0;
+1 8 0 12 -228856 -258113 0;
 #X symbolatom 187 184 30 0 0 2 pd_target_File #0-pdFile-rcv #0-pdFile
 ;
 #X text 297 166 <-----;
@@ -3998,7 +4003,7 @@ système de remote control de automatonism3;
 #X text 796 697 refresh;
 #X text 115 208 600:960;
 #X obj 181 102 vsl 15 45 1 4 1 0 \$0-zoom \$0-zoom-rcv empty 0 -9 0
-10 -262130 -1 -1 0 1;
+10 -262130 -1 -1 3000 1;
 #X text 182 99 z;
 #X text 182 109 o;
 #X text 182 119 o;

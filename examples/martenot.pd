@@ -3,7 +3,7 @@
 #N canvas 597 201 1321 704 36;
 #X scalar bckgrnd 0 0 960 600 653 \;;
 #X obj 29 28 hsl 800 550 50 120 0 0 note note-rcv empty -2 -8 0 10
--204800 -1 -1 59900 0;
+-204800 -1 -1 0 0;
 #X obj 136 220 mtof;
 #X obj 135 164 r note;
 #X obj 134 265 t f b;
@@ -18,7 +18,9 @@
 #A saved -G 140.551;
 #A saved -B 88.3465;
 #A saved -pages 1;
-#A saved -mode 1;
+#A saved -mode 2;
+#A saved -landscape 1;
+#A saved -zoom 1;
 #X text 299 155 TRIBUTE TO MARTENOT;
 #X msg 240 324 0.5 \, 0 300;
 #N canvas 0 50 450 300 mob-listeners 0;

@@ -1,9 +1,9 @@
 #N canvas 642 58 1035 1018 16;
 #X obj 792 337 - 127;
-#X obj 100 102 vsl 76 153 0 127 0 0 empty \$0-slider empty 0 -9 0 10
--244789 -244789 -244789 0 1;
+#X obj 100 102 vsl 57 98 0 127 0 0 empty \$0-slider empty 0 -9 0 10
+-4033 -4033 -4033 1472 1;
 #X obj 805 718 s \$0-cnv;
-#X obj 101 100 cnv 1 74 159 empty \$0-cnv empty 2 12 0 10 -243706 -66577
+#X obj 101 100 cnv 1 55 74 empty \$0-cnv empty 2 12 0 10 -224760 -66577
 0;
 #X obj 574 50 inlet;
 #X obj 676 198 t f f;
@@ -242,7 +242,7 @@
 #X floatatom 149 217 8 0 0 0 back_color_ #0-bc-rcv #0-bc-snd;
 #X floatatom 150 242 8 0 0 0 front_color #0-fc-rcv #0-fc-snd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -243706
+#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -224760
 -66577 0;
 #X obj 170 75 r \$0-back_color;
 #X msg 170 104 color \$1 \$1;
@@ -252,7 +252,7 @@
 #X coords 0 -1 1 1 20 20 2 100 100;
 #X restore 12 214 pd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-fc_cnv-rcv empty 20 12 0 14 -244789
+#X obj 100 100 cnv 20 20 20 empty \$0-fc_cnv-rcv empty 20 12 0 14 -4033
 -66577 0;
 #X msg 170 104 color \$1 \$1;
 #X obj 170 75 r \$0-front_color;
@@ -482,7 +482,7 @@ a rgb;
 #X text 137 31 ................;
 #N canvas 0 50 450 300 todo 0;
 #X obj 169 165 nbx 3 20 10 200 1 0 \$0-spdrt \$0-spdrt-rcv speed_ratio(%)
--140 10 0 16 -262144 -1 -1 148.865 256;
+-140 10 0 16 -262144 -1 -1 100 256;
 #X obj 24 70 cnv 15 200 80 empty empty TODO 20 12 0 14 -262130 -66577
 0;
 #X floatatom 130 90 5 0 0 0 text_color #0-cc-rcv #0-cc-snd;
@@ -499,9 +499,9 @@ a rgb;
 #X floatatom 130 120 5 0 0 0 text_size - -;
 #X restore 32 356 pd todo;
 #X obj 342 120 nbx 3 20 10 200 1 0 \$0-spdrt \$0-spdrt-rcv speed_ratio(%)
--140 10 0 16 -262144 -1 -1 148.865 256;
+-140 10 0 16 -262144 -1 -1 100 256;
 #X obj 72 120 hradio 20 1 0 2 \$0-mode \$0-mode-rcv mode 2 -10 0 14
--262144 -1 -1 1;
+-262144 -1 -1 0;
 #X text 20 119 jump;
 #X text 12 82 Behaviour;
 #X text 115 118 steady->;
@@ -945,7 +945,7 @@ a rgb;
 #X obj 1010 12 iemlib/iem_receive;
 #X obj 1230 4 r \$0-name;
 #X msg 1230 33 set \$1-rcv;
-#N canvas 972 58 947 1018 mmp-export-vfader_as_vLCD 0;
+#N canvas 972 58 947 1018 mmp-export-vfader_as_vLCD 1;
 #X obj 47 16 r MMP_EXPORT;
 #X obj 232 10 r \$0-x;
 #X obj 312 32 r \$0-y;
@@ -1041,11 +1041,12 @@ a rgb;
 #X obj 1748 546 t b f;
 #X obj 1748 575 *;
 #X obj 1279 642 pack s s f f f f;
-#X obj 193 282 r MOB_ZOOM;
+#X obj 280 162 r MOB_ZOOM;
 #X obj 83 321 * 1;
 #X obj 158 322 * 1;
 #X obj 308 321 * 1;
 #X obj 236 320 * 1;
+#X obj 180 272 t b f b f b f;
 #X connect 0 0 71 0;
 #X connect 1 0 3 1;
 #X connect 1 0 24 0;
@@ -1138,13 +1139,18 @@ a rgb;
 #X connect 90 0 91 5;
 #X connect 91 0 86 0;
 #X connect 92 0 93 1;
-#X connect 92 0 94 1;
-#X connect 92 0 96 1;
 #X connect 92 0 95 1;
+#X connect 92 0 97 0;
 #X connect 93 0 67 0;
 #X connect 94 0 67 1;
 #X connect 95 0 67 3;
 #X connect 96 0 67 2;
+#X connect 97 0 94 0;
+#X connect 97 1 94 1;
+#X connect 97 2 96 0;
+#X connect 97 3 96 1;
+#X connect 97 4 95 0;
+#X connect 97 5 95 1;
 #X restore 1201 463 pd mmp-export-vfader_as_vLCD;
 #X connect 0 0 23 0;
 #X connect 1 0 8 0;
@@ -1223,4 +1229,4 @@ a rgb;
 #X connect 69 0 51 0;
 #X connect 70 0 71 0;
 #X connect 71 0 69 0;
-#X coords 0 -1 1 1 76 159 2 100 100;
+#X coords 0 -1 1 1 57 104 2 100 100;
