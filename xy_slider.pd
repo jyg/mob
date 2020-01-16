@@ -206,8 +206,8 @@
 #X obj 864 727 outlet;
 #X obj 100 99 cnv 5 5 5 \$0-pos \$0-pos-rcv empty 20 12 0 14 -66577
 -66577 0;
-#X obj 100 102 vsl 301 122 0 127 0 0 empty empty empty 0 20 0 20 -212598
--212598 -212598 6600 1;
+#X obj 100 102 vsl 191 104 0 127 0 0 empty empty empty 0 20 0 20 -212598
+-212598 -212598 0 1;
 #X msg 790 213 -1;
 #X obj 612 311 route remove update pressure;
 #X obj 1129 727 outlet;
@@ -410,7 +410,7 @@
 #X connect 9 0 10 0;
 #X connect 10 0 0 0;
 #X restore 1017 680 pd vertical_cursor;
-#X obj 252 100 cnv 1 1 128 empty \$0-vertical_cursor empty 20 12 0
+#X obj 252 100 cnv 1 1 110 empty \$0-vertical_cursor empty 20 12 0
 14 -258113 -66577 0;
 #N canvas 0 50 732 441 horizontal_cursor 0;
 #X obj 139 221 *;
@@ -439,11 +439,11 @@
 #X connect 11 0 12 0;
 #X connect 12 0 0 0;
 #X restore 1030 621 pd horizontal_cursor;
-#X obj 100 139 cnv 1 301 1 empty \$0-horizontal_cursor empty 20 12
+#X obj 100 139 cnv 1 191 1 empty \$0-horizontal_cursor empty 20 12
 0 14 -258113 -66577 0;
 #X msg 969 616 \$1;
 #X msg 1004 576 \$2;
-#N canvas 0 50 1568 1015 mmp-export-MMPXYSlider 0;
+#N canvas 0 50 1568 1015 mmp-export-MMPXYSlider 1;
 #X obj 121 37 r MMP_EXPORT;
 #X obj 256 32 r \$0-x;
 #X obj 312 32 r \$0-y;
@@ -528,12 +528,17 @@
 #X obj 414 162 r WIDGET-ID;
 #X obj 416 193 list append;
 #X msg 416 222 symbol \$1.\$2;
+#X obj 193 212 r MOB_ZOOM;
+#X obj 83 251 * 1;
+#X obj 158 252 * 1;
+#X obj 308 251 * 1;
+#X obj 236 250 * 1;
 #X connect 0 0 75 0;
 #X connect 1 0 5 1;
-#X connect 2 0 25 1;
-#X connect 3 0 25 3;
-#X connect 4 0 25 2;
-#X connect 5 0 25 0;
+#X connect 2 0 83 0;
+#X connect 3 0 84 0;
+#X connect 4 0 85 0;
+#X connect 5 0 82 0;
 #X connect 6 0 25 4;
 #X connect 7 0 25 6;
 #X connect 8 0 25 7;
@@ -608,15 +613,23 @@
 #X connect 78 0 79 0;
 #X connect 79 0 80 0;
 #X connect 80 0 25 5;
+#X connect 81 0 82 1;
+#X connect 81 0 83 1;
+#X connect 81 0 85 1;
+#X connect 81 0 84 1;
+#X connect 82 0 25 0;
+#X connect 83 0 25 1;
+#X connect 84 0 25 3;
+#X connect 85 0 25 2;
 #X restore 1117 269 pd mmp-export-MMPXYSlider;
-#N canvas 109 381 429 458 xy_slider_properties(\$0) 1;
+#N canvas 109 381 429 458 xy_slider_properties(\$0) 0;
 #X obj 6 4 cnv 15 400 450 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X floatatom 146 14 5 0 0 0 width #0-w-rcv #0-w-snd;
 #X floatatom 126 183 8 0 0 0 back_color #0-bc-rcv #0-bc-snd;
 #X floatatom 127 208 8 0 0 0 front_color #0-fc-rcv #0-fc-snd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -220468
+#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -212598
 -66577 0;
 #X obj 170 75 r \$0-back_color;
 #X msg 170 104 color \$1 \$1;
@@ -639,7 +652,7 @@
 -1;
 #X floatatom 283 16 5 0 0 0 height #0-h-rcv #0-h-snd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-cc_cnv-rcv empty 20 12 0 14 -225271
+#X obj 100 100 cnv 20 20 20 empty \$0-cc_cnv-rcv empty 20 12 0 14 -1
 -66577 0;
 #X msg 170 104 color \$1 \$1;
 #X obj 170 75 r \$0-cursor_color;
@@ -861,7 +874,7 @@ a rgb;
 0;
 #X floatatom 130 90 5 0 0 0 text_color #0-cc-rcv #0-cc-snd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-cc_cnv-rcv empty 20 12 0 14 -225271
+#X obj 100 100 cnv 20 20 20 empty \$0-cc_cnv-rcv empty 20 12 0 14 -1
 -66577 0;
 #X msg 170 104 color \$1 \$1;
 #X obj 170 75 r \$0-cursor_color;
@@ -1053,4 +1066,4 @@ a rgb;
 #X connect 99 1 100 0;
 #X connect 100 0 88 0;
 #X connect 100 0 87 0;
-#X coords 0 -1 1 1 301 128 2 100 100;
+#X coords 0 -1 1 1 191 110 2 100 100;

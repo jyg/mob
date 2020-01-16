@@ -8,7 +8,9 @@
 #A saved -G 140.551;
 #A saved -B 88.3465;
 #A saved -pages 2;
-#A saved -mode 0;
+#A saved -mode 2;
+#A saved -landscape 0;
+#A saved -zoom 1;
 #X obj 263 849 mob/button;
 #A saved -name mybutton;
 #A saved -cursor_color -1;
@@ -21,17 +23,17 @@
 #A saved -cursor_color -1;
 #A saved -back_color -1.3559e+07;
 #A saved -size 191 110;
-#X obj 524 380 vsl 50 200 0 127 0 0 my_vsl my_vsl-rcv empty 0 -9 0
+#X obj 524 370 vsl 50 200 0 127 0 0 my_vsl my_vsl-rcv empty 0 -9 0
 10 -260097 -257985 -1 0 0;
-#X obj 112 332 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
--232576 -258113 -1 0 0;
-#X obj 452 424 vradio 50 1 0 4 my_vradio my_vradio-rcv empty 0 -8 0
+#X obj 112 322 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
+-232576 -258113 -1 8158 0;
+#X obj 452 414 vradio 50 1 0 4 my_vradio my_vradio-rcv empty 0 -8 0
 10 -4034 -159808 -1 0;
-#X obj 123 390 hradio 60 1 0 5 my_hradio my_hradio-rcv empty 0 -8 0
+#X obj 123 380 hradio 60 1 0 5 my_hradio my_hradio-rcv empty 0 -8 0
 10 -260097 -257985 -1 0;
 #N canvas 0 50 450 349 mob-listeners 0;
-#X obj 20 30 mob/listenerHLCD_lin my_hsl my_hsl-rcv 1 0 1 0;
-#X obj 20 60 mob/listenerVLCD_lin my_vsl my_vsl-rcv 2 0 127 0;
+#X obj 20 30 mob/listenerVLCD_lin my_vsl my_vsl-rcv 1 0 127 0;
+#X obj 20 60 mob/listenerHLCD_lin my_hsl my_hsl-rcv 2 0 1 0;
 #X obj 20 90 mob/listenerHLCD_lin my_hsl my_hsl-rcv 3 0 1 181.631;
 #X obj 20 120 mob/listenerVLCD_lin my_vsl my_vsl-rcv 4 0 127 148.865
 ;
@@ -55,35 +57,52 @@
 0;
 #X text 17 94 [mob] converts guis into mmp-widgets., f 24;
 #N canvas 0 50 730 596 some_restrictions 0;
-#X text 23 200 Only "jump on click" mode for sliders om target platform.
+#X text 23 250 Only "jump on click" mode for sliders om target platform.
 ;
-#X text 30 445 No labels. Use comments and (coming soon) textdisplay
+#X text 30 495 No labels. Use comments and (coming soon) textdisplay
 abstraction.;
 #X text 22 29 Native guis can be connected by wires but MUST have defined
 send/receive channels., f 53;
 #X text 25 85 The send channel defines the name of the parameter to
 be handled.;
-#X text 24 137 Don't use the rcv channel in your patch. To change the
-value of a slider \, send the value of the associed parameter name
-(using send channel), f 53;
-#X text 28 509 no " in comments;
-#X text 24 231 Use mob/hfader & mob/vfader with steady mode property.
+#X text 24 281 Use mob/hfader & mob/vfader with steady mode property.
 ;
-#X text 23 261 No logarithm mode for sliders on target platform \,
+#X text 23 311 No logarithm mode for sliders on target platform \,
 but you can define any bounds (min and max values for sliders);
-#X text 26 340 No Init feature as defined in the properties dialog.
+#X text 26 390 No Init feature as defined in the properties dialog.
 Initialisation values have to be defined using the parameter state
 saving system., f 52;
-#X restore 273 264 pd some_restrictions;
+#N canvas 0 50 647 574 example 0;
+#X obj 27 20 mob/listenerXY_lin my_param my_param-rcv -1 0 128;
+#X obj 273 232 s my_param;
+#X obj 79 128 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X msg 263 160 2;
+#X msg 324 162 56;
+#X text 106 99 my_param-rcv;
+#X text 110 259 my_param;
+#X obj 409 130 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
+0 10 -262144 -1 -1 0 1;
+#X text 436 101 my_param-rcv;
+#X text 440 261 my_param;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X restore 255 216 pd example;
+#X text 32 540 no " (quotation marks) in comments;
+#X text 24 137 There is no need to update the guis in your patch with
+[set \$1( messages sent to the rcv channel. The listeners do that for
+you. To change the value \, say \, of a slider \, just send the value
+to the associed parameter name sender., f 53;
+#X restore 37 598 pd some_restrictions;
 #X text 8 264 * supported native GUIs :;
-#X text 44 343 -hsl;
-#X text 527 345 -vsl;
-#X text 43 411 -hradio;
-#X text 439 396 -vradio;
-#X text 44 482 -bng;
-#X obj 121 478 bng 70 250 50 0 my_bng my_bng empty 17 7 0 10 -262144
+#X text 44 333 -hsl;
+#X text 527 335 -vsl;
+#X text 43 401 -hradio;
+#X text 439 386 -vradio;
+#X text 44 472 -bng;
+#X obj 121 468 bng 70 250 50 0 my_bng my_bng empty 17 7 0 10 -262144
 -1 -1;
-#X text 200 505 (bng is converted as a button), f 18;
+#X text 200 495 (bng is converted as a button), f 18;
 #X text 49 665 -mob/hfader;
 #X text 249 775 -mob/vfader;
 #X text 257 818 -mob/button;
@@ -92,7 +111,7 @@ and copy the .pd and .mmp files to the target platform!, f 49;
 #X text 106 32 (do not erase);
 #X text 21 144 [mob] object will not appear on the target platform
 \, you can move it anywhere on the patch., f 49;
-#X text 19 570 * currently not supported :;
+#X text 19 545 * currently not supported :;
 #X text 46 773 -mob/xy_slider (jump on touch), f 16;
 #X obj 900 47 vradio 50 1 0 3 mob_load mob_load-rcv empty 0 -8 0 10
 -4034 -159808 -1 1;
@@ -100,8 +119,8 @@ and copy the .pd and .mmp files to the target platform!, f 49;
 #X obj 1008 50 vradio 50 1 0 3 mob_save mob_save-rcv empty 0 -8 0 10
 -258113 -159808 -1 1;
 #X text 1005 17 mob_save;
-#X text 177 336 (only 'jump on click' mode for sliders), f 23;
-#X text 42 295 -comments are displayed on the target platform.;
+#X text 177 326 (only 'jump on click' mode for sliders), f 23;
+#X text 42 285 -comments are displayed on the target platform.;
 #X obj 386 771 mob/vfader;
 #A saved -mode 1;
 #A saved -max 127;
@@ -142,10 +161,9 @@ and copy the .pd and .mmp files to the target platform!, f 49;
 #A saved -cursor_color 0;
 #A saved -back_color -1.25007e+07;
 #A saved -size 178 63;
-#N canvas 0 50 450 300 TODO 0;
-#X text 340 23 tallPhone;
-#X text 340 42 widePhone;
-#X text 8 23 TODO : add those canvas types :;
+#N canvas 0 50 630 343 TODO 0;
+#X text 16 25 Add rescaling feature to enable larger objects on mmp
+;
 #X restore 511 153 pd TODO;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array array1 20 float 3;
@@ -202,16 +220,9 @@ editmode, f 40;
 #X connect 10 0 11 0;
 #X connect 11 0 9 0;
 #X restore 629 520 pd changing_text_into_cnv;
-#N canvas 0 50 557 328 editing 0;
-#X text 35 58 To edit mob/Guis properties :;
-#X text 60 99 right-click & choose "properties";
-#X text 30 139 To resize :;
-#X text 49 179 set edit mode (ctrl+e) \, press ctrl key and then click
-and drag, f 40;
-#X restore 253 647 pd editing mob/faders properties;
 #X text 16 632 * mob/Guis :;
 #X text 497 828 (jump mode), f 5;
-#X text 85 594 toggle \, number \, symbol \, vu;
+#X text 85 569 toggle \, number \, symbol \, vu;
 #X text 384 827 (steady mode), f 7;
 #X text 106 694 (steady mode);
 #X text 289 694 (jump mode);
@@ -220,3 +231,10 @@ and drag, f 40;
 in tcl/tk vfader / hfader objects), f 47;
 #X restore 457 689 pd about jump/steady modes;
 #X f 12;
+#N canvas 0 50 557 328 How_to_edit_mob/faders_properties 0;
+#X text 35 58 To edit mob/Guis properties :;
+#X text 60 99 right-click & choose "properties";
+#X text 30 139 To resize :;
+#X text 49 179 set edit mode (ctrl+e) \, press ctrl key and then click
+and drag, f 40;
+#X restore 227 640 pd How_to_edit_mob/faders_properties;
