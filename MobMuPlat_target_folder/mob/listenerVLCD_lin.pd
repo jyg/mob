@@ -61,6 +61,10 @@ up \; second and third elements are x and y touch position \, normalized
 #X obj 152 762 * 0.01;
 #X obj 23 809 - 1;
 #X obj 23 834 * -1;
+#X text 273 92 pd 0.48;
+#X text 316 109 RJ_SCENE_LOAD récupère la valeur #saved \, si celle-ci
+est nulle \, on lui substitue l'argument \$6;
+#X obj 399 454 list append \$6;
 #X connect 0 0 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -69,6 +73,7 @@ up \; second and third elements are x and y touch position \, normalized
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
+#X connect 9 0 61 0;
 #X connect 9 1 12 0;
 #X connect 10 0 0 1;
 #X connect 13 0 1 0;
@@ -118,3 +123,4 @@ up \; second and third elements are x and y touch position \, normalized
 #X connect 56 0 52 0;
 #X connect 57 0 58 0;
 #X connect 58 0 47 0;
+#X connect 61 0 12 0;

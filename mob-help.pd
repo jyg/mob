@@ -24,20 +24,34 @@
 #A saved -back_color -1.3559e+07;
 #A saved -size 191 110;
 #X obj 524 370 vsl 50 200 0 127 0 0 my_vsl my_vsl-rcv empty 0 -9 0
-10 -260097 -257985 -1 4400 0;
+10 -260097 -257985 -1 5469 0;
 #X obj 112 322 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
--232576 -258113 -1 0 0;
-#X obj 452 414 vradio 50 1 0 4 my_vradio my_vradio-rcv empty 0 -8 0
+-232576 -258113 -1 13102 0;
+#X obj 452 414 vradio 50 1 1 4 my_vradio my_vradio-rcv empty 0 -8 0
 10 -4034 -159808 -1 3;
-#X obj 123 380 hradio 60 1 0 5 my_hradio my_hradio-rcv empty 0 -8 0
-10 -260097 -257985 -1 0;
-#N canvas 0 50 450 349 mob-listeners 0;
-#X obj 20 30 mob/listenerHLCD_lin my_hsl my_hsl-rcv 1 0 1 0;
-#X obj 20 60 mob/listenerVLCD_lin my_vsl my_vsl-rcv 2 0 127 0;
-#X obj 20 90 mob/listenerHLCD_lin my_hsl my_hsl-rcv 3 0 1 181.631;
-#X obj 20 120 mob/listenerVLCD_lin my_vsl my_vsl-rcv 4 0 127 148.865
+#X obj 123 380 hradio 60 1 1 5 my_hradio my_hradio-rcv empty 0 -8 0
+10 -260097 -257985 -1 3;
+#N canvas 0 50 685 548 mob-listeners 1;
+#X obj 20 30 mob/listenerHLCD_lin my_hsl my_hsl-rcv 1 0 1 0 0.438182
 ;
-#X obj 20 150 mob/listenerXY_lin xy xy-rcv 5 -1 1;
+#A saved 0.438182;
+#A saved MOB_TARGET my_hsl;
+#X obj 20 60 mob/listenerVLCD_lin my_vsl my_vsl-rcv 2 0 127 0 34.9049
+;
+#A saved 34.9049;
+#A saved MOB_TARGET my_vsl;
+#X obj 20 90 mob/listenerHLCD_lin my_hsl my_hsl-rcv 3 0 1 181.631 0.438182
+;
+#A saved 0.438182;
+#A saved MOB_TARGET my_hsl;
+#X obj 20 120 mob/listenerVLCD_lin my_vsl my_vsl-rcv 4 0 127 148.865
+34.9049;
+#A saved 34.9049;
+#A saved MOB_TARGET my_vsl;
+#X obj 20 150 mob/listenerXY_lin xy xy-rcv 5 -1 1 -0.602094 -0.381818
+;
+#A saved -0.602094 -0.381818;
+#A saved MOB_TARGET xy;
 #X obj 20 180 mob/listener mybutton mybutton-rcv;
 #X obj 20 210 mob/listener_lin my_vsl my_vsl-rcv 6 0 127;
 #X obj 20 240 mob/listener_lin my_hsl my_hsl-rcv 7 0 1;
@@ -64,11 +78,10 @@ be handled.;
 ;
 #X text 23 311 No logarithm mode for sliders on target platform \,
 but you can define any bounds (min and max values for sliders);
-#X text 26 390 No Init feature as defined in the properties dialog.
-Initialisation values have to be defined using the parameter state
-saving system., f 52;
 #N canvas 0 50 647 574 example 0;
 #X obj 27 20 mob/listenerXY_lin my_param my_param-rcv -1 0 128;
+#A saved 0 0;
+#A saved MOB_TARGET my_param;
 #X obj 273 232 s my_param;
 #X obj 79 128 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
 0 10 -262144 -1 -1 0 1;
@@ -88,6 +101,8 @@ saving system., f 52;
 [set \$1( messages sent to the rcv channel. The listeners do that for
 you. To change the value \, say \, of a slider \, just send the value
 to the associed parameter name sender., f 53;
+#X text 23 374 Legacy guis support init feature as defined in their
+properties dialog.;
 #X restore 37 598 pd some_restrictions;
 #X text 18 259 * supported native GUIs :;
 #X text 44 333 -hsl;
@@ -153,7 +168,7 @@ and copy the .pd and .mmp files to the target platform!, f 26;
 #A saved -cursor_color 0;
 #A saved -back_color -1.25007e+07;
 #A saved -size 178 63;
-#N canvas 0 50 630 343 TODO 1;
+#N canvas 0 50 630 343 TODO 0;
 #X text 60 51 Arrays;
 #X text 24 6 TODO LIST;
 #X text 91 81 -enable preset saving of arrays;
@@ -219,16 +234,22 @@ and copy the .pd and .mmp files to the target platform!, f 26;
 in tcl/tk vfader / hfader objects), f 47;
 #X restore 457 689 pd about jump/steady modes;
 #X f 12;
-#N canvas 0 50 557 328 How_to_edit_mob/faders_properties 0;
+#N canvas 0 50 609 459 How_to_edit_mob/faders_properties 0;
 #X text 35 58 To edit mob/Guis properties :;
 #X text 60 99 right-click & choose "properties";
 #X text 30 139 To resize :;
 #X text 49 179 set edit mode (ctrl+e) \, press ctrl key and then click
 and drag, f 40;
+#X text 29 282 pd 0.5 :;
+#X text 23 342 This issue will be fixed with pd 0.51;
+#X text 21 246 WARNING;
+#X text 22 245 WARNING;
+#X text 46 313 Resizing does not work properly with canvas zooming
+= 2;
 #X restore 227 640 pd How_to_edit_mob/faders_properties;
 #X text 303 447 -tgl;
-#X obj 306 473 tgl 70 0 my_tgl my_tgl-rcv empty 17 7 0 10 -261234 -258113
--1 0 1;
+#X obj 306 473 tgl 70 1 my_tgl my_tgl-rcv empty 17 7 0 10 -261234 -258113
+-1 1 1;
 #X text 85 569 number \, symbol \, vu;
 #X text 271 9 <-(do not erase);
 #X text 16 206 Note : [mob] object will not appear on the target platform
@@ -241,3 +262,6 @@ and drag, f 40;
 #X text 39 112 displayMode 0 = line \, displayMode 1 = filled bar,
 f 27;
 #X restore 849 346 pd About_display_modes;
+#X floatatom 541 614 5 0 0 0 - - -;
+#X msg 758 659 \; my_vsl 66;
+#X connect 5 0 58 0;
