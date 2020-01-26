@@ -206,7 +206,7 @@
 #X obj 864 727 outlet;
 #X obj 100 99 cnv 5 5 5 \$0-pos \$0-pos-rcv empty 20 12 0 14 -66577
 -66577 0;
-#X obj 100 102 vsl 60 54 0 127 0 0 empty empty empty 0 20 0 20 -233017
+#X obj 100 102 vsl 237 128 0 127 0 0 empty empty empty 0 20 0 20 -233017
 -233017 -233017 0 1;
 #X msg 790 213 -1;
 #X obj 612 311 route remove update pressure;
@@ -410,8 +410,8 @@
 #X connect 9 0 10 0;
 #X connect 10 0 0 0;
 #X restore 1017 680 pd vertical_cursor;
-#X obj 125 100 cnv 1 1 60 empty \$0-vertical_cursor empty 20 12 0 14
--258113 -66577 0;
+#X obj 125 100 cnv 1 1 134 empty \$0-vertical_cursor empty 20 12 0
+14 -258113 -66577 0;
 #N canvas 0 50 732 441 horizontal_cursor 0;
 #X obj 139 221 *;
 #X obj 90 17 inlet y;
@@ -439,8 +439,8 @@
 #X connect 11 0 12 0;
 #X connect 12 0 0 0;
 #X restore 1030 621 pd horizontal_cursor;
-#X obj 100 126 cnv 1 60 1 empty \$0-horizontal_cursor empty 20 12 0
-14 -258113 -66577 0;
+#X obj 100 126 cnv 1 237 1 empty \$0-horizontal_cursor empty 20 12
+0 14 -258113 -66577 0;
 #X msg 969 616 \$1;
 #X msg 1004 576 \$2;
 #N canvas 0 50 1568 1015 mmp-export-MMPXYSlider 0;
@@ -636,10 +636,10 @@
 #X connect 90 0 89 5;
 #X connect 90 1 89 6;
 #X restore 1117 269 pd mmp-export-MMPXYSlider;
-#N canvas 109 381 429 458 xy_slider_properties(\$0) 0;
+#N canvas 109 381 429 458 xy_slider_properties(\$0) 1;
 #X obj 6 4 cnv 15 400 450 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X floatatom 146 14 5 0 0 0 width #0-w-rcv #0-w-snd;
+#X floatatom 146 14 5 0 0 0 width #0-w-rcv #0-w;
 #X floatatom 126 183 8 0 0 0 back_color #0-bc-rcv #0-bc-snd;
 #X floatatom 127 208 8 0 0 0 front_color #0-fc-rcv #0-fc-snd;
 #N canvas 0 50 450 300 (subpatch) 0;
@@ -664,7 +664,7 @@
 #X restore 213 212 pd;
 #X obj 342 318 bng 40 250 50 0 \$0-ok empty OK 5 20 0 20 -204786 -1
 -1;
-#X floatatom 283 16 5 0 0 0 height #0-h-rcv #0-h-snd;
+#X floatatom 283 16 5 0 0 0 height #0-h-rcv #0-h;
 #N canvas 0 50 450 300 (subpatch) 0;
 #X obj 100 100 cnv 20 20 20 empty \$0-cc_cnv-rcv empty 20 12 0 14 -1
 -66577 0;
@@ -1080,4 +1080,4 @@ a rgb;
 #X connect 99 1 100 0;
 #X connect 100 0 88 0;
 #X connect 100 0 87 0;
-#X coords 0 -1 1 1 60 60 2 100 100;
+#X coords 0 -1 1 1 237 134 2 100 100;

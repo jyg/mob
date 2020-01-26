@@ -2,7 +2,7 @@
 #X obj 100 100 cnv 15 298 138 empty empty mob 2 8 0 14 -228856 -1 0
 ;
 #X obj 54 63 inlet;
-#N canvas 1163 889 362 187 \$0-properties 0;
+#N canvas 1041 786 362 187 \$0-properties 0;
 #X obj 58 137 cnv 15 200 35 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 67 145 bng 15 250 50 0 \$0-done empty OK 17 7 0 10 -24198 -1
@@ -10,12 +10,12 @@
 #X obj 188 145 bng 15 250 50 0 \$0-cancel empty cancel 17 7 0 10 -258699
 -1 -1;
 #X obj 61 76 hsl 128 15 0 255 0 1 \$0-R \$0-R empty -2 -8 0 10 -258699
--1 -1 8400 1;
+-1 -1 8300 1;
 #X obj 61 93 hsl 128 15 0 255 0 1 \$0-G \$0-G empty -2 -8 0 10 -24198
--1 -1 7000 1;
+-1 -1 7600 1;
 #X obj 61 110 hsl 128 15 0 255 0 1 \$0-B \$0-B empty -2 -8 0 10 -62784
--1 -1 4400 1;
-#X obj 206 76 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -174295
+-1 -1 5400 1;
+#X obj 206 76 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -170396
 -262144 0;
 #X obj 120 145 bng 15 250 50 0 \$0-apply empty apply 17 7 0 10 -241291
 -1 -1;
@@ -195,7 +195,7 @@
 #X restore 448 44 pd propertyguts;
 #X obj 350 100 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 355 105 cnv 15 40 40 empty \$0-color empty 20 12 0 14 -174295
+#X obj 355 105 cnv 15 40 40 empty \$0-color empty 20 12 0 14 -170396
 -262144 0;
 #X text 286 118 BackGroundColor;
 #X floatatom 363 150 5 0 99 0 firstPage #0-firstPage-rcv #0-firstPage
@@ -2286,6 +2286,10 @@ width 0 0 0;
 #X obj 94 447 * 1;
 #X obj 63 449 * 1;
 #X obj 295 401 t f f;
+#X obj 1032 455 s \$0-listeners;
+#X obj 1036 371 pack s s;
+#X msg 1036 394 \$1 \$2;
+#X obj 1031 431 list prepend mob/listenerCnv;
 #X connect 0 0 43 0;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
@@ -2335,6 +2339,8 @@ width 0 0 0;
 #X connect 42 3 65 0;
 #X connect 42 4 64 0;
 #X connect 42 5 40 4;
+#X connect 42 5 68 0;
+#X connect 42 6 68 1;
 #X connect 42 7 40 5;
 #X connect 42 8 56 0;
 #X connect 42 9 57 0;
@@ -2377,6 +2383,9 @@ width 0 0 0;
 #X connect 65 0 40 2;
 #X connect 66 0 54 0;
 #X connect 66 1 40 6;
+#X connect 68 0 69 0;
+#X connect 69 0 70 0;
+#X connect 70 0 67 0;
 #X restore 1214 444 pd cnv;
 #N canvas 0 57 1920 1023 gop(automatonism) 0;
 #X msg 919 191 read snare.pd;
@@ -4002,6 +4011,10 @@ système de remote control de automatonism3;
 #X obj 631 222 delay 500;
 #X obj 836 719 s \$0-done;
 #X obj 1023 383 route vsl hsl vradio hradio bng cnv tgl;
+#X obj 684 809 v MOB_BACKGROUND_COLOR;
+#X obj 671 727 r \$0-color;
+#X obj 671 752 route color;
+#X msg 671 777 \$1;
 #X connect 1 0 78 0;
 #X connect 4 0 3 0;
 #X connect 5 0 4 0;
@@ -4107,4 +4120,7 @@ système de remote control de automatonism3;
 #X connect 152 4 54 0;
 #X connect 152 5 114 0;
 #X connect 152 6 79 0;
+#X connect 154 0 155 0;
+#X connect 155 0 156 0;
+#X connect 156 0 153 0;
 #X coords 0 -1 1 1 300 140 1 100 100;
