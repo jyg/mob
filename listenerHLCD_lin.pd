@@ -27,7 +27,7 @@
 #X obj 705 666 list trim;
 #X obj 705 691 s \$2;
 #X text 13 473 routed fromGUI;
-#X obj 88 110 r \$1;
+#X obj 78 49 r \$1;
 #X obj 17 517 r \$3.\$1;
 #X obj 19 545 route 1 2;
 #X msg 20 575 \$1;
@@ -55,7 +55,7 @@ up \; second and third elements are x and y touch position \, normalized
 #X obj 162 733 spigot \$6;
 #X obj 77 627 loadbang;
 #X obj 170 710 * 0.01;
-#N canvas 0 57 1920 1023 savestate 1;
+#N canvas 0 57 1920 1023 savestate 0;
 #X obj 237 276 savestate;
 #X obj 461 122 list append;
 #X obj 542 84 r \$1;
@@ -95,6 +95,7 @@ des parametres #saved ou inscrits en dur est déclenché par savestate
 #X text 316 109 RJ_SCENE_LOAD récupère la valeur #saved \, si celle-ci
 est nulle \, on lui substitue l'argument \$6;
 #X obj 512 405 list append \$6;
+#X obj 86 104 change;
 #X connect 0 0 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -120,7 +121,7 @@ est nulle \, on lui substitue l'argument \$6;
 #X connect 23 0 24 0;
 #X connect 24 0 25 0;
 #X connect 25 0 26 0;
-#X connect 28 0 14 0;
+#X connect 28 0 61 0;
 #X connect 29 0 30 0;
 #X connect 30 0 31 0;
 #X connect 30 1 45 0;
@@ -149,3 +150,4 @@ est nulle \, on lui substitue l'argument \$6;
 #X connect 51 0 48 0;
 #X connect 52 0 50 0;
 #X connect 60 0 12 0;
+#X connect 61 0 14 0;

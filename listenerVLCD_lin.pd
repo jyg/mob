@@ -25,7 +25,7 @@
 #X obj 424 646 list trim;
 #X obj 424 671 s \$2;
 #X text 13 473 routed fromGUI;
-#X obj 88 110 r \$1;
+#X obj 84 84 r \$1;
 #X obj 31 597 r \$3.\$1;
 #X obj 31 623 route 1 2;
 #X msg 192 310 clear;
@@ -101,6 +101,7 @@ des parametres #saved ou inscrits en dur est déclenché par savestate
 #X text 316 109 RJ_SCENE_LOAD récupère la valeur #saved \, si celle-ci
 est nulle \, on lui substitue l'argument \$6;
 #X obj 399 454 list append \$6;
+#X obj 89 121 change;
 #X connect 0 0 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -125,7 +126,7 @@ est nulle \, on lui substitue l'argument \$6;
 #X connect 21 0 22 0;
 #X connect 22 0 23 0;
 #X connect 23 0 24 0;
-#X connect 26 0 14 0;
+#X connect 26 0 67 0;
 #X connect 27 0 28 0;
 #X connect 28 0 33 0;
 #X connect 28 1 38 0;
@@ -160,3 +161,4 @@ est nulle \, on lui substitue l'argument \$6;
 #X connect 57 0 58 0;
 #X connect 58 0 47 0;
 #X connect 66 0 12 0;
+#X connect 67 0 14 0;

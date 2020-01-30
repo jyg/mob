@@ -1,22 +1,27 @@
 #N struct bckgrnd float x float y float width float height float color
 ;
-#N canvas 300 64 1338 1003 16;
+#N canvas 184 58 1338 1003 16;
 #X scalar bckgrnd 0 0 600 960 654 \;;
 #X scalar bckgrnd 600 0 600 960 654 \;;
-#X obj 289 47 mob;
+#X scalar bckgrnd 1200 0 600 960 654 \;;
+#X obj 291 11 mob;
 #A saved -R 166.654;
 #A saved -G 152.598;
 #A saved -B 108.425;
-#A saved -pages 2;
+#A saved -pages 3;
 #A saved -mode 2;
 #A saved -landscape 0;
 #A saved -zoom 1;
 #X obj 869 449 mob/button;
+#A saved -invisible 0;
+#A saved -z_offset 0;
 #A saved -name mybutton;
 #A saved -cursor_color -1;
 #A saved -back_color -9.20064e+06;
 #A saved -size 60 60;
-#X obj 654 419 mob/xy_slider;
+#X obj 645 422 mob/xy_slider;
+#A saved -invisible 0;
+#A saved -z_offset 0;
 #A saved -max 1;
 #A saved -min -1;
 #A saved -name xy;
@@ -24,14 +29,14 @@
 #A saved -back_color -1.3559e+07;
 #A saved -size 191 110;
 #X obj 524 370 vsl 50 200 0 127 0 0 my_vsl my_vsl-rcv empty 0 -9 0
-10 -260097 -257985 -1 13253 0;
-#X obj 112 322 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
--232576 -258113 -1 21800 0;
+10 -260097 -257985 -1 0 0;
+#X obj 126 322 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
+-232576 -258113 -1 0 0;
 #X obj 452 414 vradio 50 1 1 4 my_vradio my_vradio-rcv empty 0 -8 0
-10 -4034 -159808 -1 3;
+10 -4034 -159808 -1 0;
 #X obj 123 380 hradio 60 1 1 5 my_hradio my_hradio-rcv empty 0 -8 0
 10 -260097 -257985 -1 3;
-#X text 125 37 [mob] converts guis into mmp-widgets., f 17;
+#X text 15 102 [mob] converts guis into mmp-widgets., f 24;
 #X text 18 259 * supported native GUIs :;
 #X text 44 333 -hsl;
 #X text 527 335 -vsl;
@@ -44,8 +49,8 @@
 #X text 647 267 -mob/hfader;
 #X text 865 380 -mob/vfader;
 #X text 863 418 -mob/button;
-#X text 16 96 Just draw your interface \, then press the red button
-and copy the .pd and .mmp files to the target platform!, f 26;
+#X text 16 154 Just draw your interface \, then press the red button
+and copy the .pd and .mmp files to the target platform!, f 56;
 #X text 652 373 -mob/xy_slider (jump on touch), f 16;
 #X obj 900 47 vradio 50 1 0 3 mob_load mob_load-rcv empty 0 -8 0 10
 -4034 -159808 -1 0;
@@ -56,6 +61,8 @@ and copy the .pd and .mmp files to the target platform!, f 26;
 #X text 177 326 (only 'jump on click' mode for sliders), f 23;
 #X text 42 285 -comments are displayed on the target platform.;
 #X obj 989 374 mob/vfader;
+#A saved -invisible 0;
+#A saved -z_offset 0;
 #A saved -mode 1;
 #A saved -max 127;
 #A saved -min 0;
@@ -66,6 +73,8 @@ and copy the .pd and .mmp files to the target platform!, f 26;
 #A saved -back_color -1.56298e+07;
 #A saved -size 76 159;
 #X obj 653 296 mob/hfader;
+#A saved -invisible 0;
+#A saved -z_offset 0;
 #A saved -mode 1;
 #A saved -max 1;
 #A saved -min 0;
@@ -76,6 +85,8 @@ and copy the .pd and .mmp files to the target platform!, f 26;
 #A saved -back_color -1.25007e+07;
 #A saved -size 176 63;
 #X obj 1092 372 mob/vfader;
+#A saved -invisible 0;
+#A saved -z_offset 0;
 #A saved -mode 0;
 #A saved -max 127;
 #A saved -min 0;
@@ -86,6 +97,8 @@ and copy the .pd and .mmp files to the target platform!, f 26;
 #A saved -back_color -1.56298e+07;
 #A saved -size 76 159;
 #X obj 857 292 mob/hfader;
+#A saved -invisible 0;
+#A saved -z_offset 0;
 #A saved -mode 0;
 #A saved -max 1;
 #A saved -min 0;
@@ -102,11 +115,11 @@ and copy the .pd and .mmp files to the target platform!, f 26;
 #X text 95 111 -abstraction to choose colors \, displaymode \, editmode
 ;
 #X text 52 161 Object emulating LCD display with datastructures;
-#X text 46 204 Menu;
 #X text 49 239 Dialog box;
 #X text 47 270 Confirm dialog box;
 #X text 44 297 Multitouch xyslider;
-#X restore 1047 923 pd TODO;
+#X text 46 201 Multi Slider;
+#X restore 1224 918 pd TODO;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array array1 20 float 3;
 #A 0 0.257144 0.300001 0.314286 0.314286 0.285715 0.257144 0.228573
@@ -119,33 +132,8 @@ and copy the .pd and .mmp files to the target platform!, f 26;
 & 'mob_save', f 24;
 #X text 43 741 Quick and dirty export of gop-array uses only mode 0
 \, displayMode 0, f 22;
-#X obj 57 578 cnv 15 350 60 my_cnv my_cnv-rcv texte 20 25 0 50 -233017
+#X obj 57 578 cnv 15 350 60 my_cnv my_cnv-rcv ceci 20 25 0 50 -233017
 -66577 0;
-#N canvas 0 50 748 453 changing_text_into_cnv 0;
-#X msg 222 101 ceci;
-#X msg 231 140 est;
-#X msg 229 175 un;
-#X msg 310 105 texte;
-#X obj 218 28 r my_vradio;
-#X obj 218 57 select 0 1 2 3;
-#X obj 164 362 s my_cnv-rcv;
-#X obj 165 300 list prepend label;
-#X obj 165 329 list trim;
-#X text 373 269 Other messages aren't handled.;
-#X text 368 169 label messages sent to canvas receiver are automatically
-forwarded to MobMuPlat interface., f 31;
-#X connect 0 0 7 0;
-#X connect 1 0 7 0;
-#X connect 2 0 7 0;
-#X connect 3 0 7 0;
-#X connect 4 0 5 0;
-#X connect 5 0 0 0;
-#X connect 5 1 1 0;
-#X connect 5 2 2 0;
-#X connect 5 3 3 0;
-#X connect 7 0 8 0;
-#X connect 8 0 6 0;
-#X restore 56 642 pd changing_text_into_cnv;
 #X text 621 231 * mob/Guis :;
 #X text 1103 428 (jump mode), f 5;
 #X text 990 427 (steady mode), f 7;
@@ -173,7 +161,7 @@ and drag, f 40;
 #X obj 306 473 tgl 70 1 my_tgl my_tgl-rcv empty 17 7 0 10 -261234 -258113
 -1 1 1;
 #X text 90 892 number \, symbol \, vu;
-#X text 16 206 Note : [mob] object will not appear on the target platform
+#X text 59 200 Note : [mob] object will not appear on the target platform
 \, you can move it anywhere on the patch., f 53;
 #X floatatom 541 614 5 0 0 0 - - -;
 #X text 48 550 -cnv + text;
@@ -228,41 +216,39 @@ will fail., f 62;
 properties dialog.;
 #X text 23 250 Only "jump on click" mode for native sliders on target
 platform., f 65;
-#X restore 42 921 pd some_restrictions_with_native_guis;
-#X obj 493 13 about_mob;
+#X restore 39 923 pd some_restrictions_with_native_guis;
 #N canvas 0 50 450 300 mob-listeners 0;
-#X obj 20 30 mob/listenerMenu my_menu my_menu-rcv;
-#X obj 20 60 mob/listenerHLCD_lin my_hsl my_hsl-rcv 1 0 1 0 0.729097
-;
-#A saved 0.729097;
-#A saved MOB_TARGET my_hsl;
-#X obj 20 90 mob/listenerVLCD_lin my_vsl my_vsl-rcv 2 0 127 0 84.5788
-;
-#A saved 84.5788;
-#A saved MOB_TARGET my_vsl;
-#X obj 20 120 mob/listenerHLCD_lin my_hsl my_hsl-rcv 3 0 1 181.631
-0.729097;
-#A saved 0.729097;
-#A saved MOB_TARGET my_hsl;
-#X obj 20 150 mob/listenerVLCD_lin my_vsl my_vsl-rcv 4 0 127 148.865
-84.5788;
-#A saved 84.5788;
-#A saved MOB_TARGET my_vsl;
-#X obj 20 180 mob/listenerXY_lin xy xy-rcv 5 -1 1 -0.602094 -0.381818
-;
-#A saved -0.602094 -0.381818;
+#X obj 20 50 mob/listener mybutton mybutton-rcv;
+#X obj 20 100 mob/listenerXY_lin xy xy-rcv 1 -1 1 0 0;
+#A saved 0 0;
 #A saved MOB_TARGET xy;
-#X obj 20 210 mob/listener mybutton mybutton-rcv;
-#X obj 20 240 mob/listener_lin my_vsl my_vsl-rcv 6 0 127;
-#X obj 20 270 mob/listener_lin my_hsl my_hsl-rcv 7 0 1;
-#X obj 20 300 mob/listenerVradio my_vradio my_vradio-rcv 8 4;
-#X obj 20 330 mob/listenerHradio my_hradio my_hradio-rcv 9 5;
-#X obj 20 360 mob/listenerBng my_bng 10 250 50;
-#X obj 20 390 mob/listenerVradio mob_load mob_load-rcv 11 3;
-#X obj 20 420 mob/listenerVradio mob_save mob_save-rcv 12 3;
-#X obj 20 450 mob/listenerCnv my_cnv my_cnv-rcv;
-#X obj 20 480 mob/listener my_tgl my_tgl-rcv;
-#X obj 20 510 mob/listenerCnv menu_result menu_result-rcv;
+#X obj 20 150 mob/listener_lin my_vsl my_vsl-rcv 2 0 127;
+#X obj 20 200 mob/listener_lin my_hsl my_hsl-rcv 3 0 1;
+#X obj 20 250 mob/listenerVradio my_vradio my_vradio-rcv 4 4;
+#X obj 20 300 mob/listenerHradio my_hradio my_hradio-rcv 5 5;
+#X obj 20 350 mob/listenerBng my_bng 6 250 50;
+#X obj 20 400 mob/listenerVradio mob_load mob_load-rcv 7 3;
+#X obj 20 450 mob/listenerVradio mob_save mob_save-rcv 8 3;
+#X obj 20 500 mob/listenerVLCD_lin my_vsl my_vsl-rcv 9 0 127 148.865
+0;
+#A saved 0;
+#A saved MOB_TARGET my_vsl;
+#X obj 20 550 mob/listenerHLCD_lin my_hsl my_hsl-rcv 10 0 1 181.631
+0;
+#A saved 0;
+#A saved MOB_TARGET my_hsl;
+#X obj 20 600 mob/listenerVLCD_lin my_vsl my_vsl-rcv 11 0 127 0 0;
+#A saved 0;
+#A saved MOB_TARGET my_vsl;
+#X obj 20 650 mob/listenerHLCD_lin my_hsl my_hsl-rcv 12 0 1 0 0;
+#A saved 0;
+#A saved MOB_TARGET my_hsl;
+#X obj 20 700 mob/listenerCnv my_cnv my_cnv-rcv;
+#X obj 20 750 mob/listener my_tgl my_tgl-rcv;
+#X obj 20 800 mob/listenerCnv menu_result menu_result-rcv;
+#X obj 20 850 mob/listenerMenu my_menu my_menu-rcv;
+#X obj 20 900 mob/listener back back-rcv;
+#X obj 20 950 mob/listener top top-rcv;
 #X obj 20 0 mob/loader mob-help;
 #X restore 100 10 pd mob-listeners;
 #N canvas 0 50 450 300 populating_menu 0;
@@ -297,4 +283,49 @@ platform., f 65;
 #A saved -title My_menu;
 #A saved -name my_menu;
 #A saved -size 303 67;
-#X connect 5 0 51 0;
+#N canvas 0 50 748 453 changing_cnv's_text 0;
+#X msg 222 101 ceci;
+#X msg 231 140 est;
+#X msg 229 175 un;
+#X msg 310 105 texte;
+#X obj 218 28 r my_vradio;
+#X obj 218 57 select 0 1 2 3;
+#X obj 164 362 s my_cnv-rcv;
+#X obj 165 300 list prepend label;
+#X obj 165 329 list trim;
+#X text 373 269 Other messages aren't handled.;
+#X text 368 169 label messages sent to canvas receiver are automatically
+forwarded to MobMuPlat interface., f 31;
+#X connect 0 0 7 0;
+#X connect 1 0 7 0;
+#X connect 2 0 7 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 5 1 1 0;
+#X connect 5 2 2 0;
+#X connect 5 3 3 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
+#X restore 56 642 pd changing_cnv's_text;
+#X obj 1250 135 tgl 200 0 back back-rcv empty 17 7 0 10 -228856 -99865
+-1 0 1;
+#X obj 1341 211 tgl 200 0 top top-rcv empty 17 7 0 10 -261234 -4034
+-1 0 1;
+#X text 1023 872 advanced -->;
+#X text 1250 43 ADVANCED;
+#N canvas 0 50 778 470 more 0;
+#X text 48 302 If you plan to create complex behaviors with overlapped
+widgets and transparency support \, use MobMuPlatEditor or test on
+your target device., f 25;
+#X text 18 60 In puredata tcl/tk interface \, widgets on background
+level intercept mouse interaction. On MobMuPlat \, widget on top level
+intercept touch interaction., f 53;
+#X text 59 144 puredata tcl/tk doesn't support transparency., f 23
+;
+#X text 61 192 mob/widgets have a "invisible" checkbox in properties
+panel for MobMuPlat Widget export, f 47;
+#X restore 1589 192 pd more;
+#X text 1229 70 * Z-order and touch interaction differ in tcl/tk and
+in MobMuPlat, f 38;
+#X connect 6 0 51 0;

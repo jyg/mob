@@ -1,0 +1,5 @@
+inst_scratcher-0 inertia 100;
+inst_scratcher-0 from 0;
+inst_scratcher-0 to 1;
+scratchControl 0.488571 0.0285714;
+play 0;

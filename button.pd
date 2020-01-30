@@ -49,17 +49,24 @@
 #X msg 21 303 -size 60 60 \, -back_color 10 \, -front_color 1 \, -cursor_color
 -1, f 10;
 #X obj 742 490 s \$0-name;
-#X obj 1046 155 symbol;
-#X obj 1098 120 r \$0-name;
-#X msg 966 238 -name \$1;
+#X obj 773 140 symbol;
+#X obj 825 105 r \$0-name;
+#X msg 693 223 -name \$1;
 #X obj 744 457 symbol;
 #X obj 210 48 t b b b b b b b;
-#X obj 270 395 route -size -back_color -cursor_color -name;
+#X obj 990 107 v \$0-z_offset;
+#X msg 990 136 -z_offset \$1;
+#X msg 1201 150 -invisible \$1;
+#X obj 1202 108 v \$0-invisible;
+#X obj 270 395 route -size -back_color -cursor_color -name -z_offset
+-invisible;
+#X obj 887 471 s \$0-z_offset;
+#X obj 1099 472 s \$0-invisible;
 #X connect 0 0 3 0;
 #X connect 0 0 14 0;
 #X connect 0 1 1 0;
 #X connect 2 0 7 0;
-#X connect 3 0 28 0;
+#X connect 3 0 32 0;
 #X connect 4 0 27 0;
 #X connect 5 0 7 1;
 #X connect 6 0 9 0;
@@ -74,7 +81,7 @@
 #X connect 16 0 18 0;
 #X connect 17 0 8 0;
 #X connect 18 0 8 0;
-#X connect 21 0 28 0;
+#X connect 21 0 32 0;
 #X connect 23 0 25 0;
 #X connect 24 0 23 1;
 #X connect 25 0 8 0;
@@ -84,10 +91,18 @@
 #X connect 27 2 15 0;
 #X connect 27 3 16 0;
 #X connect 27 4 23 0;
-#X connect 28 0 6 0;
-#X connect 28 1 19 0;
-#X connect 28 2 20 0;
-#X connect 28 3 26 0;
+#X connect 27 5 28 0;
+#X connect 27 6 31 0;
+#X connect 28 0 29 0;
+#X connect 29 0 8 0;
+#X connect 30 0 8 0;
+#X connect 31 0 30 0;
+#X connect 32 0 6 0;
+#X connect 32 1 19 0;
+#X connect 32 2 20 0;
+#X connect 32 3 26 0;
+#X connect 32 4 33 0;
+#X connect 32 5 34 0;
 #X restore 1408 282 pd savestate;
 #X obj 1409 234 namecanvas \$0-this;
 #X msg 98 66 size \$1 \$2;
@@ -191,8 +206,8 @@
 #X obj 864 727 outlet;
 #X obj 100 99 cnv 5 5 5 \$0-pos \$0-pos-rcv empty 20 12 0 14 -66577
 -66577 0;
-#X obj 100 102 vsl 86 45 0 127 0 0 empty \$0-click_area-rcv empty 0
-20 0 20 -2177 -2177 -2177 0 1;
+#X obj 100 102 vsl 60 54 0 127 0 0 empty \$0-click_area-rcv empty 0
+20 0 20 -233017 -233017 -233017 0 1;
 #X msg 790 213 -1;
 #X obj 612 311 route remove update pressure;
 #X obj 1129 727 outlet;
@@ -339,6 +354,12 @@
 #X obj 675 294 r \$0-name;
 #X msg 675 323 set \$1;
 #X obj 674 380 s \$0-name-rcv;
+#X msg 422 313 set \$1;
+#X obj 422 284 r \$0-z_offset;
+#X obj 421 370 s \$0-z_offset-rcv;
+#X msg 406 448 set \$1;
+#X obj 406 419 r \$0-invisible;
+#X obj 405 505 s \$0-invisible-rcv;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 3 0 5 0;
@@ -354,11 +375,15 @@
 #X connect 19 0 18 0;
 #X connect 21 0 22 0;
 #X connect 22 0 23 0;
+#X connect 24 0 26 0;
+#X connect 25 0 24 0;
+#X connect 27 0 29 0;
+#X connect 28 0 27 0;
 #X restore 1115 227 pd gui_feedback;
 #X msg 612 881 color \$1 \$1 \$1;
 #X obj 855 664 pipe 0;
 #X obj 547 538 &&;
-#N canvas 0 50 1568 1015 mmp-export-button 0;
+#N canvas 0 50 1568 1015 mmp-export-button 1;
 #X obj 121 37 r MMP_EXPORT;
 #X obj 256 32 r \$0-x;
 #X obj 312 32 r \$0-y;
@@ -370,11 +395,11 @@
 #X obj 613 89 r \$0-r;
 #X obj 613 109 r \$0-g;
 #X obj 613 129 r \$0-b;
-#X obj 613 149 r \$0-a;
+#X obj 723 359 r \$0-a;
 #X obj 723 89 r \$0-hr;
 #X obj 723 109 r \$0-hg;
 #X obj 723 129 r \$0-hb;
-#X obj 723 149 r \$0-ha;
+#X obj 1027 359 r \$0-ha;
 #X obj 67 584 list fromsymbol;
 #X obj 71 647 list append 125;
 #X obj 71 625 list prepend add 123;
@@ -437,7 +462,22 @@
 #X obj 232 322 * 1;
 #X obj 126 280 t f b f b f b f;
 #X obj 125 245 r MOB_ZOOM;
-#X connect 0 0 69 0;
+#N canvas 278 130 450 300 MMP_EXPORT_BY_INDEX 0;
+#X obj 151 40 r MMP_EXPORT_BY_INDEX;
+#X obj 151 69 t f b;
+#X obj 203 124 canvasindex 2;
+#X obj 146 184 select;
+#X obj 146 268 outlet;
+#X text 38 6 enable z-order;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 2 0;
+#X connect 2 0 3 1;
+#X connect 3 0 4 0;
+#X restore 42 54 pd MMP_EXPORT_BY_INDEX;
+#X obj 1014 211 r \$0-invisible;
+#X obj 1014 240 - 1;
+#X obj 1014 269 * -1;
 #X connect 1 0 5 1;
 #X connect 2 0 72 0;
 #X connect 3 0 73 0;
@@ -448,11 +488,9 @@
 #X connect 8 0 27 6;
 #X connect 9 0 27 7;
 #X connect 10 0 27 8;
-#X connect 11 0 27 9;
 #X connect 12 0 27 10;
 #X connect 13 0 27 11;
 #X connect 14 0 27 12;
-#X connect 15 0 27 13;
 #X connect 16 0 18 0;
 #X connect 17 0 19 0;
 #X connect 18 0 17 0;
@@ -520,15 +558,20 @@
 #X connect 75 5 73 0;
 #X connect 75 6 73 1;
 #X connect 76 0 75 0;
+#X connect 77 0 69 0;
+#X connect 78 0 79 0;
+#X connect 79 0 80 0;
+#X connect 80 0 27 13;
+#X connect 80 0 27 9;
 #X restore 1117 269 pd mmp-export-button;
-#N canvas 126 486 419 480 mmpButton_properties(\$0) 0;
+#N canvas 531 573 419 480 mmpButton_properties(\$0) 0;
 #X obj 6 4 cnv 15 400 450 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X floatatom 146 14 5 0 0 0 width #0-w-rcv #0-w-snd;
 #X floatatom 126 183 8 0 0 0 back_color #0-bc-rcv #0-bc-snd;
 #X floatatom 127 208 8 0 0 0 front_color #0-fc-rcv #0-fc-snd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -2177
+#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -233017
 -66577 0;
 #X obj 170 75 r \$0-back_color;
 #X msg 170 104 color \$1 \$1;
@@ -564,10 +607,10 @@
 #X obj 13 10 hsl 128 12 0 255 0 0 \$0-r \$0-r-i empty -2 -8 0 10 -228856
 -258113 -1 0 0;
 #X obj 13 22 hsl 128 12 0 255 0 0 \$0-g \$0-g-i empty -2 -8 0 10 -228856
--4034 -1 6900 0;
+-4034 -1 0 0;
 #X obj 13 34 hsl 128 12 0 255 0 0 \$0-b \$0-b-i empty -2 -8 0 10 -228856
--4160 -1 9400 0;
-#X obj 24 50 cnv 34 34 34 empty \$0-color-cnv empty 20 12 0 14 -2224
+-4160 -1 0 0;
+#X obj 24 50 cnv 34 34 34 empty \$0-color-cnv empty 20 12 0 14 -64
 -262144 0;
 #X msg 21 309 color \$1;
 #X obj 85 179 t b f;
@@ -575,9 +618,9 @@
 #X obj 144 10 nbx 3 12 0 255 0 0 \$0-r-i \$0-r1-i empty 0 -8 0 8 -261234
 -1 -1 0 256;
 #X obj 144 22 nbx 3 12 0 255 0 0 \$0-g-i \$0-g1-i empty 0 -8 0 8 -204786
--1 -1 138 256;
+-1 -1 0 256;
 #X obj 144 34 nbx 3 12 0 255 0 0 \$0-b-i \$0-b1-i empty 0 -8 0 8 -203904
--1 -1 188 256;
+-1 -1 0 256;
 #X msg 21 139 set \$1;
 #X obj 21 159 s \$0-r1-i;
 #X msg 95 139 set \$1;
@@ -585,9 +628,9 @@
 #X msg 177 139 set \$1;
 #X obj 177 159 s \$0-b1-i;
 #X obj 85 49 vradio 12 1 0 3 \$0-lab \$0-lab-i empty 0 -8 0 10 -228856
--1 -1 1;
-#X obj 72 50 cnv 10 10 10 empty \$0-cnv-back empty 20 12 0 14 -2177
--262144 0;
+-1 -1 0;
+#X obj 72 50 cnv 10 10 10 empty \$0-cnv-back empty 20 12 0 14 -64 -262144
+0;
 #X obj 72 62 cnv 10 10 10 empty \$0-cnv-front empty 20 12 0 14 -2224
 -262144 0;
 #X obj 72 74 cnv 10 10 10 empty \$0-cnv-label empty 20 12 0 14 -38657
@@ -759,7 +802,7 @@ a rgb;
 #X connect 30 0 16 0;
 #X connect 31 0 30 0;
 #X coords 0 -1 1 1 164 78 1 10 10;
-#X restore 41 242 pd pick;
+#X restore 236 183 pd pick;
 #X symbolatom 91 148 30 0 0 0 send_to #0-name-rcv #0-name;
 #X text 22 117 Messages;
 #N canvas 0 50 450 300 todo 0;
@@ -779,7 +822,16 @@ a rgb;
 #X coords 0 -1 1 1 20 20 2 100 100;
 #X restore 200 92 pd;
 #X floatatom 130 120 5 0 0 0 text_size - -;
-#X restore 32 356 pd todo;
+#X restore 314 380 pd todo;
+#X floatatom 275 335 5 0 0 0 z-offset #0-z_offset-rcv #0-z_offset;
+#X text 21 281 MobMuPlat Widget Export;
+#X obj 153 333 tgl 20 0 \$0-z_offset \$0-z_offset-rcv MoveOnTop -100
+8 0 16 -262144 -1 -1 0 99;
+#X obj 153 313 tgl 20 0 \$0-invisible \$0-invisible-rcv Transparency
+-130 8 0 16 -262144 -1 -1 0 1;
+#X obj 179 313 hsl 60 20 1 0 0 0 \$0-invisible \$0-invisible-rcv empty
+-2 -8 0 10 -262144 -1 -1 5900 1;
+#X text 246 309 Opacity;
 #X restore 1115 196 pd mmpButton_properties(\$0);
 #X obj 1113 163 s pd-mmpButton_properties(\$0);
 #X obj 218 840 list append color 0 0 0;
@@ -886,4 +938,4 @@ a rgb;
 #X connect 84 0 85 0;
 #X connect 85 0 86 0;
 #X connect 87 0 84 1;
-#X coords 0 -1 1 1 86 51 2 100 100;
+#X coords 0 -1 1 1 60 60 2 100 100;

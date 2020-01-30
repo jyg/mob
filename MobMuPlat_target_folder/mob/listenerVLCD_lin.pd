@@ -25,7 +25,7 @@
 #X obj 424 646 list trim;
 #X obj 424 671 s \$2;
 #X text 13 473 routed fromGUI;
-#X obj 88 110 r \$1;
+#X obj 84 84 r \$1;
 #X obj 31 597 r \$3.\$1;
 #X obj 31 623 route 1 2;
 #X msg 192 310 clear;
@@ -61,10 +61,47 @@ up \; second and third elements are x and y touch position \, normalized
 #X obj 152 762 * 0.01;
 #X obj 23 809 - 1;
 #X obj 23 834 * -1;
+#N canvas 0 57 1920 1023 savestate 0;
+#X obj 237 276 savestate;
+#X obj 461 122 list append;
+#X obj 542 84 r \$1;
+#X obj 427 85 t b b;
+#X obj 307 363 list trim;
+#X obj 307 388 route MOB_TARGET;
+#X obj 292 555 s \$1;
+#X obj 272 488 loadbang;
+#X obj 469 466 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 416 427 route float;
+#X obj 432 223 list append MOB_TARGET \$1;
+#X obj 292 530 list append \$7;
+#X connect 0 0 4 0;
+#X connect 0 1 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 1;
+#X connect 3 0 10 0;
+#X connect 3 1 1 0;
+#X connect 4 0 5 0;
+#X connect 5 1 9 0;
+#X connect 7 0 11 0;
+#X connect 9 0 11 1;
+#X connect 9 1 8 0;
+#X connect 10 0 0 0;
+#X connect 11 0 6 0;
+#X restore 204 35 pd savestate;
+#X text 314 28 le probleme de savestate est que le listener est généré
+au moment de l'export \, et donc ne connait pas la valeur du parametre.
+donc savestate stocke une liste vide.;
 #X text 273 92 pd 0.48;
+#X text 171 12 pd 0.49;
+#X text 279 148 pd 0.49;
+#X text 318 170 RJ_SCENE_LOAD n'est pas déclenchée. le chargement
+des parametres #saved ou inscrits en dur est déclenché par savestate
+;
 #X text 316 109 RJ_SCENE_LOAD récupère la valeur #saved \, si celle-ci
 est nulle \, on lui substitue l'argument \$6;
 #X obj 399 454 list append \$6;
+#X obj 89 121 change;
 #X connect 0 0 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -73,7 +110,7 @@ est nulle \, on lui substitue l'argument \$6;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
-#X connect 9 0 61 0;
+#X connect 9 0 66 0;
 #X connect 9 1 12 0;
 #X connect 10 0 0 1;
 #X connect 13 0 1 0;
@@ -89,7 +126,7 @@ est nulle \, on lui substitue l'argument \$6;
 #X connect 21 0 22 0;
 #X connect 22 0 23 0;
 #X connect 23 0 24 0;
-#X connect 26 0 14 0;
+#X connect 26 0 67 0;
 #X connect 27 0 28 0;
 #X connect 28 0 33 0;
 #X connect 28 1 38 0;
@@ -123,4 +160,5 @@ est nulle \, on lui substitue l'argument \$6;
 #X connect 56 0 52 0;
 #X connect 57 0 58 0;
 #X connect 58 0 47 0;
-#X connect 61 0 12 0;
+#X connect 66 0 12 0;
+#X connect 67 0 14 0;
