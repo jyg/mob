@@ -130,7 +130,7 @@ and copy the .pd and .mmp files to the target platform!, f 56;
 #X text 17 686 * Quick and dirty export of gop-arrays;
 #X text 616 42 * Preset state saving using reserved senders names 'mob_load'
 & 'mob_save', f 24;
-#X text 43 741 Quick and dirty export of gop-array uses only mode 0
+#X text 40 706 Quick and dirty export of gop-array uses only mode 0
 \, displayMode 0, f 22;
 #X obj 57 578 cnv 15 350 60 my_cnv my_cnv-rcv ceci 20 25 0 50 -233017
 -66577 0;
@@ -176,7 +176,7 @@ and drag, f 40;
 f 27;
 #X text 43 191 Quick and dirty export of gop-array uses only mode 0
 \, displayMode 0, f 43;
-#X restore 45 819 pd About_array_displaying_modes;
+#X restore 42 773 pd About_array_displaying_modes;
 #N canvas 0 50 730 596 some_restrictions_with_native_guis 0;
 #X text 22 29 Native guis can be connected by wires but MUST have defined
 send/receive channels., f 53;
@@ -328,4 +328,14 @@ panel for MobMuPlat Widget export, f 47;
 #X restore 1589 192 pd more;
 #X text 1229 70 * Z-order and touch interaction differ in tcl/tk and
 in MobMuPlat, f 38;
+#X msg 82 829 \; toGUI list array1 refresh;
+#X text 16 802 To refresh displaying of a table :;
+#X text 654 709 -mob/jog : jogwheel controller;
+#X obj 654 739 mob/jog;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -name untitled;
+#A saved -cursor_color -1;
+#A saved -back_color 10;
+#A saved -size 146;
 #X connect 6 0 51 0;
