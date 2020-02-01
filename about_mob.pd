@@ -1,1 +1,3 @@
-#N canvas 0 50 450 300 12;
+#N canvas 203 254 450 300 16;
+#X text 30 36 A project by Jean-Yves Gratius;
+#X text 78 126 https://github.com/jyg/mob;
