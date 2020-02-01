@@ -24,7 +24,7 @@
 #X obj 316 21 iemguts/receivecanvas 1;
 #X obj 105 402 list prepend 0;
 #X obj 105 433 route 0 1;
-#N canvas 0 57 1920 1023 savestate 0;
+#N canvas 0 57 1920 1023 savestate 1;
 #X obj 157 276 savestate;
 #X obj 269 320 s \$0-save;
 #X obj 142 107 v \$0-w;
@@ -41,11 +41,8 @@
 #X obj 19 106 spigot 1;
 #X msg 88 76 0;
 #X obj 305 148 v \$0-back_color;
-#X obj 471 146 v \$0-cursor_color;
 #X msg 305 177 -back_color \$1;
-#X msg 475 177 -cursor_color \$1;
 #X obj 349 481 s \$0-back_color;
-#X obj 532 480 s \$0-cursor_color;
 #X msg 21 303 -size 60 60 \, -back_color 10 \, -front_color 1 \, -cursor_color
 -1, f 10;
 #X obj 742 490 s \$0-name;
@@ -58,16 +55,19 @@
 #X msg 990 136 -z_offset \$1;
 #X msg 1201 150 -invisible \$1;
 #X obj 1202 108 v \$0-invisible;
-#X obj 270 395 route -size -back_color -cursor_color -name -z_offset
--invisible;
 #X obj 887 471 s \$0-z_offset;
 #X obj 1099 472 s \$0-invisible;
+#X obj 471 146 v \$0-front_color;
+#X msg 475 177 -front_color \$1;
+#X obj 270 395 route -size -back_color -front_color -name -z_offset
+-invisible;
+#X obj 532 480 s \$0-front_color;
 #X connect 0 0 3 0;
 #X connect 0 0 14 0;
 #X connect 0 1 1 0;
 #X connect 2 0 7 0;
-#X connect 3 0 32 0;
-#X connect 4 0 27 0;
+#X connect 3 0 33 0;
+#X connect 4 0 24 0;
 #X connect 5 0 7 1;
 #X connect 6 0 9 0;
 #X connect 6 1 10 0;
@@ -75,34 +75,34 @@
 #X connect 8 0 0 0;
 #X connect 11 0 8 0;
 #X connect 12 0 13 0;
-#X connect 13 0 21 0;
+#X connect 13 0 18 0;
 #X connect 14 0 13 1;
-#X connect 15 0 17 0;
-#X connect 16 0 18 0;
-#X connect 17 0 8 0;
-#X connect 18 0 8 0;
-#X connect 21 0 32 0;
-#X connect 23 0 25 0;
-#X connect 24 0 23 1;
-#X connect 25 0 8 0;
-#X connect 26 0 22 0;
-#X connect 27 0 2 0;
-#X connect 27 1 5 0;
-#X connect 27 2 15 0;
-#X connect 27 3 16 0;
-#X connect 27 4 23 0;
-#X connect 27 5 28 0;
-#X connect 27 6 31 0;
-#X connect 28 0 29 0;
-#X connect 29 0 8 0;
-#X connect 30 0 8 0;
-#X connect 31 0 30 0;
-#X connect 32 0 6 0;
-#X connect 32 1 19 0;
-#X connect 32 2 20 0;
-#X connect 32 3 26 0;
-#X connect 32 4 33 0;
-#X connect 32 5 34 0;
+#X connect 15 0 16 0;
+#X connect 16 0 8 0;
+#X connect 18 0 33 0;
+#X connect 20 0 22 0;
+#X connect 21 0 20 1;
+#X connect 22 0 8 0;
+#X connect 23 0 19 0;
+#X connect 24 0 2 0;
+#X connect 24 1 5 0;
+#X connect 24 2 15 0;
+#X connect 24 3 31 0;
+#X connect 24 4 20 0;
+#X connect 24 5 25 0;
+#X connect 24 6 28 0;
+#X connect 25 0 26 0;
+#X connect 26 0 8 0;
+#X connect 27 0 8 0;
+#X connect 28 0 27 0;
+#X connect 31 0 32 0;
+#X connect 32 0 8 0;
+#X connect 33 0 6 0;
+#X connect 33 1 17 0;
+#X connect 33 2 34 0;
+#X connect 33 3 23 0;
+#X connect 33 4 29 0;
+#X connect 33 5 30 0;
 #X restore 1408 282 pd savestate;
 #X obj 1409 234 namecanvas \$0-this;
 #X msg 98 66 size \$1 \$2;
@@ -206,8 +206,8 @@
 #X obj 864 727 outlet;
 #X obj 100 99 cnv 5 5 5 \$0-pos \$0-pos-rcv empty 20 12 0 14 -66577
 -66577 0;
-#X obj 100 102 vsl 60 54 0 127 0 0 empty \$0-click_area-rcv empty 0
-20 0 20 -233017 -233017 -233017 0 1;
+#X obj 100 102 vsl 66 55 0 127 0 0 empty \$0-click_area-rcv empty 0
+20 0 20 -191285 -191285 -191285 0 1;
 #X msg 790 213 -1;
 #X obj 612 311 route remove update pressure;
 #X obj 1129 727 outlet;
@@ -226,11 +226,11 @@
 #X obj 548 476 < 1;
 #X obj 637 476 < 1;
 #X obj 978 724 outlet;
-#X obj 907 620 pack f f;
+#X obj 973 604 pack f f;
 #X obj 493 571 spigot;
 #X obj 510 438 t f f;
-#X obj 956 552 - 1;
-#X obj 957 588 * -1;
+#X obj 1022 536 - 1;
+#X obj 1023 572 * -1;
 #X text 1291 10 format d'entrée MULTITOUCH.COOKED;
 #X text 1407 44 <slot> remove;
 #X text 1410 63 <slot> update <x> <y>;
@@ -383,7 +383,7 @@
 #X msg 612 881 color \$1 \$1 \$1;
 #X obj 855 664 pipe 0;
 #X obj 547 538 &&;
-#N canvas 0 50 1568 1015 mmp-export-button 1;
+#N canvas 0 50 1568 1015 mmp-export-button 0;
 #X obj 121 37 r MMP_EXPORT;
 #X obj 256 32 r \$0-x;
 #X obj 312 32 r \$0-y;
@@ -462,7 +462,7 @@
 #X obj 232 322 * 1;
 #X obj 126 280 t f b f b f b f;
 #X obj 125 245 r MOB_ZOOM;
-#N canvas 278 130 450 300 MMP_EXPORT_BY_INDEX 1;
+#N canvas 278 130 450 300 MMP_EXPORT_BY_INDEX 0;
 #X obj 151 40 r MMP_EXPORT_BY_INDEX;
 #X obj 146 268 outlet;
 #X text 38 6 enable z-order;
@@ -575,14 +575,14 @@
 #X connect 80 0 27 13;
 #X connect 80 0 27 9;
 #X restore 1117 269 pd mmp-export-button;
-#N canvas 531 573 419 480 mmpButton_properties(\$0) 0;
+#N canvas 531 596 419 480 mmpButton_properties(\$0) 0;
 #X obj 6 4 cnv 15 400 450 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X floatatom 146 14 5 0 0 0 width #0-w-rcv #0-w-snd;
 #X floatatom 126 183 8 0 0 0 back_color #0-bc-rcv #0-bc-snd;
 #X floatatom 127 208 8 0 0 0 front_color #0-fc-rcv #0-fc-snd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -233017
+#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -191285
 -66577 0;
 #X obj 170 75 r \$0-back_color;
 #X msg 170 104 color \$1 \$1;
@@ -592,7 +592,7 @@
 #X coords 0 -1 1 1 20 20 2 100 100;
 #X restore 212 185 pd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-fc_cnv-rcv empty 20 12 0 14 -2224
+#X obj 100 100 cnv 20 20 20 empty \$0-fc_cnv-rcv empty 20 12 0 14 -133941
 -66577 0;
 #X msg 170 104 color \$1 \$1;
 #X obj 170 75 r \$0-front_color;
@@ -616,22 +616,22 @@
 #X restore 213 241 pd;
 #N canvas 0 50 550 616 pick 0;
 #X obj 13 10 hsl 128 12 0 255 0 0 \$0-r \$0-r-i empty -2 -8 0 10 -228856
--258113 -1 0 0;
+-258113 -1 6500 0;
 #X obj 13 22 hsl 128 12 0 255 0 0 \$0-g \$0-g-i empty -2 -8 0 10 -228856
--4034 -1 0 0;
+-4034 -1 8900 0;
 #X obj 13 34 hsl 128 12 0 255 0 0 \$0-b \$0-b-i empty -2 -8 0 10 -228856
--4160 -1 0 0;
-#X obj 24 50 cnv 34 34 34 empty \$0-color-cnv empty 20 12 0 14 -64
+-4160 -1 10400 0;
+#X obj 24 50 cnv 34 34 34 empty \$0-color-cnv empty 20 12 0 14 -133941
 -262144 0;
 #X msg 21 309 color \$1;
 #X obj 85 179 t b f;
 #X obj 167 179 t b f;
 #X obj 144 10 nbx 3 12 0 255 0 0 \$0-r-i \$0-r1-i empty 0 -8 0 8 -261234
--1 -1 0 256;
+-1 -1 130 256;
 #X obj 144 22 nbx 3 12 0 255 0 0 \$0-g-i \$0-g1-i empty 0 -8 0 8 -204786
--1 -1 0 256;
+-1 -1 178 256;
 #X obj 144 34 nbx 3 12 0 255 0 0 \$0-b-i \$0-b1-i empty 0 -8 0 8 -203904
--1 -1 0 256;
+-1 -1 208 256;
 #X msg 21 139 set \$1;
 #X obj 21 159 s \$0-r1-i;
 #X msg 95 139 set \$1;
@@ -639,10 +639,10 @@
 #X msg 177 139 set \$1;
 #X obj 177 159 s \$0-b1-i;
 #X obj 85 49 vradio 12 1 0 3 \$0-lab \$0-lab-i empty 0 -8 0 10 -228856
--1 -1 0;
-#X obj 72 50 cnv 10 10 10 empty \$0-cnv-back empty 20 12 0 14 -64 -262144
-0;
-#X obj 72 62 cnv 10 10 10 empty \$0-cnv-front empty 20 12 0 14 -2224
+-1 -1 1;
+#X obj 72 50 cnv 10 10 10 empty \$0-cnv-back empty 20 12 0 14 -191285
+-262144 0;
+#X obj 72 62 cnv 10 10 10 empty \$0-cnv-front empty 20 12 0 14 -133941
 -262144 0;
 #X obj 72 74 cnv 10 10 10 empty \$0-cnv-label empty 20 12 0 14 -38657
 -262144 0;
@@ -841,7 +841,7 @@ a rgb;
 #X obj 153 313 tgl 20 0 \$0-invisible \$0-invisible-rcv Transparency
 -130 8 0 16 -262144 -1 -1 0 1;
 #X obj 179 313 hsl 60 20 1 0 0 0 \$0-invisible \$0-invisible-rcv empty
--2 -8 0 10 -262144 -1 -1 0 1;
+-2 -8 0 10 -262144 -1 -1 5900 1;
 #X text 246 309 Opacity;
 #X restore 1115 196 pd mmpButton_properties(\$0);
 #X obj 1113 163 s pd-mmpButton_properties(\$0);
@@ -851,6 +851,9 @@ a rgb;
 #X obj 483 880 list trim;
 #X obj 482 921 s \$0-click_area-rcv;
 #X msg 700 768 list color \$1 \$1 \$1;
+#X obj 996 658 s;
+#X obj 1160 561 r \$0-name;
+#X obj 1160 590 symbol;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 1;
@@ -863,6 +866,7 @@ a rgb;
 #X connect 7 0 6 0;
 #X connect 7 0 77 0;
 #X connect 7 0 12 1;
+#X connect 7 0 88 0;
 #X connect 8 0 11 0;
 #X connect 8 1 51 0;
 #X connect 9 0 10 0;
@@ -949,4 +953,6 @@ a rgb;
 #X connect 84 0 85 0;
 #X connect 85 0 86 0;
 #X connect 87 0 84 1;
-#X coords 0 -1 1 1 60 60 2 100 100;
+#X connect 89 0 90 0;
+#X connect 90 0 88 1;
+#X coords 0 -1 1 1 66 61 2 100 100;
