@@ -10,7 +10,7 @@ In order to create GUIs, it comes with a java app (MobMuPlat Editor) that genera
 
 Native mode is a special feature of MobMuPlat app that enables the direct rendering of your pd patches with all native guis (vsl, hsl, tgl, etc..), but doesn't let you access to MobMuPlat enhanced gui features (grid, xy slider, xy multitouch, lcd panel, etc..), nor use of multiple pages. 
 
-**With [mob] you can access to all those features**, in a faster way than with the MobMuPlat Java Editor. Furthermore, if you think your widgets are displayed too small or too big on your target mobile device, you can easily adjust the scale factor.
+**With [mob] you can access to some of those features**, in a faster way than with the MobMuPlat Java Editor. Furthermore, if you think your widgets are displayed too small or too big on your target mobile device, you can easily adjust the scale factor.
 
 [mob] maps native pd-guis (hsv, vsl, hradio, vradio, toggle, bang, cnv, array) and text comments into mmp.widgets in the .mmp file.
 It comes with enhanced guis (mob/hfader, mob/button, mob/xy_slider, mob/jog, mob/menu) that are also converted to mmp.widgets.
