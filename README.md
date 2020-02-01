@@ -13,7 +13,7 @@ Native mode is a special feature of MobMuPlat app that enables the direct render
 **With [mob] you can access to all those features**, in a faster way than with the MobMuPlat Java Editor. Furthermore, if you think your widgets are displayed too small or too big on your target mobile device, you can easily adjust the scale factor.
 
 [mob] maps native pd-guis (hsv, vsl, hradio, vradio, toggle, bang, cnv, array) and text comments into mmp.widgets in the .mmp file.
-It comes with enhanced guis (mob/hfader, mob/button, mob/xy_slider, mob/jog, and, coming soon, mob/knob ...) that are also converted to mmp.widgets.
+It comes with enhanced guis (mob/hfader, mob/button, mob/xy_slider, mob/jog, mob/menu) that are also converted to mmp.widgets.
 
 [mob] comes with a RJDJ-based preset saving mechanism.
 
