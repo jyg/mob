@@ -34,6 +34,8 @@ Copy the content of subfolder named 'MobMuPlat_target_folder' into the MobMuPlat
 
 **Usage**
 
+Have first a look at **mob-help.pd**
+
 Edit the patch you want to export to MobMuPlat with pd >= 0.50. Add the [mob] object on it. Check the background color, the layout size, the number of pages, etc.. You can adjust the scale factor with the "zoom" slider.
 
 All the native pd GUIs will be exported. They must interact with the patch only with their rcv and snd channel names (wired connections not tested).
@@ -42,4 +44,4 @@ Save your patch. Click on red button, [mob] creates dynamically the needed wrapp
 
 That's all !
 
-See mob-help.pd and the "examples" folder for more infos.
+See the "examples" folder for more infos.
