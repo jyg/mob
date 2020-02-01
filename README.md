@@ -1,5 +1,5 @@
 # mob
-Generating MobMuPlat interface files (.mmp) directly from *.pd patches
+Custom widgets + helper for generating MobMuPlat interface files (.mmp) directly from *.pd patches
 
 MobMuPlat (see http://danieliglesia.com/mobmuplat/) is an app that lets you run pd patches on iOS / Android mobile devices.
 In order to create GUIs, it comes with a java app (MobMuPlat Editor) that generates .mmp files.
@@ -10,10 +10,10 @@ In order to create GUIs, it comes with a java app (MobMuPlat Editor) that genera
 
 Native mode is a special feature of MobMuPlat app that enables the direct rendering of your pd patches with all native guis (vsl, hsl, tgl, etc..), but doesn't let you access to MobMuPlat enhanced gui features (grid, xy slider, xy multitouch, lcd panel, etc..), nor use of multiple pages. 
 
-**With [mob] you can access to all those features**, in a faster way than with the MobMuPlat Java Editor. Furthermore, if you think your widgets are displayed too small or too big on your target mobile device, you can easily adjust the scale factor.
+**With [mob] you can access to most of those features**, in a faster way than with the MobMuPlat Java Editor. Furthermore, if you think your widgets are displayed too small or too big on your target mobile device, you can easily adjust the scale factor (hard zooming).
 
 [mob] maps native pd-guis (hsv, vsl, hradio, vradio, toggle, bang, cnv, array) and text comments into mmp.widgets in the .mmp file.
-It comes with enhanced guis (mob/hfader, mob/button, mob/xy_slider, mob/jog, and, coming soon, mob/knob ...) that are also converted to mmp.widgets.
+It comes with enhanced guis (mob/hfader, mob/button, mob/xy_slider, mob/jog, mob/menu) that are also converted to mmp.widgets.
 
 [mob] comes with a RJDJ-based preset saving mechanism.
 
@@ -34,7 +34,9 @@ Copy the content of subfolder named 'MobMuPlat_target_folder' into the MobMuPlat
 
 **Usage**
 
-Edit the patch you want to export to MobMuPlat with pd >= 0.50. Add the [mob] object on it. Check the background color, the layout size, the number of pages, etc.. You can adjust the scale factor with the "zoom" slider.
+Have first a look at **mob-help.pd**
+
+Edit the patch you want to export to MobMuPlat with pd >= 0.50. **Add the [mob] object on it**. Check the background color, the layout size, the number of pages, etc.. You can adjust the scale factor with the "zoom" slider.
 
 All the native pd GUIs will be exported. They must interact with the patch only with their rcv and snd channel names (wired connections not tested).
 
@@ -42,4 +44,4 @@ Save your patch. Click on red button, [mob] creates dynamically the needed wrapp
 
 That's all !
 
-See mob-help.pd and the "examples" folder for more infos.
+See the "examples" folder for more infos.
