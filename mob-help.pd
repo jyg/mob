@@ -4,7 +4,7 @@
 #X scalar bckgrnd 0 0 600 960 654 \;;
 #X scalar bckgrnd 600 0 600 960 654 \;;
 #X scalar bckgrnd 1200 0 600 960 654 \;;
-#X obj 291 11 mob;
+#X obj 340 5 mob;
 #A saved -R 166.654;
 #A saved -G 152.598;
 #A saved -B 108.425;
@@ -31,12 +31,11 @@
 #X obj 524 370 vsl 50 200 0 127 0 0 my_vsl my_vsl-rcv empty 0 -9 0
 10 -260097 -257985 -1 0 0;
 #X obj 126 322 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
--232576 -258113 -1 0 0;
+-232576 -258113 -1 5500 0;
 #X obj 452 414 vradio 50 1 1 4 my_vradio my_vradio-rcv empty 0 -8 0
 10 -4034 -159808 -1 0;
 #X obj 123 380 hradio 60 1 1 5 my_hradio my_hradio-rcv empty 0 -8 0
-10 -260097 -257985 -1 3;
-#X text 15 102 [mob] converts guis into mmp-widgets., f 24;
+10 -260097 -257985 -1 2;
 #X text 18 259 * supported native GUIs :;
 #X text 44 333 -hsl;
 #X text 527 335 -vsl;
@@ -49,7 +48,7 @@
 #X text 647 267 -mob/hfader;
 #X text 865 380 -mob/vfader;
 #X text 863 418 -mob/button;
-#X text 16 154 Just draw your interface \, then press the red button
+#X text 6 153 Just draw your interface \, then press the red button
 and copy the .pd and .mmp files to the target platform!, f 56;
 #X text 652 373 -mob/xy_slider (jump on touch), f 16;
 #X obj 900 47 vradio 50 1 0 3 mob_load mob_load-rcv empty 0 -8 0 10
@@ -128,7 +127,7 @@ and copy the .pd and .mmp files to the target platform!, f 56;
 #X coords 0 1 20 -1 200 140 1;
 #X restore 374 733 graph;
 #X text 17 686 * Quick and dirty export of gop-arrays;
-#X text 616 42 * Preset state saving using reserved senders names 'mob_load'
+#X text 654 47 * Preset state saving using reserved senders names 'mob_load'
 & 'mob_save', f 24;
 #X obj 57 578 cnv 15 350 60 my_cnv my_cnv-rcv ceci 20 25 0 50 -233017
 -66577 0;
@@ -177,10 +176,21 @@ f 27;
 #N canvas 0 50 730 596 some_restrictions_with_native_guis 0;
 #X text 22 29 Native guis can be connected by wires but MUST have defined
 send/receive channels., f 53;
-#X text 25 85 The send channel defines the name of the parameter to
+#X text 22 78 The send channel defines the name of the parameter to
 be handled.;
 #X text 23 311 No logarithm mode for sliders on target platform \,
 but you can define any bounds (min and max values for sliders);
+#X text 24 282 But you can use mob/hfader & mob/vfader with steady
+mode property., f 67;
+#X text 25 448 No labels attached to guis. Use comment or cnv objects
+;
+#X text 26 489 No quotation marks (") in comments \, else mmp export
+will fail., f 62;
+#X text 23 374 Legacy guis supports init feature as defined in their
+properties dialog.;
+#X text 23 250 Only "jump on click" mode for native sliders on target
+platform., f 65;
+#N canvas 0 50 703 300 bugtofix 0;
 #N canvas 0 50 647 574 example 0;
 #X obj 27 20 mob/listenerXY_lin my_param my_param-rcv -1 0 128;
 #A saved 0 0;
@@ -198,21 +208,15 @@ but you can define any bounds (min and max values for sliders);
 #X text 440 261 my_param;
 #X connect 3 0 1 0;
 #X connect 4 0 1 0;
-#X restore 255 216 pd example;
-#X text 24 137 There is no need to update the guis in your patch with
+#X restore 250 116 pd example;
+#X text 19 37 There is no need to update the guis in your patch with
 [set \$1( messages sent to the rcv channel. The listeners do that for
 you. To change the value \, say \, of a slider \, just send the value
 to the associed parameter name sender., f 53;
-#X text 24 282 But you can use mob/hfader & mob/vfader with steady
-mode property., f 67;
-#X text 25 448 No labels attached to guis. Use comment or cnv objects
-;
-#X text 26 489 No quotation marks (") in comments \, else mmp export
-will fail., f 62;
-#X text 23 374 Legacy guis supports init feature as defined in their
-properties dialog.;
-#X text 23 250 Only "jump on click" mode for native sliders on target
-platform., f 65;
+#X text 10 35 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+, f 52;
+#X text 63 188 This has to be changed;
+#X restore 542 167 pd bugtofix;
 #X restore 39 923 pd some_restrictions_with_native_guis;
 #N canvas 0 50 450 300 mob-listeners 0;
 #X obj 20 50 mob/listener mybutton mybutton-rcv;
@@ -232,13 +236,13 @@ platform., f 65;
 #A saved MOB_TARGET my_vsl;
 #X obj 20 550 mob/listenerHLCD_lin my_hsl my_hsl-rcv 10 0 1 181.631
 0;
-#A saved 0;
+#A saved 0.183946;
 #A saved MOB_TARGET my_hsl;
 #X obj 20 600 mob/listenerVLCD_lin my_vsl my_vsl-rcv 11 0 127 0 0;
 #A saved 0;
 #A saved MOB_TARGET my_vsl;
 #X obj 20 650 mob/listenerHLCD_lin my_hsl my_hsl-rcv 12 0 1 0 0;
-#A saved 0;
+#A saved 0.183946;
 #A saved MOB_TARGET my_hsl;
 #X obj 20 700 mob/listenerCnv my_cnv my_cnv-rcv;
 #X obj 20 750 mob/listener my_tgl my_tgl-rcv;
@@ -338,6 +342,9 @@ intercept touch interaction., f 53;
 properties panel \, in order to facilitate MobMuPlat export., f 47
 ;
 #X restore 1552 145 pd explanations;
-#X text 616 210 * mob/widgets : (click help for more info on each widget)
+#X text 5 56 [mob] exports this patch and its GUIs to MobMuPlat platform
+by generating a *.mmp interface file with converted gui-widgets.,
+f 32;
+#X text 616 210 * mob widgets : (click help for more info on each widget)
 ;
-#X connect 6 0 49 0;
+#X connect 6 0 48 0;

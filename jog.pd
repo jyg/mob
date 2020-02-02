@@ -324,14 +324,14 @@
 #X obj 266 664 iemlib/iem_receive;
 #X obj 266 693 list trim;
 #X obj 1113 163 s pd-jog_properties(\$0);
-#N canvas 109 381 429 458 jog_properties(\$0) 0;
+#N canvas 109 381 429 458 jog_properties(\$0) 1;
 #X obj 6 4 cnv 15 400 450 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X floatatom 146 14 5 0 0 0 size #0-w-rcv #0-w;
 #X floatatom 126 183 8 0 0 0 back_color #0-bc-rcv #0-bc-snd;
 #X floatatom 127 208 8 0 0 0 front_color #0-fc-rcv #0-fc-snd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -158122
+#X obj 100 100 cnv 20 20 20 empty \$0-bc_cnv-rcv empty 20 12 0 14 -233017
 -66577 0;
 #X obj 170 75 r \$0-back_color;
 #X msg 170 104 color \$1 \$1;
@@ -364,22 +364,22 @@
 #X restore 213 241 pd;
 #N canvas 0 50 550 616 pick 0;
 #X obj 13 10 hsl 128 12 0 255 0 0 \$0-r \$0-r-i empty -2 -8 0 10 -228856
--258113 -1 7700 0;
+-258113 -1 0 0;
 #X obj 13 22 hsl 128 12 0 255 0 0 \$0-g \$0-g-i empty -2 -8 0 10 -228856
--4034 -1 7700 0;
+-4034 -1 0 0;
 #X obj 13 34 hsl 128 12 0 255 0 0 \$0-b \$0-b-i empty -2 -8 0 10 -228856
--4160 -1 8200 0;
+-4160 -1 0 0;
 #X obj 24 50 cnv 34 34 34 empty \$0-color-cnv empty 20 12 0 14 -158122
 -262144 0;
 #X msg 21 309 color \$1;
 #X obj 85 179 t b f;
 #X obj 167 179 t b f;
 #X obj 144 10 nbx 3 12 0 255 0 0 \$0-r-i \$0-r1-i empty 0 -8 0 8 -261234
--1 -1 154 256;
+-1 -1 0 256;
 #X obj 144 22 nbx 3 12 0 255 0 0 \$0-g-i \$0-g1-i empty 0 -8 0 8 -204786
--1 -1 154 256;
+-1 -1 0 256;
 #X obj 144 34 nbx 3 12 0 255 0 0 \$0-b-i \$0-b1-i empty 0 -8 0 8 -203904
--1 -1 164 256;
+-1 -1 0 256;
 #X msg 21 139 set \$1;
 #X obj 21 159 s \$0-r1-i;
 #X msg 95 139 set \$1;
@@ -565,8 +565,6 @@ a rgb;
 #X symbolatom 91 148 30 0 0 0 send_to #0-name-rcv #0-name;
 #X text 22 117 Messages;
 #N canvas 0 50 450 300 todo 0;
-#X obj 169 165 nbx 3 20 10 200 1 0 \$0-spdrt \$0-spdrt-rcv speed_ratio(%)
--140 10 0 16 -262144 -1 -1 10 256;
 #X obj 24 70 cnv 15 200 80 empty empty TODO 20 12 0 14 -262130 -66577
 0;
 #X floatatom 130 90 5 0 0 0 text_color #0-cc-rcv #0-cc-snd;
@@ -593,8 +591,8 @@ a rgb;
 #X text 250 361 Opacity;
 #X restore 1115 196 pd jog_properties(\$0);
 #X msg 77 61 size \$1;
-#X obj 100 100 bng 377 250 50 0 empty \$0-jog-rcv empty 17 7 0 10 -158122
--158122 -158122;
+#X obj 100 100 bng 146 250 50 0 empty \$0-jog-rcv empty 17 7 0 10 -233017
+-233017 -233017;
 #N canvas 0 50 629 675 cursor3 0;
 #X obj 29 20 inlet;
 #X obj 140 146 sin;
@@ -788,11 +786,11 @@ a rgb;
 #X connect 28 0 24 0;
 #X restore 249 986 pd cursor1;
 #X obj 775 797 outlet pressure;
-#X obj 122 247 cnv 10 10 10 empty \$0-cursor1 empty 20 12 0 14 -1 -66577
+#X obj 181 108 cnv 10 10 10 empty \$0-cursor1 empty 20 12 0 14 -1 -66577
 0;
-#X obj 158 255 cnv 10 10 10 empty \$0-cursor2 empty 20 12 0 14 -1 -66577
+#X obj 178 121 cnv 10 10 10 empty \$0-cursor2 empty 20 12 0 14 -1 -66577
 0;
-#X obj 193 263 cnv 10 10 10 empty \$0-cursor3 empty 20 12 0 14 -1 -66577
+#X obj 175 134 cnv 10 10 10 empty \$0-cursor3 empty 20 12 0 14 -1 -66577
 0;
 #X obj 100 100 cnv 1 1 1 \$0-pos \$0-pos-rcv empty 20 12 0 14 -66577
 -66577 0;
@@ -889,7 +887,7 @@ a rgb;
 #X obj 283 78 r \$0-back_color;
 #X obj 428 286 r \$0-front_color;
 #X msg 383 366 color -1.40812e+07 -1.40812e+07 -1.40812e+07;
-#X msg 283 239 color -1.01321e+07 -1.01321e+07 -1.01321e+07;
+#X msg 283 239 color 10 10 10;
 #X msg 256 152 set color \$1 \$1 \$1;
 #X msg 419 314 set color \$1 \$1 \$1;
 #X msg 389 202 color \$1 \$1 \$1;
@@ -908,7 +906,7 @@ a rgb;
 #X connect 8 0 9 0;
 #X restore 649 594 pd colors;
 #X obj 404 696 inlet;
-#N canvas 0 57 1920 1023 mmp-export-jog_as_jogLCD 1;
+#N canvas 0 57 1920 1023 mmp-export-jog_as_jogLCD 0;
 #X obj 109 -2 r MMP_EXPORT;
 #X obj 232 10 r \$0-x;
 #X obj 312 32 r \$0-y;
@@ -1218,4 +1216,4 @@ a rgb;
 #X connect 85 0 48 0;
 #X connect 86 0 48 0;
 #X connect 87 0 51 0;
-#X coords 0 -1 1 1 377 377 2 100 100;
+#X coords 0 -1 1 1 146 146 2 100 100;

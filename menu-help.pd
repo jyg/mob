@@ -12,11 +12,11 @@
 #X msg 323 110 set this is the list of menu items;
 #X obj 2 1 cnv 15 700 40 empty empty empty 20 12 0 14 -232576 -66577
 0;
-#X text 338 11 pd 0.49 + iemguts;
 #X text 25 9 mob/menu;
 #X text 26 276 To edit shape \, ctrl+drag on it in edit mode;
 #X text 26 302 To edit properties \, right-click + properties popup
 menu;
+#X text 338 11 pd 0.49 + iemguts + iemlib;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
 #X connect 4 0 1 0;

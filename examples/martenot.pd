@@ -2,18 +2,18 @@
 ;
 #N canvas 597 201 1321 704 36;
 #X scalar bckgrnd 0 0 960 600 653 \;;
-#X obj 29 28 hsl 800 550 50 120 0 0 note note-rcv empty -2 -8 0 10
--204800 -1 -1 0 0;
-#X obj 136 220 mtof;
-#X obj 135 164 r note;
-#X obj 134 265 t f b;
-#X obj 63 370 osc~;
-#X obj 61 325 lop~ 10;
-#X obj 77 444 *~;
-#X obj 80 508 dac~;
-#X obj 229 383 line~;
-#X obj 248 446 lop~ 10;
-#X obj 960 239 mob;
+#X obj 61 21 hsl 840 550 50 120 0 0 note note-rcv empty -2 -8 0 10
+-204800 -1 -1 3800 0;
+#X obj 1060 254 mtof;
+#X obj 1059 198 r note;
+#X obj 1058 299 t f b;
+#X obj 987 404 osc~;
+#X obj 985 359 lop~ 10;
+#X obj 1001 478 *~;
+#X obj 1004 542 dac~;
+#X obj 1153 417 line~;
+#X obj 1172 480 lop~ 10;
+#X obj 981 25 mob;
 #A saved -R 164.646;
 #A saved -G 140.551;
 #A saved -B 88.3465;
@@ -22,27 +22,19 @@
 #A saved -landscape 1;
 #A saved -zoom 1;
 #X text 299 155 TRIBUTE TO MARTENOT;
-#X msg 240 324 0.5 \, 0 300;
 #N canvas 0 50 450 300 mob-listeners 0;
-#X obj 20 30 mob/listener_lin note note-rcv 1 50 120;
-#X obj 20 60 mob/listenerVradio mob_load mob_load-rcv 2 4;
-#X obj 20 90 mob/listenerVradio mob_save mob_save-rcv 3 4;
+#X obj 20 50 mob/listener_lin note note-rcv 1 50 120;
 #X obj 20 0 mob/loader martenot;
 #X restore 100 10 pd mob-listeners;
-#X obj 866 58 vradio 50 1 0 4 mob_load mob_load-rcv empty 0 -8 0 10
--4034 -159808 -1 1;
-#X obj 866 360 vradio 50 1 0 4 mob_save mob_save-rcv empty 0 -8 0 10
--258113 -159808 -1 1;
-#X text 844 301 save;
-#X text 834 5 load;
+#X msg 1164 358 0.5 \, 0 100;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
 #X connect 4 0 6 0;
-#X connect 4 1 13 0;
+#X connect 4 1 14 0;
 #X connect 5 0 7 0;
 #X connect 6 0 5 0;
 #X connect 7 0 8 0;
 #X connect 7 0 8 1;
 #X connect 9 0 10 0;
 #X connect 10 0 7 1;
-#X connect 13 0 9 0;
+#X connect 14 0 9 0;
