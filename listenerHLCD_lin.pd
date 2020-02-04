@@ -96,6 +96,8 @@ des parametres #saved ou inscrits en dur est déclenché par savestate
 est nulle \, on lui substitue l'argument \$6;
 #X obj 512 405 list append \$6;
 #X obj 86 104 change;
+#X obj 126 41 r \$2;
+#X obj 126 66 route set;
 #X connect 0 0 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -151,3 +153,5 @@ est nulle \, on lui substitue l'argument \$6;
 #X connect 52 0 50 0;
 #X connect 60 0 12 0;
 #X connect 61 0 14 0;
+#X connect 62 0 63 0;
+#X connect 63 0 61 0;

@@ -10,12 +10,12 @@
 #X obj 188 145 bng 15 250 50 0 \$0-cancel empty cancel 17 7 0 10 -258699
 -1 -1;
 #X obj 61 76 hsl 128 15 0 255 0 1 \$0-R \$0-R empty -2 -8 0 10 -258699
--1 -1 3200 1;
+-1 -1 8300 1;
 #X obj 61 93 hsl 128 15 0 255 0 1 \$0-G \$0-G empty -2 -8 0 10 -24198
--1 -1 5400 1;
+-1 -1 7600 1;
 #X obj 61 110 hsl 128 15 0 255 0 1 \$0-B \$0-B empty -2 -8 0 10 -62784
--1 -1 6300 1;
-#X obj 206 76 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -67296
+-1 -1 5400 1;
+#X obj 206 76 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -170396
 -262144 0;
 #X obj 120 145 bng 15 250 50 0 \$0-apply empty apply 17 7 0 10 -241291
 -1 -1;
@@ -195,7 +195,7 @@
 #X restore 448 44 pd propertyguts;
 #X obj 350 100 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 349 100 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -67296
+#X obj 349 100 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -170396
 -262144 0;
 #X text 286 118 BackGroundColor;
 #X floatatom 363 150 5 0 99 0 firstPage #0-firstPage-rcv #0-firstPage
@@ -1749,9 +1749,6 @@ width 0 0 0;
 #X obj 200 515 r \$0-zoom;
 #X obj 168 547 * 1;
 #X obj 197 575 * 1;
-#X obj 134 478 unpack f f f 0 s s s 0 0 0 0 f f f 0 0, f 49;
-#X obj 258 604 list prepend mob/listener;
-#X obj 263 544 pack s s;
 #X msg 263 567 \$1 \$2;
 #N canvas 0 57 1920 1023 export_as_MMPToggle 0;
 #X obj 162 428 list fromsymbol;
@@ -1824,21 +1821,25 @@ width 0 0 0;
 #X connect 27 1 5 0;
 #X connect 29 0 0 0;
 #X restore 132 814 pd export_as_MMPToggle;
-#X connect 0 0 31 0;
+#X obj 258 604 list prepend mob/listenerTgl;
+#X obj 134 478 unpack f f f 0 s s s 0 0 0 0 f f f 0 0, f 49;
+#X obj 263 544 pack s s;
+#X text 553 471 extra \$17 = "on value" is not supported;
+#X connect 0 0 34 0;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
 #X connect 4 0 16 0;
 #X connect 4 1 17 0;
 #X connect 5 0 12 0;
 #X connect 5 1 13 0;
-#X connect 6 0 35 6;
+#X connect 6 0 32 6;
 #X connect 7 0 8 0;
 #X connect 8 0 10 0;
 #X connect 9 0 18 0;
 #X connect 9 1 19 0;
 #X connect 10 0 14 0;
 #X connect 10 1 15 0;
-#X connect 11 0 35 7;
+#X connect 11 0 32 7;
 #X connect 12 0 4 0;
 #X connect 13 0 22 0;
 #X connect 14 0 9 0;
@@ -1855,20 +1856,20 @@ width 0 0 0;
 #X connect 25 0 11 2;
 #X connect 28 0 29 1;
 #X connect 28 0 30 1;
-#X connect 29 0 35 2;
-#X connect 30 0 35 3;
-#X connect 31 0 35 0;
-#X connect 31 1 35 1;
-#X connect 31 2 29 0;
-#X connect 31 2 30 0;
-#X connect 31 4 35 5;
-#X connect 31 4 33 0;
-#X connect 31 5 33 1;
-#X connect 31 11 2 0;
-#X connect 31 12 7 0;
-#X connect 32 0 27 0;
-#X connect 33 0 34 0;
+#X connect 29 0 32 2;
+#X connect 30 0 32 3;
+#X connect 31 0 33 0;
+#X connect 33 0 27 0;
 #X connect 34 0 32 0;
+#X connect 34 1 32 1;
+#X connect 34 2 29 0;
+#X connect 34 2 30 0;
+#X connect 34 4 32 5;
+#X connect 34 4 35 0;
+#X connect 34 5 35 1;
+#X connect 34 11 2 0;
+#X connect 34 12 7 0;
+#X connect 35 0 31 0;
 #X restore 1257 482 pd tgl;
 #X obj 17 218 delay 300;
 #X obj 56 346 delay 100;
@@ -2177,7 +2178,7 @@ width 0 0 0;
 #X connect 9 0 10 1;
 #X connect 10 0 1 0;
 #X restore 73 91 pd zoom;
-#X msg 61 278 symbol "address":"\$12"\\\,"selectionColor":[1\\\,1\\\,1\\\,0.5]\\\,"highlightColor":[0\\\,0\\\,0\\\,1]\\\,"frame":[\$1\\\,\$2\\\,\$7\\\,\$8]\\\,"mode":1\\\,"color":[1\\\,1\\\,1\\\,0.1]\\\,"class":"MMPTable"\\\,"displayRangeLo":\$6\\\,"displayRangeHi":\$4\\\,"displayMode":0
+#X msg 61 278 symbol "address":"\$10"\\\,"selectionColor":[1\\\,1\\\,1\\\,0.5]\\\,"highlightColor":[0\\\,0\\\,0\\\,1]\\\,"frame":[\$1\\\,\$2\\\,\$7\\\,\$8]\\\,"mode":1\\\,"color":[1\\\,1\\\,1\\\,0.1]\\\,"class":"MMPTable"\\\,"displayRangeLo":\$6\\\,"displayRangeHi":\$4\\\,"displayMode":0
 ;
 #X connect 0 0 23 0;
 #X connect 11 0 13 0;
@@ -3980,7 +3981,7 @@ système de remote control de automatonism3;
 #X text 796 697 refresh;
 #X text 115 208 600:960;
 #X obj 181 102 vsl 15 45 1 4 1 0 \$0-zoom \$0-zoom-rcv empty 0 -9 0
-10 -262130 -1 -1 700 1;
+10 -262130 -1 -1 0 1;
 #X text 182 99 z;
 #X text 182 109 o;
 #X text 182 119 o;

@@ -33,6 +33,9 @@
 #X msg 345 799 clear \, set 0 0 1;
 #X obj 81 836 list prepend \$3.\$1;
 #X msg 89 376 \$2;
+#X obj 168 587 r \$2;
+#X obj 168 612 route set;
+#X obj 116 641 change;
 #X connect 0 0 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -56,10 +59,13 @@
 #X connect 23 1 24 0;
 #X connect 24 0 20 1;
 #X connect 26 0 32 0;
-#X connect 28 0 30 0;
+#X connect 28 0 36 0;
 #X connect 29 0 32 0;
 #X connect 30 0 26 0;
 #X connect 30 1 29 0;
 #X connect 31 0 32 0;
 #X connect 32 0 11 0;
 #X connect 33 0 27 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 30 0;

@@ -437,10 +437,10 @@
 #X obj 906 393 r \$0-w;
 #X obj 996 413 r \$0-h;
 #X msg 805 689 vis_size \$2 \$1;
-#X obj 104 100 hsl 130 18 0 127 0 0 empty \$0-slider empty -2 -8 0
-10 -233017 -233017 -233017 900 1;
+#X obj 104 100 hsl 121 15 0 127 0 0 empty \$0-slider empty -2 -8 0
+10 -233017 -233017 -233017 0 1;
 #X obj 54 12 - 6;
-#X obj 101 101 cnv 1 54 16 empty \$0-cnv empty 2 6 0 10 -128992 -66577
+#X obj 101 101 cnv 1 1 1 empty \$0-cnv empty 2 6 0 10 -128992 -66577
 0;
 #X msg 587 648 vis_size 1 1;
 #X obj 748 344 / 127;
@@ -796,7 +796,7 @@ a rgb;
 #X obj 149 355 tgl 20 0 \$0-z_offset \$0-z_offset-rcv MoveOnTop -100
 8 0 16 -262144 -1 -1 0 99;
 #X obj 175 336 hsl 60 20 1 0 0 0 \$0-invisible \$0-invisible-rcv empty
--2 -8 0 10 -262144 -1 -1 0 1;
+-2 -8 0 10 -262144 -1 -1 5900 1;
 #X text 242 332 Opacity;
 #X restore 1116 303 pd mmp.hfader_properties(\$0);
 #X obj 473 169 t f f f;
@@ -979,7 +979,7 @@ a rgb;
 #X connect 87 3 63 0;
 #X connect 87 4 68 0;
 #X restore 1189 419 pd mmp-export-hfader_as_slider;
-#N canvas 126 107 1920 1023 mmp-export-hfader_as_LCD 0;
+#N canvas -368 84 1920 1023 mmp-export-hfader_as_LCD 0;
 #X obj 75 21 r MMP_EXPORT;
 #X obj 232 10 r \$0-x;
 #X obj 312 32 r \$0-y;
@@ -1111,6 +1111,7 @@ a rgb;
 #X obj 1718 642 iem_receive;
 #X msg 1739 595 set \$1;
 #X obj 1279 552 pack s s f f f f f;
+#X obj 1718 684 route float;
 #X connect 1 0 3 1;
 #X connect 1 0 24 0;
 #X connect 2 0 25 0;
@@ -1216,9 +1217,10 @@ a rgb;
 #X connect 99 1 100 1;
 #X connect 100 0 104 5;
 #X connect 101 0 103 0;
-#X connect 102 0 104 6;
+#X connect 102 0 105 0;
 #X connect 103 0 102 0;
 #X connect 104 0 83 0;
+#X connect 105 0 104 6;
 #X restore 1201 463 pd mmp-export-hfader_as_LCD;
 #X text 1513 422 disabled;
 #X obj 365 793 outlet;
@@ -1300,4 +1302,4 @@ a rgb;
 #X connect 69 1 70 0;
 #X connect 69 2 60 0;
 #X connect 70 0 52 0;
-#X coords 0 -1 1 1 136 18 2 100 100;
+#X coords 0 -1 1 1 127 15 2 100 100;

@@ -1,6 +1,6 @@
 #N struct bckgrnd float x float y float width float height float color
 ;
-#N canvas 246 58 1338 1003 16;
+#N canvas 393 108 1338 1003 16;
 #X scalar bckgrnd 0 0 600 960 654 \;;
 #X scalar bckgrnd 600 0 600 960 654 \;;
 #X scalar bckgrnd 1200 0 600 960 654 \;;
@@ -29,9 +29,9 @@
 #A saved -back_color -1.3559e+07;
 #A saved -size 191 110;
 #X obj 524 370 vsl 50 200 0 127 0 0 my_vsl my_vsl-rcv empty 0 -9 0
-10 -260097 -257985 -1 0 0;
+10 -260097 -257985 -1 6600 0;
 #X obj 126 322 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
--232576 -258113 -1 5500 0;
+-232576 -258113 -1 0 0;
 #X obj 452 414 vradio 50 1 1 4 my_vradio my_vradio-rcv empty 0 -8 0
 10 -4034 -159808 -1 0;
 #X obj 123 380 hradio 60 1 1 5 my_hradio my_hradio-rcv empty 0 -8 0
@@ -155,7 +155,7 @@ and drag, f 40;
 #X restore 815 254 pd How_to_edit_mob/faders_properties;
 #X text 303 447 -tgl;
 #X obj 306 473 tgl 70 1 my_tgl my_tgl-rcv empty 17 7 0 10 -261234 -258113
--1 1 1;
+-1 144 144;
 #X text 90 892 number \, symbol \, vu;
 #X text 59 200 Note : [mob] object will not appear on the target platform
 \, you can move it anywhere on the patch., f 53;
@@ -178,47 +178,58 @@ f 27;
 send/receive channels., f 53;
 #X text 22 78 The send channel defines the name of the parameter to
 be handled.;
-#X text 23 311 No logarithm mode for sliders on target platform \,
+#X text 22 271 No logarithm mode for sliders on target platform \,
 but you can define any bounds (min and max values for sliders);
-#X text 24 282 But you can use mob/hfader & mob/vfader with steady
-mode property., f 67;
-#X text 25 448 No labels attached to guis. Use comment or cnv objects
+#X text 30 417 No labels attached to guis. Use comment or cnv objects
 ;
-#X text 26 489 No quotation marks (") in comments \, else mmp export
+#X text 24 456 No quotation marks (") in comments \, else mmp export
 will fail., f 62;
-#X text 23 374 Legacy guis supports init feature as defined in their
+#X text 23 323 Legacy guis supports init feature as defined in their
 properties dialog.;
-#X text 23 250 Only "jump on click" mode for native sliders on target
+#X text 23 176 Only "jump on click" mode for native sliders on target
 platform., f 65;
-#N canvas 0 50 703 300 bugtofix 0;
-#N canvas 0 50 647 574 example 0;
-#X obj 27 20 mob/listenerXY_lin my_param my_param-rcv -1 0 128;
-#A saved 0 0;
-#A saved MOB_TARGET my_param;
-#X obj 273 232 s my_param;
-#X obj 79 128 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
-0 10 -262144 -1 -1 0 1;
-#X msg 263 160 2;
-#X msg 324 162 56;
-#X text 106 99 my_param-rcv;
-#X text 110 259 my_param;
-#X obj 409 130 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
-0 10 -262144 -1 -1 0 1;
-#X text 436 101 my_param-rcv;
-#X text 440 261 my_param;
-#X connect 3 0 1 0;
-#X connect 4 0 1 0;
-#X restore 250 116 pd example;
-#X text 19 37 There is no need to update the guis in your patch with
-[set \$1( messages sent to the rcv channel. The listeners do that for
-you. To change the value \, say \, of a slider \, just send the value
-to the associed parameter name sender., f 53;
-#X text 10 35 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-, f 52;
-#X text 63 188 This has to be changed;
-#X restore 542 167 pd bugtofix;
+#N canvas 0 50 647 574 handling_'set'_messages 0;
+#X obj 77 515 s my_param;
+#X obj 37 134 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
+0 10 -262144 -1 -1 200 1;
+#X msg 67 443 2;
+#X msg 117 442 56;
+#X text 71 102 my_param-rcv;
+#X text 85 250 my_param;
+#X obj 458 116 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
+0 10 -262144 -1 -1 200 1;
+#X text 466 89 my_param-rcv;
+#X text 504 237 my_param;
+#X obj 224 205 s my_param-rcv;
+#X msg 246 103 set 56;
+#X msg 251 137 set 2;
+#X obj 226 252 r my_param;
+#X floatatom 226 282 5 0 0 0 - - -;
+#N canvas 0 50 717 365 guts 0;
+#X obj 20 97 mob/listener_lin my_param my_param-rcv -1 0 128;
+#X text 59 39 this object is automatically added by mob;
+#X restore 525 508 pd guts;
+#X text 16 19 With 'set' messages \, you can set the value displayed
+by a slider/radio/tgl without outputting this value;
+#X msg 200 444 2;
+#X msg 250 443 56;
+#X obj 210 516 s my_param-rcv;
+#X text 16 324 To change the value of a parameter \, either send to
+this parameter or to the receiver channel of the corresponding gui
+widget.;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 10 0 9 0;
+#X connect 11 0 9 0;
+#X connect 12 0 13 0;
+#X connect 16 0 18 0;
+#X connect 17 0 18 0;
+#X restore 327 372 pd handling_'set'_messages;
+#X text 23 206 If you need steady mode \, use mob/hfader & mob/vfader
+with steady mode property., f 67;
+#X text 23 374 'set' messages are supported;
 #X restore 39 923 pd some_restrictions_with_native_guis;
-#N canvas 0 50 450 300 mob-listeners 0;
+#N canvas -12 346 450 300 mob-listeners 0;
 #X obj 20 50 mob/listener mybutton mybutton-rcv;
 #X obj 20 100 mob/listenerXY_lin xy xy-rcv 1 -1 1 0 0;
 #A saved 0 0;
@@ -231,25 +242,27 @@ to the associed parameter name sender., f 53;
 #X obj 20 400 mob/listenerVradio mob_load mob_load-rcv 7 3;
 #X obj 20 450 mob/listenerVradio mob_save mob_save-rcv 8 3;
 #X obj 20 500 mob/listenerVLCD_lin my_vsl my_vsl-rcv 9 0 127 148.865
-0;
-#A saved 0;
+42.1206;
+#A saved 42.1206;
 #A saved MOB_TARGET my_vsl;
 #X obj 20 550 mob/listenerHLCD_lin my_hsl my_hsl-rcv 10 0 1 181.631
 0;
-#A saved 0.183946;
-#A saved MOB_TARGET my_hsl;
-#X obj 20 600 mob/listenerVLCD_lin my_vsl my_vsl-rcv 11 0 127 0 0;
 #A saved 0;
+#A saved MOB_TARGET my_hsl;
+#X obj 20 600 mob/listenerVLCD_lin my_vsl my_vsl-rcv 11 0 127 0 42.1206
+;
+#A saved 42.1206;
 #A saved MOB_TARGET my_vsl;
 #X obj 20 650 mob/listenerHLCD_lin my_hsl my_hsl-rcv 12 0 1 0 0;
-#A saved 0.183946;
+#A saved 0;
 #A saved MOB_TARGET my_hsl;
 #X obj 20 700 mob/listenerCnv my_cnv my_cnv-rcv;
-#X obj 20 750 mob/listener my_tgl my_tgl-rcv;
+#X obj 20 750 mob/listenerTgl my_tgl my_tgl-rcv;
 #X obj 20 800 mob/listenerCnv menu_result menu_result-rcv;
 #X obj 20 850 mob/listenerMenu my_menu my_menu-rcv;
-#X obj 20 900 mob/listener back back-rcv;
-#X obj 20 950 mob/listener top top-rcv;
+#X obj 20 900 mob/listenerTgl back back-rcv;
+#X obj 20 950 mob/listenerTgl top top-rcv;
+#X obj 20 1000 mob/listenerJog untitled untitled-rcv 13;
 #X obj 20 0 mob/loader mob-help;
 #X restore 100 10 pd mob-listeners;
 #N canvas 0 50 450 300 populating_menu 0;
