@@ -1,3 +1,11 @@
-#N canvas 203 254 450 300 16;
+#N canvas 203 254 809 500 16;
 #X text 30 36 A project by Jean-Yves Gratius;
-#X text 78 126 https://github.com/jyg/mob;
+#X text 74 66 https://github.com/jyg/mob;
+#X text 32 182 1) [mob] object to help exporting pd patches to MobMuPlat
+platform, f 70;
+#X text 35 212 2) enhanced widgets for use in pd patches. They are
+multitouch compatible (check https://github.com/jyg/multitouch), f
+70;
+#X text 12 132 mob repo has two functions :;
+#X text 12 285 See mob-help.pd for a summary of all those features.
+;
