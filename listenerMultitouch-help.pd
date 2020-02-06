@@ -1,0 +1,35 @@
+#N canvas 811 195 880 536 16;
+#X text 78 230 \$1 : parameter name;
+#X text 78 274 \$3 : unique identifier.;
+#X text 78 294 \$4 : min value;
+#X text 79 315 \$5 : max value;
+#X text 22 201 Arguments;
+#N canvas 0 50 450 300 routing_fromGUI_messages 0;
+#X obj 90 0 r fromGUI;
+#X obj 137 107 list split 1;
+#X obj 123 170 list append;
+#X obj 125 137 t b s;
+#X obj 162 244 s;
+#X obj 123 199 list trim;
+#X text 112 73 @ mobmuplat;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 2 1;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 3 1 4 1;
+#X connect 5 0 4 0;
+#X restore 278 163 pd routing_fromGUI_messages;
+#X text 80 253 \$2 : gui-receiver name (for updating tcl-tk guis);
+#X text 22 66 horizontal;
+#X text 587 168 <- put this subpatch once in your pd patch \, if you
+don't use mob/loader., f 26;
+#X text 624 70 <- put one of these objects in your pd patch \, for
+each xy_slider you want to create., f 26;
+#X text 49 471 In MobMuPlatEditor \, create a MMPXYSlider widget \,
+and with the addres = "\$3.\$1" (in the example \, it would be "<sid>.parameter")
+;
+#X text 10 23 Wrapper for mob/xy_multi in mmp interface, f 67;
+#X obj 14 103 listenerMultitouch parameter receiver <sid> 0 127;
+#A saved 0 0;
+#A saved MOB_TARGET parameter;

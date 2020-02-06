@@ -12,14 +12,14 @@
 #A saved -mode 2;
 #A saved -landscape 0;
 #A saved -zoom 1;
-#X obj 869 449 mob/button;
+#X obj 764 369 mob/button;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -name mybutton;
 #A saved -front_color 0;
 #A saved -back_color -9.20064e+06;
 #A saved -size 60 60;
-#X obj 645 422 mob/xy_slider;
+#X obj 784 436 mob/xy_slider;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -max 1;
@@ -29,7 +29,7 @@
 #A saved -back_color -1.3559e+07;
 #A saved -size 191 110;
 #X obj 524 370 vsl 50 200 0 127 0 0 my_vsl my_vsl-rcv empty 0 -9 0
-10 -260097 -257985 -1 6600 0;
+10 -260097 -257985 -1 3790 0;
 #X obj 126 322 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
 -232576 -258113 -1 0 0;
 #X obj 452 414 vradio 50 1 1 4 my_vradio my_vradio-rcv empty 0 -8 0
@@ -45,12 +45,12 @@
 #X obj 52 467 bng 70 250 50 0 my_bng my_bng empty 17 7 0 10 -262144
 -1 -1;
 #X text 135 470 (bng is converted as a button), f 12;
-#X text 647 267 -mob/hfader;
+#X text 621 265 -mob/hfader;
 #X text 865 380 -mob/vfader;
-#X text 863 418 -mob/button;
+#X text 622 377 -mob/button;
 #X text 6 153 Just draw your interface \, then press the red button
 and copy the .pd and .mmp files to the target platform!, f 56;
-#X text 652 373 -mob/xy_slider (jump on touch), f 16;
+#X text 626 459 -mob/xy_slider (jump on touch), f 16;
 #X obj 900 47 vradio 50 1 0 3 mob_load mob_load-rcv empty 0 -8 0 10
 -4034 -159808 -1 0;
 #X text 892 18 mob_load;
@@ -59,7 +59,7 @@ and copy the .pd and .mmp files to the target platform!, f 56;
 #X text 1005 17 mob_save;
 #X text 177 326 (only 'jump on click' mode for sliders), f 23;
 #X text 42 285 -comments are displayed on the target platform.;
-#X obj 989 374 mob/vfader;
+#X obj 1003 374 mob/vfader;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -mode 1;
@@ -83,7 +83,7 @@ and copy the .pd and .mmp files to the target platform!, f 56;
 #A saved -cursor_color 0;
 #A saved -back_color -1.25007e+07;
 #A saved -size 176 63;
-#X obj 1092 372 mob/vfader;
+#X obj 1106 372 mob/vfader;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -mode 0;
@@ -131,8 +131,8 @@ and copy the .pd and .mmp files to the target platform!, f 56;
 & 'mob_save', f 24;
 #X obj 57 578 cnv 15 350 60 my_cnv my_cnv-rcv ceci 20 25 0 50 -233017
 -66577 0;
-#X text 1103 428 (jump mode), f 5;
-#X text 990 427 (steady mode), f 7;
+#X text 1117 428 (jump mode), f 5;
+#X text 1004 427 (steady mode), f 7;
 #X text 685 299 (steady mode);
 #X text 887 296 (jump mode);
 #N canvas 567 330 589 177 about 0;
@@ -161,7 +161,7 @@ and drag, f 40;
 \, you can move it anywhere on the patch., f 53;
 #X floatatom 541 614 5 0 0 0 - - -;
 #X text 48 550 -cnv + text;
-#X text 656 550 -mob/menu (modal menu);
+#X text 620 549 -mob/menu (modal menu);
 #X text 24 868 * currently not supported guis :;
 #N canvas 0 50 537 340 About_array_displaying_modes 0;
 #X text 39 18 MMP offers different modes for displaying arrays, f
@@ -191,13 +191,13 @@ platform., f 65;
 #N canvas 0 50 647 574 handling_'set'_messages 0;
 #X obj 77 515 s my_param;
 #X obj 37 134 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
-0 10 -262144 -1 -1 200 1;
+0 10 -262144 -1 -1 0 1;
 #X msg 67 443 2;
 #X msg 117 442 56;
 #X text 71 102 my_param-rcv;
 #X text 85 250 my_param;
 #X obj 458 116 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
-0 10 -262144 -1 -1 200 1;
+0 10 -262144 -1 -1 0 1;
 #X text 466 89 my_param-rcv;
 #X text 504 237 my_param;
 #X obj 224 205 s my_param-rcv;
@@ -242,16 +242,16 @@ with steady mode property., f 67;
 #X obj 20 400 mob/listenerVradio mob_load mob_load-rcv 7 3;
 #X obj 20 450 mob/listenerVradio mob_save mob_save-rcv 8 3;
 #X obj 20 500 mob/listenerVLCD_lin my_vsl my_vsl-rcv 9 0 127 148.865
-42.1206;
-#A saved 42.1206;
+24.1851;
+#A saved 24.1851;
 #A saved MOB_TARGET my_vsl;
 #X obj 20 550 mob/listenerHLCD_lin my_hsl my_hsl-rcv 10 0 1 181.631
 0;
 #A saved 0;
 #A saved MOB_TARGET my_hsl;
-#X obj 20 600 mob/listenerVLCD_lin my_vsl my_vsl-rcv 11 0 127 0 42.1206
+#X obj 20 600 mob/listenerVLCD_lin my_vsl my_vsl-rcv 11 0 127 0 24.1851
 ;
-#A saved 42.1206;
+#A saved 24.1851;
 #A saved MOB_TARGET my_vsl;
 #X obj 20 650 mob/listenerHLCD_lin my_hsl my_hsl-rcv 12 0 1 0 0;
 #A saved 0;
@@ -263,34 +263,24 @@ with steady mode property., f 67;
 #X obj 20 900 mob/listenerTgl back back-rcv;
 #X obj 20 950 mob/listenerTgl top top-rcv;
 #X obj 20 1000 mob/listenerJog untitled untitled-rcv 13;
+#X obj 20 1050 mob/listenerMultitouch untitled untitled-rcv 14 0 1
+;
 #X obj 20 0 mob/loader mob-help;
 #X restore 100 10 pd mob-listeners;
 #N canvas 0 50 450 300 populating_menu 0;
 #X obj 96 129 s my_menu-rcv;
 #X msg 96 89 set this is my menu list of items;
 #X obj 99 46 loadbang;
+#X obj 263 166 r my_menu;
+#X msg 261 207 label \$1:\$2;
+#X obj 258 239 s menu_result-rcv;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
-#X restore 657 654 pd populating_menu;
-#X obj 969 585 cnv 15 200 60 menu_result menu_result-rcv 2:the 10 20
-0 26 -261234 -66577 0;
-#N canvas 0 50 450 300 getting_menu_result 0;
-#X obj 49 29 r my_menu;
-#X msg 86 89 label \$1:\$2;
-#X obj 86 118 s menu_result-rcv;
-#X obj 49 211 unpack f s;
-#X floatatom 49 240 5 0 0 0 - - -;
-#X symbolatom 145 244 10 0 0 0 - - -;
-#X text 253 63 displaying result in canvas object, f 18;
-#X text 248 137 cnv receiver name;
-#X msg 184 26 label;
-#X connect 0 0 1 0;
-#X connect 0 0 3 0;
-#X connect 1 0 2 0;
 #X connect 3 0 4 0;
-#X connect 3 1 5 0;
-#X connect 8 0 2 0;
-#X restore 938 657 pd getting_menu_result;
+#X connect 4 0 5 0;
+#X restore 657 654 pd populating_menu;
+#X obj 969 585 cnv 15 200 60 menu_result menu_result-rcv 0:this 10
+20 0 26 -261234 -66577 0;
 #X text 984 551 Menu output :;
 #X obj 656 583 mob/menu my_menu;
 #A saved -font_color -1.6777e+07;
@@ -326,11 +316,10 @@ forwarded to MobMuPlat interface., f 31;
 -1 0 1;
 #X obj 1341 211 tgl 200 0 top top-rcv empty 17 7 0 10 -261234 -4034
 -1 0 1;
-#X text 1023 872 advanced -->;
+#X text 1046 926 advanced -->;
 #X msg 82 812 \; toGUI list array1 refresh;
 #X text 16 785 To refresh displaying of a table :;
-#X text 654 709 -mob/jog : jogwheel controller;
-#X obj 654 739 mob/jog;
+#X obj 637 739 mob/jog;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -name untitled;
@@ -360,4 +349,16 @@ by generating a *.mmp interface file with converted gui-widgets.,
 f 32;
 #X text 616 210 * mob widgets : (click help for more info on each widget)
 ;
+#X obj 864 723 mob/xy_multi;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -max 1;
+#A saved -min 0;
+#A saved -name untitled;
+#A saved -cursor_color -1;
+#A saved -back_color -8.6e+06;
+#A saved -size 288 198;
+#X obj 627 919 multitouch.enable;
+#X text 857 698 -mob/xy_multi;
+#X text 620 699 -mob/jog : jogwheel;
 #X connect 6 0 48 0;
