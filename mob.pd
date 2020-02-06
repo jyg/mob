@@ -10,12 +10,12 @@
 #X obj 188 145 bng 15 250 50 0 \$0-cancel empty cancel 17 7 0 10 -258699
 -1 -1;
 #X obj 61 76 hsl 128 15 0 255 0 1 \$0-R \$0-R empty -2 -8 0 10 -258699
--1 -1 8300 1;
+-1 -1 9800 1;
 #X obj 61 93 hsl 128 15 0 255 0 1 \$0-G \$0-G empty -2 -8 0 10 -24198
--1 -1 7600 1;
+-1 -1 9900 1;
 #X obj 61 110 hsl 128 15 0 255 0 1 \$0-B \$0-B empty -2 -8 0 10 -62784
--1 -1 5400 1;
-#X obj 206 76 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -170396
+-1 -1 9800 1;
+#X obj 206 76 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -203890
 -262144 0;
 #X obj 120 145 bng 15 250 50 0 \$0-apply empty apply 17 7 0 10 -241291
 -1 -1;
@@ -195,7 +195,7 @@
 #X restore 448 44 pd propertyguts;
 #X obj 350 100 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 349 100 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -170396
+#X obj 349 100 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -203890
 -262144 0;
 #X text 286 118 BackGroundColor;
 #X floatatom 363 150 5 0 99 0 firstPage #0-firstPage-rcv #0-firstPage
@@ -1453,7 +1453,7 @@ width 0 0 0;
 #X connect 1 0 3 0;
 #X connect 2 0 4 0;
 #X restore 706 195 pd data_structures;
-#N canvas 297 81 1059 764 drawing_border_in_parent_patch 0;
+#N canvas 297 81 1059 764 drawing_border_in_parent_patch 1;
 #X obj 117 59 r \$0-pdFile-rcv;
 #X obj 162 197 pointer bckgrnd;
 #X msg 110 146 traverse pd-\$1 \, next;
@@ -1525,15 +1525,15 @@ width 0 0 0;
 #X obj 791 554 r \$0-zoom;
 #X obj 791 579 t b f;
 #X obj 594 314 s \$0-done;
-#X obj 797 110 + 0;
-#X obj 858 119 + 0;
-#X obj 936 120 + 0;
-#X obj 784 70 * 10;
-#X obj 866 73 * 10;
-#X obj 936 73 * 10;
 #X obj 784 45 / 256;
 #X obj 846 45 / 256;
 #X obj 913 45 / 256;
+#X obj 784 70 * 8;
+#X obj 866 73 * 8;
+#X obj 936 73 * 8;
+#X obj 797 110 + 0.5;
+#X obj 858 119 + 0.5;
+#X obj 936 120 + 0.5;
 #X connect 0 0 13 0;
 #X connect 1 0 54 0;
 #X connect 1 1 48 0;
@@ -1562,9 +1562,9 @@ width 0 0 0;
 #X connect 21 0 60 0;
 #X connect 22 0 66 0;
 #X connect 23 0 63 0;
-#X connect 24 0 76 0;
-#X connect 25 0 77 0;
-#X connect 26 0 78 0;
+#X connect 24 0 70 0;
+#X connect 25 0 71 0;
+#X connect 26 0 72 0;
 #X connect 27 0 29 0;
 #X connect 28 0 27 0;
 #X connect 28 1 27 1;
@@ -1618,15 +1618,15 @@ width 0 0 0;
 #X connect 67 0 68 0;
 #X connect 68 0 66 0;
 #X connect 68 1 66 1;
-#X connect 70 0 36 0;
-#X connect 71 0 37 0;
-#X connect 72 0 38 0;
-#X connect 73 0 70 0;
-#X connect 74 0 71 0;
-#X connect 75 0 72 0;
-#X connect 76 0 73 0;
-#X connect 77 0 74 0;
-#X connect 78 0 75 0;
+#X connect 70 0 73 0;
+#X connect 71 0 74 0;
+#X connect 72 0 75 0;
+#X connect 73 0 76 0;
+#X connect 74 0 77 0;
+#X connect 75 0 78 0;
+#X connect 76 0 36 0;
+#X connect 77 0 37 0;
+#X connect 78 0 38 0;
 #X restore 621 360 pd drawing_border_in_parent_patch;
 #X obj 896 559 r \$0-mode;
 #X obj 947 710 text get \$0-resolutions;

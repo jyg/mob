@@ -1,4 +1,4 @@
-#N canvas 103 412 732 621 16;
+#N canvas 875 193 732 621 16;
 #X obj 33 187 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 27 265 To edit shape \, ctrl+drag on it in edit mode;
@@ -22,7 +22,7 @@ menu;
 #A saved -size 60 60;
 #X text 25 9 mob/jog;
 #X text 9 43 Fast and responsive pressure-sensitive job wheel;
-#X obj 88 120 mob/jog;
+#X obj 63 126 mob/jog;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -name untitled;

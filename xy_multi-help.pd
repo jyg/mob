@@ -71,7 +71,7 @@ menu;
 #A saved -name my_multitouch;
 #A saved -cursor_color -1;
 #A saved -back_color 10;
-#A saved -size 156 146;
+#A saved -size 109 102;
 #X obj 468 412 route 0 1 2 ... 9;
 #X obj 587 469 unpack f f;
 #X floatatom 587 493 5 0 0 0 - - -;
