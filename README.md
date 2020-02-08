@@ -1,6 +1,6 @@
 # mob
 ### Custom widgets + helper for generating MobMuPlat interface files (.mmp) directly from *.pd patches
-<img src="https://raw.githubusercontent.com/jyg/mob/master/data/mob-scratch-demo.png" alt="mob scratch demo" width=1440 height=717>
+<img src="https://raw.githubusercontent.com/jyg/mob/master/data/mob-scratch-demo.png" alt="mob scratch demo" width=700 height=300>
 **MobMuPlat** (see http://danieliglesia.com/mobmuplat/) is an app that lets you run pd patches on iOS / Android mobile devices.
 In order to create GUIs, it comes with a java app (**MobMuPlat Editor**) that you have to use for designing your interface files (*.mmp).
 
