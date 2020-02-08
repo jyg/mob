@@ -24,7 +24,7 @@ It comes with enhanced guis (vfader, hfader, button, xy_slider, jog, menu, xy_nu
 - iemguts + iemlib external libs
 - (optional) for multitouch support : https://github.com/jyg/multitouch + hidio
 
-Note that current version of pd on MobMuPlat is 0.48-0. **Don'use in your patch : [savestate], [pdcontrol], [slop~]; beware of [declare]'s different behaviour, [value] has no second inlet**
+Note that current version of pd on MobMuPlat is 0.48-0. **Don'use in your patch : [savestate], [pdcontrol], [slop~] ; beware of [declare]'s different behaviour ; [value] has no second inlet**
 
 ## Instructions
 
