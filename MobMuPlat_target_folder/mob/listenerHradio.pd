@@ -1,4 +1,4 @@
-#N canvas 961 58 958 1018 12;
+#N canvas 1293 121 958 1018 12;
 #X obj 569 357 list append;
 #X obj 653 467 s RJ_SCENE;
 #X obj 597 221 r RJ_SCENE_SAVE;
@@ -26,7 +26,7 @@
 #X msg 729 295 0;
 #X text 192 764 erase previous;
 #X obj 120 478 s \$1;
-#X obj 117 600 r \$1;
+#X obj 44 509 r \$1;
 #X msg 153 742 clear;
 #X obj 116 682 t f b;
 #X msg 345 799 clear \, set 0 0 1;
@@ -36,6 +36,8 @@
 #X obj 167 582 r \$2;
 #X obj 167 607 route set;
 #X obj 116 641 change;
+#X obj 65 561 t f f;
+#X msg 99 594 set \$1;
 #X connect 0 0 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -58,7 +60,7 @@
 #X connect 23 0 24 0;
 #X connect 23 1 24 0;
 #X connect 24 0 20 1;
-#X connect 27 0 36 0;
+#X connect 27 0 37 0;
 #X connect 28 0 31 0;
 #X connect 29 0 32 0;
 #X connect 29 1 28 0;
@@ -69,3 +71,6 @@
 #X connect 34 0 35 0;
 #X connect 35 0 36 0;
 #X connect 36 0 29 0;
+#X connect 37 0 29 0;
+#X connect 37 1 38 0;
+#X connect 38 0 36 0;

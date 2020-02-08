@@ -1,9 +1,9 @@
 #N struct bckgrnd float x float y float width float height float color
 ;
-#N canvas 597 201 1321 704 36;
-#X scalar bckgrnd 0 0 960 600 653 \;;
+#N canvas 706 95 1321 704 36;
+#X scalar bckgrnd 0 0 960 600 543 \;;
 #X obj 61 21 hsl 840 550 50 120 0 0 note note-rcv empty -2 -8 0 10
--204800 -1 -1 3800 0;
+-204800 -1 -1 31500 0;
 #X obj 1060 254 mtof;
 #X obj 1059 198 r note;
 #X obj 1058 299 t f b;
@@ -26,7 +26,7 @@
 #X obj 20 50 mob/listener_lin note note-rcv 1 50 120;
 #X obj 20 0 mob/loader martenot;
 #X restore 100 10 pd mob-listeners;
-#X msg 1164 358 0.5 \, 0 100;
+#X msg 1164 358 0.2 \, 0 100;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
 #X connect 4 0 6 0;

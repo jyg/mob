@@ -57,9 +57,9 @@ menu;
 #A saved -front_color -8.30178e+06;
 #A saved -back_color -1.22355e+07;
 #A saved -size 68 63;
-#X text 31 446 pressure and x/y values not supported in mobmuplat.
+#X text 159 441 pressure and x/y values not supported in mobmuplat.
 ;
-#X text 33 471 use mob/xy_slider instead;
+#X text 161 466 use mob/xy_slider instead;
 #X obj 566 355 r my_button;
 #X floatatom 565 384 5 0 0 0 - - -;
 #X connect 3 0 4 0;

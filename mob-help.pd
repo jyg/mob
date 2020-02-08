@@ -1,25 +1,17 @@
 #N struct bckgrnd float x float y float width float height float color
 ;
 #N canvas 393 108 1338 1003 16;
-#X scalar bckgrnd 0 0 600 960 566 \;;
-#X scalar bckgrnd 600 0 600 960 566 \;;
-#X scalar bckgrnd 1200 0 600 960 566 \;;
-#X obj 340 5 mob;
-#A saved -R 162.638;
-#A saved -G 184.724;
-#A saved -B 192.756;
-#A saved -pages 3;
-#A saved -mode 2;
-#A saved -landscape 0;
-#A saved -zoom 1;
-#X obj 785 369 mob/button;
+#X scalar bckgrnd 0 0 600 960 653 \;;
+#X scalar bckgrnd 600 0 600 960 653 \;;
+#X scalar bckgrnd 1200 0 600 960 653 \;;
+#X obj 747 182 mob/button;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -name mybutton;
 #A saved -front_color 0;
 #A saved -back_color -9.20064e+06;
 #A saved -size 60 60;
-#X obj 784 436 mob/xy_slider;
+#X obj 965 400 mob/xy_slider;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -max 1;
@@ -27,11 +19,11 @@
 #A saved -name xy;
 #A saved -cursor_color -1;
 #A saved -back_color -1.3559e+07;
-#A saved -size 191 110;
+#A saved -size 199 143;
 #X obj 524 370 vsl 50 200 0 127 0 0 my_vsl my_vsl-rcv empty 0 -9 0
-10 -260097 -257985 -1 788 0;
+10 -260097 -257985 -1 7622 0;
 #X obj 126 322 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
--232576 -258113 -1 13500 0;
+-232576 -258113 -1 14700 0;
 #X obj 452 414 vradio 50 1 1 4 my_vradio my_vradio-rcv empty 0 -8 0
 10 -4034 -159808 -1 0;
 #X obj 123 380 hradio 60 1 1 5 my_hradio my_hradio-rcv empty 0 -8 0
@@ -46,20 +38,20 @@
 -1 -1;
 #X text 135 470 (bng is converted as a button), f 12;
 #X text 621 265 -mob/hfader;
-#X text 865 380 -mob/vfader;
-#X text 622 377 -mob/button;
+#X text 623 363 -mob/vfader;
+#X text 631 179 -mob/button;
 #X text 6 153 Just draw your interface \, then press the red button
 and copy the .pd and .mmp files to the target platform!, f 56;
-#X text 630 458 -mob/xy_slider (jump on touch), f 15;
-#X obj 900 47 vradio 50 1 0 3 mob_load mob_load-rcv empty 0 -8 0 10
+#X text 954 357 -mob/xy_slider (jump on touch), f 15;
+#X obj 900 7 hradio 50 1 0 3 mob_load mob_load-rcv empty 0 -8 0 10
 -4034 -159808 -1 0;
-#X text 892 18 mob_load;
-#X obj 1008 50 vradio 50 1 0 3 mob_save mob_save-rcv empty 0 -8 0 10
--258113 -159808 -1 1;
-#X text 1005 17 mob_save;
+#X text 1066 19 mob_load;
+#X obj 900 64 hradio 50 1 0 3 mob_save mob_save-rcv empty 0 -8 0 10
+-258113 -159808 -1 0;
+#X text 1065 75 mob_save;
 #X text 177 326 (only 'jump on click' mode for sliders), f 23;
 #X text 42 285 -comments are displayed on the target platform.;
-#X obj 1003 374 mob/vfader;
+#X obj 748 377 mob/vfader;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -mode 1;
@@ -71,7 +63,7 @@ and copy the .pd and .mmp files to the target platform!, f 56;
 #A saved -cursor_color 0;
 #A saved -back_color -1.56298e+07;
 #A saved -size 76 159;
-#X obj 653 296 mob/hfader;
+#X obj 758 274 mob/hfader;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -mode 1;
@@ -83,7 +75,7 @@ and copy the .pd and .mmp files to the target platform!, f 56;
 #A saved -cursor_color 0;
 #A saved -back_color -1.25007e+07;
 #A saved -size 176 63;
-#X obj 1106 372 mob/vfader;
+#X obj 851 379 mob/vfader;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -mode 0;
@@ -95,7 +87,7 @@ and copy the .pd and .mmp files to the target platform!, f 56;
 #A saved -cursor_color 0;
 #A saved -back_color -1.56298e+07;
 #A saved -size 76 159;
-#X obj 857 292 mob/hfader;
+#X obj 962 274 mob/hfader;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -mode 0;
@@ -118,41 +110,30 @@ and copy the .pd and .mmp files to the target platform!, f 56;
 #X text 47 270 Confirm dialog box;
 #X text 44 297 Multitouch xyslider;
 #X text 46 201 Multi Slider;
-#X restore 1224 918 pd TODO;
+#X text 255 299 OK;
+#X text 47 296 ==================;
+#X restore 1210 928 pd TODO;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array array1 20 float 3;
-#A 0 0.257144 0.300001 13.1518 0.314286 0.285715 0.257144 0.228573
+#A 0 0.257144 0.414287 0.414287 0.385715 0.285715 0.257144 0.228573
 0.200002 0.157145 0.142859 0.128574 0.100003 0.0857171 0.0714316 0.057146
 0.0428604 0.0428604 0.0428604 0.0428604 0.157145;
 #X coords 0 1 20 -1 200 140 1;
 #X restore 374 733 graph;
 #X text 17 686 * Quick and dirty export of gop-arrays;
-#X text 654 47 * Preset state saving using reserved senders names 'mob_load'
+#X text 656 20 * Preset state saving using reserved senders names 'mob_load'
 & 'mob_save', f 24;
 #X obj 57 578 cnv 15 350 60 my_cnv my_cnv-rcv ceci 20 25 0 50 -233017
 -66577 0;
-#X text 1117 428 (jump mode), f 5;
-#X text 1004 427 (steady mode), f 7;
-#X text 685 299 (steady mode);
-#X text 887 296 (jump mode);
+#X text 860 420 (jump mode), f 5;
+#X text 750 417 (steady mode), f 7;
+#X text 790 277 (steady mode);
+#X text 992 276 (jump mode);
 #N canvas 567 330 589 177 about 0;
 #X text 34 43 (For now \, jump mode is effective only in mmp interface
 \, not in tcl/tk vfader / hfader objects), f 47;
-#X restore 1055 291 pd about jump/steady modes;
+#X restore 612 413 pd about jump/steady modes;
 #X f 12;
-#N canvas 0 50 609 459 How_to_edit_mob/faders_properties 0;
-#X text 35 58 To edit mob/Guis properties :;
-#X text 60 99 right-click & choose "properties";
-#X text 30 139 To resize :;
-#X text 49 179 set edit mode (ctrl+e) \, press ctrl key and then click
-and drag, f 40;
-#X text 29 282 pd 0.5 :;
-#X text 23 342 This issue will be fixed with pd 0.51;
-#X text 21 246 WARNING;
-#X text 22 245 WARNING;
-#X text 46 313 Resizing does not work properly with canvas zooming
-= 2;
-#X restore 815 254 pd How_to_edit_mob/faders_properties;
 #X text 303 447 -tgl;
 #X obj 306 473 tgl 70 1 my_tgl my_tgl-rcv empty 17 7 0 10 -261234 -258113
 -1 144 144;
@@ -228,33 +209,36 @@ widget.;
 #X text 23 206 If you need steady mode \, use mob/hfader & mob/vfader
 with steady mode property., f 67;
 #X text 23 374 'set' messages are supported;
+#X text 59 524 see also http://danieliglesia.com/mobmuplat/doc/index.htm
+;
 #X restore 39 923 pd some_restrictions_with_native_guis;
-#N canvas -12 346 450 300 mob-listeners 0;
+#N canvas 74 719 450 300 mob-listeners 0;
 #X obj 20 50 mob/listener mybutton mybutton-rcv;
 #X obj 20 100 mob/listenerXY_lin xy xy-rcv 1 -1 1 0 0;
-#A saved 0.0386765 0.0597401;
+#A saved 0 0;
 #A saved MOB_TARGET xy;
 #X obj 20 150 mob/listener_lin my_vsl my_vsl-rcv 2 0 127;
 #X obj 20 200 mob/listener_lin my_hsl my_hsl-rcv 3 0 1;
 #X obj 20 250 mob/listenerVradio my_vradio my_vradio-rcv 4 4;
 #X obj 20 300 mob/listenerHradio my_hradio my_hradio-rcv 5 5;
 #X obj 20 350 mob/listenerBng my_bng 6 250 50;
-#X obj 20 400 mob/listenerVradio mob_load mob_load-rcv 7 3;
-#X obj 20 450 mob/listenerVradio mob_save mob_save-rcv 8 3;
+#X obj 20 400 mob/listenerHradio mob_load mob_load-rcv 7 3;
+#X obj 20 450 mob/listenerHradio mob_save mob_save-rcv 8 3;
 #X obj 20 500 mob/listenerVLCD_lin my_vsl my_vsl-rcv 9 0 127 148.865
-24.1851;
-#A saved 5.02863;
+48.6402;
+#A saved 48.6402;
 #A saved MOB_TARGET my_vsl;
 #X obj 20 550 mob/listenerHLCD_lin my_hsl my_hsl-rcv 10 0 1 181.631
-0;
-#A saved 0.451505;
+0.491639;
+#A saved 0.491639;
 #A saved MOB_TARGET my_hsl;
-#X obj 20 600 mob/listenerVLCD_lin my_vsl my_vsl-rcv 11 0 127 0 24.1851
+#X obj 20 600 mob/listenerVLCD_lin my_vsl my_vsl-rcv 11 0 127 0 48.6402
 ;
-#A saved 5.02863;
+#A saved 48.6402;
 #A saved MOB_TARGET my_vsl;
-#X obj 20 650 mob/listenerHLCD_lin my_hsl my_hsl-rcv 12 0 1 0 0;
-#A saved 0.451505;
+#X obj 20 650 mob/listenerHLCD_lin my_hsl my_hsl-rcv 12 0 1 0 0.491639
+;
+#A saved 0.491639;
 #A saved MOB_TARGET my_hsl;
 #X obj 20 700 mob/listenerCnv my_cnv my_cnv-rcv;
 #X obj 20 750 mob/listenerTgl my_tgl my_tgl-rcv;
@@ -262,9 +246,15 @@ with steady mode property., f 67;
 #X obj 20 850 mob/listenerMenu my_menu my_menu-rcv;
 #X obj 20 900 mob/listenerTgl back back-rcv;
 #X obj 20 950 mob/listenerTgl top top-rcv;
-#X obj 20 1000 mob/listenerJog untitled untitled-rcv 13;
+#X obj 20 1000 mob/listenerJog untitled untitled-rcv 13 0;
 #X obj 20 1050 mob/listenerMultitouch untitled untitled-rcv 14 0 1
 ;
+#X obj 20 1100 mob/listenerKnob my_knob my_knob-rcv 15 0.673019;
+#A saved 0.673019;
+#A saved MOB_TARGET my_knob;
+#X obj 20 1150 mob/listenerKnob my_knob my_knob-rcv 16 0.673019;
+#A saved 0.673019;
+#A saved MOB_TARGET my_knob;
 #X obj 20 0 mob/loader mob-help;
 #X restore 100 10 pd mob-listeners;
 #N canvas 0 50 450 300 populating_menu 0;
@@ -316,7 +306,7 @@ forwarded to MobMuPlat interface., f 31;
 -1 0 1;
 #X obj 1341 211 tgl 200 0 top top-rcv empty 17 7 0 10 -261234 -4034
 -1 0 1;
-#X text 1046 926 advanced -->;
+#X text 1058 931 advanced -->;
 #X msg 82 812 \; toGUI list array1 refresh;
 #X text 16 785 To refresh displaying of a table :;
 #X obj 637 739 mob/jog;
@@ -327,10 +317,31 @@ forwarded to MobMuPlat interface., f 31;
 #A saved -back_color -1.48604e+07;
 #A saved -size 146;
 #X text 18 714 (uses only mode 0 \, displayMode 0);
-#X text 1229 70 * Z-order and touch interaction behavior differ in
-tcl/tk and in MobMuPlat, f 47;
 #X text 1231 38 CAUTION !;
-#N canvas 0 50 778 470 explanations 0;
+#X text 7 68 [mob] exports this patch and its GUIs to MobMuPlat platform
+by generating a *.mmp interface file with converted gui-widgets.,
+f 32;
+#X text 653 125 * mob widgets : (click help for more info on each widget)
+, f 50;
+#X obj 848 726 mob/xy_multi;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -max 1;
+#A saved -min 0;
+#A saved -name untitled;
+#A saved -cursor_color -1;
+#A saved -back_color -8.6e+06;
+#A saved -size 288 198;
+#X obj 627 919 multitouch.enable;
+#X text 857 698 -mob/xy_multi;
+#X text 620 699 -mob/jog : jogwheel;
+#X text 1234 439 ! mob widgets don't work if embedded in graph-on-parent
+subpatches., f 43;
+#X text 1235 497 Remember that [mob] doesn't export embedded gop GUIs
+to MobMuPlat (except for arrays)., f 47;
+#X text 1229 70 ! Z-order and touch interaction behavior differ between
+tcl/tk and MobMuPlat platforms., f 47;
+#N canvas 0 50 778 470 more_details 0;
 #X text 19 309 If you plan to create complex behaviors with overlapped
 widgets and transparency support \, use MobMuPlatEditor or test on
 your target device., f 55;
@@ -343,22 +354,44 @@ intercept touch interaction., f 53;
 #X text 18 207 mob/widgets have transparency and z-order settings in
 properties panel \, in order to facilitate MobMuPlat export., f 47
 ;
-#X restore 1552 145 pd explanations;
-#X text 5 56 [mob] exports this patch and its GUIs to MobMuPlat platform
-by generating a *.mmp interface file with converted gui-widgets.,
-f 32;
-#X text 616 210 * mob widgets : (click help for more info on each widget)
-;
-#X obj 846 742 mob/xy_multi;
+#X restore 1552 145 pd more_details;
+#X obj 345 2 mob;
+#A saved -R 192.756;
+#A saved -G 152.598;
+#A saved -B 102.402;
+#A saved -pages 3;
+#A saved -mode 2;
+#A saved -landscape 0;
+#A saved -zoom 1;
+#X text 850 182 -mob/knob;
+#X obj 957 155 mob/knob;
+#A saved -range 1;
 #A saved -invisible 0;
 #A saved -z_offset 0;
-#A saved -max 1;
-#A saved -min 0;
-#A saved -name untitled;
-#A saved -cursor_color -1;
-#A saved -back_color -8.6e+06;
-#A saved -size 288 198;
-#X obj 627 919 multitouch.enable;
-#X text 857 698 -mob/xy_multi;
-#X text 620 699 -mob/jog : jogwheel;
-#X connect 6 0 48 0;
+#A saved -name my_knob;
+#A saved -front_color -1.6161e+07;
+#A saved -back_color -1.05196e+07;
+#A saved -size 113;
+#N canvas 0 50 609 459 more_info 0;
+#X text 35 58 To edit mob/Guis properties :;
+#X text 60 99 right-click & choose "properties";
+#X text 30 139 To resize :;
+#X text 49 179 set edit mode (ctrl+e) \, press ctrl key and then click
+and drag, f 40;
+#X text 29 282 pd 0.5 :;
+#X text 23 342 This issue will be fixed with pd 0.51;
+#X text 21 246 WARNING;
+#X text 22 245 WARNING;
+#X text 46 313 Resizing does not work properly with canvas zooming
+= 2;
+#X restore 744 148 pd more_info;
+#X f 13;
+#X obj 1076 154 mob/knob;
+#A saved -range 1;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -name my_knob;
+#A saved -front_color -51713;
+#A saved -back_color -1.34211e+07;
+#A saved -size 113;
+#X connect 5 0 46 0;
