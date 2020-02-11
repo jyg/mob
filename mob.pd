@@ -10,12 +10,12 @@
 #X obj 188 145 bng 15 250 50 0 \$0-cancel empty cancel 17 7 0 10 -258699
 -1 -1;
 #X obj 61 76 hsl 128 15 0 255 0 1 \$0-R \$0-R empty -2 -8 0 10 -258699
--1 -1 9800 1;
+-1 -1 11400 1;
 #X obj 61 93 hsl 128 15 0 255 0 1 \$0-G \$0-G empty -2 -8 0 10 -24198
 -1 -1 9900 1;
 #X obj 61 110 hsl 128 15 0 255 0 1 \$0-B \$0-B empty -2 -8 0 10 -62784
 -1 -1 9800 1;
-#X obj 206 76 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -203890
+#X obj 206 76 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -236658
 -262144 0;
 #X obj 120 145 bng 15 250 50 0 \$0-apply empty apply 17 7 0 10 -241291
 -1 -1;
@@ -195,7 +195,7 @@
 #X restore 448 44 pd propertyguts;
 #X obj 350 100 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 349 100 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -203890
+#X obj 349 100 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -236658
 -262144 0;
 #X text 286 118 BackGroundColor;
 #X floatatom 363 150 5 0 99 0 firstPage #0-firstPage-rcv #0-firstPage
@@ -1453,7 +1453,7 @@ width 0 0 0;
 #X connect 1 0 3 0;
 #X connect 2 0 4 0;
 #X restore 706 195 pd data_structures;
-#N canvas 297 81 1059 764 drawing_border_in_parent_patch 1;
+#N canvas 297 81 1059 764 drawing_border_in_parent_patch 0;
 #X obj 117 59 r \$0-pdFile-rcv;
 #X obj 162 197 pointer bckgrnd;
 #X msg 110 146 traverse pd-\$1 \, next;
@@ -3950,7 +3950,7 @@ système de remote control de automatonism3;
 #X connect 83 0 85 1;
 #X connect 84 0 82 0;
 #X connect 84 1 83 0;
-#X restore 1493 671 pd gop(automatonism);
+#X restore 1317 603 pd gop(automatonism);
 #X obj 978 567 r \$0-landscape;
 #X obj 943 630 * 2;
 #X obj 852 592 loadbang;
@@ -3981,7 +3981,7 @@ système de remote control de automatonism3;
 #X text 796 697 refresh;
 #X text 115 208 600:960;
 #X obj 181 102 vsl 15 45 1 4 1 0 \$0-zoom \$0-zoom-rcv empty 0 -9 0
-10 -262130 -1 -1 0 1;
+10 -262130 -1 -1 2000 1;
 #X text 182 99 z;
 #X text 182 109 o;
 #X text 182 119 o;
@@ -4056,16 +4056,6 @@ système de remote control de automatonism3;
 #X connect 24 0 4 1;
 #X connect 25 0 4 1;
 #X restore 1232 55 pd dynamic_patching_of_listeners_objects;
-#N canvas 0 50 450 300 route_mob/widgets 0;
-#X obj 81 43 inlet;
-#X obj 81 68 route mob/hfader mob/vfader mob/xy_slider;
-#X obj 367 119 outlet;
-#X obj 81 183 outlet;
-#X text 25 140 envoyer les coordonnees et chaque mob/widget test si
-c'est à lui de se manifester;
-#X connect 0 0 1 0;
-#X connect 1 3 2 0;
-#X restore 1352 637 pd route_mob/widgets;
 #X obj 58 256 t b b b b b b b b b, f 42;
 #X obj 528 352 s MOB_ZOOM;
 #X obj 538 326 v \$0-zoom;
@@ -4115,7 +4105,7 @@ c'est à lui de se manifester;
 #X connect 75 0 74 0;
 #X connect 76 0 78 0;
 #X connect 76 1 73 0;
-#X connect 78 0 157 0;
+#X connect 78 0 156 0;
 #X connect 79 0 73 0;
 #X connect 79 0 80 0;
 #X connect 80 0 29 0;
@@ -4165,19 +4155,18 @@ c'est à lui de se manifester;
 #X connect 150 4 54 0;
 #X connect 150 5 112 0;
 #X connect 150 6 77 0;
-#X connect 150 7 156 0;
 #X connect 152 0 153 0;
 #X connect 153 0 154 0;
 #X connect 154 0 151 0;
-#X connect 157 0 79 0;
-#X connect 157 1 17 0;
-#X connect 157 2 19 0;
-#X connect 157 3 30 0;
-#X connect 157 4 12 0;
-#X connect 157 5 71 0;
-#X connect 157 6 31 0;
-#X connect 157 7 70 0;
-#X connect 157 7 75 0;
-#X connect 157 8 159 0;
-#X connect 159 0 158 0;
+#X connect 156 0 79 0;
+#X connect 156 1 17 0;
+#X connect 156 2 19 0;
+#X connect 156 3 30 0;
+#X connect 156 4 12 0;
+#X connect 156 5 71 0;
+#X connect 156 6 31 0;
+#X connect 156 7 70 0;
+#X connect 156 7 75 0;
+#X connect 156 8 158 0;
+#X connect 158 0 157 0;
 #X coords 0 -1 1 1 300 140 1 100 100;
