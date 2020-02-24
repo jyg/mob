@@ -1,0 +1,37 @@
+#N canvas 451 150 676 648 12;
+#X obj 36 60 mob/value;
+#X text 140 65 pd 0.48 workaround for using [value] with second inlet
+feature as in pd 0.48-1, f 68;
+#X floatatom 21 179 5 0 0 0 - - -;
+#X floatatom 21 254 5 0 0 0 - - -;
+#X msg 31 202 bang;
+#X floatatom 186 177 5 0 0 0 - - -;
+#X floatatom 186 252 5 0 0 0 - - -;
+#X msg 196 200 bang;
+#X floatatom 379 177 5 0 0 0 - - -;
+#X floatatom 379 252 5 0 0 0 - - -;
+#X msg 389 200 bang;
+#X text 433 176 numbers set the value;
+#X text 437 199 bang retrieves it;
+#X floatatom 218 396 5 0 0 0 - - -;
+#X msg 287 308 symbol help-value1;
+#X msg 306 342 symbol help-value2;
+#X obj 218 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 21 229 mob/value help-value1;
+#X obj 186 227 mob/value help-value1;
+#X obj 379 227 mob/value help-value2;
+#X obj 218 370 mob/value;
+#X connect 2 0 17 0;
+#X connect 4 0 17 0;
+#X connect 5 0 18 0;
+#X connect 7 0 18 0;
+#X connect 8 0 19 0;
+#X connect 10 0 19 0;
+#X connect 14 0 20 1;
+#X connect 15 0 20 1;
+#X connect 16 0 20 0;
+#X connect 17 0 3 0;
+#X connect 18 0 6 0;
+#X connect 19 0 9 0;
+#X connect 20 0 13 0;

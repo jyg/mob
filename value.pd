@@ -1,0 +1,21 @@
+#N canvas 451 150 606 378 12;
+#X obj 126 171 outlet;
+#X obj 133 24 inlet;
+#N canvas 189 449 450 300 \$0-dynamic_patch 0;
+#X restore 126 83 pd \$0-dynamic_patch;
+#X obj 290 178 s pd-\$0-dynamic_patch;
+#X obj 294 94 list append \$0;
+#X msg 292 134 clear \, obj 0 0 r \$2-inlet \, obj 0 40 v \$1 \, obj
+0 80 s \$2-outlet \, connect 0 0 1 0 \, connect 1 0 2 0;
+#X obj 133 49 s \$0-inlet;
+#X obj 126 146 r \$0-outlet;
+#X obj 293 20 inlet;
+#X obj 401 27 loadbang;
+#X obj 400 61 list append \$1;
+#X connect 1 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 7 0 0 0;
+#X connect 8 0 4 0;
+#X connect 9 0 10 0;
+#X connect 10 0 4 0;
