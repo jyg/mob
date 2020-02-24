@@ -81,16 +81,28 @@ menu;
 #X floatatom 470 493 5 0 0 0 - - -;
 #X floatatom 531 493 5 0 0 0 - - -;
 #X obj 468 441 route add update etc..;
-#X text 20 490 getting raw MobMuPlat messages fromGUI;
 #X text 25 9 mob/xy_multi;
 #X text 14 371 ! Don't use connexions \, use send channel instead,
 f 27;
 #X obj 21 465 r my_multitouch.cooked;
 #X text 14 415 ! Pressure not supported in MobMuPlat., f 27;
 #X text 350 517 mob/xy_slider;
-#N canvas 0 50 679 131 MobMuPlat_reference 0;
+#N canvas 0 50 723 636 MobMuPlat_reference 0;
 #X text 13 41 http://danieliglesia.com/mobmuplat/doc/index.htm;
+#X text 31 150 output: on every touch and move \, these messages are
+sent \, each followed by three elements per touch: voice index \, x
+position \, y position.;
+#X text 27 249 "touchesByTime" \, followed by three-elements-per-touch
+\, sorted by recency;
+#X text 27 299 "touchesByVox" \, followed by three-elements-per-touch
+\, sorted by voice index;
+#X text 27 349 "touchesByX" \, followed by three-elements-per-touch
+\, sorted by x position;
+#X text 30 404 "touchesByY" \, followed by three-elements-per-touch
+\, sorted by y position;
+#X text 11 97 cooked MobMuPlat messages;
 #X restore 458 558 pd MobMuPlat_reference;
+#X text 20 490 getting cooked MobMuPlat messages fromGUI;
 #X connect 15 0 16 0;
 #X connect 16 0 29 0;
 #X connect 17 0 20 0;

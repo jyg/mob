@@ -26,7 +26,7 @@
 #X obj 162 296 tabread MULTITOUCH.SLOT.STATUS;
 #X obj 88 243 list split 2;
 #X obj 59 367 spigot;
-#X obj 92 424 unpack f f;
+#X obj 82 401 unpack f f;
 #X obj 101 335 == 0;
 #X text 191 318 check if slot still free;
 #X obj 519 566 f;
@@ -59,7 +59,7 @@
 #X msg 446 760 1;
 #X msg 490 760 0;
 #X text 542 787 signal slot-0 status;
-#X obj 326 602 pack f f;
+#X obj 308 661 pack f f;
 #X obj 54 478 t f f;
 #X obj 382 132 t b b b b;
 #X msg 346 900 remove \$1 \$2;
@@ -192,6 +192,8 @@
 #X restore 226 889 pd mapping;
 #X obj 297 571 /;
 #X obj 378 564 /;
+#X obj 380 609 * -1;
+#X obj 380 637 + 1;
 #X connect 0 0 18 0;
 #X connect 1 0 2 1;
 #X connect 1 1 3 1;
@@ -292,5 +294,7 @@
 #X connect 78 0 73 0;
 #X connect 79 0 74 0;
 #X connect 80 0 60 0;
-#X connect 81 0 60 1;
+#X connect 81 0 82 0;
+#X connect 82 0 83 0;
+#X connect 83 0 60 1;
 #X coords 0 1023 1 1022 85 60 0;
