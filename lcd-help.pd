@@ -1,0 +1,222 @@
+#N struct struct_frameoval float lx float ty float rx float by float
+width float color;
+#N struct struct_paintoval float lx float ty float rx float by float
+width float color;
+#N canvas 411 138 719 763 16;
+#X obj 2 1 cnv 15 700 40 empty empty empty 20 12 0 14 -232576 -66577
+0;
+#X text 50 608 To edit shape \, ctrl+drag on it in edit mode;
+#X text 50 634 To edit properties \, right-click + properties popup
+menu;
+#X text 338 11 pd 0.49 + iemguts + iemlib;
+#X text 25 9 mob/lcd;
+#X text 40 55 LCD panel for drawing graphics;
+#X obj 45 368 mob/lcd;
+#A saved -font_color -45569;
+#A saved -title ;
+#A saved -name ;
+#A saved -size 157 177;
+#N canvas 810 58 837 963 drawing_commands 0;
+#X obj 49 835 outlet;
+#X msg 49 58 clear;
+#X msg 49 787 penwidth 3;
+#X text 173 782 penwidth + 1 float (width in pixels), f 22;
+#X text 859 615 "framepoly" + N floats (specify N/2 points as a list
+of x/y pairs) - uses widget's highlight color "framepolyRGBA" + N+4
+floats (specify N/2 points as a list of x/y pairs \, red \, green \,
+blue \, alpha) "paintpoly" + N floats (specify N/2 points as a list
+of x/y pairs) - uses widget's highlight color "paintpolyRGBA" + N+4
+floats (specify N/2 points as a list of x/y pairs \, red \, green \,
+blue \, alpha);
+#X msg 49 198 paintoval 0.4 0.2 0.5 0.4 0.2 0.2 1 1, f 25;
+#X msg 49 88 frameoval 0.6 0.5 0.7 0.9 1 0.5 0 1, f 25;
+#X msg 49 308 framerect 0.1 0.1 0.9 0.9 0.5 0.3 0.1 1, f 25;
+#X msg 49 418 paintrect 0.8 0.2 0.9 0.4 0.9 0.3 0.1 1, f 25;
+#X msg 49 464 paintrect 0.4 0.4 0.6 0.6;
+#X msg 49 511 moveto 0.5 0.5;
+#X msg 49 550 lineto 0.7 0.9 1 0 0 1;
+#X msg 49 576 lineto 0.2 0.4;
+#X text 328 551 lineto + 6 floats (x \, y \, red \, green \, blue.alpha)
+;
+#X text 327 581 lineto + 2 floats (x \, y);
+#X text 444 736 "framerect" + 8 floats (left x \, top y \, right x
+\, bottom y \, red \, green \, blue \, alpha) "paintrect" + 4 floats
+(left x \, top y \, right x \, bottom y) - uses widget's highlight
+color "paintrect" + 8 floats (left x \, top y \, right x \, bottom
+y \, red \, green \, blue \, alpha);
+#X text 326 363 "framerect" + 4 floats (left x \, top y \, right x
+\, bottom y) - uses widget's highlight color;
+#X text 324 201 "paintoval" + 8 floats (left x \, top y \, right x
+\, bottom y \, red \, green \, blue \, alpha);
+#X text 323 91 "frameoval" + 8 floats (left x \, top y \, right x \,
+bottom y \, red \, green \, blue \, alpha), f 43;
+#X text 323 145 "frameoval" + 4 floats (left x \, top y \, right x
+\, bottom y) - uses widget's highlight color;
+#X text 323 257 "paintoval" + 4 floats (left x \, top y \, right x
+\, bottom y) - uses widget's highlight color;
+#X text 323 307 "framerect" + 8 floats (left x \, top y \, right x
+\, bottom y \, red \, green \, blue \, alpha);
+#X text 323 413 "paintrect" + 8 floats (left x \, top y \, right x
+\, bottom y \, red \, green \, blue \, alpha);
+#X text 326 463 "paintrect" + 4 floats (left x \, top y \, right x
+\, bottom y) - uses widget's highlight color;
+#X text 328 515 moveto + 2 floats (x \, y);
+#X text 113 12 !!! alpha-rendering ignored in tcl/tk !!!;
+#X text 114 12 !!! alpha-rendering ignored in tcl/tk !!!;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X restore 45 234 pd drawing_commands;
+#X obj 52 98 lcd;
+#A saved -font_color 0;
+#A saved -title ;
+#A saved -name ;
+#A saved -size 60 60;
+#X msg 251 196 clear \, penwidth 5 \, frameoval 0.35 0.35 0.76 0.76
+0.5 1 0 1 \, penwidth 3 \, frameoval 0.5 0.5 0.6 0.6 1 0 0 1 \, paintoval
+0.1 0.1 0.2 0.8 0.2 0.2 0.9 1, f 23;
+#X obj 250 165 loadbang;
+#X obj 251 390 mob/lcd;
+#A saved -font_color 0;
+#A saved -title ;
+#A saved -name ;
+#A saved -size 147 91;
+#N canvas 0 50 670 542 demo 0;
+#X obj 37 208 random 100;
+#X obj 37 233 / 100;
+#X obj 105 208 random 100;
+#X obj 105 233 / 100;
+#X obj 76 257 random 100;
+#X obj 76 282 / 100;
+#X obj 144 257 random 100;
+#X obj 144 282 / 100;
+#X obj 179 206 random 100;
+#X obj 179 231 / 100;
+#X obj 247 206 random 100;
+#X obj 247 231 / 100;
+#X obj 217 258 random 100;
+#X obj 217 283 / 100;
+#X obj 110 128 t b b b b b b b;
+#X obj 189 314 list;
+#X obj 37 310 pack 0 0 0 0 0 0 0;
+#X obj 150 76 metro 250;
+#X obj 36 364 outlet;
+#X msg 36 335 frameoval \$1 \$2 \$3 \$4 \$5 \$6 \$7 0.5;
+#X obj 142 36 inlet;
+#X obj 39 34 inlet;
+#X obj 309 39 inlet;
+#X msg 298 143 clear;
+#X connect 0 0 1 0;
+#X connect 1 0 16 0;
+#X connect 2 0 3 0;
+#X connect 3 0 16 2;
+#X connect 4 0 5 0;
+#X connect 5 0 16 1;
+#X connect 6 0 7 0;
+#X connect 7 0 16 3;
+#X connect 8 0 9 0;
+#X connect 9 0 16 4;
+#X connect 10 0 11 0;
+#X connect 11 0 16 6;
+#X connect 12 0 13 0;
+#X connect 13 0 16 5;
+#X connect 14 0 0 0;
+#X connect 14 1 4 0;
+#X connect 14 2 2 0;
+#X connect 14 3 6 0;
+#X connect 14 4 8 0;
+#X connect 14 5 12 0;
+#X connect 14 6 10 0;
+#X connect 16 0 19 0;
+#X connect 17 0 14 0;
+#X connect 19 0 18 0;
+#X connect 20 0 17 0;
+#X connect 21 0 14 0;
+#X connect 22 0 23 0;
+#X connect 23 0 18 0;
+#X restore 57 321 pd demo;
+#X obj 90 282 tgl 15 0 empty empty AUTO 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 122 299 bng 15 250 50 0 empty empty CLEAR 17 7 0 10 -262144
+-1 -1;
+#X obj 57 266 bng 15 250 50 0 empty empty CIRCLE 17 7 0 10 -262144
+-1 -1;
+#X obj 52 163 print;
+#N canvas 0 50 597 569 demo2 0;
+#X obj 83 100 route 1 2 0;
+#X obj 83 132 t l b;
+#X obj 94 163 unpack 0 0;
+#X obj 321 274 unpack 0 0;
+#X obj 89 204 t f f;
+#X obj 161 206 t f f;
+#X obj 329 108 unpack 0 0 0 0;
+#X obj 91 305 pack 0 0 0 0 0 0 0 0;
+#X obj 324 335 pack 0 0 0 0 0 0;
+#X obj 81 55 inlet;
+#X obj 84 475 outlet;
+#X msg 79 337 moveto \$1 \$2;
+#X msg 124 406 lineto \$1 \$2 \$3 \$4 \$5 \$6;
+#X obj 59 274 - 0.02;
+#X obj 138 276 + 0.02;
+#X obj 146 240 - 0.02;
+#X obj 218 241 + 0.02;
+#X msg 103 373 paintoval \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8;
+#X connect 0 0 1 0;
+#X connect 0 1 3 0;
+#X connect 0 2 2 0;
+#X connect 1 0 2 0;
+#X connect 1 0 11 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 3 0 8 0;
+#X connect 3 1 8 1;
+#X connect 4 0 13 0;
+#X connect 4 1 14 0;
+#X connect 5 0 15 0;
+#X connect 5 1 16 0;
+#X connect 6 0 7 4;
+#X connect 6 0 8 2;
+#X connect 6 1 8 3;
+#X connect 6 1 7 5;
+#X connect 6 2 7 6;
+#X connect 6 2 8 4;
+#X connect 6 3 7 7;
+#X connect 6 3 8 5;
+#X connect 7 0 17 0;
+#X connect 8 0 12 0;
+#X connect 9 0 0 0;
+#X connect 11 0 10 0;
+#X connect 12 0 10 0;
+#X connect 13 0 7 0;
+#X connect 14 0 7 2;
+#X connect 15 0 7 1;
+#X connect 16 0 7 3;
+#X connect 17 0 10 0;
+#X restore 430 349 pd demo2;
+#X msg 550 335 clear;
+#X obj 422 84 multitouch.enable;
+#X obj 470 388 mob/lcd;
+#A saved -font_color -1.36316e+07;
+#A saved -title ;
+#A saved -name ;
+#A saved -size 215 188;
+#X connect 7 0 6 0;
+#X connect 8 0 16 0;
+#X connect 9 0 6 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 12 0 6 0;
+#X connect 12 0 11 0;
+#X connect 13 0 12 1;
+#X connect 14 0 12 2;
+#X connect 15 0 12 0;
+#X connect 17 0 20 0;
+#X connect 18 0 20 0;
+#X connect 20 0 17 0;
