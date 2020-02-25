@@ -1,6 +1,6 @@
 # mob
 ### Custom PureData widgets + fast exporting of pd patches to mobile platform app (MobMuPlat)
-<img src="https://raw.githubusercontent.com/jyg/mob/master/data/mob-scratch-demo.png" alt="mob scratch demo" width=800 height=400>
+<img src="https://raw.githubusercontent.com/jyg/mob/master/data/mob-scratch-demo.png" alt="mob scratch demo" width=425 height=212>
 
 **MobMuPlat** (see http://danieliglesia.com/mobmuplat/) is an app that lets you run pd patches on iOS / Android mobile devices.
 In order to create GUIs, it comes with a java app (**MobMuPlat Editor**) that you have to use for designing your interface files (*.mmp).
