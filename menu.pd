@@ -29,8 +29,6 @@
 #X obj 28 46 loadbang;
 #X obj 28 152 spigot 1;
 #X msg 127 109 0;
-#X msg 30 437 -size 60 60 \, -back_color 10 \, -front_color 1 \, -cursor_color
--1, f 10;
 #X obj 437 719 s \$0-name;
 #X obj 379 206 symbol;
 #X obj 412 167 r \$0-name;
@@ -54,12 +52,13 @@
 #X obj 302 70 t b b b b b;
 #X obj 528 170 r \$0-title;
 #X msg 475 236 -title \$1;
+#X msg 30 437 -size 60 60 \, -font_color -1, f 10;
 #X connect 0 0 3 0;
 #X connect 0 0 14 0;
 #X connect 0 1 1 0;
 #X connect 2 0 7 0;
-#X connect 3 0 31 0;
-#X connect 4 0 34 0;
+#X connect 3 0 30 0;
+#X connect 4 0 33 0;
 #X connect 5 0 7 1;
 #X connect 6 0 9 0;
 #X connect 6 1 10 0;
@@ -67,33 +66,33 @@
 #X connect 8 0 0 0;
 #X connect 11 0 8 0;
 #X connect 12 0 13 0;
-#X connect 13 0 15 0;
+#X connect 13 0 36 0;
 #X connect 14 0 13 1;
-#X connect 15 0 31 0;
-#X connect 17 0 19 0;
-#X connect 18 0 17 1;
-#X connect 19 0 8 0;
-#X connect 20 0 16 0;
-#X connect 21 0 36 0;
+#X connect 16 0 18 0;
+#X connect 17 0 16 1;
+#X connect 18 0 8 0;
+#X connect 19 0 15 0;
+#X connect 20 0 35 0;
+#X connect 21 0 22 0;
 #X connect 22 0 23 0;
-#X connect 23 0 24 0;
-#X connect 25 0 22 0;
-#X connect 26 0 23 1;
-#X connect 27 0 23 0;
-#X connect 28 0 29 0;
-#X connect 29 0 8 0;
-#X connect 31 0 6 0;
-#X connect 31 1 20 0;
-#X connect 31 2 30 0;
-#X connect 31 3 32 0;
-#X connect 32 0 33 0;
-#X connect 34 0 2 0;
-#X connect 34 1 5 0;
-#X connect 34 2 17 0;
-#X connect 34 3 21 0;
-#X connect 34 4 28 0;
-#X connect 35 0 21 1;
-#X connect 36 0 8 0;
+#X connect 24 0 21 0;
+#X connect 25 0 22 1;
+#X connect 26 0 22 0;
+#X connect 27 0 28 0;
+#X connect 28 0 8 0;
+#X connect 30 0 6 0;
+#X connect 30 1 19 0;
+#X connect 30 2 29 0;
+#X connect 30 3 31 0;
+#X connect 31 0 32 0;
+#X connect 33 0 2 0;
+#X connect 33 1 5 0;
+#X connect 33 2 16 0;
+#X connect 33 3 20 0;
+#X connect 33 4 27 0;
+#X connect 34 0 20 1;
+#X connect 35 0 8 0;
+#X connect 36 0 30 0;
 #X restore 2028 406 pd savestate;
 #X obj 2029 337 namecanvas \$0-this;
 #N canvas 0 50 1005 538 resize 0;
@@ -189,8 +188,8 @@
 #X restore 280 732 pd resize;
 #X obj 818 514 r \$0-w;
 #X obj 1039 559 r \$0-h;
-#X obj 100 100 cnv 1 1 1 \$0-pos \$0-pos-rcv My_menu 2 33 0 33 -1 -262090
-0;
+#X obj 100 100 cnv 1 1 1 \$0-pos \$0-pos-rcv menu 2 30 0 30 -1 -1 0
+;
 #X obj 768 553 / 60;
 #X obj 966 611 / 60;
 #X obj 818 662 < 1;
@@ -263,12 +262,12 @@
 #X obj 694 1326 s \$0-click_area-rcv;
 #X obj 812 838 select 1;
 #X obj 1603 235 s pd-mmpMenu_properties(\$0);
-#N canvas 355 561 419 480 mmpMenu_properties(\$0) 0;
+#N canvas 355 591 419 480 mmpMenu_properties(\$0) 0;
 #X obj 8 6 cnv 15 400 450 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X floatatom 130 21 5 0 0 0 width #0-w-rcv #0-w-snd;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-lc_cnv-rcv empty 20 12 0 14 -262090
+#X obj 100 100 cnv 20 20 20 empty \$0-lc_cnv-rcv empty 20 12 0 14 -1
 -66577 0;
 #X msg 328 224 color \$1 \$1;
 #X obj 328 265 s \$0-lc_cnv-rcv;
@@ -313,8 +312,8 @@
 -4034 -1 0 0;
 #X obj 14 34 hsl 128 12 0 255 0 0 \$0-b \$0-b-i empty -2 -8 0 10 -228856
 -4160 -1 0 0;
-#X obj 48 50 cnv 34 34 34 empty \$0-color-cnv empty 20 12 0 14 -173697
--262144 0;
+#X obj 48 50 cnv 34 34 34 empty \$0-color-cnv empty 20 12 0 14 -1 -262144
+0;
 #X msg 66 576 color \$1;
 #X obj 159 388 t b f;
 #X obj 276 388 t b f;
@@ -330,7 +329,7 @@
 #X obj 173 360 s \$0-g1-i;
 #X msg 291 331 set \$1;
 #X obj 291 360 s \$0-b1-i;
-#X obj 139 62 cnv 10 10 10 empty \$0-cnv-label empty 20 12 0 14 -173697
+#X obj 139 62 cnv 10 10 10 empty \$0-cnv-label empty 20 12 0 14 -1
 -262144 0;
 #X obj 276 302 i;
 #X obj 159 302 i;
@@ -487,7 +486,7 @@ a rgb;
 #X floatatom 127 253 8 0 0 0 label_color #0-lc-rcv #0-lc-snd;
 #X text 21 328 MobMuPlat Widget Export;
 #X restore 1606 282 pd mmpMenu_properties(\$0);
-#N canvas 0 50 1568 1015 mmp-export-Menu 1;
+#N canvas 0 50 1568 1015 mmp-export-Menu 0;
 #X obj 174 53 r MMP_EXPORT;
 #X obj 368 46 r \$0-x;
 #X obj 449 46 r \$0-y;
@@ -939,4 +938,4 @@ empty empty 0 -9 0 10 -262144 -1 -1 1 \;;
 #X connect 84 0 85 0;
 #X connect 85 0 71 0;
 #X connect 86 0 82 0;
-#X coords 0 -1 1 1 303 67 2 100 100;
+#X coords 0 -1 1 1 60 60 2 100 100;

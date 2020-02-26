@@ -1,4 +1,4 @@
-#N canvas 72 200 726 763 16;
+#N canvas 1001 157 726 763 16;
 #X obj 32 64 menu my_menu;
 #A saved -font_color -3.27684e+06;
 #A saved -title menu;
