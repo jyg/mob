@@ -1,0 +1,39 @@
+dry/wet 84.6898;
+delay 2433.49;
+/fx_ring-0/wet 0.617245;
+/fx_ring-0/freq 0.617245;
+random_size 0.695918;
+random_pitch 17.3778;
+pitch -341.715;
+grain_size 101.308;
+gain 100.545;
+audio_features-0 seuil 59.0909;
+audio_features-0 learn 0;
+audio_features-0 send_data 1;
+audio_features-0 env-filt 905.512;
+audio_features-0 bright-max 99.3534;
+audio_features-0 bright-min 49.1333;
+audio_features-0 env-max 85;
+audio_features-0 env-min 50;
+audio_features-0 harmo-max 74.4711;
+audio_features-0 harmo-min 28.12;
+audio_features-0 ccy_enable 0;
+audio_features-0 ccx_enable 1;
+audio_features-0 ccx 3;
+fx_ring-0 smooth 0.01;
+fx_ring-0 phase 0;
+fx_ring-0 freq 58.0072;
+fx_ring-0 wet 0.617245;
+fx_dattorroverb-0 fbgain 0.688519;
+fx_dattorroverb-0 damping 0.674915;
+fx_dattorroverb-0 bandwidth 0.6;
+fx_dattorroverb-0 predel 30;
+fx_dattorroverb-0 wet 0.332395;
+audiolab_dump-0 dump x-feed 0 \; env-shape 0.691101 \; env-bias 0.164835
+\; env-type 0 \; dry/wet 84.6898 \; random-q 0 \; q 1 \; random-frequency
+5000 \; frequency 100 \; filter-bypass 1 \; feedback-damping 5000 \;
+feedback 0 \; random-amplitude 0 \; amplitude 0 \; random-panorama
+100 \; panorama 0 \; random-pitch 17.3778 \; pitch -341.715 \; random-grainsize
+0.695918 \; grainsize 101.308 \; random-delay 0 \; delay 2433.49 \;
+random-grain-distance 0 \; grain-distance 41.8742 \; int.grain-trigger
+0 \;;

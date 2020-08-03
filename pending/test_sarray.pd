@@ -1,0 +1,16 @@
+#N canvas 0 50 450 300 12;
+#X obj 106 66 sarray;
+#A saved -displayMode 0;
+#A saved -mode 0;
+#A saved -color 404;
+#A saved -style 0;
+#A saved -linewidth 6;
+#A saved -size 67;
+#A saved -arrayName \$1-hello;
+#A saved -yto 1;
+#A saved -xto 100;
+#A saved -yfrom -1;
+#A saved -xfrom 0;
+#A saved -style 0;
+#A saved -height 163;
+#A saved -width 209;
