@@ -3,7 +3,7 @@
   <p align="center"> <img src="https://raw.githubusercontent.com/jyg/mob/master/data/mob-scratch-demo.png" alt="mob scratch demo" ></p>
 
 ## Abstract
-**mob** is a collection of special multitouch gui-widgets, plus an helper for quickly creating MobMuPlat scenes. 
+**mob** is a collection of special multitouch gui-widgets, plus an helper for quickly creating MobMuPlat "apps". 
 1) The gui-widgets include faders, xy slider, knob, jog, menu, lcd widgets. It requires pd 0.51 + iemguts + iemlib external libs. You can use it as an extension library for your existing desktop pd-patches.
 2) The [mob] helper is aimed to replace the javascript MobMuPlat Editor for creating on-the-fly MobMuPlat apps from within puredata. It requires mrpeach/binfile external.
 
