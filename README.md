@@ -2,6 +2,8 @@
 ### PureData multitouch widgets + fast exporting of pd patches to mobile platform app (MobMuPlat)
   <p align="center"> <img src="https://raw.githubusercontent.com/jyg/mob/master/data/mob-scratch-demo.png" alt="mob scratch demo" ></p>
 
+**mob** is a collection of special multitouch gui-widgets plus an helper for quickly creating MobMuPlat scenes. The gui-widgets include faders, xy slider, knob, jog, menu, lcd widgets and require pd 0.51 + iemguts + iemlib. The [mob] helper is aimed to replace the javascript MobMuPlat Editor for creating on-the-fly MobMuPlat scenes from within puredata.
+
 **MobMuPlat** (see http://danieliglesia.com/mobmuplat/) is an app that lets you run pd patches on iOS / Android mobile devices.
 In order to create GUIs, it comes with a java app (**MobMuPlat Editor**) that you have to use for designing your interface files (*.mmp).
 
