@@ -2,11 +2,12 @@
 ### PureData multitouch widgets + fast exporting of pd patches to mobile platform app (MobMuPlat)
   <p align="center"> <img src="https://raw.githubusercontent.com/jyg/mob/master/data/mob-scratch-demo.png" alt="mob scratch demo" ></p>
 
-## Abstract :
-**mob** is a collection of special multitouch gui-widgets, plus an helper for quickly creating MobMuPlat scenes. The gui-widgets include faders, xy slider, knob, jog, menu, lcd widgets and require pd 0.51 + iemguts + iemlib external libs. The [mob] helper is aimed to replace the javascript MobMuPlat Editor for creating on-the-fly MobMuPlat scenes from within puredata, and requires mrpeach/binfile external.
+## Abstract
+**mob** is a collection of special multitouch gui-widgets, plus an helper for quickly creating MobMuPlat scenes. The gui-widgets include faders, xy slider, knob, jog, menu, lcd widgets and require pd 0.51 + iemguts + iemlib external libs. The [mob] helper is aimed to replace the javascript MobMuPlat Editor for creating on-the-fly MobMuPlat apps from within puredata, and requires mrpeach/binfile external.
 
-**MobMuPlat** (see http://danieliglesia.com/mobmuplat/) is an app that lets you run pd patches on iOS / Android mobile devices.
-In order to create GUIs, it comes with a java app (**MobMuPlat Editor**) that you have to use for designing your interface files (*.mmp).
+## Another way to create MobMuPlat apps
+**MobMuPlat** (see http://danieliglesia.com/mobmuplat/) is an app that let you run pd patches on iOS / Android mobile devices.
+In order to create GUIs, you can use the MobMuPlat native mode **or** use a special java app (**MobMuPlat Editor**) for designing your interface files (*.mmp).
 
 Alternatively, **[mob]** lets you build those .mmp files directly from the patch you want to use on mobile platform, in one click, without the need of using MobMuPlat Editor. What you get should be what you see !
 
@@ -14,9 +15,9 @@ Alternatively, **[mob]** lets you build those .mmp files directly from the patch
 
 Native mode is a special feature of MobMuPlat app that enables the direct rendering of your pd patches with all native guis (vsl, hsl, tgl, etc..), but doesn't let you access to MobMuPlat enhanced gui features (grid, xy slider, xy multitouch, lcd panel, etc..), nor use of multiple pages. 
 
-**With [mob] you can access to most of those features**, in a faster way than with the MobMuPlat Java Editor. Furthermore, if you think your widgets are displayed too small or too big on your target mobile device, you can easily adjust the scale factor (hard zooming).
+**With [mob] you can access to most of those features**, in a faster way than with the MobMuPlat Java Editor. Furthermore, if you think your widgets are displayed too small or too big on your target mobile device, **you can easily adjust the scale factor** (hard zooming).
 
-[mob] maps native pd-guis (hsv, vsl, hradio, vradio, toggle, bang, cnv, array) and text comments into mmp.widgets in the .mmp file.
+[mob] converts native pd-guis (hsv, vsl, hradio, vradio, toggle, bang, cnv, array) and text comments into mmp.widgets in the .mmp file.
 It comes with enhanced guis (vfader, hfader, button, xy_slider, jog, menu, xy_nultitouch, knob, lcd) that are also converted to mmp.widgets.
 
 [mob] includes a RJDJ-based preset saving mechanism.
