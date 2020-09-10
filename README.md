@@ -42,7 +42,7 @@ Copy the content of subfolder named 'MobMuPlat_target_folder' into the MobMuPlat
 
 **Usage**
 
-Have first a look at **mob-help.pd**
+Have first a look at **mob_overview.pd** and **mob-help.pd** 
 
 Edit the patch you want to export to MobMuPlat with pd >= 0.50. **Add the [mob] object on it**. Check the background color, the layout size, the number of pages, etc.. You can adjust the scale factor with the "zoom" slider.
 
