@@ -1,11 +1,11 @@
-#N canvas 11 149 944 1018 16;
+#N canvas 11 58 944 1018 16;
 #X obj 805 718 s \$0-cnv;
 #X obj 637 27 inlet;
 #X obj 662 197 t f f;
-#X obj 221 362 iemguts/receivecanvas 1;
-#X obj 220 397 route editmode;
-#X obj 97 434 list prepend 0;
-#X obj 97 463 route 0 1;
+#X obj 221 222 iemguts/receivecanvas 1;
+#X obj 220 257 route editmode;
+#X obj 97 294 list prepend 0;
+#X obj 97 323 route 0 1;
 #N canvas 191 104 1326 562 savestate 0;
 #X obj 237 276 savestate;
 #X obj 349 320 s \$0-save;
@@ -378,7 +378,7 @@
 #X connect 35 0 31 0;
 #X connect 37 0 30 0;
 #X connect 37 1 30 1;
-#X restore 141 505 pd resize;
+#X restore 141 365 pd resize;
 #X obj 88 544 moses 117;
 #X obj 88 573 moses 10;
 #X obj 205 706 t f f;
@@ -599,10 +599,10 @@
 #X obj 996 413 r \$0-h;
 #X msg 805 689 vis_size \$2 \$1;
 #X obj 104 100 hsl 121 15 0 127 0 0 empty \$0-slider empty -2 -8 0
-10 -228856 -228856 -228856 0 1;
+10 -228856 -228856 -228856 0 0;
 #X obj 54 12 - 6;
-#X obj 101 101 cnv 1 1 1 empty \$0-cnv empty 2 6 0 10 -153958 -66577
-0;
+#X obj 101 101 cnv 1 1 1 empty \$0-cnv empty 2 6 0 10 -153958 -1 0
+;
 #X msg 587 648 vis_size 1 1;
 #X obj 748 344 / 127;
 #X msg 1057 688 size 10 10;
@@ -680,7 +680,7 @@
 #X obj 773 412 max 0;
 #X obj 789 493 f 0;
 #X obj 1114 248 s pd-mmp.hfader_properties(\$0);
-#N canvas 1219 388 422 459 mmp.hfader_properties(\$0) 1;
+#N canvas 1219 448 422 459 mmp.hfader_properties(\$0) 0;
 #X obj 6 4 cnv 15 400 450 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X floatatom 156 8 5 0 0 0 width #0-w-rcv #0-w-snd;
@@ -725,18 +725,18 @@
 #X obj 149 385 tgl 20 0 \$0-z_offset \$0-z_offset-rcv MoveOnTop -100
 8 0 16 -262144 -1 -1 0 99;
 #X obj 175 366 hsl 60 20 1 0 0 0 \$0-invisible \$0-invisible-rcv empty
--2 -8 0 10 -262144 -1 -1 5900 1;
+-2 -8 0 10 -262144 -1 -1 0 1;
 #X text 242 362 Opacity;
 #X text 213 216 back_color;
 #X text 211 256 front_color;
 #X text 211 296 label_color;
 #N canvas 412 187 1049 632 color_picker 0;
 #X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 -228856
--258113 -1 0 0;
+-258113 -1 21914 0;
 #X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 -228856
--4034 -1 0 0;
+-4034 -1 21914 0;
 #X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 -228856
--4160 -1 0 0;
+-4160 -1 21914 0;
 #X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 -228856 -228856
 -228856 0 1;
 #N canvas 0 50 498 451 convert2rgb 0;
@@ -812,13 +812,13 @@
 #X restore 28 211 pd color_picker;
 #N canvas 882 181 1049 632 color_picker 0;
 #X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 -228856
--258113 -1 0 0;
+-258113 -1 14942 0;
 #X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 -228856
--4034 -1 0 0;
+-4034 -1 14942 0;
 #X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 -228856
--4160 -1 0 0;
-#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 -208051 -208051
--208051 0 1;
+-4160 -1 14942 0;
+#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 -153958 -153958
+-153958 0 1;
 #N canvas 0 50 498 451 convert2rgb 0;
 #X obj 53 112 * -1;
 #X obj 54 81 + 1;
@@ -1215,13 +1215,17 @@
 #X connect 70 0 69 0;
 #X restore 1201 463 pd mmp-export-hfader_as_LCD;
 #X obj 365 793 outlet;
+#X obj 142 134 r \$0-mode;
+#X msg 136 171 steady \$1;
+#X obj 88 400 list prepend 1;
+#X obj 92 433 route 1 0;
 #X connect 1 0 42 0;
 #X connect 2 0 44 1;
 #X connect 2 1 52 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 1;
 #X connect 5 0 6 0;
-#X connect 6 0 17 0;
+#X connect 6 0 75 0;
 #X connect 6 1 16 0;
 #X connect 9 0 41 0;
 #X connect 10 0 66 0;
@@ -1293,4 +1297,10 @@
 #X connect 69 1 70 0;
 #X connect 69 2 60 0;
 #X connect 70 0 52 0;
+#X connect 73 0 74 0;
+#X connect 73 0 75 1;
+#X connect 74 0 48 0;
+#X connect 75 0 76 0;
+#X connect 76 0 17 0;
+#X connect 76 1 69 0;
 #X coords 0 -1 1 1 127 15 2 100 100;

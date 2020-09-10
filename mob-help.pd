@@ -1,70 +1,71 @@
 #N canvas 1001 157 726 763 12;
-#X obj 159 230 cnv 15 298 138 empty empty mob 2 8 0 14 -228856 -1 0
+#X obj 159 250 cnv 15 298 138 empty empty mob 2 8 0 14 -228856 -1 0
 ;
-#X obj 160 310 vradio 15 1 1 4 \$0-mode \$0-mode-rcv empty 0 -8 0 10
+#X obj 160 330 vradio 15 1 1 4 \$0-mode \$0-mode-rcv empty 0 -8 0 10
 -262144 -1 -1 2;
-#X obj 160 248 vradio 15 1 0 2 \$0-landscape \$0-landscape-rcv empty
+#X obj 160 268 vradio 15 1 0 2 \$0-landscape \$0-landscape-rcv empty
 0 -8 0 10 -232576 -1 -1 0;
-#X text 175 243 Portrait;
-#X text 175 259 Landscape;
-#X text 161 275 Resolution;
-#X text 175 309 320:480;
-#X text 175 322 320:568;
-#X text 175 351 768:1024;
-#X obj 160 292 cnv 15 100 16 empty \$0-canvasType-rcv iPhone3p5Inch
+#X text 175 263 Portrait;
+#X text 175 279 Landscape;
+#X text 161 295 Resolution;
+#X text 175 329 320:480;
+#X text 175 342 320:568;
+#X text 175 371 768:1024;
+#X obj 160 312 cnv 15 100 16 empty \$0-canvasType-rcv iPhone3p5Inch
 1 8 0 12 -228856 -258113 0;
-#X text 175 338 600:960;
-#X obj 241 232 vsl 15 45 1 4 1 0 \$0-zoom \$0-zoom-rcv empty 0 -9 0
-10 -262130 -1 -1 1900 1;
-#X text 242 229 z;
-#X text 242 239 o;
-#X text 242 249 o;
-#X text 242 259 m;
-#X floatatom 256 262 5 1 4 0 - #0-zoom-rcv #0-zoom;
+#X text 175 358 600:960;
+#X obj 241 252 vsl 15 45 1 4 1 0 \$0-zoom \$0-zoom-rcv empty 0 -9 0
+10 -262130 -1 -1 0 1;
+#X text 242 249 z;
+#X text 242 259 o;
+#X text 242 269 o;
+#X text 242 279 m;
+#X floatatom 256 282 5 1 4 0 - #0-zoom-rcv #0-zoom;
 #X text 140 87 pd 0.51 + iemguts + iemlib + mrpeach/binfile, f 15
 ;
-#X obj 162 400 cnv 15 298 138 empty empty mob 2 8 0 14 -228856 -1 0
+#X obj 162 420 cnv 15 298 138 empty empty mob 2 8 0 14 -228856 -1 0
 ;
-#X floatatom 423 450 5 0 99 0 firstPage #0-firstPage-rcv #0-firstPage
+#X floatatom 423 470 5 0 99 0 firstPage #0-firstPage-rcv #0-firstPage
 ;
-#X floatatom 313 450 5 1 100 0 pageCount #0-pageCount-rcv #0-pageCount
+#X floatatom 313 470 5 1 100 0 pageCount #0-pageCount-rcv #0-pageCount
 ;
-#X text 26 251 Orientation --->;
-#X text 31 320 Aspect Ratio --->;
-#X text 259 221 <--- adjust size of gui surface, f 16;
-#X obj 162 580 cnv 15 298 138 empty empty mob 2 8 0 14 -228856 -1 0
+#X text 26 271 Orientation --->;
+#X text 31 340 Aspect Ratio --->;
+#X text 259 241 <--- adjust size of gui surface, f 16;
+#X obj 162 600 cnv 15 298 138 empty empty mob 2 8 0 14 -228856 -1 0
 ;
-#X obj 405 232 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 405 252 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 404 232 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -72576
+#X obj 404 252 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -72576
 -262144 0;
-#X text 341 250 BackGroundColor;
-#X obj 305 581 bng 40 250 50 0 empty empty export_mmp 17 7 0 10 -258113
+#X text 341 270 BackGroundColor;
+#X obj 305 601 bng 40 250 50 0 empty empty export_mmp 17 7 0 10 -258113
 -1 -1;
-#X obj 275 581 bng 30 250 50 0 \$0-done empty refresh -15 7 0 10 -4034
+#X obj 275 601 bng 30 250 50 0 \$0-done empty refresh -15 7 0 10 -4034
 -1 -1;
-#X symbolatom 247 699 30 0 0 2 mmp_target_File #0-mmpFile-rcv #0-mmpFile
+#X symbolatom 247 719 30 0 0 2 mmp_target_File #0-mmpFile-rcv #0-mmpFile
 ;
-#X obj 444 682 bng 15 250 50 0 empty empty browse -40 7 0 10 -262144
+#X obj 444 702 bng 15 250 50 0 empty empty browse -40 7 0 10 -262144
 -1 -1;
-#X obj 444 647 bng 15 250 50 0 \$0-reset empty reset -35 7 0 10 -262144
+#X obj 444 667 bng 15 250 50 0 \$0-reset empty reset -35 7 0 10 -262144
 -1 -1;
-#X text 357 680 <-----;
-#X text 409 235 pick;
-#X symbolatom 247 662 30 0 0 2 pd_target_File #0-pdFile-rcv #0-pdFile
+#X text 357 700 <-----;
+#X text 409 255 pick;
+#X symbolatom 247 682 30 0 0 2 pd_target_File #0-pdFile-rcv #0-pdFile
 ;
-#X text 357 644 <-----;
-#X text 17 187 1) Choose orientation \, aspect ratio and size of output
+#X text 357 664 <-----;
+#X text 17 207 1) Choose orientation \, aspect ratio and size of output
 gui with foloowing controls :;
-#X text 469 661 <-- controlling output files;
-#X text 464 243 <- adjusting background color;
-#X text 465 448 <-- setting first page to be displayed on app launch
+#X text 469 681 <-- controlling output files;
+#X text 464 263 <- adjusting background color;
+#X text 465 468 <-- setting first page to be displayed on app launch
 , f 23;
-#X text 460 585 <-- refresh and Export buttons;
-#X text 24 547 3) control output files and then press red button to
+#X text 460 605 <-- refresh and Export buttons;
+#X text 24 567 3) control output files and then press red button to
 get target files;
-#X text 19 375 2) You can also have multiple pages for gui output;
+#X text 19 395 2) You can also have multiple pages for gui output;
 #X text 24 11 mob object is an utility abstraction that converts a
 pd patch and its GUIs to MobMuPlat target platform by generating a
 *.mmp interface file with corresponding gui-widgets;
 #X text 22 89 Requirements :;
+#X text 334 87 More info : see mob-overview.pd;
