@@ -8,7 +8,7 @@
 2) The [mob] helper is aimed to replace the javascript MobMuPlat Editor for creating on-the-fly MobMuPlat apps from within puredata. It requires mrpeach/binfile external.
 
 ## Another way to create MobMuPlat apps
-**MobMuPlat** (see http://danieliglesia.com/mobmuplat/) is an app that let you run pd patches on iOS / Android mobile devices.
+MobMuPlat (see http://danieliglesia.com/mobmuplat/) is an app that let you run pd patches on iOS / Android mobile devices.
 In order to create GUIs, you can use the MobMuPlat native mode **or** use a special java app (**MobMuPlat Editor**) for designing your interface files (*.mmp).
 
 Alternatively, **[mob]** lets you build those .mmp files directly from the patch you want to use on mobile platform, in one click, without the need of using MobMuPlat Editor. What you get should be what you see !
