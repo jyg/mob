@@ -3,12 +3,12 @@
   <p align="center"> <img src="https://raw.githubusercontent.com/jyg/mob/master/data/mob-scratch-demo.png" alt="mob scratch demo" ></p>
 
 ## Abstract
-**mob** is a collection of special multitouch gui-widgets, plus an helper for quickly creating MobMuPlat "apps". 
+**mob** achieves two goals : a collection of special **multitouch gui-widgets**; an **helper** for quickly creating **MobMuPlat "apps"**. 
 1) The gui-widgets include faders, xy slider, knob, jog, menu, lcd widgets. It requires pd 0.51 + iemguts + iemlib external libs. You can use it as an extension library for your existing desktop pd-patches.
 2) The [mob] helper is aimed to replace the javascript MobMuPlat Editor for creating on-the-fly MobMuPlat apps from within puredata. It requires mrpeach/binfile external.
 
 ## Another way to create MobMuPlat apps
-**MobMuPlat** (see http://danieliglesia.com/mobmuplat/) is an app that let you run pd patches on iOS / Android mobile devices.
+MobMuPlat (see http://danieliglesia.com/mobmuplat/) is an app that let you run pd patches on iOS / Android mobile devices.
 In order to create GUIs, you can use the MobMuPlat native mode **or** use a special java app (**MobMuPlat Editor**) for designing your interface files (*.mmp).
 
 Alternatively, **[mob]** lets you build those .mmp files directly from the patch you want to use on mobile platform, in one click, without the need of using MobMuPlat Editor. What you get should be what you see !
@@ -42,7 +42,7 @@ Copy the content of subfolder named 'MobMuPlat_target_folder' into the MobMuPlat
 
 **Usage**
 
-Have first a look at **mob-help.pd**
+Have first a look at **mob_overview.pd** and **mob-help.pd** 
 
 Edit the patch you want to export to MobMuPlat with pd >= 0.50. **Add the [mob] object on it**. Check the background color, the layout size, the number of pages, etc.. You can adjust the scale factor with the "zoom" slider.
 
