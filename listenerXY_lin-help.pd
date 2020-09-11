@@ -1,8 +1,6 @@
 #N canvas 654 294 880 536 16;
 #X text 78 230 \$1 : parameter name;
 #X text 78 274 \$3 : unique identifier.;
-#X text 78 294 \$4 : min value;
-#X text 79 315 \$5 : max value;
 #X text 22 201 Arguments;
 #N canvas 0 50 450 300 routing_fromGUI_messages 0;
 #X obj 90 0 r fromGUI;
@@ -22,17 +20,21 @@
 #X restore 278 163 pd routing_fromGUI_messages;
 #X text 80 253 \$2 : gui-receiver name (for updating tcl-tk guis);
 #X text 22 66 horizontal;
-#X text 587 168 <- put this subpatch once in your pd patch \, if you
+#X text 657 174 <- put this subpatch once in your pd patch \, if you
 don't use mob/loader., f 26;
-#X text 10 23 Wrapper for mob/xy_slider in mmp interface, f 67;
-#X text 561 68 <- put one of these objects in your pd patch \, for
+#X text 80 29 Wrapper for mob/xy_slider in mmp interface, f 67;
+#X text 631 74 <- put one of these objects in your pd patch \, for
 each xy_slider you want to create., f 26;
-#X obj 14 103 listenerXY_lin parameter receiver <sid> 0 127 100 100
-;
-#A saved 100 100;
-#A saved MOB_TARGET parameter-<sid>;
 #X text 49 471 In MobMuPlatEditor \, create a MMPXYSlider widget \,
 and with the addres = "\$3.\$1" (in the example \, it would be "<sid>.parameter")
 ;
 #X text 75 339 \$6 : init x-value;
 #X text 70 359 \$7 : init y-value;
+#X text 78 294 \$4 : xmin value;
+#X text 79 315 \$5 : xmax value;
+#X text 75 379 \$8 : ymin value;
+#X text 70 399 \$9 : ymax value;
+#X obj 14 103 listenerXY_lin parameter receiver <sid> 0 127 100 100
+0 127;
+#A saved 100 100;
+#A saved MOB_TARGET parameter;

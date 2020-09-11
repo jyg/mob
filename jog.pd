@@ -7,13 +7,13 @@
 #X obj 313 3 iemguts/receivecanvas 1;
 #X obj 81 184 list prepend 0;
 #X obj 81 215 route 0 1;
-#N canvas 0 57 1920 1023 savestate 1;
+#N canvas 0 57 1920 1023 savestate 0;
 #X obj 157 276 savestate;
 #X obj 269 320 s \$0-save;
 #X obj 142 107 v \$0-w;
 #X obj 157 305 list trim;
 #X obj 210 19 r \$0-save;
-#X obj 199 237 list;
+#X obj 155 237 list;
 #X obj 158 545 s \$0-w;
 #X obj 19 32 loadbang;
 #X obj 19 106 spigot 1;
@@ -190,7 +190,7 @@
 #X obj 210 48 t b b b b b b b, f 85;
 #X msg 21 303 -size 60 \, -back_color 220 220 220 \, -front_color 200
 200 200 \, -cursor_color 0 0 0 \, -name untitled, f 10;
-#X floatatom 1481 500 5 0 0 0 - - -, f 5;
+#X floatatom 1481 500 5 0 0 0 - - -;
 #X obj 373 436 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 270 395 route -size -back_color -front_color -name -z_offset
@@ -468,15 +468,15 @@
 #N canvas 556 180 429 458 jog_properties(\$0) 0;
 #X obj 6 4 cnv 15 400 450 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X floatatom 146 14 5 0 0 0 size #0-w-rcv #0-w, f 5;
+#X floatatom 146 14 5 0 0 0 size #0-w-rcv #0-w;
 #X obj 342 318 bng 40 250 50 0 \$0-ok empty OK 5 20 0 20 -204786 -1
 -1;
-#X symbolatom 91 148 30 0 0 0 send_to #0-name-rcv #0-name, f 30;
+#X symbolatom 91 148 30 0 0 0 send_to #0-name-rcv #0-name;
 #X text 22 117 Messages;
 #N canvas 0 50 450 300 todo 0;
 #X obj 24 70 cnv 15 200 80 empty empty TODO 20 12 0 14 -262130 -66577
 0;
-#X floatatom 130 90 5 0 0 0 text_color #0-cc-rcv #0-cc-snd, f 5;
+#X floatatom 130 90 5 0 0 0 text_color #0-cc-rcv #0-cc-snd;
 #N canvas 0 50 450 300 (subpatch) 0;
 #X obj 100 100 cnv 20 20 20 empty \$0-cc_cnv-rcv empty 20 12 0 14 -1
 -66577 0;
@@ -487,17 +487,16 @@
 #X connect 2 0 1 0;
 #X coords 0 -1 1 1 20 20 2 100 100;
 #X restore 200 92 pd;
-#X floatatom 130 120 5 0 0 0 text_size - -, f 5;
+#X floatatom 130 120 5 0 0 0 text_size - -;
 #X restore 321 418 pd todo;
-#X floatatom 281 385 5 0 0 0 z-offset #0-z_offset-rcv #0-z_offset,
-f 5;
+#X floatatom 281 385 5 0 0 0 z-offset #0-z_offset-rcv #0-z_offset;
 #X text 25 333 MobMuPlat Widget Export;
 #X obj 157 385 tgl 20 0 \$0-z_offset \$0-z_offset-rcv MoveOnTop -100
 8 0 16 -262144 -1 -1 0 99;
 #X obj 157 365 tgl 20 0 \$0-invisible \$0-invisible-rcv Transparency
 -130 8 0 16 -262144 -1 -1 0 1;
 #X obj 183 365 hsl 60 20 1 0 0 0 \$0-invisible \$0-invisible-rcv empty
--2 -8 0 10 -262144 -1 -1 0 1;
+-2 -8 0 10 -262144 -1 -1 5900 1;
 #X text 250 361 Opacity;
 #X text 223 196 back_color;
 #X text 221 236 front_color;
@@ -1021,11 +1020,11 @@ f 5;
 #X msg 329 596 add 123;
 #X msg 137 199 0;
 #X obj 136 237 v MMP_FIRST_GUI_ITEM;
-#X floatatom 256 54 5 0 0 0 - - -, f 5;
-#X floatatom 312 54 5 0 0 0 - - -, f 5;
-#X floatatom 379 50 5 0 0 0 - - -, f 5;
-#X symbolatom 535 160 10 0 0 0 - - -, f 10;
-#X floatatom 447 100 5 0 0 0 - - -, f 5;
+#X floatatom 256 54 5 0 0 0 - - -;
+#X floatatom 312 54 5 0 0 0 - - -;
+#X floatatom 379 50 5 0 0 0 - - -;
+#X symbolatom 535 160 10 0 0 0 - - -;
+#X floatatom 447 100 5 0 0 0 - - -;
 #X obj 386 18 r \$0-w;
 #X obj 682 419 r \$0-back_color;
 #X obj 986 414 r \$0-front_color;

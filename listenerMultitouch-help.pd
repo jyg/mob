@@ -1,8 +1,6 @@
 #N canvas 811 195 880 536 16;
 #X text 78 230 \$1 : parameter name;
 #X text 78 274 \$3 : unique identifier.;
-#X text 78 294 \$4 : min value;
-#X text 79 315 \$5 : max value;
 #X text 22 201 Arguments;
 #N canvas 0 50 450 300 routing_fromGUI_messages 0;
 #X obj 90 0 r fromGUI;
@@ -30,6 +28,9 @@ each xy_slider you want to create., f 26;
 and with the addres = "\$3.\$1" (in the example \, it would be "<sid>.parameter")
 ;
 #X text 10 23 Wrapper for mob/xy_multi in mmp interface, f 67;
-#X obj 14 103 listenerMultitouch parameter receiver <sid> 0 127;
-#A saved 0 0;
-#A saved MOB_TARGET parameter;
+#X obj 14 103 listenerMultitouch parameter receiver <sid> 0 127 0 127
+;
+#X text 78 294 \$4 : xmin value;
+#X text 79 315 \$5 : xmax value;
+#X text 78 334 \$6 : ymin value;
+#X text 79 355 \$7 : ymax value;
