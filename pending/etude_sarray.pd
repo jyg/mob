@@ -1,0 +1,218 @@
+#N struct barray float color array z arrayelement;
+#N struct arrayelement float zz;
+#N canvas 0 111 1920 806 12;
+#X obj 72 119 sarray sarray11;
+#A saved -save_contents 0;
+#A saved -displayMode 0;
+#A saved -mode 0;
+#A saved -color 0;
+#A saved -style 0;
+#A saved -linewidth 1;
+#A saved -size 99;
+#A saved -arrayName sarray11;
+#A saved -yto 1;
+#A saved -xto 100;
+#A saved -yfrom -1;
+#A saved -xfrom 0;
+#A saved -style 0;
+#A saved -height 140;
+#A saved -width 200;
+#X text 46 26 to do : argument \$0 / \$1 spécifié et évalué dynamiquement
+;
+#X text 47 58 sauvegarde tableau par savestate;
+#X obj 759 120 r ___array_pointer;
+#X obj 766 169 unpack s p f;
+#X obj 839 256 pointer;
+#X obj 730 296 set float-array color;
+#X obj 753 206 t b p;
+#X obj 736 249 t b b;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-array1 100 float 1;
+#A 0 -0.242848 -0.209515 -0.176182 -0.142849 -0.131421 -0.119992 -0.108564
+-0.0971354 -0.085707 -0.0742785 -0.0628501 -0.0514216 -0.0399931 0.228571
+0.228571 0.228571 0.228571 0.231429 0.234286 0.237143 0.24 0.242857
+0.246428 0.25 0.253571 0.257143 0.260714 0.264285 0.267857 0.271428
+0.273214 0.274999 0.276785 0.278571 0.280357 0.282142 0.283928 0.285714
+0.285714 0.285714 0.285714 0.285714 0.285714 0.285714 0.285714 0.285714
+0.285714 0.285714 0.285714 0.285714 0.285714 0.285714 0.285714 0.285714
+0.285714 0.285714 0.285714 0.285714 0.285714 0.285714 0.285714 0.285714
+0.285714 0.285714 0.285714 0.285714 0.285714 0.285714 0.285714 0.285714
+0.285714 0.285714 0.282857 0.279999 0.277142 0.274285 0.271428 0.25
+0.228571 0.207143 0.185715 0.185715 0.185715 0.142858 0.142858 0.642857
+0.642857 0.642857 0.642857 0.642857 0.642857 0.642857 0.65 0.657142
+0.657142 0.664285 0.685714 0.199993 0.199993 0.199993;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 1039 396 graph;
+#X msg 733 270 850;
+#X obj 728 328 set float-array linewidth;
+#X msg 689 304 6;
+#N canvas 0 50 450 300 sub 0;
+#X coords 0 -1 1 1 200 140 1 200 200;
+#X restore 700 385 pd sub;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array2 100 float 1;
+#A 0 -0.352508 0.141993 0.150784 0.159575 0.168366 0.177157 0.185948
+0.504626 0.518912 0.518912 0.533197 0.533197 0.533197 0.547483 0.561768
+0.576054 0.59034 0.604625 0.604625 0.604625 0.604625 0.609387 0.433198
+0.433198 0.447484 0.447484 0.447484 0.447484 0.457008 0.466531 0.476055
+0.480817 0.485579 0.490341 0.495102 0.499864 0.504626 0.508198 0.511769
+0.51534 0.518912 0.526055 0.533197 0.54034 0.547483 0.547483 0.547483
+0.547483 0.554626 0.561768 0.576054 0.59034 0.59034 0.59034 0.59034
+0.59034 0.59034 0.597482 0.604625 0.604625 0.618911 0.618911 0.618911
+0.618911 0.618911 0.618911 0.618911 0.618911 0.618911 0.618911 0.618911
+0.618911 0.618911 0.618911 0.618911 0.618911 0.618911 0.618911 0.618911
+0.618911 0.618911 0.618911 0.633196 0.633196 0.633196 0.640339 0.647482
+0.647482 0.647482 0.647482 0.647482 0.676053 0.776052 0.461769 0.247486
+0.247486 0.247486 0.247486 0.247486 0.247486;
+#X array array3 100 float 1;
+#A 0 -0.295242 -0.295242 -0.295242 -0.295242 -0.295242 -0.418098 -0.418098
+-0.418098 -0.418098 -0.418098 -0.34667 -0.34667 -0.332385 -0.325242
+-0.318099 -0.646667 -0.646667 -0.646667 -0.646667 -0.646667 -0.646667
+-0.646667 -0.646667 -0.646667 -0.646667 -0.646667 -0.646667 -0.646667
+-0.178815 -0.178815 -0.178815 -0.178815 -0.178815 -0.178815 -0.178815
+-0.178815 -0.178815 -0.178815 -0.178815 -0.193101 -0.235957 -0.2931
+-0.608572 -0.60381 -0.603811 -0.603811 -0.603811 -0.600239 -0.596668
+-0.593096 -0.589525 -0.584763 -0.580001 -0.575239 -0.565716 -0.556192
+-0.546668 -0.543097 -0.539526 -0.535954 -0.532383 -0.532383 -0.532383
+-0.532383 -0.514526 -0.496669 -0.478812 -0.460955 -0.451431 -0.441907
+-0.432384 -0.432384 -0.432384 -0.432384 -0.403813 -0.375242 -0.37048
+-0.365718 -0.360956 -0.34667 -0.332385 -0.327623 -0.322861 -0.318099
+-0.460955 -0.460955 -0.146672 -0.118101 -0.0895299 -0.0823871 -0.0752443
+-0.0181021 0.0176118 0.0533257 0.0604685 0.0676113 -0.595239 -0.595239
+-0.595239 -0.595239;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 1089 180 graph;
+#X obj 1400 598 sarray sarray20;
+#A saved -save_contents 0;
+#A saved -displayMode 0;
+#A saved -mode 0;
+#A saved -color 300;
+#A saved -style 0;
+#A saved -linewidth 1;
+#A saved -size 100;
+#A saved -arrayName sarray20;
+#A saved -yto 1;
+#A saved -xto 100;
+#A saved -yfrom -1;
+#A saved -xfrom 0;
+#A saved -style 0;
+#A saved -height 140;
+#A saved -width 200;
+#X floatatom 1500 110 5 0 0 0 - - -;
+#X symbolatom 1324 450 10 0 0 0 - - -;
+#X obj 1313 380 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1324 427 iemguts/canvasdollarzero 1;
+#X msg 1500 134 -1 \$1;
+#X obj 1553 351 test_sarray \$0;
+#X obj 1631 91 sarray sarray2;
+#A saved -save_contents 0;
+#A saved -displayMode 0;
+#A saved -mode 0;
+#A saved -color 450;
+#A saved -style 0;
+#A saved -linewidth 4;
+#A saved -size 111;
+#A saved -arrayName sarray2;
+#A saved -yto 1;
+#A saved -xto 100;
+#A saved -yfrom -1;
+#A saved -xfrom 0;
+#A saved -style 0;
+#A saved -height 143;
+#A saved -width 212;
+#X obj 1639 448 sarray sarray1;
+#A saved -save_contents 0;
+#A saved -displayMode 0;
+#A saved -mode 0;
+#A saved -color 0;
+#A saved -style 0;
+#A saved -linewidth 2;
+#A saved -size 99;
+#A saved -arrayName sarray1;
+#A saved -yto 1;
+#A saved -xto 100;
+#A saved -yfrom -1;
+#A saved -xfrom 0;
+#A saved -style 0;
+#A saved -height 140;
+#A saved -width 200;
+#X obj 463 95 sarray duchnol;
+#A saved -save_contents 0;
+#A saved -displayMode 0;
+#A saved -mode 0;
+#A saved -color 860;
+#A saved -style 2;
+#A saved -linewidth 2;
+#A saved -size 4;
+#A saved -arrayName duchnol;
+#A saved -yto -1;
+#A saved -xto 3;
+#A saved -yfrom 1;
+#A saved -xfrom 0;
+#A saved -style 2;
+#A saved -height 279;
+#A saved -width 200;
+#X obj 1503 229 tabwrite \$0-duchnoll;
+#X obj 972 625 mob/vfader Untitled_1;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -mode 0;
+#A saved -max 1;
+#A saved -min 0;
+#A saved -name Untitled_1;
+#A saved -speed_ratio 100;
+#A saved -label_color 0 0 0;
+#A saved -front_color 150 150 150;
+#A saved -back_color 220 220 220;
+#A saved -size 15 127;
+#X obj 72 368 sarray Untitled_7;
+#A saved -save_contents 1;
+#A saved -contents 0.285713 0.0571367 0.58572 0.37143 -0.0142936 -0.257156
+-0.542877 -0.71431 -0.671451 0.157139;
+#A saved -displayMode 0;
+#A saved -mode 0;
+#A saved -color 560;
+#A saved -style 0;
+#A saved -linewidth 6;
+#A saved -size 10;
+#A saved -arrayName Untitled_7;
+#A saved -yto 1;
+#A saved -xto 9;
+#A saved -yfrom -1;
+#A saved -xfrom 0;
+#A saved -style 0;
+#A saved -height 140;
+#A saved -width 332;
+#X obj 545 593 bargraph du;
+#A saved -save_contents 0;
+#A saved -displayMode 0;
+#A saved -mode 0;
+#A saved -color 0;
+#A saved -style 0;
+#A saved -linewidth 1;
+#A saved -size 12;
+#A saved -arrayName du;
+#A saved -yto 0;
+#A saved -xto 11;
+#A saved -yfrom 2;
+#A saved -xfrom 0;
+#A saved -style 0;
+#A saved -height 140;
+#A saved -width 200;
+#X text 571 548 bargraph;
+#X text 171 334 sarray;
+#X connect 4 1 7 0;
+#X connect 5 0 6 1;
+#X connect 5 0 11 1;
+#X connect 7 0 8 0;
+#X connect 7 1 5 1;
+#X connect 8 0 10 0;
+#X connect 8 0 12 0;
+#X connect 8 1 5 0;
+#X connect 10 0 6 0;
+#X connect 12 0 11 0;
+#X connect 16 0 20 0;
+#X connect 18 0 19 0;
+#X connect 19 0 17 0;
+#X connect 20 0 25 0;

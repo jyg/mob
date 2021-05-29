@@ -1,30 +1,31 @@
 #N struct bckgrnd float x float y float width float height float color
 ;
 #N canvas 231 73 1338 1003 16;
-#X declare -path ./pdr/core/stuff;
 #X scalar bckgrnd 0 0 600 960 653 \;;
 #X scalar bckgrnd 600 0 600 960 653 \;;
 #X scalar bckgrnd 1200 0 600 960 653 \;;
-#X obj 747 182 mob/button;
+#X obj 747 182 mob/button mybutton;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -name mybutton;
 #A saved -front_color -1 255 255;
 #A saved -back_color 140 99 255;
 #A saved -size 60 60;
-#X obj 965 400 mob/xy_slider;
+#X obj 965 400 mob/xy_slider Untitled_1;
 #A saved -invisible 0;
 #A saved -z_offset 0;
-#A saved -max 1;
-#A saved -min 0;
-#A saved -name untitled;
+#A saved -xmax 1;
+#A saved -ymax 1;
+#A saved -xmin 0;
+#A saved -ymin 0;
+#A saved -name Untitled_1;
 #A saved -front_color 200 200 200;
 #A saved -back_color 220 220 220;
 #A saved -size 165 136;
 #X obj 524 370 vsl 50 200 0 127 0 0 my_vsl my_vsl-rcv empty 0 -9 0
 10 -260097 -257985 -1 19900 0;
 #X obj 126 322 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
--232576 -258113 -1 8393 0;
+-232576 -258113 -1 7100 0;
 #X obj 452 414 vradio 50 1 1 4 my_vradio my_vradio-rcv empty 0 -8 0
 10 -4034 -159808 -1 0;
 #X obj 123 380 hradio 60 1 1 5 my_hradio my_hradio-rcv empty 0 -8 0
@@ -52,7 +53,7 @@ and copy the .pd and .mmp files to the target platform!, f 56;
 #X text 1065 75 mob_save;
 #X text 177 326 (only 'jump on click' mode for sliders), f 23;
 #X text 42 285 -comments are displayed on the target platform.;
-#X obj 748 377 mob/vfader;
+#X obj 748 377 mob/vfader my_vsl;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -mode 1;
@@ -64,7 +65,7 @@ and copy the .pd and .mmp files to the target platform!, f 56;
 #A saved -front_color 238 195 211;
 #A saved -back_color 238 125 231;
 #A saved -size 76 159;
-#X obj 758 274 mob/hfader;
+#X obj 758 274 mob/hfader my_hsl;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -mode 1;
@@ -76,7 +77,7 @@ and copy the .pd and .mmp files to the target platform!, f 56;
 #A saved -front_color 126 102 191;
 #A saved -back_color 190 190 219;
 #A saved -size 176 63;
-#X obj 851 379 mob/vfader;
+#X obj 851 379 mob/vfader my_vsl;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -mode 0;
@@ -88,7 +89,7 @@ and copy the .pd and .mmp files to the target platform!, f 56;
 #A saved -front_color 238 195 211;
 #A saved -back_color 238 125 231;
 #A saved -size 76 159;
-#X obj 962 274 mob/hfader;
+#X obj 962 274 mob/hfader my_hsl;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -mode 0;
@@ -125,7 +126,7 @@ and copy the .pd and .mmp files to the target platform!, f 56;
 #X text 17 686 * Quick and dirty export of gop-arrays;
 #X text 656 20 * Preset state saving using reserved senders names 'mob_load'
 & 'mob_save', f 24;
-#X obj 57 578 cnv 15 350 60 my_cnv my_cnv-rcv ceci 20 25 0 50 -233017
+#X obj 57 577 cnv 15 350 60 my_cnv my_cnv-rcv ceci 20 25 0 50 -233017
 -66577 0;
 #X text 860 420 (jump mode), f 5;
 #X text 750 417 (steady mode), f 7;
@@ -211,9 +212,10 @@ with steady mode property., f 67;
 #X restore 39 923 pd some_restrictions_with_native_guis;
 #N canvas 74 719 450 300 mob-listeners 0;
 #X obj 20 50 mob/listener mybutton mybutton-rcv;
-#X obj 20 100 mob/listenerXY_lin xy xy-rcv 1 -1 1 0 0;
-#A saved -0.557789 -0.72028;
-#A saved MOB_TARGET xy;
+#X obj 20 100 mob/listenerXY_lin Untitled_1 Untitled_1-rcv 1 0 1 0
+0 0 1;
+#A saved 0 0;
+#A saved MOB_TARGET Untitled_1;
 #X obj 20 150 mob/listener_lin my_vsl my_vsl-rcv 2 0 127;
 #X obj 20 200 mob/listener_lin my_hsl my_hsl-rcv 3 0 1;
 #X obj 20 250 mob/listenerVradio my_vradio my_vradio-rcv 4 4;
@@ -222,20 +224,20 @@ with steady mode property., f 67;
 #X obj 20 400 mob/listenerHradio mob_load mob_load-rcv 7 3;
 #X obj 20 450 mob/listenerHradio mob_save mob_save-rcv 8 3;
 #X obj 20 500 mob/listenerVLCD_lin my_vsl my_vsl-rcv 9 0 127 148.865
-48.6402;
+127;
 #A saved 127;
 #A saved MOB_TARGET my_vsl;
 #X obj 20 550 mob/listenerHLCD_lin my_hsl my_hsl-rcv 10 0 1 181.631
-0.491639;
-#A saved 0.280702;
+0.237458;
+#A saved 0.237458;
 #A saved MOB_TARGET my_hsl;
-#X obj 20 600 mob/listenerVLCD_lin my_vsl my_vsl-rcv 11 0 127 0 48.6402
+#X obj 20 600 mob/listenerVLCD_lin my_vsl my_vsl-rcv 11 0 127 0 127
 ;
 #A saved 127;
 #A saved MOB_TARGET my_vsl;
-#X obj 20 650 mob/listenerHLCD_lin my_hsl my_hsl-rcv 12 0 1 0 0.491639
+#X obj 20 650 mob/listenerHLCD_lin my_hsl my_hsl-rcv 12 0 1 0 0.237458
 ;
-#A saved 0.280702;
+#A saved 0.237458;
 #A saved MOB_TARGET my_hsl;
 #X obj 20 700 mob/listenerCnv my_cnv my_cnv-rcv;
 #X obj 20 750 mob/listenerTgl my_tgl my_tgl-rcv;
@@ -243,13 +245,15 @@ with steady mode property., f 67;
 #X obj 20 850 mob/listenerMenu my_menu my_menu-rcv;
 #X obj 20 900 mob/listenerTgl back back-rcv;
 #X obj 20 950 mob/listenerTgl top top-rcv;
-#X obj 20 1000 mob/listenerMultitouch untitled untitled-rcv 13 0 1
+#X obj 20 1000 mob/listenerMultitouch Untitled_2 Untitled_2-rcv 13
+0 1 0 1;
+#X obj 20 1050 mob/listenerKnob my_knob my_knob-rcv 14 0.000302136
 ;
-#X obj 20 1050 mob/listenerKnob my_knob my_knob-rcv 14 0.834917;
-#A saved 0.000949562;
+#A saved 0.828066;
 #A saved MOB_TARGET my_knob;
-#X obj 20 1100 mob/listenerKnob my_knob my_knob-rcv 15 0.834917;
-#A saved 0.000949562;
+#X obj 20 1100 mob/listenerKnob my_knob my_knob-rcv 15 0.000302136
+;
+#A saved 0.828066;
 #A saved MOB_TARGET my_knob;
 #X obj 20 1150 mob/listenerLCD my_lcd my_lcd-rcv;
 #X obj 20 1200 mob/listenerBng draw_circle 16 250 50;
@@ -303,9 +307,9 @@ forwarded to MobMuPlat interface., f 31;
 #X connect 7 0 8 0;
 #X connect 8 0 6 0;
 #X restore 56 642 pd changing_cnv's_text;
-#X obj 1250 135 tgl 200 0 back back-rcv empty 17 7 0 10 -228856 -99865
+#X obj 1228 118 tgl 150 0 back back-rcv empty 17 7 0 10 -228856 -99865
 -1 0 1;
-#X obj 1341 211 tgl 200 0 top top-rcv empty 17 7 0 10 -261234 -4034
+#X obj 1294 174 tgl 150 0 top top-rcv empty 17 7 0 10 -261234 -4034
 -1 0 1;
 #X text 1058 931 advanced -->;
 #X msg 82 812 \; toGUI list array1 refresh;
@@ -317,20 +321,22 @@ by generating a *.mmp interface file with converted gui-widgets.,
 f 32;
 #X text 653 125 * mob widgets : (click help for more info on each widget)
 , f 50;
-#X obj 848 726 mob/xy_multi;
+#X obj 848 726 mob/xy_multi Untitled_2;
 #A saved -show_first_touch 0;
 #A saved -invisible 0;
 #A saved -z_offset 0;
-#A saved -max 1;
-#A saved -min 0;
-#A saved -name untitled;
+#A saved -xmax 1;
+#A saved -ymax 1;
+#A saved -xmin 0;
+#A saved -ymin 0;
+#A saved -name Untitled_2;
 #A saved -front_color 234 236 240;
 #A saved -back_color 180 196 222;
-#A saved -size 288 198;
+#A saved -size 290 187;
 #X text 620 699 -mob/jog : jogwheel;
-#X text 1234 439 ! mob widgets don't work if embedded in graph-on-parent
+#X text 1232 348 ! mob widgets don't work if embedded in graph-on-parent
 subpatches., f 43;
-#X text 1235 497 Remember that [mob] doesn't export embedded gop GUIs
+#X text 1231 402 Remember that [mob] doesn't export embedded gop GUIs
 to MobMuPlat (except for arrays)., f 47;
 #X text 1229 70 ! Z-order and touch interaction behavior differ between
 tcl/tk and MobMuPlat platforms., f 47;
@@ -348,7 +354,7 @@ intercept touch interaction., f 53;
 properties panel \, in order to facilitate MobMuPlat export., f 47
 ;
 #X restore 1552 145 pd more_details;
-#X obj 345 2 mob;
+#X obj 346 5 mob;
 #A saved -R 192.756;
 #A saved -G 152.598;
 #A saved -B 102.402;
@@ -357,7 +363,7 @@ properties panel \, in order to facilitate MobMuPlat export., f 47
 #A saved -landscape 0;
 #A saved -zoom 1;
 #X text 850 182 -mob/knob;
-#X obj 957 155 mob/knob;
+#X obj 957 155 mob/knob my_knob;
 #A saved -cursor_color 56 0 0;
 #A saved -range 1;
 #A saved -invisible 0;
@@ -380,7 +386,7 @@ and drag, f 40;
 = 2;
 #X restore 744 148 pd more_info;
 #X f 13;
-#X obj 1076 154 mob/knob;
+#X obj 1076 154 mob/knob my_knob;
 #A saved -cursor_color 42 0 0;
 #A saved -range 1;
 #A saved -invisible 0;
@@ -389,24 +395,24 @@ and drag, f 40;
 #A saved -front_color 0 202 0;
 #A saved -back_color 204 202 43;
 #A saved -size 113;
-#X obj 1248 613 mob/lcd;
+#X obj 1248 493 mob/lcd my_lcd;
 #A saved -back_alpha 0;
 #A saved -front_alpha 0;
 #A saved -front_color 0 0 0;
 #A saved -back_color -1 255 255;
 #A saved -title ;
 #A saved -name my_lcd;
-#A saved -size 369 237;
-#X text 1237 578 -mob/lcd;
-#X obj 1660 639 bng 50 250 50 0 draw_circle draw_circle-rcv empty 17
+#A saved -size 354 182;
+#X text 1237 468 -mob/lcd;
+#X obj 1660 469 bng 50 250 50 0 draw_circle draw_circle-rcv empty 17
 7 0 10 -204800 -4160 -1;
-#X text 1662 609 circle;
-#X obj 1660 801 bng 50 250 50 0 clear clear-rcv empty 17 7 0 10 -262130
+#X text 1662 439 circle;
+#X obj 1660 631 bng 50 250 50 0 clear clear-rcv empty 17 7 0 10 -262130
 -83269 -1;
-#X text 1662 771 clear;
-#X obj 1658 721 tgl 50 0 auto auto-rcv empty 17 7 0 10 -204786 -13381
+#X text 1662 601 clear;
+#X obj 1658 551 tgl 50 0 auto auto-rcv empty 17 7 0 10 -204786 -13381
 -1 0 1;
-#X text 1659 691 auto;
+#X text 1659 521 auto;
 #N canvas 0 50 670 542 lcd_demo_stuff 0;
 #X obj 37 208 random 100;
 #X obj 37 233 / 100;
@@ -464,15 +470,14 @@ and drag, f 40;
 #X connect 22 0 14 0;
 #X connect 23 0 17 0;
 #X connect 24 0 19 0;
-#X restore 1612 575 pd lcd_demo_stuff;
+#X restore 1422 461 pd lcd_demo_stuff;
 #X obj 1077 698 multitouch;
-#X obj 637 753 jog;
+#X text 857 698 -mob/xy_multi - needs multitouch;
+#X obj 637 753 mob/jog my_jogwheel;
 #A saved -cursor_color 0 0 0;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -name my_jogwheel;
-#A saved -front_color -1 255 255;
+#A saved -front_color 200 200 200;
 #A saved -back_color 220 220 220;
-#A saved -size 143;
-#X text 857 698 -mob/xy_multi - needs multitouch;
-#X connect 5 0 45 0;
+#A saved -size 179;

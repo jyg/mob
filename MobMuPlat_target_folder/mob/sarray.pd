@@ -1,0 +1,4 @@
+#N canvas 956 343 450 300 12;
+#X obj 115 137 r \$1-rcv;
+#X obj 121 224 s \$1;
+#X text 57 54 embedded oject for mmp/sarray abstraction;

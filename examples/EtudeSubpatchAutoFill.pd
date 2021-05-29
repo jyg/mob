@@ -1,0 +1,229 @@
+#N canvas 277 58 1471 973 16;
+#N canvas 0 50 450 300 mob-listeners 1;
+#X obj 20 50 mob/listener_lin note note-rcv 1 50 120;
+#X obj 20 0 mob/loader martenot;
+#X obj 20 104;
+#X restore 614 26 pd mob-listeners;
+#X obj 735 689 text define -k dump;
+#A set #N canvas 722 178 958 1018 12 \; #X obj 569 357 list append
+\; #X obj 631 452 s RJ_SCENE \; #X obj 597 221 r RJ_SCENE_SAVE \; #X
+obj 597 246 route save \; #X obj 597 271 t b \; #X obj 561 386 route
+bang \; #X obj 399 354 r RJ_SCENE_LOAD \; #X obj 399 379 list trim
+\; #X obj 399 404 route \\\$1 \; #X obj 399 429 route bang \; #X obj
+650 107 r \\\$1 \; #X obj 117 433 s toGUI \; #X obj 455 481 s \\\$1
+\; #X obj 623 415 list prepend \\\$1 \; #X obj 95 159 - \\\$4 \; #X
+obj 96 204 / 1 \; #X obj 161 101 loadbang \; #X obj 161 125 f \\\$5
+\; #X obj 161 149 - \\\$4 \; #X obj 161 173 select 0 \; #X obj 78 621
+* 1 \; #X obj 76 654 + \\\$4 \; #X obj 66 287 route 0 \; #X obj 65
+250 list prepend \\\$3 \\\$1 \; #X obj 67 331 list \; #X obj 181 533
+r \\\$1 \; #X obj 178 610 list prepend set \; #X obj 178 635 list trim
+\; #X obj 178 660 s \\\$2 \; #X text 33 541 routed fromGUI \; #X obj
+87 58 r \\\$1 \; #X obj 66 586 r \\\$3.\\\$1 \; #X msg 68 368 list
+\\\$1 set \\\$2 \; #X msg 143 329 list \\\$1.\\\$2 set \\\$3 \; #X
+obj 9 61 r \\\$2 \; #X obj 9 86 route set \; #X obj 90 122 change \;
+#X obj 76 679 s \\\$2 \; #X obj 181 569 change \; #X connect 0 0 5
+0 \; #X connect 2 0 3 0 \; #X connect 3 0 4 0 \; #X connect 4 0 0 0
+\; #X connect 5 1 13 0 \; #X connect 6 0 7 0 \; #X connect 7 0 8 0
+\; #X connect 8 0 9 0 \; #X connect 9 1 12 0 \; #X connect 10 0 0 1
+\; #X connect 13 0 1 0 \; #X connect 14 0 15 0 \; #X connect 15 0 23
+0 \; #X connect 16 0 17 0 \; #X connect 17 0 18 0 \; #X connect 18
+0 19 0 \; #X connect 19 1 15 1 \; #X connect 19 1 20 1 \; #X connect
+20 0 21 0 \; #X connect 21 0 37 0 \; #X connect 22 0 24 0 \; #X connect
+22 1 33 0 \; #X connect 23 0 22 0 \; #X connect 24 0 32 0 \; #X connect
+25 0 38 0 \; #X connect 26 0 27 0 \; #X connect 27 0 28 0 \; #X connect
+30 0 36 0 \; #X connect 31 0 20 0 \; #X connect 32 0 11 0 \; #X connect
+33 0 11 0 \; #X connect 34 0 35 0 \; #X connect 35 0 36 0 \; #X connect
+36 0 14 0 \; #X connect 38 0 26 0 \;;
+#X msg 933 751 read \$1;
+#X obj 1123 699 openpanel;
+#X obj 1153 648 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 73 356 text sequence dump;
+#X obj 522 786 list append note note-rcv 1 50 120;
+#X obj 94 931 print;
+#X obj 526 764 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 67 320 line \$1 \, step;
+#X floatatom 171 120 5 0 0 0 - - -;
+#X msg 613 541 line 0 \, bang;
+#X obj 57 504 list length;
+#X obj 55 543 until;
+#X obj 61 613 f;
+#X obj 113 619 + 1;
+#X obj 54 689 list store;
+#X msg 54 654 get \$1 1;
+#X obj 74 471 t l l b;
+#X msg 134 574 0;
+#X obj 54 765 list fromsymbol;
+#X obj 54 794 route 36;
+#X obj 54 728 route symbol;
+#X obj 262 836 list prepend add2;
+#X obj 260 868 list trim;
+#X obj 54 823 list tosymbol;
+#X obj 269 770 list tosymbol;
+#X msg 54 881 adddollar \$1;
+#X msg 317 361 set;
+#N canvas 1102 185 888 575 sub 1;
+#X obj 569 357 list append;
+#X obj 631 452 s RJ_SCENE;
+#X obj 597 221 r RJ_SCENE_SAVE;
+#X obj 597 246 route save;
+#X obj 597 271 t b;
+#X obj 561 386 route bang;
+#X obj 399 354 r RJ_SCENE_LOAD;
+#X obj 399 379 list trim;
+#X obj 399 404 route note;
+#X obj 399 429 route bang;
+#X obj 650 107 r note;
+#X obj 117 433 s toGUI;
+#X obj 455 481 s note;
+#X obj 623 415 list prepend note;
+#X obj 95 159 - 50;
+#X obj 96 204 / 1;
+#X obj 161 101 loadbang;
+#X obj 161 125 f 120;
+#X obj 161 149 - 50;
+#X obj 161 173 select 0;
+#X obj 78 621 * 1;
+#X obj 76 654 + 50;
+#X obj 66 287 route 0;
+#X obj 65 250 list prepend 1 note;
+#X obj 67 331 list;
+#X obj 181 533 r note;
+#X obj 178 610 list prepend set;
+#X obj 178 635 list trim;
+#X obj 178 660 s note-rcv;
+#X text 33 541 routed fromGUI;
+#X obj 87 58 r note;
+#X obj 66 586 r 1;
+#X msg 68 368 list note set note-rcv;
+#X msg 143 329 list note set 1;
+#X obj 9 61 r note-rcv;
+#X obj 9 86 route set;
+#X obj 90 122 change;
+#X obj 76 679 s note-rcv;
+#X obj 181 569 change;
+#X connect 0 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 1 13 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 1 12 0;
+#X connect 10 0 0 1;
+#X connect 13 0 1 0;
+#X connect 14 0 15 0;
+#X connect 15 0 23 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 1 15 1;
+#X connect 19 1 20 1;
+#X connect 20 0 21 0;
+#X connect 21 0 37 0;
+#X connect 22 0 24 0;
+#X connect 22 1 33 0;
+#X connect 23 0 22 0;
+#X connect 24 0 32 0;
+#X connect 25 0 38 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 30 0 36 0;
+#X connect 31 0 20 0;
+#X connect 32 0 11 0;
+#X connect 33 0 11 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 14 0;
+#X connect 38 0 26 0;
+#X restore 914 367 pd sub;
+#X obj 1105 926 s pd-sub;
+#X obj 73 385 list trim;
+#X obj 73 416 route #X;
+#X msg 1063 867 msg 143 238 ducon;
+#X obj 73 444 list;
+#X obj 546 205 f;
+#X obj 540 96 text size dump;
+#X obj 539 36 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 593 207 + 1;
+#X obj 543 246 moses;
+#X msg 640 172 0;
+#X obj 539 62 t b b b;
+#X obj 525 159 delay 10;
+#X obj 542 320 t b f b b;
+#X msg 711 178 clear;
+#X obj 725 226 s pd-sub;
+#N canvas 0 50 450 300 parse 1;
+#X obj 99 45 inlet;
+#X obj 115 126 list length;
+#X restore 905 550 pd parse;
+#X obj 119 220 t f b;
+#X msg 180 252 set;
+#X msg 444 876 connect 38 0 26 0;
+#X obj 1175 176 float;
+#X floatatom 1175 205 5 0 0 0 - - -;
+#X obj 223 710 float;
+#X obj 54 852 print;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 31 0;
+#X connect 6 0 49 0;
+#X connect 8 0 6 0;
+#X connect 9 0 5 0;
+#X connect 10 0 47 0;
+#X connect 11 0 5 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 14 0 17 0;
+#X connect 15 0 14 1;
+#X connect 16 0 22 0;
+#X connect 17 0 16 0;
+#X connect 18 0 12 0;
+#X connect 18 1 16 1;
+#X connect 18 2 19 0;
+#X connect 19 0 14 1;
+#X connect 20 0 21 0;
+#X connect 21 0 25 0;
+#X connect 21 1 26 0;
+#X connect 22 0 20 0;
+#X connect 22 1 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 49 0;
+#X connect 25 0 52 0;
+#X connect 25 0 53 0;
+#X connect 26 0 23 0;
+#X connect 27 0 49 0;
+#X connect 28 0 49 0;
+#X connect 31 0 32 0;
+#X connect 32 0 34 0;
+#X connect 33 0 30 0;
+#X connect 34 0 18 0;
+#X connect 35 0 38 0;
+#X connect 35 0 39 0;
+#X connect 36 0 39 1;
+#X connect 37 0 41 0;
+#X connect 38 0 35 1;
+#X connect 39 0 43 0;
+#X connect 40 0 35 1;
+#X connect 41 0 42 0;
+#X connect 41 1 36 0;
+#X connect 41 2 40 0;
+#X connect 41 2 44 0;
+#X connect 42 0 35 0;
+#X connect 43 0 8 0;
+#X connect 43 1 9 0;
+#X connect 43 2 28 0;
+#X connect 43 3 42 0;
+#X connect 44 0 45 0;
+#X connect 47 0 9 0;
+#X connect 47 1 48 0;
+#X connect 48 0 49 0;
+#X connect 49 0 30 0;
+#X connect 50 0 51 0;
+#X connect 52 0 27 0;
+#X connect 52 0 53 0;

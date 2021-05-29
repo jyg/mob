@@ -1,0 +1,64 @@
+#N struct bckgrnd float x float y float width float height float color
+;
+#N canvas 505 212 1184 681 12;
+#X scalar bckgrnd 0 0 320 568 653 \;;
+#X obj 302 32 mob;
+#A saved -R 192.756;
+#A saved -G 152.598;
+#A saved -B 102.402;
+#A saved -pages 1;
+#A saved -mode 1;
+#A saved -landscape 0;
+#A saved -zoom 1;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array1 10 float 1;
+#A 0 -0.5 -0.185715 -0.27143 0.0285718 0.214287 0.557147 0.657147 0.700005
+0.742862 0.685701;
+#X coords 0 1 9 -1 200 140 1;
+#X restore 30 71 graph;
+#N canvas 0 50 450 300 mob-listeners 1;
+#X obj 20 0 mob/loader Testsarray;
+#X restore 100 10 pd mob-listeners;
+#N canvas 0 50 450 300 infos 1;
+#X obj 345 299 route -width -height -style -xfrom -yfrom -xto -yto
+-arrayName -size -linewidth -color -style -mode -displayMode, f 8
+;
+#N canvas 0 50 537 340 About_array_displaying_modes 0;
+#X text 39 18 MMP offers different modes for displaying arrays, f
+26;
+#X text 41 69 mode 0 : edit content \, mode 1 : select zone, f 24
+;
+#X text 39 112 displayMode 0 = line \, displayMode 1 = filled bar,
+f 27;
+#X text 43 191 Quick and dirty export of gop-array uses only mode 0
+\, displayMode 0, f 43;
+#X restore 583 484 pd About_array_displaying_modes;
+#X text 560 297 displatMode;
+#X text 555 311 displayMode 0 = line \, displayMode 1 = filled bar
+, f 27;
+#X text 448 308 0 1 2, f 2;
+#X text 468 295 style polygone -> points -> bezier curve, f 13;
+#X text 659 343 displayMode 1 = filled bar;
+#X text 476 407 "displayRangeLo":\$6\\\,"displayRangeHi":\$4;
+#X floatatom 595 359 5 0 0 0 xto #0-xto-rcv #0-xto;
+#X floatatom 574 425 5 0 0 0 yfrom #0-yfrom-rcv #0-yfrom;
+#X floatatom 515 356 5 0 0 0 xfrom #0-xfrom-rcv #0-xfrom;
+#X floatatom 713 425 5 0 0 0 yto #0-yto-rcv #0-yto;
+#X text 336 250 Autres parametres a exporter;
+#X restore 365 229 pd infos;
+#X text 118 41 polygon;
+#X text 138 219 points;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array2 20 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 20 -1 200 140 1;
+#X restore 35 256 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array3 20 float 5;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 20 -1 200 140 1;
+#X restore 30 421 graph;
+#X text 210 402 bezier;
+#X obj 383 318 r array1;
+#X obj 383 343 print array1;
+#X connect 10 0 11 0;
