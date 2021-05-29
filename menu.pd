@@ -13,7 +13,7 @@
 #X obj 499 200 unpack f f f;
 #X obj 151 578 list prepend 0;
 #X obj 151 624 route 0 1;
-#N canvas 0 57 1920 1023 savestate 1;
+#N canvas 0 57 1920 1023 savestate 0;
 #X obj 226 397 savestate;
 #X obj 388 461 s \$0-save;
 #X obj 204 154 v \$0-w;
@@ -226,7 +226,7 @@
 #X restore 280 732 pd resize;
 #X obj 818 514 r \$0-w;
 #X obj 1039 559 r \$0-h;
-#X obj 100 100 cnv 1 1 1 \$0-pos \$0-pos-rcv empty 2 30 0 30 -1 -1
+#X obj 100 100 cnv 1 1 1 \$0-pos \$0-pos-rcv menu 2 30 0 30 -1 -221185
 0;
 #X obj 768 553 / 60;
 #X obj 966 611 / 60;
@@ -242,7 +242,7 @@
 #X obj 1620 86 iemguts/propertybang;
 #X obj 1738 143 r \$0-ok;
 #X msg 1738 185 vis 0;
-#N canvas 0 50 899 442 gui_feedback 0;
+#N canvas 0 50 1188 471 gui_feedback 0;
 #X msg 127 259 set \$1;
 #X obj 132 222 r \$0-w;
 #X obj 130 298 s \$0-w-rcv;
@@ -264,9 +264,6 @@
 #X msg 98 562 set \$1;
 #X obj 102 524 r \$0-h;
 #X obj 101 600 s \$0-h-rcv;
-#X obj 972 424 r \$0-name;
-#X msg 972 466 set \$1;
-#X obj 971 547 s \$0-name-rcv;
 #X msg 720 462 set \$1;
 #X obj 720 420 r \$0-menu_list;
 #X obj 719 545 s \$0-menu_list-rcv;
@@ -275,6 +272,48 @@
 #X obj 1115 145 s \$0-font_color;
 #X obj 1123 214 r \$0-font_color;
 #X obj 1121 289 s \$0-lc-rcv;
+#N canvas 0 50 684 586 \$0-name 0;
+#X obj 231 16 r \$0-name;
+#X msg 312 180 set \$1;
+#X obj 352 224 s \$0-name-rcv;
+#X obj 32 238 list append \$1;
+#X obj 32 267 select 0;
+#X obj 110 426 s \$0-name;
+#X obj 32 86 loadbang;
+#X msg 228 97 label \$1-rcv;
+#X obj 224 144 s \$0-receive_name-rcv;
+#X obj 472 161 iemguts/canvasargs 2;
+#X obj 32 162 spigot 1;
+#X msg 114 126 0;
+#X obj 109 346 symbol;
+#X obj 483 118 list;
+#X obj 221 45 t b s s s;
+#X obj 32 325 + 1;
+#X obj 32 354 t f f;
+#X text 253 288 \$1 argument defines default \$0-name;
+#X obj 32 296 v mob.UNTITLED_WIDGET;
+#X msg 33 389 symbol Untitled_\$1;
+#X connect 0 0 14 0;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 4 0 18 0;
+#X connect 4 1 12 0;
+#X connect 6 0 10 0;
+#X connect 7 0 8 0;
+#X connect 10 0 3 0;
+#X connect 11 0 10 1;
+#X connect 12 0 5 0;
+#X connect 13 0 9 0;
+#X connect 14 0 11 0;
+#X connect 14 1 7 0;
+#X connect 14 2 1 0;
+#X connect 14 3 13 0;
+#X connect 15 0 16 0;
+#X connect 16 0 19 0;
+#X connect 16 1 18 0;
+#X connect 18 0 15 0;
+#X connect 19 0 5 0;
+#X restore 312 448 pd \$0-name;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 3 0 5 0;
@@ -288,13 +327,11 @@
 #X connect 16 0 13 0;
 #X connect 18 0 20 0;
 #X connect 19 0 18 0;
-#X connect 21 0 22 0;
-#X connect 22 0 23 0;
-#X connect 24 0 26 0;
-#X connect 25 0 24 0;
-#X connect 27 0 31 0;
-#X connect 28 0 29 0;
-#X connect 30 0 27 0;
+#X connect 21 0 23 0;
+#X connect 22 0 21 0;
+#X connect 24 0 28 0;
+#X connect 25 0 26 0;
+#X connect 27 0 24 0;
 #X restore 1606 326 pd gui_feedback;
 #X obj 816 751 &&;
 #X obj 694 1326 s \$0-click_area-rcv;
@@ -303,12 +340,12 @@
 #N canvas 355 596 419 480 mmpMenu_properties(\$0) 0;
 #X obj 8 6 cnv 15 400 450 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X floatatom 130 21 5 0 0 0 width #0-w-rcv #0-w-snd;
+#X floatatom 130 21 5 0 0 0 width #0-w-rcv #0-w;
 #X obj 334 360 bng 40 250 50 0 \$0-ok empty OK 5 20 0 20 -204786 -1
 -1;
-#X floatatom 314 27 5 0 0 0 height #0-h-rcv #0-h-snd;
-#X symbolatom 95 208 30 0 0 0 send_to #0-name-rcv #0-name;
-#X text 31 169 Messages;
+#X floatatom 314 27 5 0 0 0 height #0-h-rcv #0-h;
+#X symbolatom 95 178 30 0 0 0 send_to #0-name-rcv #0-name;
+#X text 31 146 Messages;
 #N canvas 0 50 450 300 todo 0;
 #X obj 244 238 nbx 3 20 10 200 1 0 \$0-spdrt \$0-spdrt-rcv speed_ratio(%)
 -140 10 0 16 -262144 -1 -1 10 256;
@@ -337,12 +374,13 @@
 #X text 234 259 label_color;
 #N canvas 882 181 1049 632 color_picker 0;
 #X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 -228856
--258113 -1 0 0;
+-258113 -1 10758 0;
 #X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 -228856
 -4034 -1 0 0;
 #X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 -228856
 -4160 -1 0 0;
-#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 -1 -1 -1 0 1;
+#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 -221185 -221185
+-221185 0 1;
 #N canvas 0 50 498 451 convert2rgb 0;
 #X obj 53 112 * -1;
 #X obj 54 81 + 1;
@@ -414,6 +452,9 @@
 #X connect 20 0 16 0;
 #X coords 0 -1 1 1 169 36 2 50 150;
 #X restore 42 258 pd color_picker;
+#X obj 95 202 cnv 15 300 20 empty \$0-receive_name-rcv my_menu-rcv
+2 10 0 16 -249855 -66577 0;
+#X text 20 200 receive;
 #X restore 1606 282 pd mmpMenu_properties(\$0);
 #N canvas 0 50 1568 1015 mmp-export-Menu 0;
 #X obj 174 53 r MMP_EXPORT;
@@ -673,20 +714,6 @@ empty empty 0 -9 0 10 -262144 -1 -1 1 \;;
 #X obj 604 629 text insert \$0-menu;
 #X obj 314 728 s pd-\$0-popup_menu;
 #N canvas 602 249 317 827 \$0-popup_menu 0;
-#X obj 0 0 hsl 150 57 0 0 0 0 1041-target 1041-target-rcv this 0 28
-0 28 -262144 -262144 -49162 0 1;
-#X obj 0 57 hsl 150 57 1 1 0 0 1041-target 1041-target-rcv is 0 28
-0 28 -262144 -262144 -49162 0 1;
-#X obj 0 114 hsl 150 57 2 2 0 0 1041-target 1041-target-rcv the 0 28
-0 28 -262144 -262144 -49162 0 1;
-#X obj 0 171 hsl 150 57 3 3 0 0 1041-target 1041-target-rcv list 0
-28 0 28 -262144 -262144 -49162 0 1;
-#X obj 0 228 hsl 150 57 4 4 0 0 1041-target 1041-target-rcv of 0 28
-0 28 -262144 -262144 -49162 0 1;
-#X obj 0 285 hsl 150 57 5 5 0 0 1041-target 1041-target-rcv menu 0
-28 0 28 -262144 -262144 -49162 0 1;
-#X obj 0 342 hsl 150 57 6 6 0 0 1041-target 1041-target-rcv items 0
-28 0 28 -262144 -262144 -49162 0 1;
 #X restore 311 943 pd \$0-popup_menu;
 #X msg 762 440 1e+09;
 #X obj 762 390 loadbang;
