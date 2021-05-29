@@ -1,5 +1,5 @@
 #N canvas 809 265 669 669 10;
-#N canvas 0 57 1920 1023 savestate 1;
+#N canvas 0 57 1920 1023 savestate 0;
 #X obj 226 397 savestate;
 #X obj 388 461 s \$0-save;
 #X obj 226 439 list trim;
@@ -246,7 +246,7 @@
 #X obj 435 209 r \$0-ok;
 #X msg 438 238 vis 0;
 #X obj 345 266 s pd-array_properties(\$0);
-#N canvas 1228 287 420 500 array_properties(\$0) 0;
+#N canvas 1228 317 420 500 array_properties(\$0) 0;
 #X obj 8 6 cnv 15 400 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X floatatom 308 110 5 0 0 0 width #0-width-rcv #0-width;
@@ -407,7 +407,7 @@ empty -2 -8 0 10 -262144 -1 -1 0 1;
 #X text 117 89 polygon;
 #X text 117 120 Bezier curve;
 #X obj 93 62 tgl 15 0 \$0-save_contents \$0-save_contents-rcv save_contents
-17 7 0 10 -262144 -1 -1 1 1;
+17 7 0 10 -262144 -1 -1 0 1;
 #X floatatom 96 153 5 0 40 0 lineWidth #0-linewidth-rcv #0-linewidth
 ;
 #X obj 276 248 bng 40 250 50 0 \$0-set empty APPLY 5 20 0 20 -204786
@@ -466,7 +466,6 @@ empty -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 32 162 spigot 1;
 #X msg 114 126 0;
 #X obj 109 346 symbol;
-#X obj 483 118 list;
 #X obj 221 45 t b s s s;
 #X obj 32 325 + 1;
 #X obj 32 354 t f f;
@@ -476,26 +475,29 @@ empty -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 110 426 s \$0-arrayName;
 #X obj 352 224 s \$0-arrayName-rcv;
 #X text 253 288 \$1 argument defines default \$0-arrayName;
-#X connect 0 0 18 0;
+#X obj 483 118 list append \$2;
+#X obj 483 72 t s;
+#X text 478 95 | disabled to enable extra \$2 params;
+#X connect 0 0 17 0;
 #X connect 1 0 2 0;
-#X connect 2 0 14 0;
+#X connect 2 0 13 0;
 #X connect 2 1 9 0;
 #X connect 3 0 7 0;
 #X connect 4 0 5 0;
 #X connect 7 0 1 0;
 #X connect 8 0 7 1;
-#X connect 9 0 17 0;
-#X connect 10 0 6 0;
-#X connect 11 0 8 0;
-#X connect 11 1 4 0;
-#X connect 11 2 0 0;
-#X connect 11 3 10 0;
-#X connect 12 0 13 0;
-#X connect 13 0 15 0;
-#X connect 13 1 14 0;
-#X connect 14 0 12 0;
-#X connect 15 0 17 0;
-#X connect 16 0 11 0;
+#X connect 9 0 16 0;
+#X connect 10 0 8 0;
+#X connect 10 1 4 0;
+#X connect 10 2 0 0;
+#X connect 10 3 20 0;
+#X connect 11 0 12 0;
+#X connect 12 0 14 0;
+#X connect 12 1 13 0;
+#X connect 13 0 11 0;
+#X connect 14 0 16 0;
+#X connect 15 0 10 0;
+#X connect 19 0 6 0;
 #X restore 411 427 pd \$0-arrayName;
 #X obj 874 313 r \$0-save_contents;
 #X msg 874 336 set \$1;
@@ -530,24 +532,25 @@ empty -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 40 64 namecanvas \$0-this;
 #N canvas 3 51 450 300 \$0-display 0;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array Untitled_1 99 float 1;
-#A 0 0.342857 0.285714 -0.0142857 -0.228571 -0.457143 -0.571429 -0.642857
--0.7 -0.114286 -0.371429 0.224994 0.216661 0.208328 0.149995 0.149995
-0.149995 0.0999962 0.049997 0.0333306 0.0166641 -2.26498e-06 -0.0250019
--0.0500015 -0.100001 -0.110001 -0.12 -0.13 -0.14 -0.15 -0.157143 -0.164285
--0.171428 -0.178571 -0.185714 -0.192856 -0.199999 -0.199999 -0.199999
--0.199999 -0.199999 -0.199999 -0.224999 -0.249998 -0.249998 -0.249998
--0.249998 -0.249998 -0.249998 -0.249998 -0.262498 -0.274998 -0.287498
--0.299998 -0.299998 -0.299998 -0.299998 -0.299998 -0.299998 -0.349997
--0.359997 -0.369997 -0.379996 -0.389996 -0.399996 -0.399996 -0.399996
--0.409996 -0.419996 -0.429996 -0.439996 -0.449995 -0.474995 -0.499995
--0.516661 -0.533327 -0.549994 -0.549994 -0.549994 -0.649992 -0.674992
--0.749991 0.54999 0.54999 0.54999 0.54999 0.54999 0.54999 0.54999 0.54999
-0.54999 0.54999 0.54999 0.54999 0.54999 0.54999 0.54999 0.54999 0.54999
-0.899985;
-#X coords 0 -1 100 1 60 40 2 0 0;
+#X array \$2-my_array 99 float 1;
+#A 0 -0.171427 -0.147618 -0.123809 -0.0999993 -0.0942851 -0.0885708
+-0.0828566 -0.0771424 -0.0714282 -0.0678568 -0.0642854 -0.060714 -0.0571426
+-0.0542855 -0.0514284 -0.0485713 -0.0457142 -0.0428571 -0.0428571 -0.0428571
+-0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571
+-0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571
+-0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571
+-0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571
+-0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571
+-0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571
+-0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571
+-0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571
+-0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571
+-0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571 -0.0428571
+-0.0428571 -0.0428571 -0.0428571 -0.0457142 -0.0485713 -0.0514284 -0.0542855
+-0.0714282 -0.0714282;
+#X coords 0 1 100 -1 200 140 2 0 0;
 #X restore 100 20 graph;
-#X coords 0 -1 100 1 60 40 2 100 20;
+#X coords 0 1 100 -1 200 140 2 100 20;
 #X restore 40 130 pd \$0-display;
 #N canvas 40 65 1179 895 colarray 0;
 #X obj 66 748 s pd-_float_array_template;
@@ -1117,283 +1120,6 @@ empty -2 -8 0 10 -262144 -1 -1 0 1;
 #X connect 106 0 0 0;
 #X connect 107 0 0 0;
 #X restore 225 33 pd colarray;
-#N canvas 0 57 1920 1023 mmp-export-sarray_as_array 0;
-#X obj 109 -2 r MMP_EXPORT;
-#X obj 48 256 r \$0-x;
-#X obj 138 309 r \$0-y;
-#X obj 27 293 f;
-#X obj 134 657 list append 125;
-#X obj 134 635 list prepend add 123;
-#X obj 147 699 list trim;
-#X obj 147 721 s MMP_BINFILE;
-#X obj 395 117 v MMP_FIRST_GUI_ITEM;
-#X obj 397 145 select 1;
-#X msg 425 597 add 44 123;
-#X msg 329 596 add 123;
-#X msg 399 184 0;
-#X obj 398 222 v MMP_FIRST_GUI_ITEM;
-#X obj 380 355 r \$0-back_color;
-#X obj 657 81 iemguts/canvasposition 1;
-#X obj 715 128 s \$0-y;
-#X obj 656 126 s \$0-x;
-#X obj 657 104 unpack f f;
-#X obj 875 82 v WIDGET-ID;
-#X obj 875 107 + 1;
-#X obj 875 132 s WIDGET-ID;
-#X obj 1279 726 s LISTENERS;
-#X obj 1271 538 symbol;
-#X obj 1271 567 t s s;
-#X msg 1311 598 symbol \$1-rcv;
-#X obj 1438 565 r \$0-min;
-#X obj 1564 564 r \$0-max;
-#X obj 66 586 list fromsymbol;
-#X obj 1688 475 r \$0-mode;
-#X obj 1748 517 r \$0-spdrt;
-#X obj 1748 546 t b f;
-#X obj 1748 575 *;
-#X obj 111 195 r MOB_ZOOM;
-#X obj 78 344 * 1;
-#X obj 132 350 * 1;
-#X obj 255 350 * 1;
-#X obj 197 345 * 1;
-#X obj 1707 631 r \$0-name;
-#X obj 1686 707 iem_receive;
-#X msg 1707 660 set \$1;
-#X obj 1279 642 pack s s f f f f f;
-#N canvas 278 130 450 300 MMP_EXPORT_BY_INDEX 0;
-#X obj 151 40 r MMP_EXPORT_BY_INDEX;
-#X obj 146 268 outlet;
-#X text 38 6 enable z-order;
-#X obj 151 69 t f b;
-#X obj 203 96 canvasindex 2;
-#X obj 146 235 select;
-#X obj 202 145 + 0;
-#X obj 249 126 r \$0-z_offset;
-#X obj 202 174 max 0;
-#X obj 202 203 min 1;
-#X obj 298 171 - 1;
-#X connect 0 0 3 0;
-#X connect 3 0 5 0;
-#X connect 3 1 4 0;
-#X connect 4 0 6 0;
-#X connect 4 1 10 0;
-#X connect 5 0 1 0;
-#X connect 6 0 8 0;
-#X connect 7 0 6 1;
-#X connect 8 0 9 0;
-#X connect 9 0 5 1;
-#X connect 10 0 9 1;
-#X restore 26 21 pd MMP_EXPORT_BY_INDEX;
-#X obj 1686 744 route float;
-#N canvas 0 50 534 640 canvas_color_to_rgb 0;
-#X obj 119 35 inlet;
-#X obj 121 96 + 1;
-#X obj 121 125 * -1;
-#X obj 134 159 t f f f;
-#X obj 45 193 / 65536;
-#X obj 163 194 / 256;
-#X obj 247 197 mod 256;
-#X obj 163 223 mod 256;
-#X obj 45 222 int;
-#X obj 45 251 / 255;
-#X obj 163 252 / 255;
-#X obj 247 226 / 255;
-#X obj 40 283 outlet;
-#X obj 164 285 outlet;
-#X obj 254 283 outlet;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 3 1 5 0;
-#X connect 3 2 6 0;
-#X connect 4 0 8 0;
-#X connect 5 0 7 0;
-#X connect 6 0 11 0;
-#X connect 7 0 10 0;
-#X connect 8 0 9 0;
-#X connect 9 0 12 0;
-#X connect 10 0 13 0;
-#X connect 11 0 14 0;
-#X restore 381 381 pd canvas_color_to_rgb;
-#N canvas 0 50 534 640 canvas_color_to_rgb 0;
-#X obj 119 35 inlet;
-#X obj 121 96 + 1;
-#X obj 121 125 * -1;
-#X obj 134 159 t f f f;
-#X obj 45 193 / 65536;
-#X obj 163 194 / 256;
-#X obj 247 197 mod 256;
-#X obj 163 223 mod 256;
-#X obj 45 222 int;
-#X obj 45 251 / 255;
-#X obj 163 252 / 255;
-#X obj 247 226 / 255;
-#X obj 40 283 outlet;
-#X obj 164 285 outlet;
-#X obj 254 283 outlet;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 3 1 5 0;
-#X connect 3 2 6 0;
-#X connect 4 0 8 0;
-#X connect 5 0 7 0;
-#X connect 6 0 11 0;
-#X connect 7 0 10 0;
-#X connect 8 0 9 0;
-#X connect 9 0 12 0;
-#X connect 10 0 13 0;
-#X connect 11 0 14 0;
-#X restore 602 364 pd canvas_color_to_rgb;
-#X obj 604 340 r \$0-front_color;
-#X obj 68 53 t b b b b b, f 134;
-#X msg 519 495 "address":"/panel6Table" \, "selectionColor":[1 \, 1
-\, 1 \, 0.5] \, "highlightColor":[1 \, 0 \, 0 \, 1] \, "frame":[1620.363
-\, 86.0898 \, 277.316 \, 97.82033] \, "mode":1 \, "color":[1 \, 1 \,
-1 \, 1] \, "class":"MMPTable" \, "displayRangeLo":-1 \, "displayRangeHi":1
-\, "displayMode":0;
-#N canvas 0 50 537 678 zoom 0;
-#X obj 75 34 inlet;
-#X obj 88 513 outlet;
-#X obj 196 206 r \$0-zoom;
-#X obj 95 274 * 1;
-#X obj 139 240 * 1;
-#X obj 97 168 unpack f f;
-#X obj 103 323 pack f f;
-#X obj 75 59 list split 6;
-#X obj 121 109 list split 2;
-#X obj 105 351 list append;
-#X obj 88 395 list append;
-#X connect 0 0 7 0;
-#X connect 2 0 3 1;
-#X connect 2 0 4 1;
-#X connect 3 0 6 0;
-#X connect 4 0 6 1;
-#X connect 5 0 3 0;
-#X connect 5 1 4 0;
-#X connect 6 0 9 0;
-#X connect 7 0 10 0;
-#X connect 7 1 8 0;
-#X connect 8 0 5 0;
-#X connect 8 1 9 1;
-#X connect 9 0 10 1;
-#X connect 10 0 1 0;
-#X restore 302 721 pd zoom;
-#X obj 1265 69 route -width -height -style -xfrom -yfrom -xto -yto
--arrayName -size -linewidth -color -style -mode -displayMode, f 8
-;
-#X obj 198 306 r \$0-width;
-#X obj 276 307 r \$0-height;
-#N canvas 0 50 537 340 About_array_displaying_modes 0;
-#X text 39 18 MMP offers different modes for displaying arrays, f
-26;
-#X text 41 69 mode 0 : edit content \, mode 1 : select zone, f 24
-;
-#X text 39 112 displayMode 0 = line \, displayMode 1 = filled bar,
-f 27;
-#X text 43 191 Quick and dirty export of gop-array uses only mode 0
-\, displayMode 0, f 43;
-#X restore 1503 254 pd About_array_displaying_modes;
-#X text 1480 67 displatMode;
-#X text 1475 81 displayMode 0 = line \, displayMode 1 = filled bar
-, f 27;
-#X text 1368 78 0 1 2, f 2;
-#X text 1388 65 style polygone -> points -> bezier curve, f 13;
-#X text 1579 113 displayMode 1 = filled bar;
-#X msg 36 495 symbol "address":"\$5"\\\,"selectionColor":[1\\\,1\\\,1\\\,0.5]\\\,"highlightColor":[0\\\,0\\\,0\\\,1]\\\,"frame":[\$1\\\,\$2\\\,\$7\\\,\$8]\\\,"mode":1\\\,"color":[1\\\,1\\\,1\\\,0.1]\\\,"class":"MMPTable"\\\,"displayRangeLo":\$6\\\,"displayRangeHi":\$4\\\,"displayMode":0
-;
-#X obj 519 317 r \$0-back_alpha;
-#X obj 742 339 r \$0-front_alpha;
-#X text 82 364 \$1;
-#X text 138 368 \$2;
-#X text 201 364 \$3;
-#X text 259 367 \$4;
-#X text 356 267 \$5;
-#X text 358 391 \$6;
-#X text 528 337 \$9;
-#X obj 74 418 pack f f f f s f f f 1 f f f 1 f, f 131;
-#X obj 311 328 r \$0-arrayName;
-#X obj 1268 688 list prepend mob/listenerSarray;
-#X obj 1286 487 r \$0-arrayName;
-#X text 1396 177 "displayRangeLo":\$6\\\,"displayRangeHi":\$4;
-#X floatatom 1515 129 5 0 0 0 xto #0-xto-rcv #0-xto;
-#X floatatom 1494 195 5 0 0 0 yfrom #0-yfrom-rcv #0-yfrom;
-#X floatatom 1435 126 5 0 0 0 xfrom #0-xfrom-rcv #0-xfrom;
-#X floatatom 1633 195 5 0 0 0 yto #0-yto-rcv #0-yto;
-#X obj 110 229 t f b f b f b f, f 23;
-#X text 1256 20 Autres parametres a exporter;
-#X connect 1 0 3 1;
-#X connect 2 0 35 0;
-#X connect 3 0 34 0;
-#X connect 4 0 6 0;
-#X connect 5 0 4 0;
-#X connect 6 0 7 0;
-#X connect 8 0 9 0;
-#X connect 9 0 11 0;
-#X connect 9 0 12 0;
-#X connect 9 1 10 0;
-#X connect 10 0 5 1;
-#X connect 11 0 5 1;
-#X connect 12 0 13 0;
-#X connect 14 0 44 0;
-#X connect 15 0 18 0;
-#X connect 18 0 17 0;
-#X connect 18 1 16 0;
-#X connect 19 0 20 0;
-#X connect 20 0 21 0;
-#X connect 23 0 24 0;
-#X connect 24 0 41 0;
-#X connect 24 1 25 0;
-#X connect 25 0 41 1;
-#X connect 26 0 41 3;
-#X connect 27 0 41 4;
-#X connect 28 0 5 0;
-#X connect 29 0 32 0;
-#X connect 30 0 31 0;
-#X connect 31 0 32 0;
-#X connect 31 1 32 1;
-#X connect 32 0 41 5;
-#X connect 33 0 78 0;
-#X connect 34 0 69 0;
-#X connect 35 0 69 1;
-#X connect 36 0 69 3;
-#X connect 37 0 69 2;
-#X connect 38 0 40 0;
-#X connect 39 0 43 0;
-#X connect 40 0 39 0;
-#X connect 41 0 71 0;
-#X connect 43 0 41 6;
-#X connect 44 0 69 5;
-#X connect 44 1 69 6;
-#X connect 44 2 69 7;
-#X connect 45 0 69 9;
-#X connect 45 1 69 10;
-#X connect 45 2 69 11;
-#X connect 46 0 45 0;
-#X connect 47 0 3 0;
-#X connect 47 1 8 0;
-#X connect 47 2 23 0;
-#X connect 47 3 15 0;
-#X connect 47 4 19 0;
-#X connect 51 0 37 0;
-#X connect 52 0 36 0;
-#X connect 59 0 28 0;
-#X connect 60 0 69 8;
-#X connect 61 0 69 12;
-#X connect 69 0 59 0;
-#X connect 70 0 69 4;
-#X connect 71 0 22 0;
-#X connect 72 0 23 1;
-#X connect 78 0 34 1;
-#X connect 78 1 35 0;
-#X connect 78 2 35 1;
-#X connect 78 3 37 0;
-#X connect 78 4 37 1;
-#X connect 78 5 36 0;
-#X connect 78 6 36 1;
-#X restore 337 428 pd mmp-export-sarray_as_array;
 #X text 324 28 credits : ingox https://forum.pdpatchrepo.info/user/ingox
 https://forum.pdpatchrepo.info/topic/11184/colarray-a-graphical-array-where-color-and-line-width-can-be-set
 ;
@@ -1401,4 +1127,4 @@ https://forum.pdpatchrepo.info/topic/11184/colarray-a-graphical-array-where-colo
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
-#X coords 0 -1 100 1 60 40 2 40 130;
+#X coords 0 1 100 -1 200 140 2 40 130;

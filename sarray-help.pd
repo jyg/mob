@@ -1,4 +1,4 @@
-#N canvas 545 180 777 653 16;
+#N canvas 545 180 753 652 16;
 #X obj 2 1 cnv 15 700 40 empty empty empty 20 12 0 14 -232576 -66577
 0;
 #X text 0 51 ______________________________________________________________________
@@ -6,7 +6,7 @@
 #X obj 1 508 cnv 15 700 120 empty empty empty 20 12 0 14 -204786 -66577
 0;
 #X text 31 515 MobMuPlat usage :;
-#X obj 63 218 sarray my_array;
+#X obj 63 218 sarray my_array 0;
 #A saved -save_contents 0;
 #A saved -displayMode 0;
 #A saved -mode 0;
@@ -34,12 +34,17 @@
 #X restore 591 110 pd credits;
 #X text 46 167 [sarray my_array];
 #X text 363 249 [sarray \$2-my_array \$0];
-#X obj 368 294 sarray \\\$2-my_array;
+#X text 20 133 * invocation : sarray <array_name>;
+#X text 328 194 * There is some trickery to do if you need to name
+it with \$0 argument :, f 37;
+#X text 24 439 * In order to edit properties \, right-click on the
+object and choose properties menu;
+#X obj 366 285 sarray \$2-my_array \$0;
 #A saved -save_contents 0;
 #A saved -displayMode 0;
 #A saved -mode 0;
-#A saved -color 50;
-#A saved -style 1;
+#A saved -color 670;
+#A saved -style 0;
 #A saved -linewidth 3;
 #A saved -size 99;
 #A saved -arrayName \$2-my_array;
@@ -47,12 +52,8 @@
 #A saved -xto 100;
 #A saved -yfrom 1;
 #A saved -xfrom 0;
-#A saved -style 1;
+#A saved -style 0;
 #A saved -height 140;
 #A saved -width 200;
-#X text 20 133 * invocation : sarray <array_name>;
-#X text 328 194 * There is some trickery to do if you need to name
-it with \$0 argument :, f 37;
-#X text 40 552 (to be documented);
-#X text 24 439 * In order to edit properties \, right-click on the
-object and choose properties menu;
+#X text 40 552 This version doesn't include MobMuPlat export feature
+;
