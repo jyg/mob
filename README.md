@@ -1,4 +1,5 @@
-# mob (updated, version 2)
+# mob 
+(updated, version 2)
 ### PureData multitouch widgets + fast exporting of pd patches to mobile platform app (MobMuPlat)
   <p align="center"> <img src="https://raw.githubusercontent.com/jyg/mob/master/doc/mob-scratch-demo.png" alt="mob scratch demo" ></p>
 
