@@ -1,0 +1,36 @@
+#N struct bckgrnd float x float y float width float height float color
+;
+#N canvas 750 358 792 454 16;
+#X scalar bckgrnd 0 0 320 568 678 \;;
+#X obj 42 190 hradio 50 1 0 3 mob_load mob_load-rcv empty 0 -8 0 10
+#00fc04 #9c00fc #000000 0;
+#X text 208 202 mob_load;
+#X obj 42 247 hradio 50 1 0 3 mob_save mob_save-rcv empty 0 -8 0 10
+#fc0400 #9c00fc #000000 0;
+#X text 207 258 mob_save;
+#X text 16 70 * Preset state saving using reserved senders names 'mob_load'
+& 'mob_save', f 24;
+#X obj 570 113 mob;
+#A saved -R 180.709;
+#A saved -zoom 1;
+#A saved -landscape 0;
+#A saved -mode 1;
+#A saved -pages 1;
+#A saved -B 255;
+#A saved -G 220.866;
+#N canvas 0 0 450 300 mob-listeners 0;
+#X obj 20 50 mob/tools/listenerHradio mob_load mob_load-rcv 1 3;
+#X obj 20 100 mob/tools/listenerHradio mob_save mob_save-rcv 2 3;
+#X obj 20 -1 mob/tools/loader2 state_saving \$0;
+#X restore 570 83 pd mob-listeners;
+#X obj 457 37 text define -k \$0-scene_state;
+#A set;
+#X obj 427 350 s \$0-scene_state;
+#X msg 427 318 clear;
+#X text 425 279 all in patch state saving;
+#X obj 121 401 s \$0-scene_state;
+#X msg 139 371 read;
+#X msg 228 370 write;
+#X text 26 308 prevoir mecanisme sauvegarde presets ailleurs :, f
+24;
+#X connect 10 0 9 0;

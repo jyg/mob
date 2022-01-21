@@ -1,9 +1,9 @@
-#N canvas 545 180 753 652 16;
-#X obj 2 1 cnv 15 700 40 empty empty empty 20 12 0 14 -232576 -66577
+#N canvas 194 64 1515 943 16;
+#X obj 2 1 cnv 15 700 40 empty empty empty 20 12 0 14 #e0c4fc #404040
 0;
 #X text 0 51 ______________________________________________________________________
 , f 70;
-#X obj 1 508 cnv 15 700 120 empty empty empty 20 12 0 14 -204786 -66577
+#X obj 1 508 cnv 15 700 120 empty empty empty 20 12 0 14 #c4fcc4 #404040
 0;
 #X text 31 515 MobMuPlat usage :;
 #X obj 63 218 sarray my_array 0;
@@ -57,3 +57,12 @@ object and choose properties menu;
 #A saved -width 200;
 #X text 40 552 This version doesn't include MobMuPlat export feature
 ;
+#X text 800 361 MMP;
+#X text 808 415 Generer un objet [array define -k <array_name>], f
+68;
+#X text 800 32 PD 0.52;
+#X text 863 141 utiliser savestate pour communiquer avec l'extérieur
+;
+#X text 860 70 dans l'objet sarray : intégrer un array \$0-array_name
+\, ou mieux : une datastruct;
+#X text 810 452 Dump des données depuis sarray;

@@ -1,0 +1,52 @@
+#N struct bckgrnd float x float y float width float height float color
+;
+#N canvas 320 106 1148 726 16;
+#X scalar bckgrnd 0 0 822.211 1315.54 777 \;;
+#X obj 674 53 mob;
+#A saved -R 236.929;
+#A saved -zoom 0.72974;
+#A saved -landscape 0;
+#A saved -mode 2;
+#A saved -pages 1;
+#A saved -B 230.906;
+#A saved -G 234.921;
+#N canvas 0 0 450 300 mob-listeners 0;
+#X obj 20 50 mob/tools/listenerBng arr1_reset arr1_reset-rcv 1 250
+50;
+#X obj 20 100 mob/tools/listenerBng arr1_refresh arr1_refresh-rcv 2
+250 50;
+#X obj 20 0 mob/tools/loader2 arrays;
+#X restore 674 23 pd mob-listeners;
+#X text 31 621 If you plan to create complex behaviors with overlapped
+widgets and transparency support \, use MobMuPlatEditor or test on
+your target device., f 55;
+#X obj 400 156 vsl 70 50 0 127 0 0 \$0-ex_sld empty empty 0 -9 0 10
+#fcfcfc #000000 #000000 0 1;
+#X obj 405 159 cnv 15 60 45 empty \$0-ex_cnv-rcv [72] 5 12 0 14 #e0e0e0
+#404040 0;
+#X obj 480 159 r \$0-ex_sld;
+#X obj 485 244 s \$0-ex_cnv-rcv;
+#X obj 482 187 int;
+#X msg 485 215 label [\$1];
+#X text 139 160 hidden vertical slider ->;
+#X text 18 93 This way \, you can for example create a custom widget
+with \, say \, front-end canvas and hidden slider in background :;
+#X text 18 33 * In puredata tcl/tk interface \, widgets on background
+level intercept mouse interaction.;
+#X text 22 378 If you want to superpose widgets \, consider that the
+top-most widget will intercept touch events. It must be transparent
+\, while the background widget will display the visual feedback but
+without interacting with touch events.;
+#X text 24 559 Remember that puredata tcl/tk doesn't support transparency.
+;
+#X text 20 482 mob/widgets have transparency and z-order settings in
+properties panel. top-most z-order level = 99, f 75;
+#X text 16 282 In the patch \, z-order of widgets are defined by their
+order of creation., f 73;
+#X text 291 345 _________;
+#X text 445 33 ________________;
+#X text 19 341 * On MobMuPlat \, widgets on top level intercept touch
+interaction., f 74;
+#X connect 6 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;

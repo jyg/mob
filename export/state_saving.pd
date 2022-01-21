@@ -1,0 +1,18 @@
+#N struct bckgrnd float x float y float width float height float color
+;
+#N canvas 750 358 792 454 16;
+#X scalar bckgrnd 0 0 320 568 678 \;;
+#X obj 42 190 hradio 50 1 0 3 mob_load mob_load-rcv empty 0 -8 0 10
+#00fc04 #9c00fc #000000 0;
+#X text 208 202 mob_load;
+#X obj 42 247 hradio 50 1 0 3 mob_save mob_save-rcv empty 0 -8 0 10
+#fc0400 #9c00fc #000000 0;
+#X text 207 258 mob_save;
+#X text 16 70 * Preset state saving using reserved senders names 'mob_load'
+& 'mob_save', f 24;
+#X obj 570 113 mob;
+#N canvas 0 50 450 300 mob-listeners 0;
+#X obj 20 50 mob/tools/listenerHradio mob_load mob_load-rcv 1 3;
+#X obj 20 100 mob/tools/listenerHradio mob_save mob_save-rcv 2 3;
+#X obj 20 0 mob/tools/loader2 state_saving;
+#X restore 570 83 pd mob-listeners;

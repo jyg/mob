@@ -1,0 +1,480 @@
+#N struct bckgrnd float x float y float width float height float color
+;
+#N canvas 222 0 1338 1003 16;
+#X scalar bckgrnd 0 0 600 960 653 \;;
+#X scalar bckgrnd 600 0 600 960 653 \;;
+#X scalar bckgrnd 1200 0 600 960 653 \;;
+#X obj 747 182 mob/button mybutton mybutton-rcv 10;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -name mybutton;
+#A saved -front_color 200 200 200;
+#A saved -back_color 220 220 220;
+#A saved -size 98 71;
+#X obj 965 400 mob/xy_slider Untitled_1* Untitled_1*-rcv 10 0 1 0 0
+0 1;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -xmax 1;
+#A saved -ymax 1;
+#A saved -xmin 0;
+#A saved -ymin 0;
+#A saved -name Untitled_1*;
+#A saved -front_color 200 200 200;
+#A saved -back_color 220 220 220;
+#A saved -size 188 142;
+#X obj 524 370 vsl 50 200 0 127 0 0 my_vsl my_vsl-rcv empty 0 -9 0
+10 #fc8000 #f8fc00 #000000 0 0;
+#X obj 126 322 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
+#e0c4fc #fc0400 #000000 0 0;
+#X obj 452 414 vradio 50 1 1 4 my_vradio my_vradio-rcv empty 0 -8 0
+10 #00fc04 #9c00fc #000000 0;
+#X obj 123 380 hradio 60 1 1 5 my_hradio my_hradio-rcv empty 0 -8 0
+10 #fc8000 #f8fc00 #000000 2;
+#X text 18 259 * supported native GUIs :;
+#X text 44 333 -hsl;
+#X text 527 335 -vsl;
+#X text 43 401 -hradio;
+#X text 439 386 -vradio;
+#X text 44 443 -bng;
+#X obj 52 467 bng 70 250 50 0 my_bng my_bng empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 135 470 (bng is converted as a button), f 12;
+#X text 621 265 -mob/hfader;
+#X text 623 363 -mob/vfader;
+#X text 631 179 -mob/button;
+#X text 6 153 Just draw your interface \, then press the red button
+and copy the .pd and .mmp files to the target platform!, f 56;
+#X text 954 357 -mob/xy_slider (jump on touch), f 15;
+#X obj 900 7 hradio 50 1 0 3 mob_load mob_load-rcv empty 0 -8 0 10
+#00fc04 #9c00fc #000000 0;
+#X text 1066 19 mob_load;
+#X obj 900 64 hradio 50 1 0 3 mob_save mob_save-rcv empty 0 -8 0 10
+#fc0400 #9c00fc #000000 0;
+#X text 1065 75 mob_save;
+#X text 177 326 (only 'jump on click' mode for sliders), f 23;
+#X text 42 285 -comments are displayed on the target platform.;
+#X obj 748 377 mob/vfader my_vsl my_vsl-rcv 9 0 127 148.865 0;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -mode 1;
+#A saved -max 127;
+#A saved -min 0;
+#A saved -name my_vsl;
+#A saved -speed_ratio 148.865;
+#A saved -label_color -1 255 255;
+#A saved -front_color 238 195 211;
+#A saved -back_color 238 125 231;
+#A saved -size 76 159;
+#X obj 758 274 mob/hfader my_hsl my_hsl-rcv 8 0 1 181.631 0;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -mode 1;
+#A saved -max 1;
+#A saved -min 0;
+#A saved -name my_hsl;
+#A saved -speed_ratio 181.631;
+#A saved -label_color -1 255 255;
+#A saved -front_color 126 102 191;
+#A saved -back_color 190 190 219;
+#A saved -size 176 63;
+#X obj 851 379 mob/vfader my_vsl my_vsl-rcv 7 0 127 0 0;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -mode 0;
+#A saved -max 127;
+#A saved -min 0;
+#A saved -name my_vsl;
+#A saved -speed_ratio 100;
+#A saved -label_color -1 255 255;
+#A saved -front_color 238 195 211;
+#A saved -back_color 238 125 231;
+#A saved -size 76 159;
+#X obj 962 274 mob/hfader my_hsl my_hsl-rcv 6 0 1 0 0;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -mode 0;
+#A saved -max 1;
+#A saved -min 0;
+#A saved -name my_hsl;
+#A saved -speed_ratio 100;
+#A saved -label_color -1 255 255;
+#A saved -front_color 126 102 191;
+#A saved -back_color 190 190 219;
+#A saved -size 178 63;
+#N canvas 0 50 630 343 TODO 0;
+#X text 60 51 Arrays;
+#X text 24 6 TODO LIST;
+#X text 91 81 -enable preset saving of arrays;
+#X text 95 111 -abstraction to choose colors \, displaymode \, editmode
+;
+#X text 52 161 Object emulating LCD display with datastructures;
+#X text 49 239 Dialog box;
+#X text 47 270 Confirm dialog box;
+#X text 44 297 Multitouch xyslider;
+#X text 46 201 Multi Slider;
+#X text 255 299 OK;
+#X text 47 296 ==================;
+#X text 49 159 ================================================;
+#X restore 1701 922 pd TODO;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array1 20 float 3;
+#A 0 -0.171434 -0.0428594 0.0285708 0.0499998 0.0714289 0.171431 0.257147
+0.28572 0.342864 0.400008 0.414294 0.442866 0.457152 0.471438 0.514296
+0.542868 0.585726 0.600012 0.614298 0.828589;
+#X coords 0 1 20 -1 200 140 1;
+#X restore 374 733 graph;
+#X text 17 686 * Quick and dirty export of gop-arrays;
+#X text 656 20 * Preset state saving using reserved senders names 'mob_load'
+& 'mob_save', f 24;
+#X obj 57 577 cnv 15 350 60 my_cnv my_cnv-rcv ceci 20 25 0 50 #e0e0e0
+#404040 0;
+#X text 860 420 (jump mode), f 5;
+#X text 750 417 (steady mode), f 7;
+#X text 790 277 (steady mode);
+#X text 992 276 (jump mode);
+#X text 303 447 -tgl;
+#X obj 306 473 tgl 70 1 my_tgl my_tgl-rcv empty 17 7 0 10 #fcc4c4 #fc0400
+#000000 0 144;
+#X text 90 892 number \, symbol \, vu;
+#X text 59 200 Note : [mob] object will not appear on the target platform
+\, you can move it anywhere on the patch., f 53;
+#X floatatom 541 614 5 0 0 0 - - - 0;
+#X text 48 550 -cnv + text;
+#X text 620 549 -mob/menu (modal menu);
+#X text 24 868 * currently not supported guis :;
+#N canvas 0 0 849 882 About_array_displaying_modes 0;
+#X text 39 18 MMP offers different modes for displaying arrays, f
+26;
+#X text 41 69 mode 0 : edit content \, mode 1 : select zone, f 24
+;
+#X text 39 112 displayMode 0 = line \, displayMode 1 = filled bar,
+f 27;
+#X text 43 191 Quick and dirty export of gop-array uses only mode 0
+\, displayMode 0, f 43;
+#X floatatom 97 348 5 1 10 0 - - - 0;
+#X floatatom 271 351 5 0 0 0 - - - 0;
+#X msg 238 321 9;
+#X msg 271 321 90;
+#X msg 305 321 900;
+#X text 85 322 set line width;
+#X text 314 349 set color;
+#X msg 97 376 \; array1 width \$1;
+#X msg 271 377 \; array1 color \$1;
+#X connect 4 0 11 0;
+#X connect 5 0 12 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X restore 41 747 pd About_array_displaying_modes;
+#N canvas 0 0 730 596 some_restrictions_with_native_guis 0;
+#X text 22 29 Native guis can be connected by wires but MUST have defined
+send/receive channels., f 53;
+#X text 22 78 The send channel defines the name of the parameter to
+be handled.;
+#X text 22 271 No logarithm mode for sliders on target platform \,
+but you can define any bounds (min and max values for sliders);
+#X text 30 417 No labels attached to guis. Use comment or cnv objects
+;
+#X text 24 456 No quotation marks (") in comments \, else mmp export
+will fail., f 62;
+#X text 23 323 Legacy guis supports init feature as defined in their
+properties dialog.;
+#X text 23 176 Only "jump on click" mode for native sliders on target
+platform., f 65;
+#N canvas 0 0 647 574 handling_'set'_messages 0;
+#X obj 77 515 s my_param;
+#X obj 37 134 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
+0 10 #fcfcfc #000000 #000000 0 1;
+#X msg 67 443 2;
+#X msg 117 442 56;
+#X text 71 102 my_param-rcv;
+#X text 85 250 my_param;
+#X obj 458 116 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
+0 10 #fcfcfc #000000 #000000 0 1;
+#X text 466 89 my_param-rcv;
+#X text 504 237 my_param;
+#X obj 224 205 s my_param-rcv;
+#X msg 246 103 set 56;
+#X msg 251 137 set 2;
+#X obj 226 252 r my_param;
+#X floatatom 226 282 5 0 0 0 - - - 0;
+#N canvas 0 0 717 365 guts 0;
+#X text 59 39 this object is automatically added by mob;
+#X obj 20 97 mob/tools/listener_lin my_param my_param-rcv -1 0 128
+;
+#X restore 525 508 pd guts;
+#X text 16 19 With 'set' messages \, you can set the value displayed
+by a slider/radio/tgl without outputting this value;
+#X msg 200 444 2;
+#X msg 250 443 56;
+#X obj 210 516 s my_param-rcv;
+#X text 16 324 To change the value of a parameter \, either send to
+this parameter or to the receiver channel of the corresponding gui
+widget.;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 10 0 9 0;
+#X connect 11 0 9 0;
+#X connect 12 0 13 0;
+#X connect 16 0 18 0;
+#X connect 17 0 18 0;
+#X restore 327 372 pd handling_'set'_messages;
+#X text 23 206 If you need steady mode \, use mob/hfader & mob/vfader
+with steady mode property., f 67;
+#X text 23 374 'set' messages are supported;
+#X text 59 524 see also http://danieliglesia.com/mobmuplat/doc/index.htm
+;
+#X restore 39 923 pd some_restrictions_with_native_guis;
+#N canvas 74 684 450 300 mob-listeners 0;
+#X obj 20 50 mob/tools/listener_lin my_vsl my_vsl-rcv 11 0 127;
+#X obj 20 100 mob/tools/listener_lin my_hsl my_hsl-rcv 12 0 1;
+#X obj 20 150 mob/tools/listenerVradio my_vradio my_vradio-rcv 13 4
+;
+#X obj 20 200 mob/tools/listenerHradio my_hradio my_hradio-rcv 14 5
+;
+#X obj 20 250 mob/tools/listenerBng my_bng 15 250 50;
+#X obj 20 300 mob/tools/listenerHradio mob_load mob_load-rcv 16 3;
+#X obj 20 350 mob/tools/listenerHradio mob_save mob_save-rcv 17 3;
+#X obj 20 400 mob/tools/listenerCnv my_cnv my_cnv-rcv;
+#X obj 20 450 mob/tools/listenerTgl my_tgl my_tgl-rcv 18;
+#X obj 20 500 mob/tools/listenerCnv menu_result menu_result-rcv;
+#X obj 20 550 mob/tools/listenerTgl back back-rcv 19;
+#X obj 20 600 mob/tools/listenerTgl top top-rcv 20;
+#X obj 20 650 mob/tools/listenerBng draw_circle 21 250 50;
+#X obj 20 700 mob/tools/listenerBng clear 22 250 50;
+#X obj 20 750 mob/tools/listenerTgl auto auto-rcv 23;
+#X obj 20 0 mob/tools/loader2 mob_overview;
+#X restore 100 10 pd mob-listeners;
+#N canvas 0 0 450 300 populating_menu 0;
+#X obj 96 129 s my_menu-rcv;
+#X msg 96 89 set this is my menu list of items;
+#X obj 99 46 loadbang;
+#X obj 263 166 r my_menu;
+#X msg 261 207 label \$1:\$2;
+#X obj 258 239 s menu_result-rcv;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X restore 657 654 pd populating_menu;
+#X obj 969 585 cnv 15 200 60 menu_result menu_result-rcv 5:of 10 20
+0 26 #fcc4c4 #404040 0;
+#X text 984 551 Menu output :;
+#X obj 656 583 mob/menu my_menu my_menu-rcv 5;
+#A saved -label_color 0 0 0;
+#A saved -title ;
+#A saved -name my_menu;
+#A saved -size 60 60;
+#N canvas 0 50 748 453 changing_cnv's_text 0;
+#X msg 222 101 ceci;
+#X msg 231 140 est;
+#X msg 229 175 un;
+#X msg 310 105 texte;
+#X obj 218 28 r my_vradio;
+#X obj 218 57 select 0 1 2 3;
+#X obj 164 362 s my_cnv-rcv;
+#X obj 165 300 list prepend label;
+#X obj 165 329 list trim;
+#X text 373 269 Other messages aren't handled.;
+#X text 368 169 label messages sent to canvas receiver are automatically
+forwarded to MobMuPlat interface., f 31;
+#X connect 0 0 7 0;
+#X connect 1 0 7 0;
+#X connect 2 0 7 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 5 1 1 0;
+#X connect 5 2 2 0;
+#X connect 5 3 3 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
+#X restore 56 642 pd changing_cnv's_text;
+#X obj 1228 118 tgl 150 0 back back-rcv empty 17 7 0 10 #dcdcdc #606060
+#000000 0 1;
+#X obj 1294 174 tgl 150 0 top top-rcv empty 17 7 0 10 #fcc4c4 #00fc04
+#000000 0 1;
+#X text 1058 931 advanced -->;
+#X msg 82 812 \; toGUI list array1 refresh;
+#X text 16 785 To refresh displaying of a table :;
+#X text 18 714 (uses only mode 0 \, displayMode 0);
+#X text 1231 38 CAUTION !;
+#X text 7 68 [mob] exports this patch and its GUIs to MobMuPlat platform
+by generating a *.mmp interface file with converted gui-widgets.,
+f 32;
+#X text 653 125 * mob widgets : (click help for more info on each widget)
+, f 50;
+#X obj 848 726 mob/xy_multi Untitled_2* Untitled_2*-rcv 5 0 1 0 1;
+#A saved -show_first_touch 0;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -xmax 1;
+#A saved -ymax 1;
+#A saved -xmin 0;
+#A saved -ymin 0;
+#A saved -name Untitled_2*;
+#A saved -front_color 200 200 200;
+#A saved -back_color 220 220 220;
+#A saved -size 328 230;
+#X text 620 699 -mob/jog : jogwheel;
+#X text 1232 348 ! mob widgets don't work if embedded in graph-on-parent
+subpatches., f 43;
+#X text 1231 402 Remember that [mob] doesn't export embedded gop GUIs
+to MobMuPlat (except for arrays)., f 47;
+#X text 1229 70 ! Z-order and touch interaction behavior differ between
+tcl/tk and MobMuPlat platforms., f 47;
+#N canvas 0 50 778 470 more_details 0;
+#X text 19 309 If you plan to create complex behaviors with overlapped
+widgets and transparency support \, use MobMuPlatEditor or test on
+your target device., f 55;
+#X text 18 60 In puredata tcl/tk interface \, widgets on background
+level intercept mouse interaction. On MobMuPlat \, widget on top level
+intercept touch interaction., f 53;
+#X text 59 144 puredata tcl/tk doesn't support transparency., f 23
+;
+#X text 20 281 BUT :;
+#X text 18 207 mob/widgets have transparency and z-order settings in
+properties panel \, in order to facilitate MobMuPlat export., f 47
+;
+#X restore 1552 145 pd more_details;
+#X obj 346 5 mob;
+#A saved -R 192.756;
+#A saved -zoom 1;
+#A saved -landscape 0;
+#A saved -mode 2;
+#A saved -pages 3;
+#A saved -B 102.402;
+#A saved -G 152.598;
+#X text 850 182 -mob/knob;
+#X obj 957 155 mob/knob my_knob my_knob-rcv 4 0;
+#A saved -name my_knob;
+#A saved -range 1;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -cursor_color 0 0 0;
+#A saved -front_color 200 200 200;
+#A saved -back_color 220 220 220;
+#A saved -size 105;
+#N canvas 0 50 609 459 more_info 0;
+#X text 35 58 To edit mob/Guis properties :;
+#X text 60 99 right-click & choose "properties";
+#X text 30 139 To resize :;
+#X text 49 179 set edit mode (ctrl+e) \, press ctrl key and then click
+and drag, f 40;
+#X text 29 282 pd 0.5 :;
+#X text 23 342 This issue will be fixed with pd 0.51;
+#X text 21 246 WARNING;
+#X text 22 245 WARNING;
+#X text 46 313 Resizing does not work properly with canvas zooming
+= 2;
+#X restore 744 148 pd more_info;
+#X f 13;
+#X obj 1076 154 mob/knob my_knob my_knob-rcv 3 0;
+#A saved -name my_knob;
+#A saved -range 1;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -cursor_color 0 0 0;
+#A saved -front_color 200 200 200;
+#A saved -back_color 220 220 220;
+#A saved -size 104;
+#X obj 1248 493 mob/lcd my_lcd my_lcd-rcv 2;
+#A saved -back_alpha 1;
+#A saved -front_alpha 1;
+#A saved -front_color 150 150 150;
+#A saved -back_color 220 220 220;
+#A saved -title ;
+#A saved -name my_lcd;
+#A saved -size 401 403;
+#X text 1237 468 -mob/lcd;
+#X obj 1660 469 bng 50 250 50 0 draw_circle draw_circle-rcv empty 17
+7 0 10 #c4fcfc #0400fc #000000;
+#X text 1662 439 circle;
+#X obj 1660 631 bng 50 250 50 0 clear clear-rcv empty 17 7 0 10 #fcfcc4
+#505410 #000000;
+#X text 1662 601 clear;
+#X obj 1658 551 tgl 50 0 auto auto-rcv empty 17 7 0 10 #c4fcc4 #0c4410
+#000000 0 1;
+#X text 1659 521 auto;
+#N canvas 0 0 670 542 lcd_demo_stuff 0;
+#X obj 37 208 random 100;
+#X obj 37 233 / 100;
+#X obj 105 208 random 100;
+#X obj 105 233 / 100;
+#X obj 76 257 random 100;
+#X obj 76 282 / 100;
+#X obj 144 257 random 100;
+#X obj 144 282 / 100;
+#X obj 179 206 random 100;
+#X obj 179 231 / 100;
+#X obj 247 206 random 100;
+#X obj 247 231 / 100;
+#X obj 217 258 random 100;
+#X obj 217 283 / 100;
+#X obj 110 128 t b b b b b b b;
+#X obj 189 314 list;
+#X obj 37 310 pack 0 0 0 0 0 0 0;
+#X obj 150 76 metro 250;
+#X msg 36 335 frameoval \$1 \$2 \$3 \$4 \$5 \$6 \$7 0.5;
+#X msg 298 143 clear;
+#X obj 480 155 loadbang;
+#X msg 480 184 penwidth 3;
+#X obj 39 34 r draw_circle;
+#X obj 182 32 r auto;
+#X obj 309 39 r clear;
+#X obj 36 393 s my_lcd-rcv;
+#X connect 0 0 1 0;
+#X connect 1 0 16 0;
+#X connect 2 0 3 0;
+#X connect 3 0 16 2;
+#X connect 4 0 5 0;
+#X connect 5 0 16 1;
+#X connect 6 0 7 0;
+#X connect 7 0 16 3;
+#X connect 8 0 9 0;
+#X connect 9 0 16 4;
+#X connect 10 0 11 0;
+#X connect 11 0 16 6;
+#X connect 12 0 13 0;
+#X connect 13 0 16 5;
+#X connect 14 0 0 0;
+#X connect 14 1 4 0;
+#X connect 14 2 2 0;
+#X connect 14 3 6 0;
+#X connect 14 4 8 0;
+#X connect 14 5 12 0;
+#X connect 14 6 10 0;
+#X connect 16 0 18 0;
+#X connect 17 0 14 0;
+#X connect 18 0 25 0;
+#X connect 19 0 25 0;
+#X connect 20 0 21 0;
+#X connect 21 0 25 0;
+#X connect 22 0 14 0;
+#X connect 23 0 17 0;
+#X connect 24 0 19 0;
+#X restore 1422 461 pd lcd_demo_stuff;
+#X obj 1077 698 multitouch;
+#X text 857 698 -mob/xy_multi - needs multitouch;
+#X obj 610 726 mob/jog my_jogwheel my_jogwheel-rcv 2 0 0 0 0 1;
+#A saved -cursor_color 0 0 0;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -name my_jogwheel;
+#A saved -front_color 200 200 200;
+#A saved -back_color 220 220 220;
+#A saved -size 225;
+#X obj 436 641 mob/hfader Untitled_4* Untitled_4*-rcv 1 0 1 0 0;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -mode 0;
+#A saved -max 1;
+#A saved -min 0;
+#A saved -name Untitled_4*;
+#A saved -speed_ratio 100;
+#A saved -label_color 0 0 0;
+#A saved -front_color 150 150 150;
+#A saved -back_color 220 220 220;
+#A saved -size 143 85;
+#X connect 42 0 89 0;

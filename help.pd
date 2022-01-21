@@ -1,0 +1,46 @@
+#N canvas 0 0 740 567 12;
+#X obj 131 131 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#N canvas 751 447 450 300 \$0-mob-help 1;
+#X text 45 30 mob/hfader;
+#X obj 16 31 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 16 61 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 45 60 mob/vfader;
+#X obj 16 121 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 45 120 mob/knob;
+#X obj 16 91 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 45 90 mob/button;
+#X obj 16 181 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 45 180 mob/xy_slider;
+#X obj 16 211 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 45 210 mob/xy_multi;
+#X obj 16 241 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 45 240 mob/lcd;
+#X obj 16 271 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 45 270 mob/menu;
+#X obj 16 151 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 45 150 mob/jog;
+#X text 165 30 horizontal fader;
+#X text 165 60 vertical fader;
+#X text 165 90 button;
+#X text 165 120 rotary button;
+#X text 165 150 rotary jogwheel;
+#X text 165 180 bidimensional slider;
+#X text 165 210 bidimensional multitouch slider;
+#X text 165 240 display canvas with drawing primitives;
+#X text 165 270 popup menu;
+#X restore 343 166 pd \$0-mob-help;
+#X obj 121 219 s pd-\$0-mob-help;
+#X msg 124 188 vis 1;
+#X connect 0 0 3 0;
+#X connect 3 0 2 0;
+#X coords 0 -1 1 1 85 60 1 100 100;

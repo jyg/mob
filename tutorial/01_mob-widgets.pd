@@ -1,0 +1,213 @@
+#N struct 1016-barray array z 1016-arrayelement float color;
+#N struct 1016-arrayelement float zz;
+#N canvas 147 0 1096 1016 16;
+#X obj 246 277 mob/button;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -name Untitled_1*;
+#A saved -front_color 200 200 200;
+#A saved -back_color 220 220 220;
+#A saved -size 61 60;
+#X text 66 278 * mob/button;
+#X text 66 348 * mob/knob;
+#X obj 246 352 mob/knob;
+#A saved -name Untitled_2*;
+#A saved -range 1;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -cursor_color 0 0 0;
+#A saved -front_color 200 200 200;
+#A saved -back_color 220 220 220;
+#A saved -size 60;
+#X text 66 428 * mob/jog;
+#X obj 246 427 mob/jog;
+#A saved -cursor_color 0 0 0;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -name Untitled_3*;
+#A saved -front_color 200 200 200;
+#A saved -back_color 220 220 220;
+#A saved -size 60;
+#X text 66 498 * mob/hfader;
+#X obj 246 502 mob/hfader;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -mode 0;
+#A saved -max 1;
+#A saved -min 0;
+#A saved -name Untitled_4*;
+#A saved -speed_ratio 100;
+#A saved -label_color 0 0 0;
+#A saved -front_color 150 150 150;
+#A saved -back_color 220 220 220;
+#A saved -size 83 45;
+#X text 66 568 * mob/vfader;
+#X obj 246 562 mob/vfader;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -mode 0;
+#A saved -max 1;
+#A saved -min 0;
+#A saved -name Untitled_5*;
+#A saved -speed_ratio 100;
+#A saved -label_color 0 0 0;
+#A saved -front_color 150 150 150;
+#A saved -back_color 220 220 220;
+#A saved -size 47 79;
+#X text 66 658 * mob/xy_slider;
+#X obj 246 656 mob/xy_slider;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -xmax 1;
+#A saved -ymax 1;
+#A saved -xmin 0;
+#A saved -ymin 0;
+#A saved -name Untitled_6*;
+#A saved -front_color 200 200 200;
+#A saved -back_color 220 220 220;
+#A saved -size 60 60;
+#X text 66 728 * mob/xy_multi;
+#X obj 246 731 mob/xy_multi;
+#A saved -show_first_touch 0;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -xmax 1;
+#A saved -ymax 1;
+#A saved -xmin 0;
+#A saved -ymin 0;
+#A saved -name Untitled_7*;
+#A saved -front_color 200 200 200;
+#A saved -back_color 220 220 220;
+#A saved -size 60 60;
+#X text 66 818 * mob/multislider;
+#X obj 247 812 mob/multislider;
+#A saved -back_alpha 1;
+#A saved -front_alpha 1;
+#A saved -save_contents 0;
+#A saved -front_color -1 255 255;
+#A saved -back_color -1 255 255;
+#A saved -back_color -1 255 255;
+#A saved -size 10;
+#A saved -name Untitled_8*;
+#A saved -yto 0;
+#A saved -xto 10;
+#A saved -yfrom 1;
+#A saved -xfrom 0;
+#A saved -height 140;
+#A saved -width 200;
+#X text 66 968 * mob/lcd;
+#X obj 247 967 mob/lcd;
+#A saved -z_offset 0;
+#A saved -back_alpha 1;
+#A saved -front_alpha 1;
+#A saved -front_color 150 150 150;
+#A saved -back_color 255 255 255;
+#A saved -title ;
+#A saved -name Untitled_9*;
+#A saved -size 104 52;
+#X text 65 1033 * mob/menu;
+#X obj 247 1038 mob/menu Untitled_1;
+#A saved -label_color 0 0 0;
+#A saved -title ;
+#A saved -name Untitled_1;
+#A saved -size 143 49;
+#X text 357 279 a button with press/release infos;
+#X text 357 349 a knob with press/release infos;
+#X text 356 427 an infinite circular knob with press/release infos
+;
+#X text 360 496 an horizontal fader with press/release infos;
+#X text 360 566 a vertical fader with press/release infos;
+#X text 350 659 a x/y bidimensional slider;
+#X text 350 739 a multitouch slider (for multitouch linux);
+#X text 470 819 a multislider;
+#X text 437 1049 a popup menu;
+#X text 435 973 a LCD display (as in MobMuPlat) for drawing 2D shapes
+;
+#N canvas 680 181 997 378 TODO 0;
+#X text 46 33 * mob/sarray;
+#X text 72 64 (pending);
+#X text 454 44 an array container with settable color/linewidth;
+#X text 48 210 * mob/grid;
+#X text 458 215 a 2D grid (as in MobMuPlat);
+#X obj 225 216 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 245 216 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 265 216 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 285 216 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 305 216 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 325 216 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 345 216 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 365 216 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 225 236 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 245 236 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 265 236 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 285 236 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 305 236 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 325 236 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 345 236 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 365 236 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 225 256 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 245 256 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 265 256 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 285 256 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 305 256 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 325 256 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 345 256 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 365 256 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 225 276 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 245 276 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 265 276 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 285 276 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 305 276 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 325 276 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 345 276 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 365 276 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 216 64 pending/sarray;
+#X restore 744 1052 pd TODO;
+#X obj 38 24 cnv 15 300 30 empty empty MOB-WIDGETS 3 15 0 20 #e0e0e0
+#404040 0;
+#X obj 21 71 cnv 15 600 180 empty empty empty 20 12 0 14 #dfdfdf #404040
+0;
+#X text 33 74 mob-widgets can be used in any patch.;
+#X text 30 108 Before using them \, you have to place mob folder in
+one of your defined pd paths. Then simply type the name of the widget
+with mob/ prefix.;
+#X text 36 201 To edit them \, right-click + properties.;
+#X text 35 221 For more info \, right-click + help., f 43;
+#X text 36 181 To resize them \, control + drag in edit mode.;
+#X obj 658 70 cnv 15 300 100 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X text 667 75 Requirements;
+#X text 699 107 * pd > 0.51;
+#X text 698 138 * iemguts externals lib;

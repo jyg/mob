@@ -1,0 +1,23 @@
+#N struct bckgrnd float x float y float width float height float color
+;
+#N canvas 661 292 731 617 12;
+#X scalar bckgrnd 0 0 319.513 511.22 554 \;;
+#N canvas 0 0 450 300 mob-listeners 0;
+#X obj 20 0 mob/tools/loader2 test2;
+#X restore 268 -4 pd mob-listeners;
+#X obj 275 25 mob;
+#X text 429 204 hfader;
+#X text 428 221 vfader;
+#X text 429 180 hsl vsl lin;
+#X text 336 297 copie des fichiers mmp et pd dans le dossier export
+;
+#X text 431 245 knob;
+#X obj 40 154 mob/jog Untitled_1* Untitled_1*-rcv 1 0 1 0.12549 0.109804
+1;
+#A saved -cursor_color 255 32 28;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -name Untitled_1*;
+#A saved -front_color 200 200 200;
+#A saved -back_color 220 220 220;
+#A saved -size 202;

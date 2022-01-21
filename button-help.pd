@@ -1,70 +1,78 @@
-#N canvas 301 169 732 621 16;
-#X obj 44 175 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#N canvas 440 200 732 621 16;
+#X obj 44 175 tgl 30 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X text 38 258 To edit shape \, ctrl+drag on it in edit mode;
-#X floatatom 233 172 5 0 0 1 pressure(=surface) - -;
+#X floatatom 233 172 5 0 0 1 pressure(=surface) - - 0;
 #X obj 99 186 unpack f f;
-#X floatatom 99 215 5 0 0 0 x - -;
-#X floatatom 191 217 5 0 0 0 y - -;
+#X floatatom 99 215 5 0 0 0 x - - 0;
+#X floatatom 191 217 5 0 0 0 y - - 0;
 #X text 67 42 Fast and responsive pressure-sensitive button;
-#X obj 58 85 button;
+#X obj 55 87 button;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -name ;
-#A saved -front_color 0;
-#A saved -back_color 10;
+#A saved -front_color -1 255 255;
+#A saved -back_color -1 255 245;
 #A saved -size 60 60;
 #X text 37 279 To edit properties \, right-click + properties popup
 menu;
-#X obj 257 551 mob/jog;
+#X obj 257 551 mob/jog untitled;
+#A saved -cursor_color 0 0 0;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -name untitled;
-#A saved -cursor_color -1;
-#A saved -back_color 10;
+#A saved -front_color -1 255 255;
+#A saved -back_color -1 255 245;
 #A saved -size 60;
 #X text 43 536 see also;
 #X text 252 522 mob/jog;
 #X text 438 523 mob/xy_slider;
-#X obj 448 552 mob/xy_slider;
+#X obj 448 552 mob/xy_slider untitled;
 #A saved -invisible 0;
 #A saved -z_offset 0;
-#A saved -max 1;
-#A saved -min 0;
+#A saved -xmax 1;
+#A saved -ymax 1;
+#A saved -xmin 0;
+#A saved -ymin 0;
 #A saved -name untitled;
-#A saved -cursor_color -1;
-#A saved -back_color 10;
+#A saved -front_color -1 255 255;
+#A saved -back_color -1 255 245;
 #A saved -size 60 60;
 #X text 345 194 (only in multitouch mode);
-#X obj 451 85 multitouch.enable;
 #X text 167 84 multitouch compatible : see;
 #X text 241 114 https://github.com/jyg/multitouch;
-#X obj 2 1 cnv 15 700 40 empty empty empty 20 12 0 14 -232576 -66577
+#X obj 2 1 cnv 15 700 40 empty empty empty 20 12 0 14 #e0c4fc #404040
 0;
 #X text 338 11 pd 0.49 + iemguts;
 #X text 25 9 mob/button;
 #X text 0 51 ______________________________________________________________________
 , f 70;
-#X obj 1 338 cnv 15 700 180 empty empty empty 20 12 0 14 -204786 -66577
+#X obj 1 338 cnv 15 700 180 empty empty empty 20 12 0 14 #c4fcc4 #404040
 0;
 #X text 31 345 MobMuPlat usage :;
-#X text 101 376 Don't use connexions !, f 12;
-#X text 338 364 use send/receive channels instead, f 16;
-#X obj 227 365 button;
+#X obj 227 365 button my_button;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -name my_button;
-#A saved -front_color -8.30178e+06;
-#A saved -back_color -1.22355e+07;
+#A saved -front_color 126 172 211;
+#A saved -back_color 186 178 235;
 #A saved -size 68 63;
-#X text 159 441 pressure and x/y values not supported in mobmuplat.
-;
-#X text 161 466 use mob/xy_slider instead;
-#X obj 566 355 r my_button;
-#X floatatom 565 384 5 0 0 0 - - -;
+#X obj 346 343 r my_button;
+#X floatatom 345 372 5 0 0 0 - - - 0;
+#X text 20 381 You can both use connexions and send/receive pairs,
+f 18;
+#X obj 523 379 unpack f f;
+#X floatatom 523 408 5 0 0 0 x - - 0;
+#X floatatom 615 410 5 0 0 0 y - - 0;
+#X obj 520 341 r my_button.xy;
+#X text 28 472 /!\ pressure info is not provided in MobMuPlat.;
+#X obj 507 77 multitouch;
 #X connect 3 0 4 0;
 #X connect 3 1 5 0;
 #X connect 7 0 0 0;
 #X connect 7 1 3 0;
 #X connect 7 2 2 0;
-#X connect 29 0 30 0;
+#X connect 24 0 25 0;
+#X connect 27 0 28 0;
+#X connect 27 1 29 0;
+#X connect 30 0 27 0;

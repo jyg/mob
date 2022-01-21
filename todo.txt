@@ -1,9 +1,0 @@
-TODO
-
-
-release notes
-
-13/11	Pour tous les mobwidgets, le canal send/receive est ajouté comme argument $1.
-
-
-14/11	prise en charge sur la plateforme mobile du câblage des widgets avec les autres objets présents dans le patch 

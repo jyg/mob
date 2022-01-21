@@ -1,0 +1,5 @@
+#N canvas 807 252 732 621 16;
+#X text 54 81 pd listener linked to MMP widget;
+#X obj 50 139 multislider my_multi my_multi-rcv 2;
+#X text 51 193 args : <send_name> <receive_name> <MMPWidget_Id>, f
+65;

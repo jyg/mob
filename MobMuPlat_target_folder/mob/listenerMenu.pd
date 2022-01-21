@@ -1,8 +1,0 @@
-#N canvas 515 197 917 327 12;
-#X obj 197 217 s toGUI;
-#X obj 189 101 r \$2;
-#X obj 187 186 list prepend \$1;
-#X obj 184 147 route set;
-#X connect 1 0 3 0;
-#X connect 2 0 0 0;
-#X connect 3 0 2 0;

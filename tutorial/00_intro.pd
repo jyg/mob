@@ -1,0 +1,21 @@
+#N canvas 0 0 668 618 16;
+#X obj 38 24 cnv 15 300 30 empty empty WELCOME\\\ TO\\\ MOB 3 15 0
+20 #e0e0e0 #404040 0;
+#X text 19 374 Requirements;
+#X text 69 435 * puredata 0.52 or higher;
+#X text 72 462 * iemguts externals lib;
+#X text 54 132 * a collection of special multitouch "mob-widgets";
+#X text 46 408 For mob-widgets;
+#X text 43 490 For MobMuPlat;
+#X text 378 342 www.mobmuplat.com/;
+#X text 73 524 * download latest MobMuPlat files;
+#X text 300 548 www.mobmuplat.com/;
+#X text 19 88 MOB achieves two goals :;
+#X text 51 299 [mob] is aimed to substitute the javascript MobMuPlat
+Editor that comes with the MobMuPlat Development Package, f 54;
+#X text 80 157 Those widgets include faders \, xy slider \, knob \,
+jog \, menu \, lcd widgets, f 51;
+#X text 54 207 * a special abstraction \, [mob] \, utility for creating
+on-the-fly MobMuPlat 'scenes' from within puredata. MobMuPlat app is
+a puredata player with custom interfaces \, for iPhone and/or Android
+platforms., f 53;

@@ -1,5 +1,0 @@
-#N canvas 956 343 450 300 12;
-#X obj 115 137 r \$1;
-#X text 57 54 embedded oject for mmp/hbutton abstraction;
-#X obj 115 162 outlet;
-#X connect 0 0 2 0;

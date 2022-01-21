@@ -1,71 +1,105 @@
-#N canvas 1001 157 726 763 12;
-#X obj 159 250 cnv 15 298 138 empty empty mob 2 8 0 14 -228856 -1 0
-;
-#X obj 160 330 vradio 15 1 1 4 \$0-mode \$0-mode-rcv empty 0 -8 0 10
--262144 -1 -1 2;
-#X obj 160 268 vradio 15 1 0 2 \$0-landscape \$0-landscape-rcv empty
-0 -8 0 10 -232576 -1 -1 0;
-#X text 175 263 Portrait;
-#X text 175 279 Landscape;
-#X text 161 295 Resolution;
-#X text 175 329 320:480;
-#X text 175 342 320:568;
-#X text 175 371 768:1024;
-#X obj 160 312 cnv 15 100 16 empty \$0-canvasType-rcv iPhone3p5Inch
-1 8 0 12 -228856 -258113 0;
-#X text 175 358 600:960;
-#X obj 241 252 vsl 15 45 1 4 1 0 \$0-zoom \$0-zoom-rcv empty 0 -9 0
-10 -262130 -1 -1 0 1;
-#X text 242 249 z;
-#X text 242 259 o;
-#X text 242 269 o;
-#X text 242 279 m;
-#X floatatom 256 282 5 1 4 0 - #0-zoom-rcv #0-zoom;
-#X text 140 87 pd 0.51 + iemguts + iemlib + mrpeach/binfile, f 15
-;
-#X obj 162 420 cnv 15 298 138 empty empty mob 2 8 0 14 -228856 -1 0
-;
-#X floatatom 423 470 5 0 99 0 firstPage #0-firstPage-rcv #0-firstPage
-;
-#X floatatom 313 470 5 1 100 0 pageCount #0-pageCount-rcv #0-pageCount
-;
-#X text 26 271 Orientation --->;
-#X text 31 340 Aspect Ratio --->;
-#X text 259 241 <--- adjust size of gui surface, f 16;
-#X obj 162 600 cnv 15 298 138 empty empty mob 2 8 0 14 -228856 -1 0
-;
-#X obj 405 252 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 404 252 cnv 15 50 50 empty \$0-color empty 20 12 0 14 -72576
--262144 0;
-#X text 341 270 BackGroundColor;
-#X obj 305 601 bng 40 250 50 0 empty empty export_mmp 17 7 0 10 -258113
--1 -1;
-#X obj 275 601 bng 30 250 50 0 \$0-done empty refresh -15 7 0 10 -4034
--1 -1;
-#X symbolatom 247 719 30 0 0 2 mmp_target_File #0-mmpFile-rcv #0-mmpFile
-;
-#X obj 444 702 bng 15 250 50 0 empty empty browse -40 7 0 10 -262144
--1 -1;
-#X obj 444 667 bng 15 250 50 0 \$0-reset empty reset -35 7 0 10 -262144
--1 -1;
-#X text 357 700 <-----;
-#X text 409 255 pick;
-#X symbolatom 247 682 30 0 0 2 pd_target_File #0-pdFile-rcv #0-pdFile
-;
-#X text 357 664 <-----;
-#X text 17 207 1) Choose orientation \, aspect ratio and size of output
-gui with foloowing controls :;
-#X text 469 681 <-- controlling output files;
-#X text 464 263 <- adjusting background color;
-#X text 465 468 <-- setting first page to be displayed on app launch
-, f 23;
-#X text 460 605 <-- refresh and Export buttons;
-#X text 24 567 3) control output files and then press red button to
-get target files;
-#X text 19 395 2) You can also have multiple pages for gui output;
-#X text 24 11 mob object is an utility abstraction that converts a
-pd patch and its GUIs to MobMuPlat target platform by generating a
-*.mmp interface file with corresponding gui-widgets;
-#X text 22 89 Requirements :;
+#N canvas 655 63 699 594 12;
 #X text 334 87 More info : see mob-overview.pd;
+#X text 23 76 Requirements (v2) :;
+#X text 65 95 pd 0.52 + iemguts + iemlib, f 15;
+#N canvas 853 336 568 276 1)_Set_aspect-ratio_and_size 0;
+#X obj 160 64 cnv 15 298 138 empty empty mob_v2 2 8 0 14 #dcdcdc #000000
+0;
+#X obj 161 144 vradio 15 1 1 4 \$0-mode \$0-mode-rcv empty 0 -8 0 10
+#fcfcfc #000000 #000000 2;
+#X obj 161 82 vradio 15 1 0 2 \$0-landscape \$0-landscape-rcv empty
+0 -8 0 10 #e0c4fc #000000 #000000 0;
+#X text 176 77 Portrait;
+#X text 176 93 Landscape;
+#X text 162 109 Resolution;
+#X text 176 143 320:480;
+#X text 176 156 320:568;
+#X text 176 185 768:1024;
+#X obj 161 126 cnv 15 100 16 empty \$0-canvasType-rcv iPhone3p5Inch
+1 8 0 12 #dcdcdc #fc0400 0;
+#X text 176 172 600:960;
+#X obj 242 66 vsl 15 45 1 4 1 0 \$0-zoom \$0-zoom-rcv empty 0 -9 0
+10 #fcfcc4 #000000 #000000 0 1;
+#X text 243 63 z;
+#X text 243 73 o;
+#X text 243 83 o;
+#X text 243 93 m;
+#X text 27 85 Orientation --->;
+#X text 32 154 Aspect Ratio --->;
+#X text 263 67 <--- adjust size of gui surface, f 16;
+#X text 18 21 Choose orientation \, aspect ratio and size of output
+gui with foloowing controls :;
+#X restore 53 187 pd 1)_Set_aspect-ratio_and_size;
+#N canvas 852 382 595 257 2)_Set_page-layout_and_background-color 0
+;
+#X obj 19 56 cnv 15 298 138 empty empty mob_v2 2 8 0 14 #dcdcdc #000000
+0;
+#X floatatom 280 106 5 0 99 0 firstPage \$0-firstPage-rcv \$0-firstPage
+0;
+#X floatatom 170 106 5 1 100 0 pageCount \$0-pageCount-rcv \$0-pageCount
+0;
+#X obj 268 54 bng 50 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 268 54 cnv 15 50 50 empty \$0-color empty 20 12 0 14 #44b4fc
+#fcfcfc 0;
+#X text 204 72 BackGroundColor;
+#X text 272 57 pick;
+#X text 327 65 <- adjusting background color;
+#X text 322 104 <-- setting first page to be displayed on app launch
+, f 23;
+#X text 16 21 You can also have multiple pages for gui output;
+#X restore 52 228 pd 2)_Set_page-layout_and_background-color;
+#N canvas 759 453 611 253 3)_Generate_output_files 0;
+#X obj 12 60 cnv 15 298 138 empty empty mob 2 8 0 14 #dcdcdc #000000
+0;
+#X obj 155 61 bng 40 250 50 0 empty empty export_mmp 17 7 0 10 #fc0400
+#000000 #000000;
+#X obj 125 61 bng 30 250 50 0 \$0-done empty refresh -15 7 0 10 #00fc04
+#000000 #000000;
+#X symbolatom 97 179 30 0 0 2 mmp_target_File \$0-mmpFile-rcv \$0-mmpFile
+0;
+#X obj 294 162 bng 15 250 50 0 empty empty browse -40 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 294 127 bng 15 250 50 0 \$0-reset empty reset -35 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 207 160 <-----;
+#X symbolatom 97 142 30 0 0 2 pd_target_File \$0-pdFile-rcv \$0-pdFile
+0;
+#X text 207 124 <-----;
+#X text 319 141 <-- controlling output files;
+#X text 310 65 <-- refresh and Export buttons;
+#X text 31 208 By default \, target files are stored in mob/export
+folder;
+#X text 21 8 Check output files names and then press red button to
+generate target files;
+#X restore 51 275 pd 3)_Generate_output_files;
+#X text 194 124 (since pd 0.52 \, there is no more dependency to mrpeach/binfile)
+, f 44;
+#X text 30 336 mob widgets are enhanced gui widgets \, both multitouch
+and compatible with MobMuPlat, f 85;
+#X text 21 7 mob abstraction is an utility object that converts a pd
+patch and its GUIs to MobMuPlat target platform by generating a *.mmp
+interface file with corresponding gui-widgets;
+#N canvas 977 240 470 322 mob/widgets_list 0;
+#X text 45 30 mob/hfader;
+#X text 45 60 mob/vfader;
+#X text 45 120 mob/knob;
+#X text 45 90 mob/button;
+#X text 45 180 mob/xy_slider;
+#X text 45 210 mob/xy_multi;
+#X text 45 240 mob/lcd;
+#X text 45 270 mob/menu;
+#X text 45 150 mob/jog;
+#X text 165 30 horizontal fader;
+#X text 165 60 vertical fader;
+#X text 165 90 button;
+#X text 165 120 rotary button;
+#X text 165 150 rotary jogwheel;
+#X text 165 180 bidimensional slider;
+#X text 165 210 bidimensional multitouch slider;
+#X text 165 240 display canvas with drawing primitives;
+#X text 165 270 popup menu;
+#X restore 55 372 pd mob/widgets_list;
+#X text 224 372 Requirements : pd 0.52 + iemguts external lib;
+#X text 34 423 mob/value;
+#X obj 60 458 mob/value;

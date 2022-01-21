@@ -1,0 +1,152 @@
+#N canvas 0 0 1084 935 16;
+#X obj 38 24 cnv 15 300 30 empty empty EXPORTING\\\ TO\\\ MOBMUPLAT
+3 15 0 20 #e0e0e0 #404040 0;
+#X obj 122 531 cnv 15 300 350 empty empty empty 20 12 0 14 #ffe3c6
+#404040 0;
+#X obj 126 534 tgl 15 0 empty empty mob 20 7 0 14 #fcfcfc #ffffff #000000
+0 1;
+#X obj 146 554 tgl 15 0 empty empty examples 20 7 0 14 #fcfcfc #ffffff
+#000000 0 1;
+#X obj 146 744 tgl 15 0 empty empty tools 20 7 0 14 #fcfcfc #ffffff
+#000000 0 1;
+#X obj 146 764 tgl 15 0 empty empty tutorial 20 7 0 14 #fcfcfc #ffffff
+#000000 0 1;
+#X obj 66 474 tgl 15 0 empty empty Documents 20 7 0 14 #9f9f9f #9f9f9f
+#9f9f9f 0 1;
+#X obj 86 494 tgl 15 0 empty empty Pd 20 7 0 14 #9f9f9f #9f9f9f #9f9f9f
+0 1;
+#X obj 106 514 tgl 15 0 empty empty externals 20 7 0 14 #9f9f9f #9f9f9f
+#9f9f9f 0 1;
+#X obj 166 574 tgl 8 0 empty empty martenot.pd 20 7 0 14 #ff0400 #ff0400
+#ff0400 0 1;
+#X obj 166 824 tgl 8 0 empty empty 02_exporting_to_MobMuPlat.pd 20
+7 0 14 #0f4710 #0f4710 #0f4710 0 1;
+#X obj 166 804 tgl 8 0 empty empty 01_mob_widgets.pd 20 7 0 14 #0f4710
+#0f4710 #0f4710 0 1;
+#X obj 166 784 tgl 8 0 empty empty 00_intro.pd 20 7 0 14 #0f4710 #0f4710
+#0f4710 0 1;
+#X obj 166 854 tgl 8 0 empty empty etc... 20 7 0 14 #0f4710 #0f4710
+#0f4710 0 1;
+#X text 230 468 Desktop Computer;
+#X text 571 471 MobMuPlat Device;
+#X obj 536 532 cnv 15 300 350 empty empty empty 20 12 0 14 #e3c6ff
+#404040 0;
+#X obj 135 621 cnv 15 700 110 empty empty empty 20 12 0 14 #feffc6
+#404040 0;
+#X obj 146 594 tgl 15 0 empty empty export 20 7 0 14 #fcfcfc #ffffff
+#000000 0 1;
+#X obj 166 634 tgl 15 0 empty empty mob 20 7 0 14 #fcfcfc #ffffff #000000
+0 1;
+#X obj 186 654 tgl 15 0 empty empty data 20 7 0 14 #fcfcfc #ffffff
+#000000 0 1;
+#X obj 186 674 tgl 15 0 empty empty tools 20 7 0 14 #fcfcfc #ffffff
+#000000 0 1;
+#X obj 166 694 tgl 8 0 empty empty martenot.pd 20 7 0 14 #9c00ff #9c00ff
+#9c00ff 0 1;
+#X obj 166 714 tgl 8 0 empty empty martenot.mmp 20 7 0 14 #9c00ff #9c00ff
+#9c00ff 0 1;
+#X obj 576 594 tgl 15 0 empty empty MobMuPlat 20 7 0 14 #ffffff #ffffff
+#0400ff 0 1;
+#X obj 596 634 tgl 15 0 empty empty mob 20 7 0 14 #fcfcfc #ffffff #000000
+0 1;
+#X obj 616 654 tgl 15 0 empty empty data 20 7 0 14 #fcfcfc #ffffff
+#000000 0 1;
+#X obj 616 674 tgl 15 0 empty empty tools 20 7 0 14 #fcfcfc #ffffff
+#000000 0 1;
+#X obj 596 694 tgl 8 0 empty empty martenot.pd 20 7 0 14 #9c00ff #9c00ff
+#9c00ff 0 1;
+#X obj 596 714 tgl 8 0 empty empty martenot.mmp 20 7 0 14 #9c00ff #9c00ff
+#9c00ff 0 1;
+#X obj 604 106 bng 40 250 50 0 \$0-openpatch empty empty 17 7 0 10
+#fcfcfc #000000 #000000;
+#X obj 791 175 cnv 15 139 90 empty empty empty 20 12 0 14 #0400ff #404040
+0;
+#X obj 810 189 cnv 15 100 60 empty empty empty 20 12 0 14 #c6ffc7 #404040
+0;
+#X text 814 207 Martenot;
+#X obj 949 194 cnv 15 80 40 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 985 198 bng 15 250 50 0 empty empty empty 17 7 0 10 #ff0400
+#ff0400 #000000;
+#X obj 1009 198 bng 15 250 50 0 empty empty empty 17 7 0 10 #0400ff
+#0400ff #000000;
+#X obj 976 198 bng 10 250 50 0 empty empty empty 17 7 0 10 #00ff04
+#00ff04 #000000;
+#X obj 954 200 vradio 8 1 0 4 empty empty empty 0 -8 0 10 #fcfcfc #000000
+#000000 0;
+#X text 957 111 [mob];
+#X text 805 110 [GUI area];
+#N canvas 0 50 450 250 (subpatch) 0;
+#X coords 0 1 100 -1 300 140 1 0 0;
+#X restore 752 143 graph;
+#X obj 954 244 hsl 50 10 0 127 0 0 empty empty pd_audio-stuff -2 5
+0 6 #fcfcfc #ffffff #000000 0 1;
+#X text 102 189 On the right \, there is the [pd audio-stuff] subpatch
+\, and \, in grey \, the [mob] abstraction (entitled 'mob_v2');
+#N canvas 0 0 450 300 guts 0;
+#X obj 56 167 s pd;
+#X obj 56 104 pdcontrol;
+#X msg 54 69 dir;
+#X msg 56 138 open martenot.pd \$1/../examples/;
+#X obj 58 32 r \$0-openpatch;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 2 0;
+#X restore 975 851 pd guts;
+#X text 67 77 Let'see how [mob] can export a pd patch toMobMuPlat target
+platform., f 68;
+#X text 69 115 1) Open mob/examples/martenot.pd \, by clicking here
+->;
+#X text 65 238 2) Pressing the red button "export_mmp' will generate
+two new files (martenot.pd and martenot.mmp) in the folder /export
+, f 64;
+#X text 298 345 NOTE : In this tutorial \, we assume that you've already
+copied /export/mob folder and its content to /MobMuPlat folder on your
+target device., f 74;
+#X text 762 289 fig.1 - preview of martenot.pd;
+#X text 167 890 fig. 2 - mob folder structure on desktop and target
+platforms, f 63;
+#X text 300 687 > - - - - - - - - - - - - >;
+#X text 300 707 > - - - - - - - - - - - - >;
+#X text 163 590 _____;
+#X text 594 590 _______;
+#X text 65 289 3) You just have to copy those files into the /MobMuPlat
+folder on the mobile device. See fig.2 below for the folder structure.
+;
+#X text 975 135 |;
+#X text 847 151 V;
+#X text 847 135 |;
+#X text 847 125 |;
+#X text 975 166 V;
+#X text 975 151 |;
+#X text 975 129 |;
+#X text 104 147 On the left (fig.1) \, you see the interface (GUI area)
+inside the blue rectangle;
+#X text 68 403 4) If your project includes extra files / folders \,
+you'll have to copy them manually to the export folder structure and
+to the target platform.;
+#X text 240 630 > - - - - - - - - - - - - - - - >;
+#X text 422 659 -> copy ->;
+#X connect 2 0 3 0;
+#X connect 3 0 9 0;
+#X connect 3 0 18 0;
+#X connect 4 0 5 0;
+#X connect 5 0 12 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 2 0;
+#X connect 10 0 13 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 18 0 19 0;
+#X connect 18 0 4 0;
+#X connect 19 0 20 0;
+#X connect 19 0 22 0;
+#X connect 20 0 21 0;
+#X connect 22 0 23 0;
+#X connect 24 0 25 0;
+#X connect 25 0 26 0;
+#X connect 25 0 28 0;
+#X connect 26 0 27 0;
+#X connect 28 0 29 0;

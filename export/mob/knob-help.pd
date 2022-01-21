@@ -1,0 +1,5 @@
+#N canvas 807 252 732 621 16;
+#X text 51 193 args : <send_name> <receive_name> <MMPWidget_Id> <default_value>
+, f 65;
+#X obj 74 161 knob myknob myknob-rcv 2 3;
+#X text 64 69 pd listener linked to MMP widget;

@@ -1,0 +1,27 @@
+#N struct bckgrnd float x float y float width float height float color
+;
+#N canvas 385 29 636 483 12;
+#X scalar bckgrnd 0 0 544.471 340.294 653 \;;
+#X text 239 95 points;
+#X obj 503 11 mob;
+#N canvas 0 50 450 300 mob-listeners 0;
+#X obj 20 0 mob/tools/loader2 Testsarray;
+#X restore 100 10 pd mob-listeners;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array1 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0.1 0.1 0.114286 0.128572 0.147619 0.166667 0.185715 0.200001
+0.214286 0.233334 0.252382 0.27143 0.278573 0.285715 0.300001 0.328573
+0.335716 0.342859 0.357144 0.364287 0.37143 0.378573 0.385716 0.390478
+0.39524 0.400002 0.407145 0.414288 0.428573 0.428573 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 259 10 graph;
+#X msg 564 388 \; env width 6;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array2 80 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 80 -1 500 140 1 0 0;
+#X restore 145 164 graph;

@@ -63,8 +63,8 @@
 #X restore 725 710 pd convert;
 #X obj 727 762 s \$0-front_color;
 #X obj 789 614 s \$0-arrayName;
-#X obj 49 194 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 49 194 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 253 560 s \$0-width;
 #X obj 330 562 s \$0-height;
 #X obj 263 171 v \$0-width;
@@ -247,19 +247,19 @@
 #X msg 438 238 vis 0;
 #X obj 345 266 s pd-array_properties(\$0);
 #N canvas 1228 317 420 500 array_properties(\$0) 0;
-#X obj 8 6 cnv 15 400 300 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 8 6 cnv 15 400 300 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X floatatom 308 110 5 0 0 0 width #0-width-rcv #0-width;
-#X floatatom 306 85 5 0 0 0 height #0-height-rcv #0-height;
+#X floatatom 308 110 5 0 0 0 width \$0-width-rcv \$0-width 0;
+#X floatatom 306 85 5 0 0 0 height \$0-height-rcv \$0-height 0;
 #N canvas 0 50 450 300 todo 0;
 #X obj 244 238 nbx 3 20 10 200 1 0 \$0-spdrt \$0-spdrt-rcv speed_ratio(%)
--140 10 0 16 -262144 -1 -1 10 256;
-#X obj 35 101 cnv 15 200 80 empty empty TODO 20 12 0 14 -262130 -66577
+-140 10 0 16 #fcfcfc #000000 #000000 0 256;
+#X obj 35 101 cnv 15 200 80 empty empty TODO 20 12 0 14 #fcfcc4 #404040
 0;
-#X floatatom 187 130 5 0 0 0 text_color #0-cc-rcv #0-cc-snd;
+#X floatatom 187 130 5 0 0 0 text_color \$0-cc-rcv \$0-cc-snd 0;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 215 153 cnv 20 20 20 empty \$0-cc_cnv-rcv empty 20 12 0 14 -1
--66577 0;
+#X obj 215 153 cnv 20 20 20 empty \$0-cc_cnv-rcv empty 20 12 0 14 #000000
+#404040 0;
 #X msg 316 159 color \$1 \$1;
 #X obj 316 117 r \$0-cursor_color;
 #X obj 316 198 s \$0-cc_cnv-rcv;
@@ -267,35 +267,37 @@
 #X connect 2 0 1 0;
 #X coords 0 -1 1 1 20 20 2 100 100;
 #X restore 288 132 pd;
-#X floatatom 187 173 5 0 0 0 text_size - -;
-#X floatatom 277 38 5 0 0 0 z-offset #0-z_offset-rcv #0-z_offset;
+#X floatatom 187 173 5 0 0 0 text_size - - 0;
+#X floatatom 277 38 5 0 0 0 z-offset \$0-z_offset-rcv \$0-z_offset
+0;
 #X obj 153 21 tgl 20 0 \$0-invisible \$0-invisible-rcv Invisible -100
-8 0 16 -262144 -1 -1 0 1;
+8 0 16 #fcfcfc #000000 #000000 0 1;
 #X obj 153 40 tgl 20 0 \$0-z_offset \$0-z_offset-rcv MoveOnTop -100
-8 0 16 -262144 -1 -1 0 99;
+8 0 16 #fcfcfc #000000 #000000 0 99;
 #X restore 141 358 pd todo;
-#X obj 9 309 cnv 15 400 180 empty empty empty 20 12 0 14 -204786 -66577
+#X obj 9 309 cnv 15 400 180 empty empty empty 20 12 0 14 #c4fcc4 #404040
 0;
 #X text 48 317 MobMuPlat Widget Export, f 25;
-#X floatatom 104 435 5 0 0 0 z-offset #0-z_offset-rcv #0-z_offset;
+#X floatatom 104 435 5 0 0 0 z-offset \$0-z_offset-rcv \$0-z_offset
+0;
 #X obj 135 458 tgl 20 0 \$0-z_offset \$0-z_offset-rcv MoveOnTop -100
-8 0 16 -262144 -1 -1 0 99;
+8 0 16 #fcfcfc #000000 #000000 0 99;
 #X obj 92 382 hsl 60 20 0 1 0 0 \$0-front_alpha \$0-front_alpha-rcv
-empty -2 -8 0 10 -262144 -1 -1 0 1;
+empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 91 352 hsl 60 20 0 1 0 0 \$0-back_alpha \$0-back_alpha-rcv empty
--2 -8 0 10 -262144 -1 -1 0 1;
+-2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 19 171 front_color;
 #X text 163 349 Back color Opacity;
 #X text 165 379 Front color Opacity;
 #N canvas 882 181 1049 632 color_picker 0;
-#X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 -228856
--258113 -1 0 0;
-#X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 -228856
--4034 -1 0 0;
-#X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 -228856
--4160 -1 0 0;
-#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 -249857 -249857
--249857 0 1;
+#X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
+#fc0400 #000000 0 0;
+#X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
+#00fc04 #000000 0 0;
+#X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
+#0400fc #000000 0 0;
+#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 #f40000 #f40000
+#f40000 0 1;
 #N canvas 0 50 498 451 convert2rgb 0;
 #X obj 53 112 * -1;
 #X obj 54 81 + 1;
@@ -397,26 +399,26 @@ empty -2 -8 0 10 -262144 -1 -1 0 1;
 #X connect 33 1 31 1;
 #X coords 0 -1 1 1 169 36 2 50 150;
 #X restore 99 176 pd color_picker;
-#X obj 353 249 bng 40 250 50 0 \$0-ok empty OK 5 20 0 20 -204786 -1
--1;
-#X symbolatom 91 13 30 0 0 0 arrayName #0-arrayName-rcv #0-arrayName
-;
-#X floatatom 94 37 8 0 0 0 size #0-size-rcv #0-size;
+#X obj 353 249 bng 40 250 50 0 \$0-ok empty OK 5 20 0 20 #c4fcc4 #000000
+#000000;
+#X symbolatom 91 13 30 0 0 0 arrayName \$0-arrayName-rcv \$0-arrayName
+0;
+#X floatatom 94 37 8 0 0 0 size \$0-size-rcv \$0-size 0;
 #X obj 93 91 vradio 15 1 0 3 \$0-style \$0-style-rcv style -40 22 0
-10 -262144 -1 -1 0;
+10 #fcfcfc #000000 #000000 0;
 #X text 117 89 polygon;
 #X text 117 120 Bezier curve;
 #X obj 93 62 tgl 15 0 \$0-save_contents \$0-save_contents-rcv save_contents
-17 7 0 10 -262144 -1 -1 0 1;
-#X floatatom 96 153 5 0 40 0 lineWidth #0-linewidth-rcv #0-linewidth
-;
-#X obj 276 248 bng 40 250 50 0 \$0-set empty APPLY 5 20 0 20 -204786
--1 -1;
+17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 96 153 5 0 40 0 lineWidth \$0-linewidth-rcv \$0-linewidth
+0;
+#X obj 276 248 bng 40 250 50 0 \$0-set empty APPLY 5 20 0 20 #c4fcc4
+#000000 #000000;
 #X text 117 105 points (black);
-#X floatatom 170 237 5 0 0 0 xto #0-xto-rcv #0-xto;
-#X floatatom 90 260 5 0 0 0 ytop #0-yfrom-rcv #0-yfrom;
-#X floatatom 90 234 5 0 0 0 xfrom #0-xfrom-rcv #0-xfrom;
-#X floatatom 170 259 5 0 0 0 ybottom #0-yto-rcv #0-yto;
+#X floatatom 170 237 5 0 0 0 xto \$0-xto-rcv \$0-xto 0;
+#X floatatom 90 260 5 0 0 0 ytop \$0-yfrom-rcv \$0-yfrom 0;
+#X floatatom 90 234 5 0 0 0 xfrom \$0-xfrom-rcv \$0-xfrom 0;
+#X floatatom 170 259 5 0 0 0 ybottom \$0-yto-rcv \$0-yto 0;
 #X restore 344 288 pd array_properties(\$0);
 #N canvas 0 50 1427 874 gui_feedback 0;
 #X msg 148 73 set \$1;
@@ -532,7 +534,7 @@ empty -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 40 64 namecanvas \$0-this;
 #N canvas 3 51 450 300 \$0-display 0;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array Untitled_2 99 float 1;
+#X array Untitled_1 99 float 1;
 #A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -642,14 +644,14 @@ empty -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 43 858 t s b;
 #X obj 43 924 t b b s, f 13;
 #X obj 477 196 r \$0-ok;
-#X obj 108 398 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X floatatom 599 243 5 0 0 0 - - -;
-#X floatatom 677 243 5 0 0 0 - - -;
-#X floatatom 755 243 5 0 0 0 - - -;
-#X floatatom 819 243 5 0 0 0 - - -;
-#X floatatom 883 243 5 0 0 0 - - -;
-#X floatatom 961 243 5 0 0 0 - - -;
+#X obj 108 398 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 599 243 5 0 0 0 - - - 0;
+#X floatatom 677 243 5 0 0 0 - - - 0;
+#X floatatom 755 243 5 0 0 0 - - - 0;
+#X floatatom 819 243 5 0 0 0 - - - 0;
+#X floatatom 883 243 5 0 0 0 - - - 0;
+#X floatatom 961 243 5 0 0 0 - - - 0;
 #N canvas 0 57 1920 1023 parse_$x-arguments 0;
 #X obj 94 7 inlet;
 #X obj 100 51 list fromsymbol;
@@ -812,8 +814,8 @@ empty -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 829 407 list tosymbol;
 #X obj 682 451 list append;
 #X msg 682 474 symbol \$1\$2;
-#X obj 164 337 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 164 337 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 34 360 iemguts/canvasdollarzero 3;
 #X obj 600 415 route bang;
 #X connect 0 0 1 0;
@@ -930,8 +932,8 @@ empty -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 829 407 list tosymbol;
 #X obj 682 451 list append;
 #X msg 682 474 symbol \$1\$2;
-#X obj 164 337 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 164 337 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 34 360 iemguts/canvasdollarzero 3;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
@@ -1313,10 +1315,10 @@ f 27;
 #X obj 1268 688 list prepend mob/listenerSarray;
 #X obj 1286 487 r \$0-arrayName;
 #X text 1396 177 "displayRangeLo":\$6\\\,"displayRangeHi":\$4;
-#X floatatom 1515 129 5 0 0 0 xto #0-xto-rcv #0-xto;
-#X floatatom 1494 195 5 0 0 0 yfrom #0-yfrom-rcv #0-yfrom;
-#X floatatom 1435 126 5 0 0 0 xfrom #0-xfrom-rcv #0-xfrom;
-#X floatatom 1633 195 5 0 0 0 yto #0-yto-rcv #0-yto;
+#X floatatom 1515 129 5 0 0 0 xto \$0-xto-rcv \$0-xto 0;
+#X floatatom 1494 195 5 0 0 0 yfrom \$0-yfrom-rcv \$0-yfrom 0;
+#X floatatom 1435 126 5 0 0 0 xfrom \$0-xfrom-rcv \$0-xfrom 0;
+#X floatatom 1633 195 5 0 0 0 yto \$0-yto-rcv \$0-yto 0;
 #X obj 110 229 t f b f b f b f, f 23;
 #X text 1256 20 Autres parametres a exporter;
 #X connect 1 0 3 1;

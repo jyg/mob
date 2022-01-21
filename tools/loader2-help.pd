@@ -1,0 +1,4 @@
+#N canvas 555 312 450 300 12;
+#X obj 18 60 mob/tools/loader2 <parent_patch_name>;
+#X text 12 19 abstraction insérée dans le sous-patch [pd mob_listeners]
+au moment de l'export;

@@ -1,0 +1,135 @@
+#N canvas 0 0 684 758 16;
+#X obj 547 263 vsl 50 200 0 127 0 0 my_vsl my_vsl-rcv empty 0 -9 0
+10 #e3c6ff #f8fc00 #000000 0 0;
+#X obj 200 260 hsl 300 50 0 1 0 0 my_hsl my_hsl-rcv empty -2 -8 0 10
+#e3c6ff #fc0400 #000000 0 0;
+#X obj 472 323 vradio 50 1 1 4 my_vradio my_vradio-rcv empty 0 -8 0
+10 #ff8300 #9c00fc #000000 0;
+#X obj 147 318 hradio 60 1 1 5 my_hradio my_hradio-rcv empty 0 -8 0
+10 #fc8000 #f8fc00 #000000 2;
+#X text 42 197 * supported native GUIs :;
+#X text 68 325 -hradio;
+#X text 68 381 -bng;
+#X obj 76 405 bng 70 250 50 0 my_bng my_bng empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 159 408 (bng is converted as a button), f 12;
+#X text 251 264 (only 'jump on click' mode for sliders), f 23;
+#X text 66 223 -comments are displayed on the target platform.;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array1 20 float 3;
+#A 0 -0.171434 -0.0428594 0.0285708 0.0499998 0.0714289 0.171431 0.257147
+0.28572 0.342864 0.400008 0.414294 0.442866 0.457152 0.471438 0.514296
+0.542868 0.585726 0.600012 0.614298 0.828589;
+#X coords 0 1 20 -1 200 140 1;
+#X restore 447 611 graph;
+#X text 41 624 * Quick and dirty export of gop-arrays;
+#X obj 81 515 cnv 15 350 60 my_cnv my_cnv-rcv ceci 20 25 0 50 #e0e0e0
+#404040 0;
+#X text 327 385 -tgl;
+#X obj 330 411 tgl 70 1 my_tgl my_tgl-rcv empty 17 7 0 10 #fcc4c4 #fc0400
+#000000 144 144;
+#X text 72 488 -cnv + text;
+#N canvas 0 0 730 596 some_restrictions_with_native_guis 0;
+#X text 22 271 No logarithm mode for sliders on target platform \,
+but you can define any bounds (min and max values for sliders);
+#X text 30 417 No labels attached to guis. Use comment or cnv objects
+;
+#X text 24 456 No quotation marks (") in comments \, else mmp export
+will fail., f 62;
+#X text 23 323 Legacy guis supports init feature as defined in their
+properties dialog.;
+#X text 23 176 Only "jump on click" mode for native sliders on target
+platform., f 65;
+#N canvas 0 0 647 574 handling_'set'_messages 0;
+#X obj 77 515 s my_param;
+#X obj 37 134 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
+0 10 #fcfcfc #000000 #000000 0 1;
+#X msg 67 443 2;
+#X msg 117 442 56;
+#X text 71 102 my_param-rcv;
+#X text 85 250 my_param;
+#X obj 458 116 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
+0 10 #fcfcfc #000000 #000000 0 1;
+#X text 466 89 my_param-rcv;
+#X text 504 237 my_param;
+#X obj 224 205 s my_param-rcv;
+#X msg 246 103 set 56;
+#X msg 251 137 set 2;
+#X obj 226 252 r my_param;
+#X floatatom 226 282 5 0 0 0 - - - 0;
+#N canvas 0 0 717 365 guts 0;
+#X text 59 39 this object is automatically added by mob;
+#X obj 20 97 mob/tools/listener_lin my_param my_param-rcv -1 0 128
+;
+#X restore 525 508 pd guts;
+#X text 16 19 With 'set' messages \, you can set the value displayed
+by a slider/radio/tgl without outputting this value;
+#X msg 200 444 2;
+#X msg 250 443 56;
+#X obj 210 516 s my_param-rcv;
+#X text 16 324 To change the value of a parameter \, either send to
+this parameter or to the receiver channel of the corresponding gui
+widget.;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 10 0 9 0;
+#X connect 11 0 9 0;
+#X connect 12 0 13 0;
+#X connect 16 0 18 0;
+#X connect 17 0 18 0;
+#X restore 327 372 pd handling_'set'_messages;
+#X text 23 206 If you need steady mode \, use mob/hfader & mob/vfader
+with steady mode property., f 67;
+#X text 23 374 'set' messages are supported;
+#X text 59 524 see also http://danieliglesia.com/mobmuplat/doc/index.htm
+;
+#X restore 52 721 pd some_restrictions_with_native_guis;
+#N canvas 0 50 748 453 changing_cnv's_text 0;
+#X msg 222 101 ceci;
+#X msg 231 140 est;
+#X msg 229 175 un;
+#X msg 310 105 texte;
+#X obj 218 28 r my_vradio;
+#X obj 218 57 select 0 1 2 3;
+#X obj 164 362 s my_cnv-rcv;
+#X obj 165 300 list prepend label;
+#X obj 165 329 list trim;
+#X text 373 269 Other messages aren't handled.;
+#X text 368 169 label messages sent to canvas receiver are automatically
+forwarded to MobMuPlat interface., f 31;
+#X connect 0 0 7 0;
+#X connect 1 0 7 0;
+#X connect 2 0 7 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 5 1 1 0;
+#X connect 5 2 2 0;
+#X connect 5 3 3 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
+#X restore 80 580 pd changing_cnv's_text;
+#X text 21 84 Native guis can be connected by wires but MUST have defined
+send/receive channels., f 53;
+#X text 21 138 The send channel defines the name of the parameter to
+be handled.;
+#X obj 38 24 cnv 15 300 30 empty empty NATIVE\\\ GUIS\\\ TO\\\ MOBMUPLAT
+3 15 0 20 #e0e0e0 #404040 0;
+#X text 68 271 -hsl/vsl;
+#X text 66 349 /vradio;
+#X text 42 694 * not supported native guis :;
+#N canvas 0 0 893 452 About_array_displaying_modes 0;
+#X text 452 118 mode 0 : edit content \, mode 1 : select zone, f 24
+;
+#X text 450 161 displayMode 0 = line \, displayMode 1 = filled bar
+, f 27;
+#X msg 174 378 \; toGUI list array1 refresh;
+#X text 34 235 Quick and dirty export of gop-array with [mob] uses
+only mode 0 \, displayMode 0, f 78;
+#X text 39 88 MMP offers different modes for displaying arrays :,
+f 31;
+#X text 167 272 A pending [sarray] object is on my todo list \, to
+enable colors \, and more mode displays.;
+#X text 35 330 To refresh displaying of a table in MobMuPlat \, you
+have to send the following message :;
+#X restore 71 651 pd About_array_displaying_modes;

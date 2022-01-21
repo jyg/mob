@@ -1,0 +1,6 @@
+#N canvas 661 292 731 617 12;
+#X obj 97 140 print Powered by mob;
+#X msg 97 109 tool for fast prototyping with MobMuPlat;
+#X obj 97 77 loadbang;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;

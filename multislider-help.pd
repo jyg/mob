@@ -1,0 +1,67 @@
+#N struct 1109-barray array z 1109-arrayelement float color;
+#N struct 1109-arrayelement float zz;
+#N canvas 131 144 1180 813 16;
+#X obj 2 1 cnv 15 700 40 empty empty empty 20 12 0 14 #e0c4fc #404040
+0;
+#X text 3 48 ______________________________________________________________________
+, f 70;
+#X obj 1 408 cnv 15 700 180 empty empty empty 20 12 0 14 #c4fcc4 #404040
+0;
+#X text 25 417 MobMuPlat usage :;
+#X text 24 367 To edit properties and size \, right-click + properties
+popup menu;
+#X obj 300 165 pack f f;
+#X floatatom 376 137 5 0 0 2 index - - 0;
+#X floatatom 300 136 5 0 0 2 value - - 0;
+#X msg 773 247 dump;
+#X text 828 246 --->;
+#X text 237 76 Setting individual values :, f 18;
+#X floatatom 474 155 5 0 0 0 - - - 0;
+#X text 883 235 send a list beginning with 0 and followed by all bargraph
+values, f 34;
+#X text 260 487 not yet implemented;
+#X text 25 9 mob/multilider;
+#X text 23 72 multislider;
+#X text 338 11 pd 0.52 + iemguts;
+#X obj 326 244 s my_multislider-rcv;
+#X obj 735 285 s my_multislider-rcv;
+#X text 470 69 Setting all values \, changing multislider size:, f
+29;
+#X msg 601 115 1 0 1;
+#X msg 468 117 0.2 1 1 1 1;
+#X msg 299 194 set \$2 \$1;
+#X msg 474 185 size \$1;
+#X text 84 470 set message;
+#X text 95 558 2nd outlet;
+#X text 219 560 not yet implemented;
+#X text 74 492 size message;
+#X text 75 511 dump message;
+#X obj 208 330 print individual_value;
+#X obj 13 333 print dump_list;
+#X text 18 284 On gui touch \, multislider sends messages;
+#X obj 19 112 mob/multislider;
+#A saved -back_alpha 1;
+#A saved -front_alpha 1;
+#A saved -save_contents 0;
+#A saved -front_color -1 253 167;
+#A saved -back_color -1 253 167;
+#A saved -back_color -1 255 255;
+#A saved -size 3;
+#A saved -name my_multislider;
+#A saved -yto 0;
+#A saved -xto 3;
+#A saved -yfrom 1;
+#A saved -xfrom 0;
+#A saved -height 140;
+#A saved -width 200;
+#X connect 5 0 22 0;
+#X connect 6 0 5 1;
+#X connect 7 0 5 0;
+#X connect 8 0 18 0;
+#X connect 11 0 23 0;
+#X connect 20 0 17 0;
+#X connect 21 0 17 0;
+#X connect 22 0 17 0;
+#X connect 23 0 17 0;
+#X connect 32 0 30 0;
+#X connect 32 1 29 0;

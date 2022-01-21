@@ -1,0 +1,43 @@
+#N struct bckgrnd float x float y float width float height float color
+;
+#N canvas 444 299 885 533 12;
+#X scalar bckgrnd 0 0 320 568 777 \;;
+#X obj 614 58 mob;
+#A saved -R 234.921;
+#A saved -zoom 1;
+#A saved -landscape 0;
+#A saved -mode 1;
+#A saved -pages 1;
+#A saved -B 230.906;
+#A saved -G 234.921;
+#N canvas 0 0 450 300 mob-listeners 0;
+#X obj 20 50 mob/tools/listenerBng arr1_reset arr1_reset-rcv 1 250
+50;
+#X obj 20 100 mob/tools/listenerBng arr1_refresh arr1_refresh-rcv 2
+250 50;
+#X obj 20 0 mob/tools/loader2 arrays;
+#X restore 614 28 pd mob-listeners;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array array1 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 89 49 graph;
+#X obj 150 332 s array1;
+#X obj 150 246 bng 50 250 50 0 arr1_reset arr1_reset-rcv empty 17 7
+0 10 #fcfcfc #000000 #000000;
+#X msg 152 304 const 0;
+#X obj 138 441 bng 50 250 50 0 arr1_refresh arr1_refresh-rcv empty
+17 7 0 10 #fcfcfc #000000 #000000;
+#X text 70 452 refresh;
+#X msg 134 499 \; toGUI list array1 refresh;
+#X text 76 200 you can programmatically change the contents of an array
+, f 32;
+#X text 62 255 ex : reset;
+#X text 62 363 BUT in order to display changes on MobMuPlat target
+platform \, you have to trigger it explicitely :, f 34;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 9 0;
