@@ -25,9 +25,8 @@ It comes with enhanced guis (vfader, hfader, button, xy_slider, jog, menu, xy_nu
 [mob] includes a RJDJ-based preset saving mechanism.
 
 **Requirements :**
-- pd >= 0.50 on development platform
-- mrpeach/binfile external
-- iemguts + iemlib external libs
+- pd >= 0.52 on development platform
+- iemguts external lib
 - (optional) for multitouch support : https://github.com/jyg/multitouch + hidio
 
 Note that current version of pd on MobMuPlat is 0.48-0. **Don'use in your patch : [savestate], [pdcontrol], [slop~] ; beware of [declare]'s different behaviour ; [value] has no second inlet, if you need it, use [mob/value] instead.**
@@ -36,19 +35,19 @@ Note that current version of pd on MobMuPlat is 0.48-0. **Don'use in your patch 
 
 **Installation**
 
-Copy this folder (named 'mob') into the externals directory of your desktop puredata installation (pd >= 0.50).
+Copy this folder (named '**mob**') into the externals directory of your desktop puredata installation (pd >= 0.50).
 
-Copy the content of subfolder named 'MobMuPlat_target_folder' into the MobMuPlat directory on your mobile device.
+Copy the content of subfolder named 'export' into the MobMuPlat directory on your mobile device.
 
 **Usage**
 
-Have first a look at **mob_overview.pd** and **mob-help.pd** 
+Have first a look at patches in **tutorial** and **example** folders. 
 
-Edit the patch you want to export to MobMuPlat with pd >= 0.50. **Add the [mob] object on it**. Check the background color, the layout size, the number of pages, etc.. You can adjust the scale factor with the "zoom" slider.
+Edit the patch you want to export to MobMuPlat with pd >= 0.52. **Add the [mob] object on it**. Check the background color, the layout size, the number of pages, etc.. You can adjust the scale factor with the "zoom" slider.
 
 All the native pd GUIs will be exported. They must interact with the patch only with their rcv and snd channel names (wired connections not tested).
 
-Save your patch. Click on red button, [mob] creates dynamically the needed wrappers in the patch. The default name for the generated graphical interface file is the name of the patch but with the *.mmp extension. Copy both *.pd and *.mmp files to your mobile device (MobMuPlat directory). 
+Save your patch. Click on red button, [**mob**] adds some stuff in the current patch and creates two new files in the **export** folder. The default name for the generated graphical interface file is the name of the patch but with the *.mmp extension. Copy both *.pd and *.mmp files to your mobile device (MobMuPlat directory). 
 
 That's all !
 
