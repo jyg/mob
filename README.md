@@ -36,7 +36,7 @@ Note that current version of pd on MobMuPlat is 0.48-0. **Don'use in your patch 
 
 **Installation**
 
-Copy this folder (named '**mob**') into the externals directory of your desktop puredata installation (pd >= 0.50).
+Download from https://github.com/jyg/mob/releases/tag/mob-0.2 , uncompress and copy **mob** folder into the externals directory of your desktop puredata installation (pd >= 0.52).
 
 Copy the content of subfolder named 'export' into the MobMuPlat directory on your mobile device.
 
