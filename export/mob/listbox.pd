@@ -1,0 +1,6 @@
+#N canvas 0 50 450 300 10;
+#X obj 151 55 inlet;
+#X obj 151 183 outlet;
+#X text 196 127 dummy object to preserve backward compatibility with
+pd 0.52 files;
+#X connect 0 0 1 0;

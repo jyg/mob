@@ -1,5 +1,5 @@
-#N struct 1016-barray array z 1016-arrayelement float color;
-#N struct 1016-arrayelement float zz;
+#N struct 1017-barray array z 1017-arrayelement float color;
+#N struct 1017-arrayelement float zz;
 #N canvas 147 0 1096 1016 16;
 #X obj 246 277 mob/button;
 #A saved -invisible 0;
@@ -121,8 +121,6 @@
 #X text 350 739 a multitouch slider (for multitouch linux);
 #X text 470 819 a multislider;
 #X text 437 1049 a popup menu;
-#X text 435 973 a LCD display (as in MobMuPlat) for drawing 2D shapes
-;
 #N canvas 680 181 997 378 TODO 0;
 #X text 46 33 * mob/sarray;
 #X text 72 64 (pending);
@@ -193,7 +191,35 @@
 #000000 0 1;
 #X obj 365 276 tgl 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
-#X obj 216 64 pending/sarray;
+#X obj 205 53 mob/sarray;
+#A saved -save_contents 1;
+#A saved -contents 0 0 0 0 0 0 0 0 0 -0.0142857 0.028571 0.0428566
+0.0499994 0.0571421 0.114284 0.142856 0.171427 0.242854 0.261902 0.280949
+0.299997 0.30714 0.314282 0.371425 0.38571 0.399996 0.414281 0.414281
+0.442852 0.449995 0.471424 0.414281 0.371425 0.342853 0.25714 0.199998
+0.171427 0.114284 0.0428566 0.028571 -0.0285712 -0.035714 -0.0571424
+-0.0642852 -0.0714279 -0.0714279 -0.0857135 -0.0999991 -0.0999991 -0.0999991
+-0.114285 -0.12857 -0.142856 -0.157141 -0.171427 -0.185712 -0.185712
+-0.185712 -0.185712 -0.18857 -0.191427 -0.194284 -0.197141 -0.199998
+-0.199998 -0.199998 -0.199998 -0.171427 -0.149999 -0.12857 -0.0571424
+-0.0285712 -1.19209e-07 0.0357138 0.0714277 0.107142 0.142856 0.171427
+0.199998 0.242854 0.242854 0.235712 0.214283 0.185712 0.178569 0.171427
+0.164284 0.142856 -0.0142857 -0.0857135 -0.0999991 -0.157141 -0.185712
+-0.228569 -0.25714 -0.271426 -0.271426 -0.271426 -0.271426;
+#A saved -displayMode 0;
+#A saved -mode 0;
+#A saved -color 850;
+#A saved -style 0;
+#A saved -linewidth 3;
+#A saved -size 99;
+#A saved -arrayName mob/sarray;
+#A saved -yto -1;
+#A saved -xto 100;
+#A saved -yfrom 1;
+#A saved -xfrom 0;
+#A saved -style 0;
+#A saved -height 140;
+#A saved -width 200;
 #X restore 744 1052 pd TODO;
 #X obj 38 24 cnv 15 300 30 empty empty MOB-WIDGETS 3 15 0 20 #e0e0e0
 #404040 0;
@@ -211,3 +237,5 @@ with mob/ prefix.;
 #X text 667 75 Requirements;
 #X text 699 107 * pd > 0.51;
 #X text 698 138 * iemguts externals lib;
+#X text 435 973 a "LCD display" (as in MobMuPlat) for drawing 2D shapes
+;

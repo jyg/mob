@@ -1,138 +1,120 @@
-#N struct 1012-barray array z 1012-arrayelement float color;
-#N struct 1012-arrayelement float zz;
-#N canvas 408 107 1180 813 16;
-#X obj 2 1 cnv 15 700 40 empty empty empty 20 12 0 14 -232576 -66577
+#N struct 1664-barray array z 1664-arrayelement float color;
+#N struct 1664-arrayelement float zz;
+#N struct 1665-barray array z 1665-arrayelement float color;
+#N struct 1665-arrayelement float zz;
+#N struct 1661-barray array z 1661-arrayelement float color;
+#N struct 1661-arrayelement float zz;
+#N struct 1662-barray array z 1662-arrayelement float color;
+#N struct 1662-arrayelement float zz;
+#N canvas 738 92 1180 813 16;
+#X obj 2 1 cnv 15 700 40 empty empty empty 20 12 0 14 #e0c4fc #404040
 0;
-#X text 338 11 pd 0.49 + iemguts;
 #X text 3 48 ______________________________________________________________________
 , f 70;
-#X obj 1 318 cnv 15 700 180 empty empty empty 20 12 0 14 -204786 -66577
+#X obj 1 408 cnv 15 700 180 empty empty empty 20 12 0 14 #c4fcc4 #404040
 0;
-#X text 31 345 MobMuPlat usage :;
-#X text 25 9 mob/bargraph;
-#X text 37 279 To edit properties and size \, right-click + properties
+#X text 25 417 MobMuPlat usage :;
+#X text 24 367 To edit properties and size \, right-click + properties
 popup menu;
-#N canvas 0 23 817 361 arrayguts 0;
-#X obj 6 -41 inlet;
-#X obj 98 -36 inlet;
-#X obj 97 60 t b b;
-#X msg 132 94 read -resize anderson1.wav array1;
-#X obj 133 122 soundfiler;
-#X obj 97 174 send array1;
-#X obj 156 58 loadbang;
-#X msg 7 -3 \; array1 resize 8 \, \; array1 0 -1 -0.75 -0.5 -0.25 0.25
-0.5 0.75 1;
-#X text 96 220 this bang \, to refresh the gui on post-loadbang soundfile
-loads \, is an unfortunate temporary workaround \, which will not be
-neccessary in the future. See https://github.com/libpd/libpd/issues/114.
-;
-#X connect 0 0 7 0;
-#X connect 1 0 2 0;
-#X connect 2 0 5 0;
-#X connect 2 1 3 0;
-#X connect 3 0 4 0;
-#X restore 880 40 pd arrayguts;
-#X text 168 503 sarray;
-#X text 23 72 bargraph;
-#X text 38 513 see also :;
-#X obj 326 244 s my_bargraph-rcv;
 #X obj 300 165 pack f f;
-#X floatatom 376 137 5 0 0 2 index - -;
-#X floatatom 300 136 5 0 0 2 value - -;
-#X obj 744 363 r my_bargraph;
-#N canvas 0 50 450 300 sarray_listener 0;
-#X restore 186 639 pd sarray_listener;
-#X obj 22 110 bargraph my_bargraph;
+#X floatatom 376 137 5 0 0 2 index - - 0;
+#X floatatom 300 136 5 0 0 2 value - - 0;
+#X msg 773 247 dump;
+#X text 828 246 --->;
+#X text 237 76 Setting individual values :, f 18;
+#X floatatom 474 155 5 0 0 0 - - - 0;
+#X text 883 235 send a list beginning with 0 and followed by all bargraph
+values, f 34;
+#X text 158 485 not yet implemented;
+#X text 338 11 pd 0.52 + iemguts;
+#X text 470 69 Setting all values \, changing multislider size:, f
+29;
+#X msg 601 115 1 0 1;
+#X msg 468 117 0.2 1 1 1 1;
+#X msg 299 194 set \$2 \$1;
+#X msg 474 185 size \$1;
+#X text 18 284 On gui touch \, multislider sends messages;
+#X text 25 9 mob/bargraph;
+#X text 23 72 bargraph;
+#X obj 326 243 s my_bargraph-rcv;
+#X obj 735 285 s my_bargraph-rcv;
+#X obj 64 620 mob/bargraph;
+#A saved -back_alpha 1;
+#A saved -front_alpha 1;
+#A saved -contents 0.582857 0.497143 0.42 0.385714 0.394286 0.385714
+0.454286 0.48 0.792857 0.35;
 #A saved -save_contents 1;
-#A saved -contents -0.435294 -0.435294 -0.388235 -0.364706 -0.258824
--0.176471 -0.105882 -0.0705882 0.188235 -0.0117648;
-#A saved -displayMode 0;
-#A saved -mode 0;
-#A saved -color 660;
-#A saved -style 0;
-#A saved -linewidth 1;
+#A saved -front_color -1 253 113;
+#A saved -back_color -1 253 113;
+#A saved -back_color -1 255 255;
 #A saved -size 10;
-#A saved -arrayName my_bargraph;
-#A saved -yto -1;
+#A saved -name Untitled_5*;
+#A saved -borders 4;
+#A saved -xto 10;
+#A saved -style 0;
+#A saved -xfrom 0;
+#A saved -height 140;
+#A saved -width 200;
+#X obj 308 629 mob/bargraph;
+#A saved -back_alpha 1;
+#A saved -front_alpha 1;
+#A saved -contents 0.853112 0.853112 0.853112 0.32 0.415051 0.448113
+0.431582 0.39852 0.357194 0.324133 0.311735 0.315867 0.38199 0.435714
+0.50597 0.580357 0.551429 0.24148 0.262143 0.286939 0.324133 0.340663
+0.353062 0.344796 0.299337 0.262143 0.233214 0.19602 0.158827;
+#A saved -save_contents 1;
+#A saved -front_color -1 255 195;
+#A saved -back_color -1 255 195;
+#A saved -back_color -1 255 255;
+#A saved -size 29;
+#A saved -name Untitled_4*;
+#A saved -borders 1;
+#A saved -xto 29;
+#A saved -style 1;
+#A saved -xfrom 0;
+#A saved -height 140;
+#A saved -width 200;
+#X obj 916 651 mob/multislider;
+#A saved -back_alpha 1;
+#A saved -front_alpha 1;
+#A saved -save_contents 0;
+#A saved -front_color -1 252 143;
+#A saved -back_color -1 252 143;
+#A saved -back_color -1 255 255;
+#A saved -size 10;
+#A saved -name Untitled_3*;
+#A saved -yto 0;
 #A saved -xto 10;
 #A saved -yfrom 1;
 #A saved -xfrom 0;
-#A saved -style 0;
-#A saved -height 170;
+#A saved -height 140;
 #A saved -width 200;
-#N canvas 0 50 450 250 (subpatch) 0;
-#X array native_array 30 float 3;
-#A 0 -0.599993 -0.649992 -0.699992 -0.699992 -0.35 -0.35 -0.300001
--0.200002 -0.599986 -0.599986 -0.599986 -0.599986 -0.599986 -0.599986
--0.599986 -0.499988 -0.399989 -0.34999 -0.299991 -0.249992 -0.124994
-4.58956e-06 0.016671 0.0333374 0.0500038 0.100003 0.150002 0.200002
-0.250001 0.499997;
-#X coords 0 1 30 -1 60 40 1 0 0;
-#X restore 301 546 graph;
-#X msg 474 185 resize \$1;
-#X msg 610 185 color \$1;
-#X msg 828 434 resize <value>;
-#X obj 744 399 route list resize;
-#X obj 769 141 array define -k my_bargraph 20;
-#A 0 -0.435294 -0.435294 -0.388235 -0.364706 -0.258824 -0.176471 -0.105882
--0.0705882 0.188235 -0.0117648 0.0352941 0.0352941 0.0352941 0.0470588
-0.0470588 0.0588235 0.0588235 0.105882 0.458824 0.494118;
-#X obj 167 542 sarray sarray;
-#A saved -save_contents 1;
-#A saved -contents 0 0 -0.150008 -0.150008 -0.850024 -0.850024 -0.850024
--0.850024 -0.850024 -0.850024 0.500007 0.550008 0.550008 0.550008 0.400005
-0.0999977 -0.100007 -0.400014 -0.525017 -0.450015 -0.400014 -0.200009
--0.200009 -0.100007 -0.100007 -0.100007 -0.100007 -0.100007 -0.100007
--0.100007;
-#A saved -displayMode 0;
-#A saved -mode 0;
-#A saved -color 740;
+#X text 665 637 see also;
+#X text 735 671 mob/multislider;
+#X obj 208 330 print individual_value;
+#X obj 13 333 print dump_list;
+#X obj 30 126 mob/bargraph;
+#A saved -back_alpha 1;
+#A saved -front_alpha 1;
+#A saved -save_contents 0;
+#A saved -front_color -1 253 145;
+#A saved -back_color -1 253 145;
+#A saved -back_color -1 255 255;
+#A saved -size 10;
+#A saved -name my_bargraph;
+#A saved -borders 0;
+#A saved -xto 10;
 #A saved -style 0;
-#A saved -linewidth 5;
-#A saved -size 30;
-#A saved -arrayName sarray;
-#A saved -yto -1;
-#A saved -xto 30;
-#A saved -yfrom 1;
 #A saved -xfrom 0;
-#A saved -style 0;
-#A saved -height 40;
-#A saved -width 80;
-#N canvas 0 50 740 518 todo 0;
-#X text 22 56 Rajouter épaisseur et couleur du trait, f 17;
-#X obj 40 175 MobMuPlat_target_folder/mob/bargraph my_bargraph;
-#X obj 39 237 MobMuPlat_target_folder/mob/sarray Untitled_1;
-#X restore 366 380 pd todo;
-#X obj 718 479 print Bargraph:list;
-#X msg 735 185 refresh;
-#X obj 735 285 s my_bargraph-rcv;
-#X msg 773 247 dump;
-#X text 828 246 --->;
-#X text 818 181 --->;
-#X text 883 180 copy values from associated array, f 31;
-#X msg 299 194 \$2 \$1;
-#X msg 600 113 2 1 1 1 1;
-#X text 237 76 Setting individual values :, f 18;
-#X text 484 87 Setting group of values :, f 14;
-#X floatatom 474 155 5 0 0 0 - - -;
-#X floatatom 609 153 5 0 0 0 - - -;
-#X text 735 337 on gui touch \, bargraph sends messages;
-#X msg 920 478 <offset> <value> |<value(s)>;
-#X text 768 96 bargraph can be linked to an array with same name,
-f 29;
-#X text 883 235 send a list beginning with 0 and followed by all bargraph
-values, f 34;
-#X text 79 381 not yet implemented;
-#X connect 12 0 33 0;
-#X connect 13 0 12 1;
-#X connect 14 0 12 0;
-#X connect 15 0 22 0;
-#X connect 19 0 11 0;
-#X connect 20 0 11 0;
-#X connect 22 0 26 0;
-#X connect 27 0 28 0;
-#X connect 29 0 28 0;
-#X connect 33 0 11 0;
-#X connect 34 0 11 0;
-#X connect 37 0 19 0;
-#X connect 38 0 20 0;
+#A saved -height 140;
+#A saved -width 200;
+#X text 785 16 multitouch supported;
+#X connect 5 0 18 0;
+#X connect 6 0 5 1;
+#X connect 7 0 5 0;
+#X connect 8 0 24 0;
+#X connect 11 0 19 0;
+#X connect 16 0 23 0;
+#X connect 17 0 23 0;
+#X connect 18 0 23 0;
+#X connect 19 0 23 0;

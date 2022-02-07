@@ -29,17 +29,7 @@
 #X obj 330 411 tgl 70 1 my_tgl my_tgl-rcv empty 17 7 0 10 #fcc4c4 #fc0400
 #000000 144 144;
 #X text 72 488 -cnv + text;
-#N canvas 0 0 730 596 some_restrictions_with_native_guis 0;
-#X text 22 271 No logarithm mode for sliders on target platform \,
-but you can define any bounds (min and max values for sliders);
-#X text 30 417 No labels attached to guis. Use comment or cnv objects
-;
-#X text 24 456 No quotation marks (") in comments \, else mmp export
-will fail., f 62;
-#X text 23 323 Legacy guis supports init feature as defined in their
-properties dialog.;
-#X text 23 176 Only "jump on click" mode for native sliders on target
-platform., f 65;
+#N canvas 0 0 700 814 some_restrictions_with_native_guis 1;
 #N canvas 0 0 647 574 handling_'set'_messages 0;
 #X obj 77 515 s my_param;
 #X obj 37 134 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
@@ -77,14 +67,40 @@ widget.;
 #X connect 12 0 13 0;
 #X connect 16 0 18 0;
 #X connect 17 0 18 0;
-#X restore 327 372 pd handling_'set'_messages;
-#X text 23 206 If you need steady mode \, use mob/hfader & mob/vfader
+#X restore 399 264 pd handling_'set'_messages;
+#X text 32 91 If you need steady mode \, use mob/hfader & mob/vfader
 with steady mode property., f 67;
-#X text 23 374 'set' messages are supported;
-#X text 59 524 see also http://danieliglesia.com/mobmuplat/doc/index.htm
+#X obj 14 378 cnv 15 650 400 empty empty empty 20 12 0 14 #ff0400 #404040
+0;
+#X obj 30 393 cnv 15 620 370 empty empty empty 20 12 0 14 #ffffff #404040
+0;
+#X floatatom 342 439 5 0 0 0 - - - 0;
+#X listbox 339 474 20 0 0 0 - - - 0;
+#X symbolatom 339 505 10 0 0 0 - - - 0;
+#X text 36 399 CAUTION;
+#X text 60 439 -float boxes (ctrl + 3);
+#X text 58 472 -list boxes (ctrl/cmd + 4);
+#X text 58 503 -symbol boxes;
+#X text 47 640 When exporting pd files to MMP tarjet platform \, [mob]
+replaces listboxes by dummy mob/listbox object \, in order to preserve
+patch consistency.;
+#X text 47 588 /!\ Beware that patches made with pd > 0.52 and containing
+listboxes cannot be read by earlier pd versions.;
+#X text 47 539 are NOT rendered in MobMuPlat;
+#X text 14 63 * Only "jump on click" mode for native sliders on target
+platform., f 66;
+#X text 19 150 * No logarithm mode for sliders on target platform \,
+but you can define any bounds (min and max values for sliders), f
+63;
+#X text 20 212 * Legacy GUIs support init feature as defined in their
+properties dialog., f 65;
+#X text 19 264 * 'set' messages are supported;
+#X text 19 302 * No labels attached to GUIs. Use comment or cnv objects
 ;
+#X text 22 338 * No quotation marks (") in comments \, else MMP export
+will fail., f 64;
 #X restore 52 721 pd some_restrictions_with_native_guis;
-#N canvas 0 50 748 453 changing_cnv's_text 0;
+#N canvas 0 0 748 453 changing_cnv's_text 0;
 #X msg 222 101 ceci;
 #X msg 231 140 est;
 #X msg 229 175 un;
