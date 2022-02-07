@@ -29,7 +29,7 @@
 #X obj 330 411 tgl 70 1 my_tgl my_tgl-rcv empty 17 7 0 10 #fcc4c4 #fc0400
 #000000 144 144;
 #X text 72 488 -cnv + text;
-#N canvas 0 0 700 814 some_restrictions_with_native_guis 1;
+#N canvas 0 0 700 814 some_restrictions_with_native_guis 0;
 #N canvas 0 0 647 574 handling_'set'_messages 0;
 #X obj 77 515 s my_param;
 #X obj 37 134 vsl 40 128 0 127 0 0 my_param my_param-rcv empty 0 -9
