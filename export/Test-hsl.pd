@@ -1,0 +1,33 @@
+#N struct bckgrnd float x float y float width float height float color
+;
+#N canvas 1223 98 458 725 12;
+#X scalar bckgrnd 0 0 319.799 567.642 678 \;;
+#N canvas 178 684 450 300 mob-listeners 0;
+#X obj 20 50 mob/tools/listener_lin hsl-send hsl-rcv 1 0 127;
+#X obj 20 0 mob/tools/loader2 Test-hsl;
+#X restore 100 10 pd mob-listeners;
+#X obj 47 98 hsl 180 50 0 127 0 0 hsl-send hsl-rcv empty -2 -8 0 10
+#fcc4c4 #fc0400 #000000 0 1;
+#X text 86 210 ducon;
+#X obj 102 274 r hsl-send;
+#X obj 102 299 mtof;
+#X obj 102 324 lop~ 10;
+#X obj 102 349 osc~;
+#X obj 102 374 *~ 0.1;
+#X obj 102 399 dac~;
+#X obj 83 582 mob;
+#A saved -R 180.709;
+#A saved -zoom 1.00063;
+#A saved -landscape 0;
+#A saved -mode 1;
+#A saved -pages 1;
+#A saved -B 255;
+#A saved -G 220.866;
+#X floatatom 161 305 5 0 0 0 - - - 0;
+#X connect 4 0 5 0;
+#X connect 4 0 11 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 0 9 1;

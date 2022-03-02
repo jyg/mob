@@ -1,5 +1,7 @@
 #N struct 1017-barray array z 1017-arrayelement float color;
 #N struct 1017-arrayelement float zz;
+#N struct 1021-barray array z 1021-arrayelement float color;
+#N struct 1021-arrayelement float zz;
 #N canvas 147 0 1096 1016 16;
 #X obj 246 277 mob/button;
 #A saved -invisible 0;
@@ -121,7 +123,25 @@
 #X text 350 739 a multitouch slider (for multitouch linux);
 #X text 470 819 a multislider;
 #X text 437 1049 a popup menu;
-#N canvas 680 181 997 378 TODO 0;
+#X obj 38 24 cnv 15 300 30 empty empty MOB-WIDGETS 3 15 0 20 #e0e0e0
+#404040 0;
+#X obj 21 71 cnv 15 600 180 empty empty empty 20 12 0 14 #dfdfdf #404040
+0;
+#X text 33 74 mob-widgets can be used in any patch.;
+#X text 30 108 Before using them \, you have to place mob folder in
+one of your defined pd paths. Then simply type the name of the widget
+with mob/ prefix.;
+#X text 36 201 To edit them \, right-click + properties.;
+#X text 35 221 For more info \, right-click + help., f 43;
+#X text 36 181 To resize them \, control + drag in edit mode.;
+#X obj 658 70 cnv 15 300 100 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X text 667 75 Requirements;
+#X text 699 107 * pd > 0.51;
+#X text 698 138 * iemguts externals lib;
+#X text 435 973 a "LCD display" (as in MobMuPlat) for drawing 2D shapes
+;
+#N canvas 680 181 1019 524 pending 0;
 #X text 46 33 * mob/sarray;
 #X text 72 64 (pending);
 #X text 454 44 an array container with settable color/linewidth;
@@ -220,22 +240,22 @@
 #A saved -style 0;
 #A saved -height 140;
 #A saved -width 200;
-#X restore 744 1052 pd TODO;
-#X obj 38 24 cnv 15 300 30 empty empty MOB-WIDGETS 3 15 0 20 #e0e0e0
-#404040 0;
-#X obj 21 71 cnv 15 600 180 empty empty empty 20 12 0 14 #dfdfdf #404040
-0;
-#X text 33 74 mob-widgets can be used in any patch.;
-#X text 30 108 Before using them \, you have to place mob folder in
-one of your defined pd paths. Then simply type the name of the widget
-with mob/ prefix.;
-#X text 36 201 To edit them \, right-click + properties.;
-#X text 35 221 For more info \, right-click + help., f 43;
-#X text 36 181 To resize them \, control + drag in edit mode.;
-#X obj 658 70 cnv 15 300 100 empty empty empty 20 12 0 14 #e0e0e0 #404040
-0;
-#X text 667 75 Requirements;
-#X text 699 107 * pd > 0.51;
-#X text 698 138 * iemguts externals lib;
-#X text 435 973 a "LCD display" (as in MobMuPlat) for drawing 2D shapes
-;
+#X obj 219 321 mob/bargraph;
+#A saved -back_alpha 1;
+#A saved -front_alpha 1;
+#A saved -contents 0.574286 0.677143 0.702857 0.651429 0.462857 0.231429
+0.102857 0.711429 0.762857 0;
+#A saved -save_contents 1;
+#A saved -front_color -1 255 255;
+#A saved -back_color -1 255 255;
+#A saved -back_color -1 255 255;
+#A saved -size 10;
+#A saved -name Untitled_10*;
+#A saved -borders 0;
+#A saved -xto 10;
+#A saved -style 0;
+#A saved -xfrom 0;
+#A saved -height 140;
+#A saved -width 200;
+#X text 45 368 * mob/bargraph;
+#X restore 744 1052 pd pending;
