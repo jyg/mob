@@ -202,7 +202,11 @@
 #X obj 291 581 r \$0-name;
 #X obj 232 692 list trim;
 #X msg 77 61 size \$1;
+<<<<<<< HEAD
 #X obj 100 100 bng 49 250 50 0 empty \$0-jog-rcv empty 17 7 0 10 #dcdcdc #dcdcdc #dcdcdc;
+=======
+#X obj 100 100 bng 60 250 50 0 empty \$0-jog-rcv empty 17 7 0 10 #dcdcdc #dcdcdc #dcdcdc;
+>>>>>>> 9b9a472f11a1b1aa8e82f028ac05ece67d85b189
 #N canvas 0 50 629 675 cursor3 0;
 #X obj 29 20 inlet;
 #X obj 140 146 sin;
@@ -396,9 +400,15 @@
 #X connect 28 0 24 0;
 #X restore 23 909 pd cursor1;
 #X obj 452 938 outlet pressure;
+<<<<<<< HEAD
 #X obj 108 133 cnv 10 10 10 empty \$0-cursor1 empty 20 12 0 14 #000000 #404040 0;
 #X obj 111 130 cnv 10 10 10 empty \$0-cursor2 empty 20 12 0 14 #000000 #404040 0;
 #X obj 113 127 cnv 10 10 10 empty \$0-cursor3 empty 20 12 0 14 #000000 #404040 0;
+=======
+#X obj 125 102 cnv 10 10 10 empty \$0-cursor1 empty 20 12 0 14 #000000 #404040 0;
+#X obj 125 107 cnv 10 10 10 empty \$0-cursor2 empty 20 12 0 14 #000000 #404040 0;
+#X obj 125 112 cnv 10 10 10 empty \$0-cursor3 empty 20 12 0 14 #000000 #404040 0;
+>>>>>>> 9b9a472f11a1b1aa8e82f028ac05ece67d85b189
 #X obj 100 100 cnv 1 1 1 \$0-pos \$0-pos-rcv empty 20 12 0 14 #404040 #404040 0;
 #X obj 37 706 -;
 #X obj 12 628 t f f f;
@@ -734,7 +744,11 @@
 #X connect 20 0 16 0;
 #X coords 0 -1 1 1 169 36 2 50 150;
 #X restore 38 271 pd color_picker;
+<<<<<<< HEAD
 #X obj 92 135 cnv 15 300 20 empty \$0-receive_name-rcv knob1-rcv 2 10 0 16 #f0fcf8 #404040 0;
+=======
+#X obj 92 135 cnv 15 300 20 empty \$0-receive_name-rcv Untitled_1*-rcv 2 10 0 16 #f0fcf8 #404040 0;
+>>>>>>> 9b9a472f11a1b1aa8e82f028ac05ece67d85b189
 #X text 17 133 receive;
 #X restore 1115 196 pd knob_properties(\$0);
 #X obj 189 806 t f f;
@@ -970,6 +984,7 @@
 #X msg 633 104 set \$1;
 #X obj 612 193 route float;
 #X obj 612 151 iemlib/iem_receive;
+<<<<<<< HEAD
 #X obj 375 418 s LISTENERS;
 #X obj 360 319 list prepend listener_knob;
 #X connect 0 0 2 0;
@@ -984,6 +999,19 @@
 #X connect 8 0 10 0;
 #X connect 9 0 6 3;
 #X connect 10 0 9 0;
+=======
+#X connect 1 0 4 0;
+#X connect 3 0 4 1;
+#X connect 4 0 5 0;
+#X connect 5 0 8 0;
+#X connect 5 1 6 0;
+#X connect 6 0 8 1;
+#X connect 7 0 8 2;
+#X connect 8 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 12 0;
+#X connect 11 0 8 3;
+>>>>>>> 9b9a472f11a1b1aa8e82f028ac05ece67d85b189
 #X connect 12 0 11 0;
 #X restore 1456 401 pd export_args;
 #X connect 0 0 2 1;
@@ -1049,8 +1077,13 @@
 #X obj 230 430 outlet;
 #X obj 181 104 iemguts/canvasdollarzero 2;
 #N canvas 0 50 450 213 \$0-dynamic-receiver 0;
+<<<<<<< HEAD
 #X obj 10 10 r MULTITOUCH.MODE2.1007;
 #X obj 10 50 s 1008-iem_receive;
+=======
+#X obj 10 10 r MULTITOUCH.MODE2.1003;
+#X obj 10 50 s 1059-iem_receive;
+>>>>>>> 9b9a472f11a1b1aa8e82f028ac05ece67d85b189
 #X connect 0 0 1 0;
 #X restore 222 306 pd \$0-dynamic-receiver;
 #X obj 219 147 pack s \$0;
@@ -1273,8 +1306,13 @@
 #X obj 131 69 inlet;
 #X obj 118 179 s pd-\$0-dynamic-receiver2;
 #N canvas 0 50 450 126 \$0-dynamic-receiver2 0;
+<<<<<<< HEAD
 #X obj 10 10 r knob1;
 #X obj 10 50 s 1008-iem_receive2;
+=======
+#X obj 10 10 r Untitled_1*;
+#X obj 10 50 s 1059-iem_receive2;
+>>>>>>> 9b9a472f11a1b1aa8e82f028ac05ece67d85b189
 #X connect 0 0 1 0;
 #X restore 120 258 pd \$0-dynamic-receiver2;
 #X obj 124 100 pack s \$0;
