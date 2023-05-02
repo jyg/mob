@@ -16,13 +16,13 @@
 #X obj 102 374 *~ 0.1;
 #X obj 102 399 dac~;
 #X obj 83 582 mob;
+#A saved -B 255;
+#A saved -G 220.866;
 #A saved -R 180.709;
 #A saved -zoom 1.00063;
 #A saved -landscape 0;
 #A saved -mode 1;
 #A saved -pages 1;
-#A saved -B 255;
-#A saved -G 220.866;
 #X floatatom 161 305 5 0 0 0 - - - 0;
 #X connect 4 0 5 0;
 #X connect 4 0 11 0;
@@ -31,3 +31,4 @@
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
 #X connect 8 0 9 1;
+#X coords 0 0 1 1 319 567 1 0 0;

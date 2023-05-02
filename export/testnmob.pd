@@ -1,0 +1,9 @@
+#N canvas 0 0 993 568 12;
+#X obj 59 68 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 489 191 mob;
+#N canvas 0 50 450 300 mob-listeners 0;
+#X obj 20 50 mob/tools/listenerTgl empty empty 1;
+#X obj 20 0 mob/tools/loader2 testnmob;
+#X restore 489 161 pd mob-listeners;
+#X coords 0 0 1 1 320 480 1 0 0;
