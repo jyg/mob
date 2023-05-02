@@ -1,7 +1,7 @@
-#N canvas 440 200 732 621 16;
+#N canvas 806 212 732 621 16;
 #X obj 44 175 tgl 30 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
-#X text 38 258 To edit shape \, ctrl+drag on it in edit mode;
+#X text 41 268 To edit shape \, ctrl+drag on it in edit mode;
 #X floatatom 233 172 5 0 0 1 pressure(=surface) - - 0;
 #X obj 99 186 unpack f f;
 #X floatatom 99 215 5 0 0 0 x - - 0;
@@ -14,7 +14,7 @@
 #A saved -front_color -1 255 255;
 #A saved -back_color -1 255 245;
 #A saved -size 60 60;
-#X text 37 279 To edit properties \, right-click + properties popup
+#X text 40 289 To edit properties \, right-click + properties popup
 menu;
 #X obj 257 551 mob/jog untitled;
 #A saved -cursor_color 0 0 0;
@@ -50,21 +50,21 @@ menu;
 #X obj 1 338 cnv 15 700 180 empty empty empty 20 12 0 14 #c4fcc4 #404040
 0;
 #X text 31 345 MobMuPlat usage :;
-#X obj 227 365 button my_button;
+#X obj 230 375 button my_button;
 #A saved -invisible 0;
 #A saved -z_offset 0;
 #A saved -name my_button;
 #A saved -front_color 126 172 211;
 #A saved -back_color 186 178 235;
 #A saved -size 68 63;
-#X obj 346 343 r my_button;
-#X floatatom 345 372 5 0 0 0 - - - 0;
+#X obj 349 353 r my_button;
+#X floatatom 348 382 5 0 0 0 - - - 0;
 #X text 20 381 You can both use connexions and send/receive pairs,
 f 18;
-#X obj 523 379 unpack f f;
-#X floatatom 523 408 5 0 0 0 x - - 0;
-#X floatatom 615 410 5 0 0 0 y - - 0;
-#X obj 520 341 r my_button.xy;
+#X obj 526 389 unpack f f;
+#X floatatom 526 418 5 0 0 0 x - - 0;
+#X floatatom 618 420 5 0 0 0 y - - 0;
+#X obj 523 351 r my_button.xy;
 #X text 28 472 /!\ pressure info is not provided in MobMuPlat.;
 #X obj 507 77 multitouch;
 #X connect 3 0 4 0;

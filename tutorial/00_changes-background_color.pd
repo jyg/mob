@@ -1,12 +1,14 @@
 #N canvas 0 0 1920 1021 12;
 #X obj 1088 75 mob;
+#A saved -B 0;
+#A saved -G 0;
+#A saved -R 0;
 #A saved -zoom 2.7407;
 #A saved -landscape 0;
-#A saved -mode 2;
+#A saved -mode 1;
 #A saved -pages 2;
-#X obj 0 0 cnv 15 218 350 _||| _|||-rcv ||| 5 12 0 14 #7c7c7c #404040
-0;
+#X obj 0 0 cnv 15 116 207 _||| _|||-rcv ||| 5 12 0 14 #7c7c7c #404040 0;
 #X msg 1157 286 pos 0 0;
 #X obj 1153 330 s _|||-rcv;
 #X connect 2 0 3 0;
-#X coords 0 1021 1 1020 85 60 0;
+#X coords 0 0 1 1 116 207 1 0 0;

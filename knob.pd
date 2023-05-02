@@ -85,8 +85,7 @@
 #X obj 30 41 t b;
 #X obj 352 714 outlet;
 #X obj 39 215 select 0;
-#X text 251 111 Pour utiliser la souris quand pas en mode multitouch
-;
+#X text 251 111 Pour utiliser la souris quand pas en mode multitouch;
 #X obj 74 700 outlet;
 #X obj 234 293 iemguts/receivecanvas 2;
 #X obj 231 360 spigot;
@@ -203,8 +202,7 @@
 #X obj 291 581 r \$0-name;
 #X obj 232 692 list trim;
 #X msg 77 61 size \$1;
-#X obj 100 100 bng 60 250 50 0 empty \$0-jog-rcv empty 17 7 0 10 #dcdcdc
-#dcdcdc #dcdcdc;
+#X obj 100 100 bng 60 250 50 0 empty \$0-jog-rcv empty 17 7 0 10 #dcdcdc #dcdcdc #dcdcdc;
 #N canvas 0 50 629 675 cursor3 0;
 #X obj 29 20 inlet;
 #X obj 140 146 sin;
@@ -398,14 +396,10 @@
 #X connect 28 0 24 0;
 #X restore 23 909 pd cursor1;
 #X obj 452 938 outlet pressure;
-#X obj 125 102 cnv 10 10 10 empty \$0-cursor1 empty 20 12 0 14 #000000
-#404040 0;
-#X obj 125 107 cnv 10 10 10 empty \$0-cursor2 empty 20 12 0 14 #000000
-#404040 0;
-#X obj 125 112 cnv 10 10 10 empty \$0-cursor3 empty 20 12 0 14 #000000
-#404040 0;
-#X obj 100 100 cnv 1 1 1 \$0-pos \$0-pos-rcv empty 20 12 0 14 #404040
-#404040 0;
+#X obj 125 102 cnv 10 10 10 empty \$0-cursor1 empty 20 12 0 14 #000000 #404040 0;
+#X obj 125 107 cnv 10 10 10 empty \$0-cursor2 empty 20 12 0 14 #000000 #404040 0;
+#X obj 125 112 cnv 10 10 10 empty \$0-cursor3 empty 20 12 0 14 #000000 #404040 0;
+#X obj 100 100 cnv 1 1 1 \$0-pos \$0-pos-rcv empty 20 12 0 14 #404040 #404040 0;
 #X obj 37 706 -;
 #X obj 12 628 t f f f;
 #X obj 71 669 spigot 1;
@@ -481,20 +475,16 @@
 #X msg 458 884 50;
 #X obj 1113 163 s pd-knob_properties(\$0);
 #N canvas 1087 275 437 475 knob_properties(\$0) 0;
-#X obj 6 4 cnv 15 400 450 empty empty empty 20 12 0 14 #e0e0e0 #404040
-0;
+#X obj 6 4 cnv 15 400 450 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X floatatom 146 14 5 0 0 0 size \$0-w-rcv \$0-w 0;
-#X obj 342 318 bng 40 250 50 0 \$0-ok empty OK 5 20 0 20 #c4fcc4 #000000
-#000000;
+#X obj 342 318 bng 40 250 50 0 \$0-ok empty OK 5 20 0 20 #c4fcc4 #000000 #000000;
 #X symbolatom 91 108 30 0 0 0 send_to \$0-name-rcv \$0-name 0;
 #X text 22 77 Messages;
 #N canvas 0 0 450 300 todo 0;
-#X obj 24 70 cnv 15 200 80 empty empty TODO 20 12 0 14 #fcfcc4 #404040
-0;
+#X obj 24 70 cnv 15 200 80 empty empty TODO 20 12 0 14 #fcfcc4 #404040 0;
 #X floatatom 130 90 5 0 0 0 text_color \$0-cc-rcv \$0-cc-snd 0;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-cc_cnv-rcv empty 20 12 0 14 #000000
-#404040 0;
+#X obj 100 100 cnv 20 20 20 empty \$0-cc_cnv-rcv empty 20 12 0 14 #000000 #404040 0;
 #X msg 170 104 color \$1 \$1;
 #X obj 170 75 r \$0-cursor_color;
 #X obj 170 132 s \$0-cc_cnv-rcv;
@@ -504,15 +494,11 @@
 #X restore 200 92 pd;
 #X floatatom 130 120 5 0 0 0 text_size - - 0;
 #X restore 321 418 pd todo;
-#X floatatom 281 385 5 0 0 0 z-offset \$0-z_offset-rcv \$0-z_offset
-0;
+#X floatatom 281 385 5 0 0 0 z-offset \$0-z_offset-rcv \$0-z_offset 0;
 #X text 25 333 MobMuPlat Widget Export;
-#X obj 157 385 tgl 20 0 \$0-z_offset \$0-z_offset-rcv MoveOnTop -100
-8 0 16 #fcfcfc #000000 #000000 0 99;
-#X obj 157 365 tgl 20 0 \$0-invisible \$0-invisible-rcv Transparency
--130 8 0 16 #fcfcfc #000000 #000000 0 1;
-#X obj 183 365 hsl 60 20 1 0 0 0 \$0-invisible \$0-invisible-rcv empty
--2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 157 385 tgl 20 0 \$0-z_offset \$0-z_offset-rcv MoveOnTop -100 8 0 16 #fcfcfc #000000 #000000 0 99;
+#X obj 157 365 tgl 20 0 \$0-invisible \$0-invisible-rcv Transparency -130 8 0 16 #fcfcfc #000000 #000000 0 1;
+#X obj 183 365 hsl 60 20 1 0 0 0 \$0-invisible \$0-invisible-rcv empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 250 361 Opacity;
 #X floatatom 146 44 5 1 999 0 range \$0-range-rcv \$0-range 0;
 #X text 218 43 (1:continuous);
@@ -521,14 +507,10 @@
 #X text 221 236 front_color;
 #X text 221 276 cursor_color;
 #N canvas 412 187 1049 632 color_picker 0;
-#X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#fc0400 #000000 0 0;
-#X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#00fc04 #000000 0 0;
-#X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#0400fc #000000 0 0;
-#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 #dcdcdc #dcdcdc
-#dcdcdc 0 1;
+#X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #fc0400 #000000 0 0;
+#X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #00fc04 #000000 0 0;
+#X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #0400fc #000000 0 0;
+#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 #dcdcdc #dcdcdc #dcdcdc 0 1;
 #N canvas 0 50 498 451 convert2rgb 0;
 #X obj 53 112 * -1;
 #X obj 54 81 + 1;
@@ -601,14 +583,10 @@
 #X coords 0 -1 1 1 169 36 2 50 150;
 #X restore 37 191 pd color_picker;
 #N canvas 882 181 1049 632 color_picker 0;
-#X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#fc0400 #000000 0 0;
-#X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#00fc04 #000000 0 0;
-#X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#0400fc #000000 0 0;
-#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 #c8c8c8 #c8c8c8
-#c8c8c8 0 1;
+#X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #fc0400 #000000 0 0;
+#X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #00fc04 #000000 0 0;
+#X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #0400fc #000000 0 0;
+#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 #c8c8c8 #c8c8c8 #c8c8c8 0 1;
 #N canvas 0 50 498 451 convert2rgb 0;
 #X obj 53 112 * -1;
 #X obj 54 81 + 1;
@@ -681,14 +659,10 @@
 #X coords 0 -1 1 1 169 36 2 50 150;
 #X restore 37 231 pd color_picker;
 #N canvas 882 181 1049 632 color_picker 0;
-#X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#fc0400 #000000 0 0;
-#X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#00fc04 #000000 0 0;
-#X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#0400fc #000000 0 0;
-#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 #000000 #000000
-#000000 0 1;
+#X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #fc0400 #000000 0 0;
+#X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #00fc04 #000000 0 0;
+#X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #0400fc #000000 0 0;
+#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 #000000 #000000 #000000 0 1;
 #N canvas 0 50 498 451 convert2rgb 0;
 #X obj 53 112 * -1;
 #X obj 54 81 + 1;
@@ -760,8 +734,7 @@
 #X connect 20 0 16 0;
 #X coords 0 -1 1 1 169 36 2 50 150;
 #X restore 38 271 pd color_picker;
-#X obj 92 135 cnv 15 300 20 empty \$0-receive_name-rcv Untitled_1*-rcv
-2 10 0 16 #f0fcf8 #404040 0;
+#X obj 92 135 cnv 15 300 20 empty \$0-receive_name-rcv Untitled_1*-rcv 2 10 0 16 #f0fcf8 #404040 0;
 #X text 17 133 receive;
 #X restore 1115 196 pd knob_properties(\$0);
 #X obj 189 806 t f f;
@@ -887,33 +860,30 @@
 #X obj 146 268 outlet;
 #X text 38 6 enable z-order;
 #X obj 151 69 t f b;
-#X obj 203 96 canvasindex 2;
 #X obj 146 235 select;
 #X obj 202 145 + 0;
 #X obj 249 126 r \$0-z_offset;
 #X obj 202 174 max 0;
 #X obj 202 203 min 1;
 #X obj 298 171 - 1;
+#X obj 203 96 iemguts/canvasindex 2;
 #X connect 0 0 3 0;
-#X connect 3 0 5 0;
-#X connect 3 1 4 0;
-#X connect 4 0 6 0;
-#X connect 4 1 10 0;
-#X connect 5 0 1 0;
-#X connect 6 0 8 0;
-#X connect 7 0 6 1;
-#X connect 8 0 9 0;
-#X connect 9 0 5 1;
-#X connect 10 0 9 1;
+#X connect 3 0 4 0;
+#X connect 3 1 10 0;
+#X connect 4 0 1 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 1;
+#X connect 7 0 8 0;
+#X connect 8 0 4 1;
+#X connect 9 0 8 1;
+#X connect 10 0 5 0;
+#X connect 10 1 9 0;
 #X restore 26 21 pd MMP_EXPORT_BY_INDEX;
 #X obj 1102 97 r \$0-invisible;
 #X obj 1102 126 - 1;
 #X obj 1102 155 * -1;
 #X obj 68 53 t b b b b b;
-#X msg 344 733 "address":"/knob1" \, "highlightColor":[1 \, 0 \, 0
-\, 1] \, "color":[0.5679013 \, 1 \, 0.617376 \, 1] \, "frame":[148.832
-\, 353.074 \, 160 \, 160] \, "indicatorColor":[0.254902 \, 0.333333
-\, 0.352941 \, 1] \, "range":8 \, "class":"MMPKnob";
+#X msg 344 733 "address":"/knob1" \, "highlightColor":[1 \, 0 \, 0 \, 1] \, "color":[0.5679013 \, 1 \, 0.617376 \, 1] \, "frame":[148.832 \, 353.074 \, 160 \, 160] \, "indicatorColor":[0.254902 \, 0.333333 \, 0.352941 \, 1] \, "range":8 \, "class":"MMPKnob";
 #X obj 549 195 r \$0-name;
 #X symbolatom 556 229 10 0 0 0 - - - 0;
 #X obj 1245 237 v WIDGET-ID;
@@ -922,8 +892,7 @@
 #X obj 435 231 r WIDGET-ID;
 #X obj 437 262 list append;
 #X msg 437 291 symbol \$1.\$2;
-#X msg 51 409 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPKnob"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5\\\,"indicatorColor":[0\\\,0\\\,0\\\,\$14]
-, f 32;
+#X msg 51 409 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPKnob"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5\\\,"indicatorColor":[0\\\,0\\\,0\\\,\$14], f 32;
 #X obj 562 236 r \$0-back_color;
 #N canvas 0 50 534 640 canvas_color_to_rgb 0;
 #X obj 119 35 inlet;
@@ -1000,9 +969,9 @@
 #X obj 481 118 r WIDGET-ID;
 #X obj 369 232 pack s s f f;
 #X obj 633 75 r \$0-name;
-#X obj 612 151 iem_receive;
 #X msg 633 104 set \$1;
 #X obj 612 193 route float;
+#X obj 612 151 iemlib/iem_receive;
 #X connect 1 0 4 0;
 #X connect 3 0 4 1;
 #X connect 4 0 5 0;
@@ -1011,10 +980,10 @@
 #X connect 6 0 8 1;
 #X connect 7 0 8 2;
 #X connect 8 0 0 0;
-#X connect 9 0 11 0;
+#X connect 9 0 10 0;
 #X connect 10 0 12 0;
-#X connect 11 0 10 0;
-#X connect 12 0 8 3;
+#X connect 11 0 8 3;
+#X connect 12 0 11 0;
 #X restore 1456 401 pd export_args;
 #X connect 0 0 2 1;
 #X connect 1 0 26 0;
@@ -1079,21 +1048,17 @@
 #X obj 230 430 outlet;
 #X obj 181 104 iemguts/canvasdollarzero 2;
 #N canvas 0 50 450 213 \$0-dynamic-receiver 0;
-#X obj 10 10 r MULTITOUCH.MODE2.1156;
-#X obj 10 50 s 1161-iem_receive;
+#X obj 10 10 r MULTITOUCH.MODE2.1003;
+#X obj 10 50 s 1059-iem_receive;
 #X connect 0 0 1 0;
 #X restore 222 306 pd \$0-dynamic-receiver;
 #X obj 219 147 pack s \$0;
 #X obj 220 227 s pd-\$0-dynamic-receiver;
 #X obj 230 395 r \$0-iem_receive;
 #X msg 121 193 clear;
-#X text 25 17 création dynamique d'un receiver avec un nom de canal
-défini au moment de l'ouverture du patch;
-#X msg 220 179 clear \, obj 10 10 r MULTITOUCH.MODE2.\$1 \, obj 10
-50 s \$2-iem_receive \, connect 0 0 1 0;
-#X text 423 381 A chaque nouvel événement touch-down \, [r MULTITOUCH.MODE2.\$1]
-recoit un message sous la forme suivante : <x> <y> <slotID>, f 37
-;
+#X text 25 17 création dynamique d'un receiver avec un nom de canal défini au moment de l'ouverture du patch;
+#X msg 220 179 clear \, obj 10 10 r MULTITOUCH.MODE2.\$1 \, obj 10 50 s \$2-iem_receive \, connect 0 0 1 0;
+#X text 423 381 A chaque nouvel événement touch-down \, [r MULTITOUCH.MODE2.\$1] recoit un message sous la forme suivante : <x> <y> <slotID>, f 37;
 #X connect 0 0 3 0;
 #X connect 1 0 3 0;
 #X connect 3 0 5 0;
@@ -1130,11 +1095,7 @@ recoit un message sous la forme suivante : <x> <y> <slotID>, f 37
 #X msg 27 856 add \$1 \$2;
 #X msg 149 859 update \$1 \$2;
 #X msg 309 862 remove \$1 \$2;
-#X text 777 42 la table MULTITOUCH.SLOT.STATUS indique si chaque slot
-(tracker de touch-event) est associé ou non à un élément GUI multitouch.
-Si tel est le cas \, l'éĺément i de la table associé au slot i
-prend la valeur \$0 du touch_listener auquel il est associé, f 33
-;
+#X text 777 42 la table MULTITOUCH.SLOT.STATUS indique si chaque slot (tracker de touch-event) est associé ou non à un élément GUI multitouch. Si tel est le cas \, l'éĺément i de la table associé au slot i prend la valeur \$0 du touch_listener auquel il est associé, f 33;
 #X obj 210 469 t f f;
 #N canvas 0 50 450 300 Is_inside_Gui_object? 0;
 #X obj 53 38 inlet;
@@ -1253,8 +1214,7 @@ prend la valeur \$0 du touch_listener auquel il est associé, f 33
 #X restore 592 487 pd Normalize_coords;
 #X f 10;
 #X obj 594 615 t l l;
-#X text 399 764 associe le slot i de la table MULTITOUCH.SLOT.STATUS
-au \$0 du présent touch_listener, f 52;
+#X text 399 764 associe le slot i de la table MULTITOUCH.SLOT.STATUS au \$0 du présent touch_listener, f 52;
 #X floatatom 110 211 5 0 0 0 - - - 0;
 #X connect 0 0 6 0;
 #X connect 1 0 3 0;
@@ -1313,13 +1273,12 @@ au \$0 du présent touch_listener, f 52;
 #X obj 118 179 s pd-\$0-dynamic-receiver2;
 #N canvas 0 50 450 126 \$0-dynamic-receiver2 0;
 #X obj 10 10 r Untitled_1*;
-#X obj 10 50 s 1103-iem_receive2;
+#X obj 10 50 s 1059-iem_receive2;
 #X connect 0 0 1 0;
 #X restore 120 258 pd \$0-dynamic-receiver2;
 #X obj 124 100 pack s \$0;
 #X obj 128 347 r \$0-iem_receive2;
-#X msg 118 131 clear \, obj 10 10 r \$1 \, obj 10 50 s \$2-iem_receive2
-\, connect 0 0 1 0;
+#X msg 118 131 clear \, obj 10 10 r \$1 \, obj 10 50 s \$2-iem_receive2 \, connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 4 0 6 0;
 #X connect 5 0 0 0;
@@ -1508,11 +1467,9 @@ au \$0 du présent touch_listener, f 52;
 #X connect 7 0 8 1;
 #X connect 8 0 2 0;
 #X restore 1540 576 pd convert;
-#X obj 270 515 route -size -back_color -front_color -name -z_offset
--invisible -range -cursor_color, f 106;
+#X obj 270 515 route -size -back_color -front_color -name -z_offset -invisible -range -cursor_color, f 106;
 #X obj 1540 615 s \$0-cursor_color;
-#X msg 16 510 -size 60 \, -back_color 220 220 220 \, -front_color 200
-200 200 \, -cursor_color 0 0 0 \, -range 1, f 10;
+#X msg 16 510 -size 60 \, -back_color 220 220 220 \, -front_color 200 200 200 \, -cursor_color 0 0 0 \, -range 1, f 10;
 #X msg 43 286 1;
 #X obj 49 324 s \$0-editmode;
 #X obj 153 159 t b b b b b b b b, f 83;

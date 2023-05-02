@@ -2,7 +2,7 @@
 #X text 334 87 More info : see mob-overview.pd;
 #X text 23 76 Requirements (v2) :;
 #X text 65 95 pd 0.52 + iemguts + iemlib, f 15;
-#N canvas 853 336 568 276 1)_Set_aspect-ratio_and_size 0;
+#N canvas 853 336 704 554 1)_Set_aspect-ratio_and_size 0;
 #X obj 160 64 cnv 15 298 138 empty empty mob_v2 2 8 0 14 #dcdcdc #000000
 0;
 #X obj 161 144 vradio 15 1 1 4 \$0-mode \$0-mode-rcv empty 0 -8 0 10
@@ -29,6 +29,9 @@
 #X text 263 67 <--- adjust size of gui surface, f 16;
 #X text 18 21 Choose orientation \, aspect ratio and size of output
 gui with foloowing controls :;
+#X obj 34 249 cnv 15 116 175 _||| _|||-rcv ||| 5 12 0 14 #7c7c7c #404040
+0;
+#X text 185 282 <- copy this canvas in main patch;
 #X restore 53 187 pd 1)_Set_aspect-ratio_and_size;
 #N canvas 852 382 595 257 2)_Set_page-layout_and_background-color 0
 ;

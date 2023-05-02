@@ -1,28 +1,22 @@
 #N canvas 114 10 1920 1023 12;
-#X obj 100 100 cnv 15 298 138 \$0-mob_cnv \$0-mob_cnv-rcv mob_v2 2
-8 0 14 #dcdcdc #000000 0;
-#X obj 245 101 bng 45 250 50 0 \$0-exportMMP! empty export 2 10 0 12
-#fc0400 #000000 #000000;
+#X declare -path iemguts;
+#X declare -path iemlib;
+#X obj 100 100 cnv 15 298 138 \$0-mob_cnv \$0-mob_cnv-rcv mob_v2 2 8 0 14 #dcdcdc #000000 0;
+#X obj 245 101 bng 45 250 50 0 \$0-exportMMP! empty export 2 10 0 12 #fc0400 #000000 #000000;
 #X obj 136 396 s MMP_EXPORT;
 #X obj 196 358 v MMP_FIRST_GUI_ITEM;
 #X msg 196 335 1;
 #X obj 956 99 r MMP_EXPORT;
-#X obj 100 180 vradio 15 1 1 4 \$0-mode \$0-mode-rcv empty 0 -8 0 10
-#fcfcfc #000000 #000000 0;
+#X obj 100 180 vradio 15 1 1 4 \$0-mode \$0-mode-rcv empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
 #X obj 1374 659 text define -k \$0-resolutions;
-#A set 320x480 iPhone3p5Inch 0 320 480 320 0 \; 480x320 iPhone3p5Inch
-1 480 320 480 0 \; 320x568 iPhone4Inch 0 320 568 320 0 \; 568x320 iPhone4Inch
-1 568 320 568 0 \; 600x960 android7Inch 0 600 960 600 0 \; 960x600
-android7Inch 1 960 600 960 0 \; 768:1024 iPad 0 768 1024 768 0 \; 1024:768
-iPad 1 1024 768 1024 0 \;;
+#A set 320x480 iPhone3p5Inch 0 320 480 320 0 \; 480x320 iPhone3p5Inch 1 480 320 480 0 \; 320x568 iPhone4Inch 0 320 568 320 0 \; 568x320 iPhone4Inch 1 568 320 568 0 \; 600x960 android7Inch 0 600 960 600 0 \; 960x600 android7Inch 1 960 600 960 0 \; 768:1024 iPad 0 768 1024 768 0 \; 1024:768 iPad 1 1024 768 1024 0 \;;
 #N canvas 4 54 692 325 reading_parent_patch 0;
 #X obj 321 293 text define \$0-patch;
 #X obj 187 47 route savetofile;
 #X obj 188 81 unpack s s;
 #X obj 187 150 s \$0-pdFile-rcv;
 #X obj 308 63 loadbang;
-#X obj 408 61 bng 15 250 50 0 empty \$0-reset empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 408 61 bng 15 250 50 0 empty \$0-reset empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 187 25 iemguts/receivecanvas 2;
 #X obj 305 90 iemguts/canvasname 2;
 #X obj 68 98 r \$0-pdFile;
@@ -58,15 +52,14 @@ iPad 1 1024 768 1024 0 \;;
 #X obj 553 139 v \$0-mode;
 #X msg 553 164 -mode \$1;
 #X obj 280 353 s \$0-mode;
-#X obj 851 106 loadbang;
-#X obj 875 132 r \$0-pageCount;
-#X obj 878 215 s \$0-pageCount;
-#X obj 837 179 max 1;
-#X obj 837 154 f;
-#X obj 825 85 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 802 250 s \$0-pageCount-rcv;
-#X msg 799 209 set \$1;
+#X obj 838 525 loadbang;
+#X obj 862 551 r \$0-pageCount;
+#X obj 865 634 s \$0-pageCount;
+#X obj 824 598 max 1;
+#X obj 824 573 f;
+#X obj 812 504 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 789 669 s \$0-pageCount-rcv;
+#X msg 786 628 set \$1;
 #X obj 962 346 r \$0-mode;
 #X msg 962 371 set \$1;
 #X obj 966 398 s \$0-mode-rcv;
@@ -94,8 +87,22 @@ iPad 1 1024 768 1024 0 \;;
 #X obj 1264 272 v \$0-zoom;
 #X obj 298 23 v MMP.EXPORT.FLAG;
 #X obj 298 48 select 0;
-#X obj 298 82 t b b b b;
-#X connect 0 0 2 0;
+#X obj 33 37 loadbang;
+#X obj 33 62 spigot 1;
+#X obj 183 169 t a b;
+#X msg 102 105 0;
+#X msg 38 171 -R 220 \, -G 220 \, -B 220;
+#X obj 54 363 s \$0-R;
+#X obj 64 393 s \$0-G;
+#X obj 74 423 s \$0-B;
+#X obj 1030 97 v \$0-R;
+#X obj 1040 127 v \$0-G;
+#X obj 1050 157 v \$0-B;
+#X msg 1016 203 -R \$1;
+#X msg 1036 233 -G \$1;
+#X msg 1056 263 -B \$1;
+#X obj 298 82 t b b b b b b b;
+#X connect 0 0 45 0;
 #X connect 0 1 41 0;
 #X connect 1 0 0 0;
 #X connect 2 0 28 0;
@@ -118,6 +125,9 @@ iPad 1 1024 768 1024 0 \;;
 #X connect 24 0 25 0;
 #X connect 26 0 27 0;
 #X connect 27 0 1 0;
+#X connect 28 0 48 0;
+#X connect 28 1 49 0;
+#X connect 28 2 50 0;
 #X connect 28 3 19 0;
 #X connect 28 4 7 0;
 #X connect 28 5 22 0;
@@ -131,11 +141,26 @@ iPad 1 1024 768 1024 0 \;;
 #X connect 39 0 40 0;
 #X connect 40 0 36 0;
 #X connect 41 0 42 0;
-#X connect 42 0 43 0;
-#X connect 43 0 4 0;
-#X connect 43 1 5 0;
-#X connect 43 2 20 0;
-#X connect 43 3 26 0;
+#X connect 42 0 57 0;
+#X connect 43 0 44 0;
+#X connect 44 0 47 0;
+#X connect 45 0 2 0;
+#X connect 45 1 46 0;
+#X connect 46 0 44 1;
+#X connect 47 0 28 0;
+#X connect 51 0 54 0;
+#X connect 52 0 55 0;
+#X connect 53 0 56 0;
+#X connect 54 0 1 0;
+#X connect 55 0 1 0;
+#X connect 56 0 1 0;
+#X connect 57 0 4 0;
+#X connect 57 1 5 0;
+#X connect 57 2 20 0;
+#X connect 57 3 26 0;
+#X connect 57 4 51 0;
+#X connect 57 5 52 0;
+#X connect 57 6 53 0;
 #X restore 1234 51 pd savestate;
 #N canvas 774 210 1920 1023 comments 0;
 #X obj 101 40 inlet;
@@ -217,8 +242,7 @@ iPad 1 1024 768 1024 0 \;;
 #X obj 551 397 list fromsymbol;
 #X obj 525 366 symbol;
 #X floatatom 364 457 5 0 0 0 - - - 0;
-#X msg 525 308 "address":"/myLabel"\\\,"highlightColor":[1\\\,0\\\,0\\\,1]\\\,"color":[0\\\,0\\\,0\\\,1]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"textFontFamily":"Default"\\\,"textFont":""\\\,"textSize":\$6\\\,"text":"\$5"\\\,"class":"MMPLabel"\\\,"androidFont":"Roboto-Regular"
-;
+#X msg 525 308 "address":"/myLabel"\\\,"highlightColor":[1\\\,0\\\,0\\\,1]\\\,"color":[0\\\,0\\\,0\\\,1]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"textFontFamily":"Default"\\\,"textFont":""\\\,"textSize":\$6\\\,"text":"\$5"\\\,"class":"MMPLabel"\\\,"androidFont":"Roboto-Regular";
 #X obj 758 425 list prepend add 44 123;
 #X obj 136 85 t a b b;
 #X floatatom 309 381 5 0 0 0 - - - 0;
@@ -293,10 +317,8 @@ iPad 1 1024 768 1024 0 \;;
 #X obj 1019 312 list append;
 #N canvas 961 58 958 1018 vsl 0;
 #X obj 101 40 inlet;
-#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
-#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
+#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
+#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #N canvas 524 270 1049 621 export_as_MMPSlider 0;
 #X obj 198 376 list fromsymbol;
 #X obj 832 517 list append 125;
@@ -326,8 +348,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 511 9 inlet range;
 #X obj 212 248 pack f f f f 1 s f f f f f f f f;
 #X obj 214 102 t f b;
-#X msg 178 277 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":false\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5
-;
+#X msg 178 277 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":false\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -684,10 +705,8 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 1019 337 list trim;
 #N canvas 1 58 958 1018 hsl 0;
 #X obj 101 40 inlet;
-#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
-#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
+#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
+#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #N canvas 524 270 1049 621 export_as_MMPSlider 0;
 #X obj 198 376 list fromsymbol;
 #X obj 832 517 list append 125;
@@ -717,8 +736,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 511 9 inlet range;
 #X obj 212 248 pack f f f f 1 s f f f f f f f f;
 #X obj 214 102 t f b;
-#X msg 178 277 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":true\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5
-;
+#X msg 178 277 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":true\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -1074,12 +1092,9 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X restore 1060 421 pd hsl;
 #N canvas 0 57 1920 1023 vradio 0;
 #X obj 101 40 inlet;
-#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
-#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
-#X text 256 286 #X obj 100 150 vradio 15 1 0 6 empty empty empty 0
--8 0 10 -262144 -1 -1 0 \;, f 114;
+#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
+#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
+#X text 256 286 #X obj 100 150 vradio 15 1 0 6 empty empty empty 0 -8 0 10 -262144 -1 -1 0 \;, f 114;
 #X obj 216 482 *;
 #X obj 335 580 s \$0-listeners;
 #X obj 344 325 r WIDGET-ID;
@@ -1120,10 +1135,8 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
 #X obj 511 9 inlet range;
 #X obj 212 248 pack f f f f 1 s f f f f f f f f;
 #X obj 214 102 t f b;
-#X msg 122 557 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":false\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5
-;
-#X msg 216 281 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"mode":0\\\,"dim":[1\\\,\$5]\\\,"class":"MMPGrid"\\\,"cellPadding":0\\\,"borderThickness":4
-;
+#X msg 122 557 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":false\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5;
+#X msg 216 281 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"mode":0\\\,"dim":[1\\\,\$5]\\\,"class":"MMPGrid"\\\,"cellPadding":0\\\,"borderThickness":4;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -1471,13 +1484,10 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
 #X restore 1101 482 pd vradio;
 #N canvas 0 57 1920 1023 hradio 0;
 #X obj 101 40 inlet;
-#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
-#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
+#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
+#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
 #X msg 558 391 -261234;
-#X text 256 286 #X obj 100 150 vradio 15 1 0 6 empty empty empty 0
--8 0 10 -262144 -1 -1 0 \;, f 114;
+#X text 256 286 #X obj 100 150 vradio 15 1 0 6 empty empty empty 0 -8 0 10 -262144 -1 -1 0 \;, f 114;
 #X obj 218 479 *;
 #N canvas 524 270 1049 621 export_as_MMPGrid 0;
 #X obj 198 376 list fromsymbol;
@@ -1508,10 +1518,8 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
 #X obj 511 9 inlet range;
 #X obj 212 248 pack f f f f 1 s f f f f f f f f;
 #X obj 214 102 t f b;
-#X msg 71 502 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":true\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5
-;
-#X msg 126 282 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"mode":0\\\,"dim":[\$5\\\,1]\\\,"class":"MMPGrid"\\\,"cellPadding":0\\\,"borderThickness":4
-;
+#X msg 71 502 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":true\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5;
+#X msg 126 282 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"mode":0\\\,"dim":[\$5\\\,1]\\\,"class":"MMPGrid"\\\,"cellPadding":0\\\,"borderThickness":4;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -1869,13 +1877,10 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
 #X restore 1138 521 pd hradio;
 #N canvas 1 58 958 1018 bng 0;
 #X obj 101 40 inlet;
-#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
-#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
+#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
+#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X msg 558 391 -261234;
-#X text 303 292 #X obj 350 100 bng 50 250 50 0 empty empty empty 17
-7 0 10 -262144 -1 -1 \;, f 76;
+#X text 303 292 #X obj 350 100 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144 -1 -1 \;, f 76;
 #N canvas 0 57 1920 1023 export_as_MMPButton 0;
 #X obj 162 428 list fromsymbol;
 #X obj 832 517 list append 125;
@@ -1905,8 +1910,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 511 9 inlet range;
 #X obj 187 197 pack f f f f 1 s f f f f f f f f;
 #X obj 214 102 t f b;
-#X msg 212 269 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPButton"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]
-;
+#X msg 212 269 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPButton"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4];
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -2269,8 +2273,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 1381 787 s \$0-yoffset;
 #X obj 1296 866 s \$0-width;
 #X obj 1325 835 s \$0-height;
-#X obj 215 101 bng 30 250 50 0 \$0-done empty refresh -15 7 0 10 #00fc04
-#000000 #000000;
+#X obj 215 101 bng 30 250 50 0 \$0-done empty refresh -15 7 0 10 #00fc04 #000000 #000000;
 #X obj 610 353 s \$0-listeners;
 #X msg 611 329 clear;
 #X obj 31 86 sendcanvas 1;
@@ -2279,10 +2282,8 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X msg 491 398 0;
 #N canvas 978 58 941 1018 tgl 0;
 #X obj 101 40 inlet;
-#X text 288 112 #X obj 232 238 tgl 40 0 toggle-snd toggle-rcv toggle-label
-17 7 0 10 -262144 -1 -1 0 1 \;;
-#X text 291 157 #X obj 350 100 bng 50 250 50 0 empty empty empty 17
-7 0 10 -262144 -1 -1 \;, f 76;
+#X text 288 112 #X obj 232 238 tgl 40 0 toggle-snd toggle-rcv toggle-label 17 7 0 10 -262144 -1 -1 0 1 \;;
+#X text 291 157 #X obj 350 100 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144 -1 -1 \;, f 76;
 #X obj 259 628 s \$0-listeners;
 #X obj 200 515 r \$0-zoom;
 #X obj 168 547 * 1;
@@ -2316,11 +2317,8 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 511 9 inlet range;
 #X obj 187 197 pack f f f f 1 s f f f f f f f f;
 #X obj 214 102 t f b;
-#X msg 249 353 "address":"/toggle" \, "frame":[662.4375 \, 316.836
-\, 100 \, 100] \, \, "class":"MMPToggle" \, "highlightColor":[0.01006579
-\, 1 \, 0 \, 1] \, "color":[1 \, 0.422782 \, 0.889061 \, 1;
-#X msg 212 269 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPToggle"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"borderThickness":4
-;
+#X msg 249 353 "address":"/toggle" \, "frame":[662.4375 \, 316.836 \, 100 \, 100] \, \, "class":"MMPToggle" \, "highlightColor":[0.01006579 \, 1 \, 0 \, 1] \, "color":[1 \, 0.422782 \, 0.889061 \, 1;
+#X msg 212 269 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPToggle"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"borderThickness":4;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -2669,10 +2667,8 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X connect 22 0 21 0;
 #X restore 1257 482 pd tgl;
 #X obj 19 274 delay 300;
-#X symbolatom 187 221 30 0 0 2 mmp_target_File \$0-mmpFile-rcv \$0-mmpFile
-0;
-#X obj 384 204 bng 15 250 50 0 empty empty browse -40 7 0 10 #fcfcfc
-#000000 #000000;
+#X symbolatom 187 221 30 0 0 2 mmp_target_File \$0-mmpFile-rcv \$0-mmpFile 0;
+#X obj 384 204 bng 15 250 50 0 empty empty browse -40 7 0 10 #fcfcfc #000000 #000000;
 #X obj 676 448 symbol;
 #X obj 712 527 pdcontrol;
 #X obj 678 473 t s b;
@@ -2694,8 +2690,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X msg 1611 562 set \$1;
 #X msg 1601 452 symbol \$1.mmp;
 #X obj 1656 375 - 3;
-#X obj 384 169 bng 15 250 50 0 \$0-reset empty reset -35 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 384 169 bng 15 250 50 0 \$0-reset empty reset -35 7 0 10 #fcfcfc #000000 #000000;
 #X text 297 202 <-----;
 #N canvas 716 58 1920 1023 parsing_main_patch|gop_arrays 0;
 #X obj 80 116 f;
@@ -2713,8 +2708,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 84 173 text get \$0-patch;
 #X obj 49 20 inlet;
 #X text 232 343 seulement niveau 0 (pas les sous-patches);
-#X obj 113 36 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 113 36 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 31 83 text size \$0-patch;
 #X obj 31 108 until;
 #X floatatom 287 190 5 0 0 0 - - - 0;
@@ -2855,8 +2849,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 457 203 v \$0-line_type;
 #X obj 513 798 print append;
 #X obj 462 723 list split 7;
-#X text 561 722 coords message is variable length since pd 0.52. Why
-?;
+#X text 561 722 coords message is variable length since pd 0.52. Why ?;
 #X connect 0 0 1 0;
 #X connect 0 0 12 0;
 #X connect 1 0 0 1;
@@ -2930,11 +2923,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X text 255 175 height;
 #X text 304 114 name;
 #X text 353 116 size;
-#X msg 347 16 "address":"/panel6Table" \, "selectionColor":[1 \, 1
-\, 1 \, 0.5] \, "highlightColor":[1 \, 0 \, 0 \, 1] \, "frame":[1620.363
-\, 86.0898 \, 277.316 \, 97.82033] \, "mode":1 \, "color":[1 \, 1 \,
-1 \, 1] \, "class":"MMPTable" \, "displayRangeLo":-1 \, "displayRangeHi":1
-\, "displayMode":0;
+#X msg 347 16 "address":"/panel6Table" \, "selectionColor":[1 \, 1 \, 1 \, 0.5] \, "highlightColor":[1 \, 0 \, 0 \, 1] \, "frame":[1620.363 \, 86.0898 \, 277.316 \, 97.82033] \, "mode":1 \, "color":[1 \, 1 \, 1 \, 1] \, "class":"MMPTable" \, "displayRangeLo":-1 \, "displayRangeHi":1 \, "displayMode":0;
 #X text 78 383 643 225 0 2 100 -3 200 140 1 0 0 array1 100;
 #X obj 66 484 list fromsymbol;
 #X obj 463 622 list append 125;
@@ -2975,8 +2964,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X connect 9 0 10 1;
 #X connect 10 0 1 0;
 #X restore 73 91 pd zoom;
-#X msg 61 278 symbol "address":"\$10"\\\,"selectionColor":[1\\\,1\\\,1\\\,0.5]\\\,"highlightColor":[0\\\,0\\\,0\\\,1]\\\,"frame":[\$1\\\,\$2\\\,\$7\\\,\$8]\\\,"mode":1\\\,"color":[1\\\,1\\\,1\\\,0.1]\\\,"class":"MMPTable"\\\,"displayRangeLo":\$6\\\,"displayRangeHi":\$4\\\,"displayMode":0
-;
+#X msg 61 278 symbol "address":"\$10"\\\,"selectionColor":[1\\\,1\\\,1\\\,0.5]\\\,"highlightColor":[0\\\,0\\\,0\\\,1]\\\,"frame":[\$1\\\,\$2\\\,\$7\\\,\$8]\\\,"mode":1\\\,"color":[1\\\,1\\\,1\\\,0.1]\\\,"class":"MMPTable"\\\,"displayRangeLo":\$6\\\,"displayRangeHi":\$4\\\,"displayMode":0;
 #X connect 0 0 23 0;
 #X connect 11 0 13 0;
 #X connect 12 0 14 0;
@@ -2996,8 +2984,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X restore 1173 168 pd gop_array;
 #N canvas 0 57 1920 1023 cnv 0;
 #X obj 101 40 inlet;
-#X text 147 136 #X obj 636 458 cnv 15 100 60 sender receiver Text 20
-12 0 14 -233017 -66577 0 \;;
+#X text 147 136 #X obj 636 458 cnv 15 100 60 sender receiver Text 20 12 0 14 -233017 -66577 0 \;;
 #X text 512 99 OFFSET_X \, Y \, FONT \, SIZE;
 #X obj 593 719 list append 125;
 #X obj 557 791 list trim;
@@ -3013,8 +3000,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 151 371 +;
 #X obj 169 409 +;
 #X obj 185 585 pack f f f f s s f f f f 1;
-#X msg 549 493 symbol "address":"\$5"\\\,"highlightColor":[1\\\,0\\\,0\\\,1]\\\,"color":[\$8\\\,\$9\\\,\$10\\\,\$11]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"textFontFamily":"Default"\\\,"textFont":""\\\,"textSize":\$7\\\,"text":"\$6"\\\,"class":"MMPLabel"\\\,"androidFont":"Roboto-Regular"
-, f 30;
+#X msg 549 493 symbol "address":"\$5"\\\,"highlightColor":[1\\\,0\\\,0\\\,1]\\\,"color":[\$8\\\,\$9\\\,\$10\\\,\$11]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"textFontFamily":"Default"\\\,"textFont":""\\\,"textSize":\$7\\\,"text":"\$6"\\\,"class":"MMPLabel"\\\,"androidFont":"Roboto-Regular", f 30;
 #X obj 129 91 t l l b;
 #X obj 76 670 list append;
 #X obj 86 872 list append 125;
@@ -3022,8 +3008,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 178 925 s MMP_BINFILE;
 #X obj 78 829 list fromsymbol;
 #X obj 83 852 list prepend add 44 123;
-#X msg 81 699 symbol "address":"\$6"\\\,"highlightColor":[1\\\,0\\\,0\\\,1]\\\,"color":[\$8\\\,\$9\\\,\$10\\\,\$11]\\\,"frame":[\$1\\\,\$2\\\,\$4\\\,\$5]\\\,"class":"MMPPanel"\\\,"imagePath":""\\\,"passTouches":true
-, f 32;
+#X msg 81 699 symbol "address":"\$6"\\\,"highlightColor":[1\\\,0\\\,0\\\,1]\\\,"color":[\$8\\\,\$9\\\,\$10\\\,\$11]\\\,"frame":[\$1\\\,\$2\\\,\$4\\\,\$5]\\\,"class":"MMPPanel"\\\,"imagePath":""\\\,"passTouches":true, f 32;
 #X obj 559 759 list append;
 #X obj 86 896 t b l;
 #X obj 274 237 r \$0-zoom;
@@ -3408,12 +3393,9 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X msg 919 191 read snare.pd;
 #X text 233 321 si;
 #X obj 288 372 select 0;
-#X obj 299 405 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 280 328 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 365 408 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 299 405 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 280 328 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 365 408 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 378 376 non vide (i.e. c'est une abstraction);
 #X floatatom 353 436 5 0 0 0 - - - 0;
 #X msg 853 236 clear \, read adc~;
@@ -3422,18 +3404,14 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 403 526 list trim;
 #X obj 403 551 route #X;
 #X obj 403 576 route coords;
-#X obj 404 661 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 429 682 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 454 700 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 404 661 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 429 682 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 454 700 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 112 55 Lire premier niveau gop;
 #X text 171 110 #X obj;
 #X text 112 90 Pour chaque ligne commencant par;
 #X text 135 166 Extraire coordonnees et nom de l'objet + indice;
-#X text 147 133 et dont la syntaxe est <abstraction_name> <1 argument>
-et dont <abstraction_name >= 3 caracteres;
+#X text 147 133 et dont la syntaxe est <abstraction_name> <1 argument> et dont <abstraction_name >= 3 caracteres;
 #X obj 14 13 inlet;
 #N canvas 284 69 1920 1023 parsing_gop_abstraction 0;
 #X obj 80 116 f;
@@ -3450,8 +3428,7 @@ et dont <abstraction_name >= 3 caracteres;
 #X obj 107 482 spigot;
 #X obj 49 20 inlet;
 #X text 232 343 seulement niveau 0 (pas les sous-patches);
-#X obj 113 36 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 113 36 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 31 108 until;
 #X floatatom 287 190 5 0 0 0 - - - 0;
 #X obj 155 22 t b b b;
@@ -3644,8 +3621,7 @@ et dont <abstraction_name >= 3 caracteres;
 #X obj 551 397 list fromsymbol;
 #X obj 525 366 symbol;
 #X floatatom 364 457 5 0 0 0 - - - 0;
-#X msg 525 308 "address":"/myLabel"\\\,"highlightColor":[1\\\,0\\\,0\\\,1]\\\,"color":[0\\\,0\\\,0\\\,1]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"textFontFamily":"Default"\\\,"textFont":""\\\,"textSize":\$6\\\,"text":"\$5"\\\,"class":"MMPLabel"\\\,"androidFont":"Roboto-Regular"
-;
+#X msg 525 308 "address":"/myLabel"\\\,"highlightColor":[1\\\,0\\\,0\\\,1]\\\,"color":[0\\\,0\\\,0\\\,1]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"textFontFamily":"Default"\\\,"textFont":""\\\,"textSize":\$6\\\,"text":"\$5"\\\,"class":"MMPLabel"\\\,"androidFont":"Roboto-Regular";
 #X obj 758 425 list prepend add 44 123;
 #X obj 136 85 t a b b;
 #X floatatom 309 381 5 0 0 0 - - - 0;
@@ -3708,10 +3684,8 @@ et dont <abstraction_name >= 3 caracteres;
 #X obj 283 831 list append;
 #N canvas 1 58 958 1018 vsl 0;
 #X obj 101 40 inlet;
-#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
-#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
+#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
+#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 515 527 + 1;
 #X obj 156 422 unpack f f f f 0 0 0 0 s s s 0 0 0 0 f f 0 0 0;
 #X obj 515 552 * -1;
@@ -3767,8 +3741,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 511 9 inlet range;
 #X obj 212 248 pack f f f f 1 s f f f f f f f f;
 #X obj 214 102 t f b;
-#X msg 178 277 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":false\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5
-;
+#X msg 178 277 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":false\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -3873,10 +3846,8 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 283 856 list trim;
 #N canvas 961 58 958 1018 hsl 0;
 #X obj 101 40 inlet;
-#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
-#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
+#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
+#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 515 527 + 1;
 #X obj 156 422 unpack f f f f 0 0 0 0 s s s 0 0 0 0 f f 0 0 0;
 #X obj 515 552 * -1;
@@ -3932,8 +3903,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 511 9 inlet range;
 #X obj 212 248 pack f f f f 1 s f f f f f f f f;
 #X obj 214 102 t f b;
-#X msg 178 277 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":true\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5
-;
+#X msg 178 277 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":true\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -4037,10 +4007,8 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X restore 324 940 pd hsl;
 #N canvas 0 57 1920 1023 vradio 0;
 #X obj 101 40 inlet;
-#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
-#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
+#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
+#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
 #X obj 515 527 + 1;
 #X obj 515 552 * -1;
 #X obj 485 647 t f f;
@@ -4065,8 +4033,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
 #X obj 644 710 / 63;
 #X obj 714 712 / 63;
 #X obj 796 712 / 63;
-#X text 256 286 #X obj 100 150 vradio 15 1 0 6 empty empty empty 0
--8 0 10 -262144 -1 -1 0 \;, f 114;
+#X text 256 286 #X obj 100 150 vradio 15 1 0 6 empty empty empty 0 -8 0 10 -262144 -1 -1 0 \;, f 114;
 #X obj 216 482 *;
 #X obj 156 422 unpack f f f 0 0 f s s s 0 0 0 0 f f 0 0 0;
 #X obj 335 580 s \$0-listeners;
@@ -4108,10 +4075,8 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
 #X obj 511 9 inlet range;
 #X obj 212 248 pack f f f f 1 s f f f f f f f f;
 #X obj 214 102 t f b;
-#X msg 80 286 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":false\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5
-;
-#X msg 43 458 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"mode":0\\\,"dim":[1\\\,\$5]\\\,"class":"MMPGrid"\\\,"cellPadding":0\\\,"borderThickness":2
-;
+#X msg 80 286 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":false\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5;
+#X msg 43 458 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"mode":0\\\,"dim":[1\\\,\$5]\\\,"class":"MMPGrid"\\\,"cellPadding":0\\\,"borderThickness":2;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -4207,10 +4172,8 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
 #X restore 365 1001 pd vradio;
 #N canvas 0 57 1920 1023 hradio 0;
 #X obj 101 40 inlet;
-#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
-#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
+#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
+#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
 #X obj 515 527 + 1;
 #X obj 515 552 * -1;
 #X obj 485 647 t f f;
@@ -4236,8 +4199,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
 #X obj 644 710 / 63;
 #X obj 714 712 / 63;
 #X obj 796 712 / 63;
-#X text 256 286 #X obj 100 150 vradio 15 1 0 6 empty empty empty 0
--8 0 10 -262144 -1 -1 0 \;, f 114;
+#X text 256 286 #X obj 100 150 vradio 15 1 0 6 empty empty empty 0 -8 0 10 -262144 -1 -1 0 \;, f 114;
 #X obj 218 479 *;
 #X obj 156 422 unpack f f f 0 0 f s s s 0 0 0 0 f f 0 0 0;
 #N canvas 524 270 1049 621 export_as_MMPGrid 0;
@@ -4269,10 +4231,8 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
 #X obj 511 9 inlet range;
 #X obj 212 248 pack f f f f 1 s f f f f f f f f;
 #X obj 214 102 t f b;
-#X msg 178 277 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":true\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5
-;
-#X msg 43 458 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"mode":0\\\,"dim":[\$5\\\,1]\\\,"class":"MMPGrid"\\\,"cellPadding":0\\\,"borderThickness":2
-;
+#X msg 178 277 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPSlider"\\\,"isHorizontal":true\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"range":\$5;
+#X msg 43 458 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"mode":0\\\,"dim":[\$5\\\,1]\\\,"class":"MMPGrid"\\\,"cellPadding":0\\\,"borderThickness":2;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -4378,10 +4338,8 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;, f 140;
 #X restore 398 1042 pd hradio;
 #N canvas 0 57 1920 1023 bng 0;
 #X obj 101 40 inlet;
-#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
-#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq
-empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
+#X text 297 82 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -262144 -1 -1 7300 1 \;;
+#X text 310 234 #X obj 183 826 vsl 60 128 0 1 0 0 snd-/fx_ring-0/freq empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 515 527 + 1;
 #X obj 515 552 * -1;
 #X obj 485 647 t f f;
@@ -4407,8 +4365,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 644 710 / 63;
 #X obj 714 712 / 63;
 #X obj 796 712 / 63;
-#X text 303 292 #X obj 350 100 bng 50 250 50 0 empty empty empty 17
-7 0 10 -262144 -1 -1 \;, f 76;
+#X text 303 292 #X obj 350 100 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144 -1 -1 \;, f 76;
 #N canvas 0 57 1920 1023 export_as_MMPButton 0;
 #X obj 162 428 list fromsymbol;
 #X obj 832 517 list append 125;
@@ -4438,8 +4395,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 511 9 inlet range;
 #X obj 187 197 pack f f f f 1 s f f f f f f f f;
 #X obj 214 102 t f b;
-#X msg 212 269 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPButton"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]
-;
+#X msg 212 269 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPButton"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4];
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -4597,8 +4553,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 511 9 inlet range;
 #X obj 187 197 pack f f f f 1 s f f f f f f f f;
 #X obj 214 102 t f b;
-#X msg 212 269 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPButton"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]
-;
+#X msg 212 269 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPButton"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4];
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -4639,8 +4594,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 977 535 s \$0-listeners;
 #X msg 973 476 \$7 \$8;
 #X obj 992 502 list prepend mob/listener;
-#X text 159 348 #X obj 232 238 tgl 40 0 toggle-snd toggle-rcv toggle-label
-17 7 0 10 -262144 -1 -1 0 1 \;;
+#X text 159 348 #X obj 232 238 tgl 40 0 toggle-snd toggle-rcv toggle-label 17 7 0 10 -262144 -1 -1 0 1 \;;
 #X obj 156 423 unpack f f f 0 s s s 0 0 0 0 f f 0;
 #X connect 0 0 28 0;
 #X connect 0 0 31 0;
@@ -4706,8 +4660,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 635 433 / 63;
 #X obj 705 435 / 63;
 #X obj 787 435 / 63;
-#X text 166 134 #X obj 636 458 cnv 15 100 60 sender receiver Text 20
-12 0 14 -233017 -66577 0 \;;
+#X text 166 134 #X obj 636 458 cnv 15 100 60 sender receiver Text 20 12 0 14 -233017 -66577 0 \;;
 #X text 512 99 OFFSET_X \, Y \, FONT \, SIZE;
 #X obj 720 711 list append 125;
 #X obj 745 786 list trim;
@@ -4728,8 +4681,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 294 389 list length;
 #X obj 266 453 * 1.3;
 #X obj 146 496 pack f f f f s s f f f f 1;
-#X msg 109 531 symbol "address":"\$5"\\\,"highlightColor":[1\\\,0\\\,0\\\,1]\\\,"color":[\$8\\\,\$9\\\,\$10\\\,\$11]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"textFontFamily":"Default"\\\,"textFont":""\\\,"textSize":\$7\\\,"text":"\$6"\\\,"class":"MMPLabel"\\\,"androidFont":"Roboto-Regular"
-;
+#X msg 109 531 symbol "address":"\$5"\\\,"highlightColor":[1\\\,0\\\,0\\\,1]\\\,"color":[\$8\\\,\$9\\\,\$10\\\,\$11]\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]\\\,"textFontFamily":"Default"\\\,"textFont":""\\\,"textSize":\$7\\\,"text":"\$6"\\\,"class":"MMPLabel"\\\,"androidFont":"Roboto-Regular";
 #X obj 151 193 unpack f f 0 f f s s s f f f f f f 0;
 #X obj 153 84 t l l b;
 #X obj 73 643 list split 7;
@@ -4739,8 +4691,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X obj 183 867 s MMP_BINFILE;
 #X obj 83 771 list fromsymbol;
 #X obj 88 794 list prepend add 44 123;
-#X msg 81 699 symbol "address":"\$6"\\\,"highlightColor":[1\\\,0\\\,0\\\,1]\\\,"color":[\$8\\\,\$9\\\,\$10\\\,\$11]\\\,"frame":[\$1\\\,\$2\\\,\$4\\\,\$5]\\\,"class":"MMPPanel"\\\,"imagePath":""\\\,"passTouches":true
-;
+#X msg 81 699 symbol "address":"\$6"\\\,"highlightColor":[1\\\,0\\\,0\\\,1]\\\,"color":[\$8\\\,\$9\\\,\$10\\\,\$11]\\\,"frame":[\$1\\\,\$2\\\,\$4\\\,\$5]\\\,"class":"MMPPanel"\\\,"imagePath":""\\\,"passTouches":true;
 #X obj 686 751 list append;
 #X obj 91 838 t b l;
 #X obj 205 452 * 1;
@@ -4751,8 +4702,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X msg 864 203 \$1';
 #X obj 867 239 list append;
 #X obj 823 271 list append;
-#X text 975 164 prevent unpack mismash with cnvs displaying numbers
-;
+#X text 975 164 prevent unpack mismash with cnvs displaying numbers;
 #X obj 815 140 list split 7;
 #X connect 0 0 48 0;
 #X connect 1 0 2 0;
@@ -4843,8 +4793,7 @@ empty empty 0 -9 0 10 -261234 -260097 -1 7300 1 \;;
 #X restore 503 1009 pd cnv;
 #X obj 287 902 route vsl hsl vradio hradio bng cnv;
 #X obj 82 567 route text obj;
-#X text 571 959 <- utiliser des listeners spéciaux qui renvoient au
-système de remote control de automatonism3;
+#X text 571 959 <- utiliser des listeners spéciaux qui renvoient au système de remote control de automatonism3;
 #X obj 21 131 list length;
 #X obj 21 171 list append;
 #X obj 40 87 t a a;
@@ -4889,18 +4838,14 @@ système de remote control de automatonism3;
 #X obj 342 719 unpack f f;
 #X text 842 655 si GOP / GOP+HIDE NAME : lancer le parsing;
 #X obj 403 601 list split 6;
-#X obj 607 659 cnv 15 15 15 empty empty empty 20 12 0 14 #fcfcc4 #404040
-0;
-#X obj 596 677 cnv 15 15 15 empty empty empty 20 12 0 14 #fcfcc4 #404040
-0;
-#X obj 698 699 cnv 15 15 15 empty empty empty 20 12 0 14 #fcfcc4 #404040
-0;
+#X obj 607 659 cnv 15 15 15 empty empty empty 20 12 0 14 #fcfcc4 #404040 0;
+#X obj 596 677 cnv 15 15 15 empty empty empty 20 12 0 14 #fcfcc4 #404040 0;
+#X obj 698 699 cnv 15 15 15 empty empty empty 20 12 0 14 #fcfcc4 #404040 0;
 #X text 446 677 gop: 0 -1 1 1 224 200 1 100 100;
 #X text 478 697 gop+hide name: 0 -1 1 1 224 200 2 100 100 \;;
 #X text 420 658 nogop: 0 707 1 706 224 200 0;
 #X text 840 682 TODO : dessiner un carré de la taille (\$5 \$6);
-#X text 495 626 examen du 7 eme element (\$7) pour determiner GOP status
-;
+#X text 495 626 examen du 7 eme element (\$7) pour determiner GOP status;
 #X text 400 742 enlever l'offset de la fenetre gop;
 #X obj 215 778 pack f f;
 #X obj 215 802 list prepend;
@@ -4992,8 +4937,7 @@ système de remote control de automatonism3;
 #X obj 1248 624 f;
 #X obj 1252 687 +;
 #X obj 1298 657 t b f;
-#X obj 100 118 vradio 15 1 0 2 \$0-landscape \$0-landscape-rcv empty
-0 -8 0 10 #e0c4fc #000000 #000000 0;
+#X obj 100 118 vradio 15 1 0 2 \$0-landscape \$0-landscape-rcv empty 0 -8 0 10 #e0c4fc #000000 #000000 0;
 #X text 115 113 Portrait;
 #X text 115 129 Landscape;
 #X text 101 145 Resolution;
@@ -5002,20 +4946,16 @@ système de remote control de automatonism3;
 #X text 115 221 768:1024;
 #X obj 1226 970 s \$0-canvasType-rcv;
 #X msg 1212 941 label \$1;
-#X obj 100 162 cnv 15 100 16 empty \$0-canvasType-rcv iPhone3p5Inch
-1 8 0 12 #dcdcdc #fc0400 0;
-#X symbolatom 187 184 30 0 0 2 pd_target_File \$0-pdFile-rcv \$0-pdFile
-0;
+#X obj 100 162 cnv 15 100 16 empty \$0-canvasType-rcv iPhone3p5Inch 1 8 0 12 #dcdcdc #fc0400 0;
+#X symbolatom 187 184 30 0 0 2 pd_target_File \$0-pdFile-rcv \$0-pdFile 0;
 #X text 297 166 <-----;
 #X obj 1200 670 t b;
-#X floatatom 253 150 5 1 100 0 pageCount \$0-pageCount-rcv \$0-pageCount
-0;
+#X floatatom 253 150 5 1 100 0 pageCount \$0-pageCount-rcv \$0-pageCount 0;
 #X obj 128 573 r MMP_BINFILE;
 #X obj 1142 642 r \$0-pageCount;
 #X text 1103 714 refresh;
 #X text 115 208 600:960;
-#X obj 181 102 vsl 15 45 0.5 4 1 1 \$0-zoom \$0-zoom-rcv empty 0 -9
-0 10 #fcfcc4 #000000 #000000 1400 1;
+#X obj 181 102 vsl 15 45 0.5 4 1 1 \$0-zoom \$0-zoom-rcv empty 0 -9 0 10 #fcfcc4 #000000 #000000 1467 1;
 #X text 182 109 o;
 #X text 182 119 o;
 #X text 182 129 m;
@@ -5215,8 +5155,7 @@ système de remote control de automatonism3;
 #X obj 328 12 r \$0-B;
 #X obj 434 193 r \$0-canvasType;
 #X obj 153 242 pack s f f f 1 f s;
-#X msg 55 287 "pdFile":"\$1"\\\,"backgroundColor":[\$2\\\,\$3\\\,\$4\\\,1.0]\\\,"pageCount":\$5\\\,"port":54321\\\,"isPageScrollShortEnd":false\\\,"startPageIndex":\$6\\\,"canvasType":"\$7"\\\,"gui":[
-;
+#X msg 55 287 "pdFile":"\$1"\\\,"backgroundColor":[\$2\\\,\$3\\\,\$4\\\,1.0]\\\,"pageCount":\$5\\\,"port":54321\\\,"isPageScrollShortEnd":false\\\,"startPageIndex":\$6\\\,"canvasType":"\$7"\\\,"gui":[;
 #X obj 63 396 list prepend 123;
 #X obj 61 422 list prepend add;
 #X obj 58 449 list trim;
@@ -5288,15 +5227,12 @@ système de remote control de automatonism3;
 #X msg 190 50 0;
 #X obj 23 32 t b b b;
 #X obj 321 770 v MMP.EXPORT.FLAG;
-#X text 58 802 Tells mob/widgets to save their state using #A savestate
-data inside the patch, f 31;
-#X text 318 789 Tells mob/widgets not to use savestate \, but canvasargs
-instead \, as file is exported to MMP platform, f 33;
+#X text 58 802 Tells mob/widgets to save their state using #A savestate data inside the patch, f 31;
+#X text 318 789 Tells mob/widgets not to use savestate \, but canvasargs instead \, as file is exported to MMP platform, f 33;
 #X obj 21 116 delay 150;
 #X obj 20 248 t b b, f 94;
 #X msg 409 595 open \$2/export/\$1 c;
-#X obj 681 396 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 681 396 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 182 99 z;
 #X obj 833 527 r \$0-listeners;
 #X obj 807 495 r LISTENERS;
@@ -5314,8 +5250,7 @@ instead \, as file is exported to MMP platform, f 33;
 #X obj 289 236 text search \$0-pre-0.52;
 #X obj 271 61 openpanel;
 #X msg 271 86 read \$1;
-#X obj 288 37 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 288 37 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 289 261 select -1;
 #X obj 327 322 text get \$0-pre-0.52;
 #X msg 290 201 list #X listbox;
@@ -5325,8 +5260,7 @@ instead \, as file is exported to MMP platform, f 33;
 #X obj 367 457 list append;
 #X obj 338 292 t f f, f 39;
 #X obj 366 521 text set \$0-pre-0.52, f 45;
-#X obj 291 299 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 291 299 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 366 489 t b l;
 #X obj 554 198 delay 1;
 #X obj 47 231 t b a;
@@ -5512,31 +5446,62 @@ instead \, as file is exported to MMP platform, f 33;
 #X connect 9 0 1 0;
 #X restore 396 505 pd picking_background_color;
 #X obj 18 301 t b b b b b b b b b b b, f 88;
-#X obj 592 721 r \$0-width;
-#X obj 706 720 r \$0-height;
-#X obj 771 811 / 1;
-#X obj 776 755 r \$0-zoom;
-#X obj 776 780 t b f;
-#X obj 674 842 / 1;
-#X obj 679 786 r \$0-zoom;
-#X obj 679 811 t b f;
-#X obj 676 949 s _|||-rcv;
-#X obj 674 896 pack f f f;
-#X msg 674 920 pos \$3 0 \, vis_size \$1 \$2;
-#X obj 906 762 r \$0-currentPage;
-#X obj 906 787 t b f;
-#X obj 674 869 t f f;
-#X obj 849 860 *;
 #X obj 489 5 r \$0-pageCount;
 #X obj 495 39 - 1;
 #X obj 501 98 s \$0-currentPage-rcv;
-#X obj 303 114 nbx 3 20 0 6 0 0 \$0-currentPage \$0-currentPage-rcv
-currentPage 0 -8 0 14 #fcfcfc #000000 #000000 0 256;
-#X obj 301 148 nbx 3 20 0 6 0 0 \$0-firstPage \$0-firstPage-rcv firstPage
-0 -8 0 14 #fcfcfc #000000 #000000 0 256;
+#X obj 303 114 nbx 3 20 0 0 0 0 \$0-currentPage \$0-currentPage-rcv currentPage 0 -8 0 14 #fcfcfc #000000 #000000 0 256;
+#X obj 301 148 nbx 3 20 0 0 0 0 \$0-firstPage \$0-firstPage-rcv firstPage 0 -8 0 14 #fcfcfc #000000 #000000 0 256;
 #X text 253 119 mmp!;
 #X obj 475 131 s \$0-firstPage-rcv;
 #X msg 501 73 range 0 \$1;
+#N canvas 0 0 1920 1021 background_color_&_gui_zone 0;
+#X obj 64 112 r \$0-width;
+#X obj 178 111 r \$0-height;
+#X obj 243 202 / 1;
+#X obj 248 146 r \$0-zoom;
+#X obj 248 171 t b f;
+#X obj 146 233 / 1;
+#X obj 151 177 r \$0-zoom;
+#X obj 151 202 t b f;
+#X obj 148 340 s _|||-rcv;
+#X obj 146 287 pack f f f;
+#X msg 146 311 pos \$3 0 \, vis_size \$1 \$2;
+#X obj 378 153 r \$0-currentPage;
+#X obj 378 178 t b f;
+#X obj 146 260 t f f;
+#X obj 321 251 *;
+#X text 408 392 Xunits/pixel Yunits/px gop xfrom yfrom xto yto width height xmargin ymargin;
+#X obj 394 451 iemguts/sendcanvas 2;
+#X msg 394 427 donecanvasdialog 1 -1 1 0 0 1 1 \$1 \$2 \$3 0 \, dirty 1;
+#X obj 411 319 pipe f f f 100;
+#X obj 411 344 pack f f f;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 9 1;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 4 1 2 1;
+#X connect 5 0 13 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 7 1 5 1;
+#X connect 9 0 10 0;
+#X connect 9 0 18 0;
+#X connect 10 0 8 0;
+#X connect 11 0 12 0;
+#X connect 12 0 5 0;
+#X connect 12 1 14 1;
+#X connect 13 0 9 0;
+#X connect 13 1 14 0;
+#X connect 14 0 9 2;
+#X connect 17 0 16 0;
+#X connect 18 0 19 0;
+#X connect 18 1 19 1;
+#X connect 18 2 19 2;
+#X connect 19 0 17 0;
+#X restore 578 765 pd background_color_&_gui_zone;
+#X obj 1002 29 declare -path iemguts;
+#X obj 1002 49 declare -path iemlib;
 #X connect 4 0 3 0;
 #X connect 5 0 64 0;
 #X connect 11 0 10 0;
@@ -5664,26 +5629,8 @@ currentPage 0 -8 0 14 #fcfcfc #000000 #000000 0 256;
 #X connect 174 8 36 0;
 #X connect 174 9 104 0;
 #X connect 174 10 32 0;
-#X connect 175 0 180 0;
-#X connect 176 0 177 0;
-#X connect 177 0 184 1;
-#X connect 178 0 179 0;
-#X connect 179 0 177 0;
-#X connect 179 1 177 1;
-#X connect 180 0 188 0;
-#X connect 181 0 182 0;
-#X connect 182 0 180 0;
-#X connect 182 1 180 1;
-#X connect 184 0 185 0;
-#X connect 185 0 183 0;
-#X connect 186 0 187 0;
-#X connect 187 0 180 0;
-#X connect 187 1 189 1;
-#X connect 188 0 184 0;
-#X connect 188 1 189 0;
-#X connect 189 0 184 2;
-#X connect 190 0 191 0;
-#X connect 191 0 197 0;
-#X connect 197 0 192 0;
-#X connect 197 0 196 0;
+#X connect 175 0 176 0;
+#X connect 176 0 182 0;
+#X connect 182 0 177 0;
+#X connect 182 0 181 0;
 #X coords 0 -1 1 1 300 140 1 100 100;
