@@ -36,9 +36,7 @@ Note that current version of pd on MobMuPlat is 0.48-0. **Don'use in your patch 
 
 **Installation**
 
-Download from https://github.com/jyg/mob/releases/tag/mob-0.2 , uncompress and copy **mob** folder into the externals directory of your desktop puredata installation (pd >= 0.52).
-
-Copy the content of subfolder named 'export' into the MobMuPlat directory on your mobile device.
+Download from https://github.com/jyg/mob/releases/tag/mob-0.3 , uncompress and copy **mob** folder into the externals directory of your desktop puredata installation (pd >= 0.52).
 
 **Usage**
 
@@ -46,9 +44,9 @@ Have first a look at patches in **tutorial** and **example** folders.
 
 Edit the patch you want to export to MobMuPlat with pd >= 0.52. **Add the [mob] object on it**. Check the background color, the layout size, the number of pages, etc.. You can adjust the scale factor with the "zoom" slider.
 
-All the native pd GUIs will be exported. They must interact with the patch only with their rcv and snd channel names (wired connections not tested).
+All the native pd GUIs will be exported. They must interact with the patch only with their rcv and snd channel names. Don't use wired connections with any guis.
 
-Save your patch. Click on red button, [**mob**] adds some stuff in the current patch and creates two new files in the **export** folder. The default name for the generated graphical interface file is the name of the patch but with the *.mmp extension. Copy both *.pd and *.mmp files to your mobile device (MobMuPlat directory). 
+Save your patch. Click on red button, [**mob**] adds some stuff in the current patch and creates a new graphical interface file, with the same name of the patch but with the *.mmp extension. Copy both *.pd and *.mmp files to your mobile device (MobMuPlat directory). 
 
 That's all !
 
