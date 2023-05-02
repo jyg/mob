@@ -102,10 +102,8 @@
 #X connect 39 1 30 1;
 #X restore 148 250 pd resize;
 #X obj 137 869 outlet;
-#X obj 100 99 cnv 5 5 5 \$0-pos \$0-pos-rcv empty 20 12 0 14 #404040
-#404040 0;
-#X obj 100 102 vsl 60 54 0 127 0 0 empty \$0-gui-rcv empty 0 20 0 20
-#e0e0e0 #e0e0e0 #e0e0e0 0 1;
+#X obj 100 99 cnv 5 5 5 \$0-pos \$0-pos-rcv empty 20 12 0 14 #404040 #404040 0;
+#X obj 100 102 vsl 60 54 0 127 0 0 empty \$0-gui-rcv empty 0 20 0 20 #e0e0e0 #e0e0e0 #e0e0e0 0 1;
 #X obj 661 869 outlet;
 #X text 1291 10 format d'entrée MULTITOUCH.COOKED;
 #X text 1407 44 <slot> remove;
@@ -115,8 +113,7 @@
 #X obj 31 11 inlet;
 #X msg 74 563 0;
 #X obj 30 41 t b;
-#X text 142 83 Pour utiliser la souris quand pas en mode multitouch
-;
+#X text 142 83 Pour utiliser la souris quand pas en mode multitouch;
 #X obj 223 686 outlet;
 #X obj 279 237 iemguts/receivecanvas 2;
 #X obj 232 377 spigot;
@@ -140,8 +137,7 @@
 #X obj 28 180 v MULTITOUCH.ACTIVESLOTS;
 #X obj 27 221 select 0;
 #X text 286 185 (Windows);
-#X text 188 108 (linux - TODO : supprimer après avoir modifié [multitouch]
-for linux), f 47;
+#X text 188 108 (linux - TODO : supprimer après avoir modifié [multitouch] for linux), f 47;
 #X obj 51 338 t b b;
 #X obj 48 385 t b b b;
 #X msg 23 553 1;
@@ -226,29 +222,29 @@ for linux), f 47;
 #X obj 224 358 * 1;
 #X obj 126 280 t f b f b f b f;
 #X obj 125 245 r MOB_ZOOM;
-#N canvas 278 130 450 300 MMP_EXPORT_BY_INDEX 0;
+#N canvas 278 130 450 300 MMP_EXPORT_BY_INDEX 1;
 #X obj 151 40 r MMP_EXPORT_BY_INDEX;
 #X obj 146 268 outlet;
 #X text 38 6 enable z-order;
 #X obj 151 69 t f b;
-#X obj 203 96 canvasindex 2;
 #X obj 146 235 select;
 #X obj 202 145 + 0;
 #X obj 249 126 r \$0-z_offset;
 #X obj 202 174 max 0;
 #X obj 202 203 min 1;
 #X obj 298 171 - 1;
+#X obj 203 96 iemguts/canvasindex 2;
 #X connect 0 0 3 0;
-#X connect 3 0 5 0;
-#X connect 3 1 4 0;
-#X connect 4 0 6 0;
-#X connect 4 1 10 0;
-#X connect 5 0 1 0;
-#X connect 6 0 8 0;
-#X connect 7 0 6 1;
-#X connect 8 0 9 0;
-#X connect 9 0 5 1;
-#X connect 10 0 9 1;
+#X connect 3 0 4 0;
+#X connect 3 1 10 0;
+#X connect 4 0 1 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 1;
+#X connect 7 0 8 0;
+#X connect 8 0 4 1;
+#X connect 9 0 8 1;
+#X connect 10 0 5 0;
+#X connect 10 1 9 0;
 #X restore 42 54 pd MMP_EXPORT_BY_INDEX;
 #X obj 800 99 r \$0-invisible;
 #X obj 800 128 - 1;
@@ -336,10 +332,8 @@ for linux), f 47;
 #X connect 6 0 0 0;
 #X connect 7 0 6 2;
 #X restore 861 690 pd export_args;
-#X msg 136 769 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPButton"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]
-, f 25;
-#X msg 76 433 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPLCD"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4]
-, f 25;
+#X msg 136 769 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPButton"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4], f 25;
+#X msg 76 433 symbol "highlightColor":[\$11\\\,\$12\\\,\$13\\\,\$14]\\\,"address":"\$6"\\\,"color":[\$7\\\,\$8\\\,\$9\\\,\$10]\\\,"class":"MMPLCD"\\\,"frame":[\$1\\\,\$2\\\,\$3\\\,\$4], f 25;
 #X obj 599 75 r \$0-name;
 #X obj 485 111 r WIDGET-ID;
 #X obj 487 142 list append;
@@ -408,23 +402,18 @@ for linux), f 47;
 #X connect 51 0 18 5;
 #X restore 1117 269 pd mmp-export-button;
 #N canvas 531 533 419 451 mmpButton_properties(\$0) 0;
-#X obj 6 4 cnv 15 400 450 empty empty empty 20 12 0 14 #e0e0e0 #404040
-0;
+#X obj 6 4 cnv 15 400 450 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X floatatom 146 14 5 0 0 0 width \$0-w-rcv \$0-w-snd 0;
-#X obj 342 318 bng 40 250 50 0 \$0-ok empty OK 5 20 0 20 #c4fcc4 #000000
-#000000;
+#X obj 342 318 bng 40 250 50 0 \$0-ok empty OK 5 20 0 20 #c4fcc4 #000000 #000000;
 #X floatatom 283 16 5 0 0 0 height \$0-h-rcv \$0-h-snd 0;
 #X symbolatom 91 118 30 0 0 0 send_to \$0-name-rcv \$0-name 0;
 #X text 22 87 Messages;
 #N canvas 0 50 450 300 todo 0;
-#X obj 169 165 nbx 3 20 10 200 1 0 \$0-spdrt \$0-spdrt-rcv speed_ratio(%)
--140 10 0 16 #fcfcfc #000000 #000000 0 256;
-#X obj 24 70 cnv 15 200 80 empty empty TODO 20 12 0 14 #fcfcc4 #404040
-0;
+#X obj 169 165 nbx 3 20 10 200 1 0 \$0-spdrt \$0-spdrt-rcv speed_ratio(%) -140 10 0 16 #fcfcfc #000000 #000000 0 256;
+#X obj 24 70 cnv 15 200 80 empty empty TODO 20 12 0 14 #fcfcc4 #404040 0;
 #X floatatom 130 90 5 0 0 0 text_color \$0-cc-rcv \$0-cc-snd 0;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X obj 100 100 cnv 20 20 20 empty \$0-cc_cnv-rcv empty 20 12 0 14 #000000
-#404040 0;
+#X obj 100 100 cnv 20 20 20 empty \$0-cc_cnv-rcv empty 20 12 0 14 #000000 #404040 0;
 #X msg 170 104 color \$1 \$1;
 #X obj 170 75 r \$0-cursor_color;
 #X obj 170 132 s \$0-cc_cnv-rcv;
@@ -434,25 +423,17 @@ for linux), f 47;
 #X restore 200 92 pd;
 #X floatatom 130 120 5 0 0 0 text_size - - 0;
 #X restore 314 380 pd todo;
-#X floatatom 275 335 5 0 0 0 z-offset \$0-z_offset-rcv \$0-z_offset
-0;
+#X floatatom 275 335 5 0 0 0 z-offset \$0-z_offset-rcv \$0-z_offset 0;
 #X text 21 281 MobMuPlat Widget Export;
-#X obj 153 333 tgl 20 0 \$0-z_offset \$0-z_offset-rcv MoveOnTop -100
-8 0 16 #fcfcfc #000000 #000000 0 99;
-#X obj 153 313 tgl 20 0 \$0-invisible \$0-invisible-rcv Transparency
--130 8 0 16 #fcfcfc #000000 #000000 0 1;
-#X obj 179 313 hsl 60 20 1 0 0 0 \$0-invisible \$0-invisible-rcv empty
--2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 153 333 tgl 20 0 \$0-z_offset \$0-z_offset-rcv MoveOnTop -100 8 0 16 #fcfcfc #000000 #000000 0 99;
+#X obj 153 313 tgl 20 0 \$0-invisible \$0-invisible-rcv Transparency -130 8 0 16 #fcfcfc #000000 #000000 0 1;
+#X obj 179 313 hsl 60 20 1 0 0 0 \$0-invisible \$0-invisible-rcv empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 246 309 Opacity;
 #N canvas 412 187 1049 632 color_picker 0;
-#X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#fc0400 #000000 0 0;
-#X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#00fc04 #000000 0 0;
-#X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#0400fc #000000 0 0;
-#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 #e0e0e0 #e0e0e0
-#e0e0e0 0 1;
+#X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #fc0400 #000000 0 0;
+#X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #00fc04 #000000 0 0;
+#X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #0400fc #000000 0 0;
+#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 #e0e0e0 #e0e0e0 #e0e0e0 0 1;
 #N canvas 0 50 498 451 convert2rgb 0;
 #X obj 53 112 * -1;
 #X obj 54 81 + 1;
@@ -527,14 +508,10 @@ for linux), f 47;
 #X text 223 196 back_color;
 #X text 221 236 front_color;
 #N canvas 882 181 1049 632 color_picker 0;
-#X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#fc0400 #000000 0 0;
-#X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#00fc04 #000000 0 0;
-#X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc
-#0400fc #000000 0 0;
-#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 #fcfcfc #fcfcfc
-#fcfcfc 0 1;
+#X obj 53 150 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #fc0400 #000000 0 0;
+#X obj 53 162 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #00fc04 #000000 0 0;
+#X obj 53 174 hsl 128 12 0 255 0 0 empty empty empty -2 -8 0 10 #dcdcdc #0400fc #000000 0 0;
+#X obj 183 150 tgl 36 0 empty empty empty 17 7 0 10 #a0a0a0 #a0a0a0 #a0a0a0 0 1;
 #N canvas 0 50 498 451 convert2rgb 0;
 #X obj 53 112 * -1;
 #X obj 54 81 + 1;
@@ -606,8 +583,7 @@ for linux), f 47;
 #X connect 20 0 16 0;
 #X coords 0 -1 1 1 169 36 2 50 150;
 #X restore 37 231 pd color_picker;
-#X obj 92 143 cnv 15 300 20 empty \$0-receive_name-rcv -rcv 2 10 0
-16 #f0fcf8 #404040 0;
+#X obj 92 143 cnv 15 300 20 empty \$0-receive_name-rcv -rcv 2 10 0 16 #f0fcf8 #404040 0;
 #X text 17 141 receive;
 #X restore 1115 196 pd mmpButton_properties(\$0);
 #X obj 1113 163 s pd-mmpButton_properties(\$0);
@@ -619,7 +595,7 @@ for linux), f 47;
 #X obj 65 92 select 1 0;
 #X obj 283 78 r \$0-back_color;
 #X obj 428 286 r \$0-front_color;
-#X msg 383 366 color 0 0 0;
+#X msg 383 366 color 1 1 1;
 #X msg 283 239 color 10 10 10;
 #X msg 256 152 set color \$1 \$1 \$1;
 #X msg 419 314 set color \$1 \$1 \$1;
@@ -677,21 +653,17 @@ for linux), f 47;
 #X obj 230 430 outlet;
 #X obj 181 104 iemguts/canvasdollarzero 2;
 #N canvas 0 0 450 242 \$0-dynamic-receiver 0;
-#X obj 10 10 r MULTITOUCH.MODE2.1021;
-#X obj 10 50 s 1022-iem_receive;
+#X obj 10 10 r MULTITOUCH.MODE2.1003;
+#X obj 10 50 s 1004-iem_receive;
 #X connect 0 0 1 0;
 #X restore 222 306 pd \$0-dynamic-receiver;
 #X obj 219 147 pack s \$0;
 #X obj 220 227 s pd-\$0-dynamic-receiver;
 #X obj 230 395 r \$0-iem_receive;
 #X msg 121 193 clear;
-#X text 25 17 création dynamique d'un receiver avec un nom de canal
-défini au moment de l'ouverture du patch;
-#X msg 220 179 clear \, obj 10 10 r MULTITOUCH.MODE2.\$1 \, obj 10
-50 s \$2-iem_receive \, connect 0 0 1 0;
-#X text 423 381 A chaque nouvel événement touch-down \, [r MULTITOUCH.MODE2.\$1]
-recoit un message sous la forme suivante : <x> <y> <slotID>, f 37
-;
+#X text 25 17 création dynamique d'un receiver avec un nom de canal défini au moment de l'ouverture du patch;
+#X msg 220 179 clear \, obj 10 10 r MULTITOUCH.MODE2.\$1 \, obj 10 50 s \$2-iem_receive \, connect 0 0 1 0;
+#X text 423 381 A chaque nouvel événement touch-down \, [r MULTITOUCH.MODE2.\$1] recoit un message sous la forme suivante : <x> <y> <slotID>, f 37;
 #X connect 0 0 3 0;
 #X connect 1 0 3 0;
 #X connect 3 0 5 0;
@@ -700,7 +672,7 @@ recoit un message sous la forme suivante : <x> <y> <slotID>, f 37
 #X connect 8 0 6 0;
 #X connect 10 0 6 0;
 #X restore 661 223 pd receive_MULTITOUCH.MODE2.parent\$0;
-#N canvas 770 9 1149 924 touch_listener 1;
+#N canvas 770 9 1149 924 touch_listener 0;
 #X obj 56 42 inlet;
 #X obj 44 629 select 1;
 #X obj 46 691 pack f f;
@@ -728,11 +700,7 @@ recoit un message sous la forme suivante : <x> <y> <slotID>, f 37
 #X msg 27 856 add \$1 \$2;
 #X msg 149 859 update \$1 \$2;
 #X msg 309 862 remove \$1 \$2;
-#X text 777 42 la table MULTITOUCH.SLOT.STATUS indique si chaque slot
-(tracker de touch-event) est associé ou non à un élément GUI multitouch.
-Si tel est le cas \, l'éĺément i de la table associé au slot i
-prend la valeur \$0 du touch_listener auquel il est associé, f 33
-;
+#X text 777 42 la table MULTITOUCH.SLOT.STATUS indique si chaque slot (tracker de touch-event) est associé ou non à un élément GUI multitouch. Si tel est le cas \, l'éĺément i de la table associé au slot i prend la valeur \$0 du touch_listener auquel il est associé, f 33;
 #X obj 210 469 t f f;
 #N canvas 0 50 450 300 Is_inside_Gui_object? 0;
 #X obj 53 38 inlet;
@@ -847,8 +815,7 @@ prend la valeur \$0 du touch_listener auquel il est associé, f 33
 #X restore 582 215 pd Normalize_coords;
 #X f 10;
 #X obj 579 474 t l l;
-#X text 399 764 associe le slot i de la table MULTITOUCH.SLOT.STATUS
-au \$0 du présent touch_listener, f 52;
+#X text 399 764 associe le slot i de la table MULTITOUCH.SLOT.STATUS au \$0 du présent touch_listener, f 52;
 #X obj 571 298 t f f f;
 #X obj 607 338 < 0;
 #X obj 662 341 > 1;
@@ -987,13 +954,12 @@ au \$0 du présent touch_listener, f 52;
 #X obj 118 179 s pd-\$0-dynamic-receiver2;
 #N canvas 0 50 450 126 \$0-dynamic-receiver2 0;
 #X obj 10 10 r -rcv;
-#X obj 10 50 s 1022-iem_receive2;
+#X obj 10 50 s 1004-iem_receive2;
 #X connect 0 0 1 0;
 #X restore 120 258 pd \$0-dynamic-receiver2;
 #X obj 124 100 pack s \$0;
 #X obj 128 347 r \$0-iem_receive2;
-#X msg 118 131 clear \, obj 10 10 r \$1 \, obj 10 50 s \$2-iem_receive2
-\, connect 0 0 1 0;
+#X msg 118 131 clear \, obj 10 10 r \$1 \, obj 10 50 s \$2-iem_receive2 \, connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 4 0 6 0;
 #X connect 5 0 0 0;
@@ -1027,8 +993,7 @@ au \$0 du présent touch_listener, f 52;
 #X obj 1202 108 v \$0-invisible;
 #X obj 887 471 s \$0-z_offset;
 #X obj 1099 472 s \$0-invisible;
-#X obj 270 395 route -size -back_color -front_color -name -z_offset
--invisible;
+#X obj 270 395 route -size -back_color -front_color -name -z_offset -invisible;
 #X obj 322 115 v \$0-back_color;
 #X obj 366 561 s \$0-back_color;
 #N canvas 0 50 540 413 convert 0;
@@ -1133,8 +1098,7 @@ au \$0 du présent touch_listener, f 52;
 #X obj 567 118 v \$0-front_color;
 #X msg 564 182 -front_color \$1 \$2 \$3;
 #X obj 502 509 s \$0-front_color;
-#X msg 21 303 -size 60 60 \, -back_color 220 220 220 \, -front_color
-200 200 200 \, -cursor_color -1, f 10;
+#X msg 21 303 -size 60 60 \, -back_color 220 220 220 \, -front_color 200 200 200 \, -cursor_color -1, f 10;
 #N canvas 0 0 731 635 init_name 0;
 #X obj 58 424 + 1;
 #X obj 57 389 v MMP.UNTITLED_WIDGET;

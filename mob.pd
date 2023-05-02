@@ -1,11 +1,7 @@
 #N canvas 114 10 1920 1023 12;
 #X declare -path iemguts;
 #X declare -path iemlib;
-<<<<<<< HEAD
 #X obj 100 100 cnv 15 298 138 \$0-mob_cnv \$0-mob_cnv-rcv mob_v3 2 8 0 14 #dcdcdc #000000 0;
-=======
-#X obj 100 100 cnv 15 298 138 \$0-mob_cnv \$0-mob_cnv-rcv mob_v2 2 8 0 14 #dcdcdc #000000 0;
->>>>>>> 9b9a472f11a1b1aa8e82f028ac05ece67d85b189
 #X obj 245 101 bng 45 250 50 0 \$0-exportMMP! empty export 2 10 0 12 #fc0400 #000000 #000000;
 #X obj 136 396 s MMP_EXPORT;
 #X obj 196 358 v MMP_FIRST_GUI_ITEM;
@@ -5235,10 +5231,6 @@
 #X text 318 789 Tells mob/widgets not to use savestate \, but canvasargs instead \, as file is exported to MMP platform, f 33;
 #X obj 21 116 delay 150;
 #X obj 20 248 t b b, f 94;
-<<<<<<< HEAD
-=======
-#X msg 409 595 open \$2/export/\$1 c;
->>>>>>> 9b9a472f11a1b1aa8e82f028ac05ece67d85b189
 #X obj 681 396 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 182 99 z;
 #X obj 833 527 r \$0-listeners;
@@ -5508,15 +5500,12 @@
 #X restore 578 765 pd background_color_&_gui_zone;
 #X obj 1002 29 declare -path iemguts;
 #X obj 1002 49 declare -path iemlib;
-<<<<<<< HEAD
 #X text 891 492 from mob/guis;
 #X obj 377 122 bng 20 250 50 0 MOB_EXPORT empty empty 0 -10 0 12 #ff8300 #000000 #000000;
 #X obj 564 1070 cnv 20 500 500 empty empty empty 20 12 0 12 #ff8300 #404040 0;
 #X msg 713 501 dir 1;
 #X msg 409 595 open \$2/\$1 c;
 #X obj 412 621 print;
-=======
->>>>>>> 9b9a472f11a1b1aa8e82f028ac05ece67d85b189
 #X connect 4 0 3 0;
 #X connect 5 0 64 0;
 #X connect 11 0 10 0;
@@ -5596,7 +5585,6 @@
 #X connect 130 0 133 0;
 #X connect 131 0 133 0;
 #X connect 132 0 130 0;
-<<<<<<< HEAD
 #X connect 132 0 135 0;
 #X connect 135 0 154 0;
 #X connect 137 0 159 0;
@@ -5648,58 +5636,4 @@
 #X connect 186 0 42 0;
 #X connect 187 0 133 0;
 #X connect 187 0 188 0;
-=======
-#X connect 132 0 136 0;
-#X connect 135 0 42 0;
-#X connect 136 0 155 0;
-#X connect 138 0 160 0;
-#X connect 139 0 137 0;
-#X connect 141 0 151 1;
-#X connect 142 0 156 0;
-#X connect 143 0 142 1;
-#X connect 144 0 150 1;
-#X connect 145 0 141 0;
-#X connect 146 0 144 0;
-#X connect 147 0 140 0;
-#X connect 147 0 172 0;
-#X connect 148 0 150 0;
-#X connect 149 0 153 0;
-#X connect 150 0 149 0;
-#X connect 151 0 147 0;
-#X connect 152 0 148 1;
-#X connect 154 0 148 0;
-#X connect 154 1 139 0;
-#X connect 155 0 154 0;
-#X connect 155 1 142 0;
-#X connect 155 2 138 0;
-#X connect 156 0 151 0;
-#X connect 156 1 145 0;
-#X connect 156 2 146 0;
-#X connect 158 0 157 0;
-#X connect 159 0 163 0;
-#X connect 159 1 34 0;
-#X connect 159 2 158 0;
-#X connect 163 0 164 0;
-#X connect 164 0 38 0;
-#X connect 164 1 41 0;
-#X connect 165 0 133 0;
-#X connect 166 0 41 0;
-#X connect 168 0 102 0;
-#X connect 169 0 102 0;
-#X connect 174 0 132 0;
-#X connect 174 1 115 0;
-#X connect 174 2 2 0;
-#X connect 174 3 4 0;
-#X connect 174 4 113 0;
-#X connect 174 5 105 0;
-#X connect 174 6 173 0;
-#X connect 174 7 8 0;
-#X connect 174 8 36 0;
-#X connect 174 9 104 0;
-#X connect 174 10 32 0;
-#X connect 175 0 176 0;
-#X connect 176 0 182 0;
-#X connect 182 0 177 0;
-#X connect 182 0 181 0;
->>>>>>> 9b9a472f11a1b1aa8e82f028ac05ece67d85b189
 #X coords 0 -1 1 1 300 140 1 100 100;
