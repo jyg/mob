@@ -1,10 +1,21 @@
-#N struct bckgrnd float x float y float width float height float color
-;
-#N canvas 961 65 835 353 16;
+#N struct bckgrnd float x float y float width float height float color;
+#N canvas 0 32 1920 994 16;
 #X scalar bckgrnd 0 0 511.22 319.513 337 \;;
 #X obj 524 78 mob;
-#X obj 18 23 mob/button pad pad-rcv 0;
-#X text 139 146 TRIBUTE TO MARTENOT;
+#A saved -B 220;
+#A saved -G 220;
+#A saved -R 220;
+#A saved -zoom 1;
+#A saved -landscape 0;
+#A saved -mode 0;
+#A saved -pages 1;
+#X obj 3 1 mob/button pad pad-rcv 0;
+#A saved -invisible 0;
+#A saved -z_offset 0;
+#A saved -name pad;
+#A saved -front_color 200 200 200;
+#A saved -back_color 220 220 220;
+#A saved -size 314 477;
 #N canvas 839 200 420 521 audio-stuf 0;
 #X obj 157 231 lop~ 10;
 #X obj 77 379 *~;
@@ -45,6 +56,8 @@
 #X connect 16 0 10 0;
 #X connect 18 0 17 0;
 #X restore 529 245 pd audio-stuf;
-#N canvas 0 50 450 300 mob-listeners 0;
+#N canvas 601 257 450 300 mob-listeners 0;
 #X obj 20 0 mob/tools/loader2 martenot;
 #X restore 524 48 pd mob-listeners;
+#X text 47 177 TRIBUTE TO MARTENOT;
+#X coords 0 0 1 1 320 480 1 0 0;
