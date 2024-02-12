@@ -1,13 +1,10 @@
-#N struct struct_paintoval float lx float ty float rx float by float
-width float color;
-#N struct struct_lineto float lx float ty float rx float by float width
-float color;
+#N struct struct_frameoval float lx float ty float rx float by float width float color;
+#N struct struct_paintoval float lx float ty float rx float by float width float color;
+#N struct struct_framerect float lx float ty float rx float by float width float color;
 #N canvas 153 194 719 763 16;
-#X obj 2 1 cnv 15 700 40 empty empty empty 20 12 0 14 #e0c4fc #404040
-0;
+#X obj 2 1 cnv 15 700 40 empty empty empty 20 12 0 14 #e0c4fc #404040 0;
 #X text 83 79 To edit shape \, ctrl+drag on it in edit mode;
-#X text 84 101 To edit properties \, right-click + properties popup
-menu, f 34;
+#X text 84 101 To edit properties \, right-click + properties popup menu, f 34;
 #X text 338 11 pd 0.49 + iemguts + iemlib;
 #X text 25 9 mob/lcd;
 #X text 78 51 LCD panel for drawing graphics;
@@ -20,9 +17,7 @@ menu, f 34;
 #A saved -title ;
 #A saved -name demo1;
 #A saved -size 157 127;
-#X msg 388 164 clear \, penwidth 5 \, frameoval 0.35 0.35 0.76 0.76
-0.5 1 0 1 \, penwidth 3 \, frameoval 0.5 0.5 0.6 0.6 1 0 0 1 \, paintoval
-0.1 0.1 0.2 0.8 0.2 0.2 0.9 1, f 31;
+#X msg 388 164 clear \, penwidth 5 \, frameoval 0.35 0.35 0.76 0.76 0.5 1 0 1 \, penwidth 3 \, frameoval 0.5 0.5 0.6 0.6 1 0 0 1 \, paintoval 0.1 0.1 0.2 0.8 0.2 0.2 0.9 1, f 31;
 #X obj 387 133 loadbang;
 #X obj 200 293 mob/lcd;
 #A saved -z_offset 0;
@@ -33,14 +28,10 @@ menu, f 34;
 #A saved -title ;
 #A saved -name demo2;
 #A saved -size 175 87;
-#X obj 68 208 tgl 15 0 empty empty AUTO 17 7 0 10 #fcfcfc #000000 #000000
-0 1;
-#X obj 111 194 bng 15 250 50 0 empty empty CLEAR 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 47 193 bng 15 250 50 0 empty empty CIRCLE 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 12 511 cnv 15 700 180 empty empty empty 20 12 0 14 #c4fcc4 #404040
-0;
+#X obj 68 208 tgl 15 0 empty empty AUTO 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 111 194 bng 15 250 50 0 empty empty CLEAR 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 47 193 bng 15 250 50 0 empty empty CIRCLE 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 12 511 cnv 15 700 180 empty empty empty 20 12 0 14 #c4fcc4 #404040 0;
 #X text 40 518 MobMuPlat usage :;
 #X obj 483 608 unpack f f;
 #X floatatom 483 637 5 0 0 0 - - - 0;
@@ -64,8 +55,7 @@ menu, f 34;
 #A saved -size 60 60;
 #X text 374 660 mousedown;
 #X text 504 664 drag;
-#X msg 19 630 clear \, penwidth 5 \, frameoval 0.35 0.35 0.76 0.76
-, f 31;
+#X msg 19 630 clear \, penwidth 5 \, frameoval 0.35 0.35 0.76 0.76, f 31;
 #N canvas 0 50 670 542 demo1 0;
 #X obj 37 208 random 100;
 #X obj 37 233 / 100;
@@ -131,8 +121,7 @@ menu, f 34;
 #A saved -title ;
 #A saved -name lcd_name;
 #A saved -size 278 210;
-#X obj 41 55 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 41 55 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 41 125 lcd_color 1 0 0 1;
 #X floatatom 274 76 5 0 0 0 - - - 0;
 #X obj 274 106 / 100;
@@ -142,8 +131,7 @@ menu, f 34;
 #X obj 699 116 / 100;
 #X msg 742 217 draw line;
 #X msg 741 189 draw fill;
-#X obj 494 86 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 494 86 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 495 152 lcd_color 0 1 0 1;
 #X obj 495 260 lcd_circle 0.05;
 #X obj 41 96 lcd_head lcd_name;
@@ -164,11 +152,8 @@ menu, f 34;
 #X obj 41 270 lcd_circle 0.05;
 #N canvas 0 0 766 801 todo/ressources 0;
 #X text 46 33 https://www.cs.trinity.edu/~jhowland/cs2322/2d/2d/;
-#X text 47 99 https://www.tutorialspoint.com/computer_graphics/2d_transformation.htm
-;
-#X text 47 204 TODO : au lieu de message "head" \, incorporer dans
-le message chain \, comme ća \, on peut connecter deux lcd_head à
-une même chaine de rendu géométrique;
+#X text 47 99 https://www.tutorialspoint.com/computer_graphics/2d_transformation.htm;
+#X text 47 204 TODO : au lieu de message "head" \, incorporer dans le message chain \, comme ća \, on peut connecter deux lcd_head à une même chaine de rendu géométrique;
 #X text 86 275 Matrice 2D;
 #X obj 65 443 lcd_rotate;
 #X obj 63 478 lcd_scale;
@@ -182,18 +167,14 @@ une même chaine de rendu géométrique;
 #X text 859 186 (default);
 #X obj 64 302 lcd_penwidth 6;
 #X obj 55 336 lcd_color 0.7 0.7 0 1;
-#X obj 422 346 cnv 15 300 300 empty empty empty 20 12 0 14 #fcc4c4
-#404040 0;
-#X obj 486 566 tgl 15 1 empty empty auto 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
-#X obj 465 454 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 422 346 cnv 15 300 300 empty empty empty 20 12 0 14 #fcc4c4 #404040 0;
+#X obj 486 566 tgl 15 1 empty empty auto 17 7 0 10 #fcfcfc #000000 #000000 1 1;
+#X obj 465 454 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 468 488 redraw;
 #X text 543 488 redraw all;
 #X text 489 445 erase all;
 #X text 441 359 LCD Renderer;
-#X obj 61 74 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
-0 1;
+#X obj 61 74 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 81 70 on/off (default on);
 #X text 60 50 draw;
 #X text 446 416 * manual erase / render;
@@ -303,7 +284,7 @@ une même chaine de rendu géométrique;
 #A saved -front_color 150 150 150;
 #A saved -back_color 220 220 220;
 #A saved -title ;
-#A saved -name Untitled_14*;
+#A saved -name Untitled_1*;
 #A saved -size 362 283;
 #X obj 241 467 unpack f f;
 #X floatatom 241 496 5 0 0 0 - - - 0;
@@ -345,39 +326,23 @@ une même chaine de rendu géométrique;
 #X msg 49 681 moveto 0.5 0.5;
 #X msg 49 720 lineto 0.7 0.9 1 0 0 1;
 #X msg 49 746 lineto 0.2 0.4;
-#X text 328 721 lineto + 6 floats (x \, y \, red \, green \, blue.alpha)
-;
 #X text 327 751 lineto + 2 floats (x \, y);
-#X text 326 363 "framerect" + 4 floats (left x \, top y \, right x
-\, bottom y) - uses widget's highlight color;
-#X text 324 201 "paintoval" + 8 floats (left x \, top y \, right x
-\, bottom y \, red \, green \, blue \, alpha);
-#X text 323 91 "frameoval" + 8 floats (left x \, top y \, right x \,
-bottom y \, red \, green \, blue \, alpha), f 43;
-#X text 323 145 "frameoval" + 4 floats (left x \, top y \, right x
-\, bottom y) - uses widget's highlight color;
-#X text 323 257 "paintoval" + 4 floats (left x \, top y \, right x
-\, bottom y) - uses widget's highlight color;
-#X text 323 307 "framerect" + 8 floats (left x \, top y \, right x
-\, bottom y \, red \, green \, blue \, alpha);
-#X text 323 413 "paintrect" + 8 floats (left x \, top y \, right x
-\, bottom y \, red \, green \, blue \, alpha);
-#X text 326 463 "paintrect" + 4 floats (left x \, top y \, right x
-\, bottom y) - uses widget's highlight color;
+#X text 326 363 "framerect" + 4 floats (left x \, top y \, right x \, bottom y) - uses widget's highlight color;
+#X text 324 201 "paintoval" + 8 floats (left x \, top y \, right x \, bottom y \, red \, green \, blue \, alpha);
+#X text 323 91 "frameoval" + 8 floats (left x \, top y \, right x \, bottom y \, red \, green \, blue \, alpha), f 43;
+#X text 323 145 "frameoval" + 4 floats (left x \, top y \, right x \, bottom y) - uses widget's highlight color;
+#X text 323 257 "paintoval" + 4 floats (left x \, top y \, right x \, bottom y) - uses widget's highlight color;
+#X text 323 307 "framerect" + 8 floats (left x \, top y \, right x \, bottom y \, red \, green \, blue \, alpha);
+#X text 323 413 "paintrect" + 8 floats (left x \, top y \, right x \, bottom y \, red \, green \, blue \, alpha);
+#X text 326 463 "paintrect" + 4 floats (left x \, top y \, right x \, bottom y) - uses widget's highlight color;
 #X text 328 685 moveto + 2 floats (x \, y);
 #X text 113 12 !!! alpha-rendering ignored in tcl/tk !!!;
 #X text 114 12 !!! alpha-rendering ignored in tcl/tk !!!;
 #N canvas 0 0 667 215 framepoly/paintpoly 0;
-#X text 29 36 "framepoly" + N floats (specify N/2 points as a list
-of x/y pairs) - uses widget's highlight color "framepolyRGBA" + N+4
-floats (specify N/2 points as a list of x/y pairs \, red \, green \,
-blue \, alpha) \; "paintpoly" + N floats (specify N/2 points as a list
-of x/y pairs) - uses widget's highlight color "paintpolyRGBA" + N+4
-floats (specify N/2 points as a list of x/y pairs \, red \, green \,
-blue \, alpha);
+#X text 29 36 "framepoly" + N floats (specify N/2 points as a list of x/y pairs) - uses widget's highlight color "framepolyRGBA" + N+4 floats (specify N/2 points as a list of x/y pairs \, red \, green \, blue \, alpha) \; "paintpoly" + N floats (specify N/2 points as a list of x/y pairs) - uses widget's highlight color "paintpolyRGBA" + N+4 floats (specify N/2 points as a list of x/y pairs \, red \, green \, blue \, alpha);
 #X restore 602 562 pd framepoly/paintpoly;
-#X text 78 554 !! MobMuPlat "framepoly" and "paintpoly" messages aren't
-implemented yet in tcl/tk, f 50;
+#X text 78 554 !! MobMuPlat "framepoly" and "paintpoly" messages aren't implemented yet in tcl/tk, f 50;
+#X text 328 721 lineto + 6 floats (x \, y \, red \, green \, blue \, alpha);
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 4 0 0 0;
@@ -390,13 +355,10 @@ implemented yet in tcl/tk, f 50;
 #X connect 11 0 0 0;
 #X restore 36 161 pd MobMuPlat_drawing_commands;
 #X text 10 389 * Inlet passes the drawing commands;
-#X text 10 414 * First outlet gives the mouse/touch interaction --->
-;
+#X text 10 414 * First outlet gives the mouse/touch interaction --->;
 #X text 7 161 1);
-#X text 389 299 2) How to paint in a LCD panel using pseudo-gem objects
-:, f 30;
-#X text 21 551 You can both use connexions or send/receive pairs,
-f 19;
+#X text 389 299 2) How to paint in a LCD panel using pseudo-gem objects :, f 30;
+#X text 21 551 You can both use connexions or send/receive pairs, f 19;
 #N canvas 377 37 976 828 second_outlet 0;
 #X obj 82 252 mob/lcd;
 #A saved -z_offset 0;
@@ -405,7 +367,7 @@ f 19;
 #A saved -front_color 150 150 150;
 #A saved -back_color 220 220 220;
 #A saved -title ;
-#A saved -name Untitled_15*;
+#A saved -name Untitled_2*;
 #A saved -size 206 183;
 #X obj 151 470 route drawing_subpatch drawing_pointer;
 #X msg 670 153 paintoval 0.4 0.2 0.5 0.4 0.2 0.2 1 1, f 25;
@@ -415,20 +377,13 @@ f 19;
 #X msg 661 345 paintrect 0.4 0.4 0.6 0.6;
 #X msg 658 400 moveto 0.5 0.5;
 #X msg 650 446 lineto 0.2 0.4;
-#X obj 380 561 pointer struct_frameoval struct_paintoval struct_framerect
-struct_paintrect struct_lineto;
-#X obj 385 655 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 455 655 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 565 655 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 655 655 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 755 655 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 835 655 bng 15 250 50 0 empty empty other 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 380 561 pointer struct_frameoval struct_paintoval struct_framerect struct_paintrect struct_lineto;
+#X obj 385 655 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 455 655 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 565 655 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 655 655 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 755 655 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 835 655 bng 15 250 50 0 empty empty other 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 73 162 clear;
 #X obj 140 571 pointer;
 #X obj 140 649 get - lx ty rx by;
@@ -441,9 +396,7 @@ struct_paintrect struct_lineto;
 #X obj 146 737 set - ty;
 #X obj 246 737 set - rx;
 #X obj 354 736 set - by;
-#X text 43 35 * Second outlet gives both the name of the subpatch that
-contains the datastructures scalars and the pointer to last appended
-scalar \, for editing purposes (not in MobMuPlat)., f 65;
+#X text 43 35 * Second outlet gives both the name of the subpatch that contains the datastructures scalars and the pointer to last appended scalar \, for editing purposes (not in MobMuPlat)., f 65;
 #X connect 0 1 1 0;
 #X connect 1 1 9 0;
 #X connect 1 1 17 0;
@@ -477,18 +430,6 @@ scalar \, for editing purposes (not in MobMuPlat)., f 65;
 #X connect 23 4 27 1;
 #X restore 32 443 pd second_outlet;
 #X text 9 444 *;
-#X obj 575 73 mob/hfader;
-#A saved -invisible 0;
-#A saved -z_offset 0;
-#A saved -mode 0;
-#A saved -max 1;
-#A saved -min 0;
-#A saved -name Untitled_3*;
-#A saved -speed_ratio 100;
-#A saved -label_color 0 0 0;
-#A saved -front_color 150 150 150;
-#A saved -back_color 220 220 220;
-#A saved -size 127 15;
 #X obj 517 474 r lcd_panel;
 #X obj 19 676 s lcd_panel-rcv;
 #X obj 6 55 mob/lcd;
@@ -498,7 +439,7 @@ scalar \, for editing purposes (not in MobMuPlat)., f 65;
 #A saved -front_color 150 150 150;
 #A saved -back_color 255 255 255;
 #A saved -title ;
-#A saved -name Untitled_9*;
+#A saved -name Untitled_3*;
 #A saved -size 60 60;
 #X connect 7 0 6 0;
 #X connect 7 0 9 0;
@@ -515,8 +456,8 @@ scalar \, for editing purposes (not in MobMuPlat)., f 65;
 #X connect 21 2 22 0;
 #X connect 22 0 23 0;
 #X connect 22 1 24 0;
-#X connect 29 0 43 0;
+#X connect 29 0 42 0;
 #X connect 30 0 6 0;
 #X connect 30 0 9 0;
 #X connect 33 0 6 0;
-#X connect 42 0 21 0;
+#X connect 41 0 21 0;
